@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Wir sind alle cool!</h1>
+        <h1>Wir sind nicht alle cool!</h1>
     </body>
 </html>
