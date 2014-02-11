@@ -43,7 +43,7 @@
             String matNr = request.getParameter("matNr");
             String kurs = request.getParameter("kurs");
             
-            Student s = new Student(vorname, nachname, email, gebDat, matNr, kurs);
+            /*Student s = new Student(vorname, nachname, email, gebDat, matNr, kurs);*/
          %>
         <div>
             
