@@ -44,7 +44,7 @@ public class Mail {
    
    Session mailSession = Session.getInstance(props, new javax.mail.Authenticator()
      {protected PasswordAuthentication getPasswordAuthentication() 
-       {return new PasswordAuthentication("Buchausleihe.wwi12b3","buchausleihe");}
+     {return new PasswordAuthentication("Buchausleihe.wwi12b3","buchausleihe");}
      });
    try{
       
@@ -57,9 +57,8 @@ public class Mail {
       
       message.setSubject("Buch");
      
-      
-      message.setContent("<h1>Guten Tag<% out.println(s.getName()); %> </h1>",
-                            "text/html" );
+      String messageContent = "<h1>Guten Tag " + s.getName() + "</h1>";
+      message.setContent(messageContent, "text/html");
       //message.setText("Guten Tag" +s.getName());
       Transport.send(message);
       result = "successfully";
