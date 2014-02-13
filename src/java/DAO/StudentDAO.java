@@ -15,7 +15,7 @@ import org.hibernate.Transaction;
  */
 public class StudentDAO {
     
-    public void createStudent(Student s){
+    public static void createStudent(Student s){
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
