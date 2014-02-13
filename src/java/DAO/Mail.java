@@ -58,9 +58,9 @@ public class Mail {
       message.setSubject("Buch");
      
       
-      message.setContent("<h1>Guten Tag <% out.println(s.getName()); %> </h1>",
+      message.setContent("<h1>Guten Tag<% out.println(s.getName()); %> </h1>",
                             "text/html" );
-      
+      //message.setText("Guten Tag" +s.getName());
       Transport.send(message);
       result = "successfully";
    }catch (MessagingException mex) {
@@ -68,7 +68,7 @@ public class Mail {
       result = "Error";
    } 
       
-      
+     System.out.println(result);
       
   }  
 }
