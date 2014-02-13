@@ -27,18 +27,22 @@
             <img src="pic/dh.jpg" alt="dh" />
         </div>
         
-        <form action="input_text.htm">
+        <form action="savestudent.jsp" methode="POST">
               <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
               <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
               <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
               <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
               <p>Passwort<br><input name="passwort2" type="password" size ="30" maxlength="40"></p>
-              <p>Geburtsdatum<br><input name="gebDat" type="date" size ="30" maxlength="40"></p>
-              <p>Matrikelnummer<br><input name="matNr" type="number" size ="30" maxlength="40"></p>
+              <p>Geburtsdatum<br><input name="gebDat" type="text" size ="30" maxlength="40"></p>
+              <p>Matrikelnummer<br><input name="matNr" type="text" size ="30" maxlength="40"></p>
               <p>Kursnummer<br><input name="kurs" type="text" size ="30" maxlength="40"></p>
+              <p><input name="button" type="submit" value="anlegen"></p>
         </form>
         <% 
-            String nachname = request.getParameter("nachname");
+            /*String n = request.getParameter( "nachname" );
+            out.println(n);
+            out.println("hallo");
+            /*String nachname = request.getParameter("nachname");
             String vorname = request.getParameter("vorname");
             String email = request.getParameter("e_mail");
             
@@ -49,7 +53,7 @@
             DateFormat df = new SimpleDateFormat("dd:MM:yyyy");
             Date date = df.parse(x);           
             
-            Student s = new Student(vorname, nachname, email, date, matNummer, kurs);
+            Student s = new Student(vorname, nachname, email, date, matNummer, kurs);*/
          %>
         <div>
             
