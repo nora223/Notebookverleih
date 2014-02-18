@@ -19,8 +19,13 @@
            </div>
     </head>
     <body>
+        <div>
+            
+        </div>
         <div id="login">
          <form action="savestudent.jsp" methode="POST">
+              <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
+                  <input type="radio" name="radio" value="männlich">männlich</input></p>
               <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
               <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
               <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>

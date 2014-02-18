@@ -6,12 +6,15 @@
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
+    background: none repeat scroll 0 0 #FFFFFF;
   font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 50%;
+      -ms-text-size-adjust: 50%;
+  
 }
 body {
   margin: 0;
+  padding: 10px 0 0; 
 }
 
 hr {
@@ -19,16 +22,26 @@ hr {
    background-color: #ec1501; 
    height: 21px; 
    border: #ec1501;
-   width: 100%;
+   width: 190%;
    margin: 0px 0px 0px 15px;
    -moz-box-sizing: content-box;
    box-sizing: content-box;
    padding: 0px;
 }
 
+div form p
+{
+    orphans: 3;
+    widows: 3;
+    padding: 0px;
+    margin: 10px;
+    text-align: left;
+  }
+  
 #pic {
     padding: 8px 0px 0px 15px;
-
+-moz-box-sizing: content-box;
+   box-sizing: content-box;
 }
 
 #login{
@@ -233,12 +246,7 @@ th {
   img {
     max-width: 100% !important;
   }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+
   h2,
   h3 {
     page-break-after: avoid;
