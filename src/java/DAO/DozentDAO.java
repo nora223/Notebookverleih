@@ -4,8 +4,8 @@
  */
 package DAO;
 
-import BL.Student;
-import BL.Mail;
+
+import BL.Dozent;
 import NotebookVerleih.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -14,13 +14,13 @@ import org.hibernate.Transaction;
  *
  * @author Tino
  */
-public class StudentDAO {
+public class DozentDAO {
     
-    public static void createStudent(Student s){
+     public static void createDozent(Dozent d){
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(s);
+        session.saveOrUpdate(d);
         transaction.commit();    
         
     }

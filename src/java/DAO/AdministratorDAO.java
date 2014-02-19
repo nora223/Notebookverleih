@@ -4,8 +4,7 @@
  */
 package DAO;
 
-import BL.Student;
-import BL.Mail;
+import BL.Administrator;
 import NotebookVerleih.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -14,15 +13,16 @@ import org.hibernate.Transaction;
  *
  * @author Tino
  */
-public class StudentDAO {
-    
-    public static void createStudent(Student s){
+public class AdministratorDAO {
+            
+    public static void createAdmininstrator(Administrator a){
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(s);
+        session.saveOrUpdate(a);
         transaction.commit();    
         
     }
+
     
 }
