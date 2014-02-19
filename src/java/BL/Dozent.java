@@ -4,17 +4,20 @@
  */
 package BL;
 
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
-
-@Entity
-public class Student implements Serializable{
+/**
+ *
+ * @author Tino
+ */
+public class Dozent {
     
-    @Id
+     @Id
     @GeneratedValue
     private long id;
     private String geschlecht;
@@ -25,24 +28,20 @@ public class Student implements Serializable{
     @Temporal (javax.persistence.TemporalType.DATE)
     private Date gebDat;
     
-    private int matNr;
-    private String kurs;
     private String passwort;
     private String username;
 
-    public Student(String geschlecht, String vorname, String name, String eMail, Date gebDat, int matNr, String kurs, String passwort, String username) {
+    public Dozent(String geschlecht, String vorname, String name, String eMail, Date gebDat, String passwort, String username) {
         this.geschlecht = geschlecht;
         this.vorname = vorname;
         this.name = name;
         this.eMail = eMail;
         this.gebDat = gebDat;
-        this.matNr = matNr;
-        this.kurs = kurs;
         this.passwort = passwort;
         this.username = username;
     }
 
-    public Student() {
+    public Dozent() {
     }
 
     public long getId() {
@@ -93,22 +92,6 @@ public class Student implements Serializable{
         this.gebDat = gebDat;
     }
 
-    public int getMatNr() {
-        return matNr;
-    }
-
-    public void setMatNr(int matNr) {
-        this.matNr = matNr;
-    }
-
-    public String getKurs() {
-        return kurs;
-    }
-
-    public void setKurs(String kurs) {
-        this.kurs = kurs;
-    }
-
     public String getPasswort() {
         return passwort;
     }
@@ -125,9 +108,6 @@ public class Student implements Serializable{
         this.username = username;
     }
     
-    
-    
-
     
     
 }
