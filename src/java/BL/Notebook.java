@@ -4,16 +4,18 @@
  */
 package BL;
 
-import java.util.Date;
+import java.io.Serializable;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
+
 
 /**
  *
  * @author Tino
  */
-public class Notebook {
+@Entity
+public class Notebook implements Serializable{
     
     @Id
     @GeneratedValue

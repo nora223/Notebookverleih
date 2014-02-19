@@ -9,7 +9,7 @@
 <%@ page import="BL.Student" 
          import="java.util.*"
          import="java.text.DateFormat"
-         import="DAO.StudentDAO"
+         
          %>
 <html>
     <head>
@@ -26,6 +26,7 @@
     <body>
         <h1>Registrierung erfolgreich!</h1>
           <% 
+            String geschlecht = request.getParameter("radio");
             String nachname = request.getParameter("nachname");
             String vorname = request.getParameter("vorname");
             String email = request.getParameter("e_mail");
@@ -39,8 +40,11 @@
             /*out.println(df);*/
             Date date = df.parse(x);           
             /*out.println(date);*/
-            Student s = new Student(vorname, nachname, email, date, matNummer, kurs);
-            BL.Student.saveStudent(s);
+            String passwort = request.getParameter("passwort");
+            String username = request.getParameter("username");
+           
+            Student s = new Student(geschlecht, vorname, nachname, email, date, matNummer,kurs, passwort, username);
+            Student.saveStudent(s);
          %>
          <div>
          <p>Hallo 

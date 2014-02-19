@@ -4,21 +4,21 @@
  */
 package BL;
 
-import BL.Student;
-import BL.Mail;
-import NotebookVerleih.HibernateUtil;
+
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+
 
 /**
  *
  * @author Tino
  */
-public class Administrator {
+@Entity
+public class Administrator implements Serializable{
     
     @Id
     @GeneratedValue

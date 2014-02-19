@@ -20,7 +20,7 @@ public class StudentDAO {
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        session.save(s);
+        session.saveOrUpdate(s);
         transaction.commit();
         
         

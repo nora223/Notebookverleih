@@ -15,9 +15,11 @@ import javax.persistence.Temporal;
  *
  * @author Tino
  */
-public class Dozent {
+
+@Entity
+public class Dozent implements Serializable{
     
-     @Id
+    @Id
     @GeneratedValue
     private long id;
     private String geschlecht;
