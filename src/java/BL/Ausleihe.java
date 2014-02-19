@@ -9,6 +9,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -24,7 +26,10 @@ public class Ausleihe implements Serializable{
     
      @Temporal (javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
+    @OneToOne
     private Student antragssteller;
+    
+    @ManyToOne
     private Dozent mitarbeiter;
     private int dauer;
     
@@ -36,6 +41,7 @@ public class Ausleihe implements Serializable{
     
     private String bermerkung;
     private String status;
+    @OneToOne
     private Notebook leihNotebook;
 
     public Ausleihe(Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook) {
