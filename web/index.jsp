@@ -11,55 +11,33 @@
          import="java.util.*"
          import="java.text.DateFormat"
          %>
-
+<?xml-stylesheet type="text/xhtml" href="newshtml.xhtml" ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href ="css/Style.css" type ="text/css" />
-    
+        <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
         <title>Start</title>
+           <div>
+            <img id="pic" src="pic/logo.png" alt="Logo"/>
+            <hr>
+            <p id="pic"><img src="pic/dh.jpg" alt="dh" />
+           </div>
     </head>
     <body>
-        <div>
-            <img src="pic/logo.png" alt="Logo"/>
-            <hr>
-            <img src="pic/dh.jpg" alt="dh" />
-        </div>
+       
         
-        <form action="savestudent.jsp" methode="POST">
-              <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
-              <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
+        <form action="Login_Start.jsp" methode="POST">
               <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
               <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
-              <p>Passwort<br><input name="passwort2" type="password" size ="30" maxlength="40"></p>
-              <p>Geburtsdatum<br><input name="gebDat" type="text" size ="30" maxlength="40"></p>
-              <p>Matrikelnummer<br><input name="matNr" type="text" size ="30" maxlength="40"></p>
-              <p>Kursnummer<br><input name="kurs" type="text" size ="30" maxlength="40"></p>
-              <p><input name="button" type="submit" value="anlegen"></p>
+              <p><input name="button" type="submit" value="Login"></p>
         </form>
-        <% 
-            /*String n = request.getParameter( "nachname" );
-            out.println(n);
-            out.println("hallo");
-            /*String nachname = request.getParameter("nachname");
-            String vorname = request.getParameter("vorname");
-            String email = request.getParameter("e_mail");
-            
-            
-            String kurs = request.getParameter("kurs");
-            Integer matNummer = Integer.parseInt(request.getParameter("matNr"));
-            String x = request.getParameter("gebDat");
-            DateFormat df = new SimpleDateFormat("dd:MM:yyyy");
-            Date date = df.parse(x);           
-            
-            Student s = new Student(vorname, nachname, email, date, matNummer, kurs);*/
-         %>
+
         <div>
             
         </div>
-                    <li><a href="new_account.jsp">Neuer Zugang anlegen?</a></li>
-                    <li><a href="forgotton_PW.jsp">Passwort vergessen?</a></li>
-         
+               <li><a href="new_account.jsp">Neuer Zugang anlegen?</a></li>
+               <li><a href="forgotton_PW.jsp">Passwort vergessen?</a></li>
+        
     </body>
 </html>
