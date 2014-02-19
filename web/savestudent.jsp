@@ -40,7 +40,7 @@
             Date date = df.parse(x);           
             /*out.println(date);*/
             Student s = new Student(vorname, nachname, email, date, matNummer, kurs);
-            DAO.StudentDAO.createStudent(s);
+            BL.Student.saveStudent(s);
          %>
          <div>
          <p>Hallo 

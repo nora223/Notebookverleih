@@ -22,7 +22,7 @@ public class StudentDAO {
         Transaction transaction = session.beginTransaction();
         session.save(s);
         transaction.commit();
-        Mail.eMailcreateStudent(s);
+        
         
         
         
