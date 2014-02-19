@@ -45,6 +45,11 @@ public class Dozent implements Serializable{
 
     public Dozent() {
     }
+    
+    public static void saveDozent(Dozent d){
+        DAO.DozentDAO.createDozent(d);
+        
+    }
 
     public long getId() {
         return id;

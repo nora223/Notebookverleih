@@ -46,6 +46,11 @@ public class Administrator implements Serializable{
 
     public Administrator() {
     }
+    
+    public static void saveAdministrator(Administrator a){
+        DAO.AdministratorDAO.createAdmininstrator(a);
+        
+    }
 
     public long getId() {
         return id;

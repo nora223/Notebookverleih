@@ -36,6 +36,11 @@ public class Notebook implements Serializable{
 
     public Notebook() {
     }
+    
+    public static void saveNotebook(Notebook n){
+        DAO.NotebookDAO.createNotebook(n);
+        
+    }
 
     public long getId() {
         return id;

@@ -52,6 +52,11 @@ public class Ausleihe implements Serializable{
 
     public Ausleihe() {
     }
+    
+    public static void saveAusleihe(Ausleihe aus){
+        DAO.AusleiheDAO.createAusleihe(aus);
+        
+    }
 
     public long getId() {
         return id;
