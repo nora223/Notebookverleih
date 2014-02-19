@@ -39,7 +39,7 @@ public class Student implements Serializable{
         this.matNr = matNr;
         this.kurs = kurs;
         this.passwort = passwort;
-        this.username = username;
+        this.username = eMail;
     }
 
     public Student() {

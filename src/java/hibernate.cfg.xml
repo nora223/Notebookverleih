@@ -8,6 +8,7 @@
     <property name="hibernate.connection.username">Admin</property>
     <property name="hibernate.connection.password">admin</property>
     <property name="hibernate.current_session_context_class">thread</property>
+    
    <!-- Überschreibt die Tabellen neu-->
     <property name="hibernate.hbm2ddl.auto">create-drop</property>
     <property name="hibernate.show_sql">true </property>

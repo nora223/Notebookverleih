@@ -41,7 +41,7 @@ public class Administrator implements Serializable{
         this.eMail = eMail;
         this.gebDat = gebDat;
         this.passwort = passwort;
-        this.username = username;
+        this.username = eMail;
     }
 
     public Administrator() {
