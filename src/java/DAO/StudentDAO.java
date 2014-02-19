@@ -5,6 +5,7 @@
 package DAO;
 
 import BL.Student;
+import BL.Mail;
 import NotebookVerleih.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -19,9 +20,10 @@ public class StudentDAO {
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(s);
+        session.save(s);
         transaction.commit();
-              
+        Mail.eMailcreateStudent(s);
+        
         
         
         
