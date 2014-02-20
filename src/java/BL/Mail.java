@@ -45,21 +45,20 @@ public class Mail {
    try{
       
       MimeMessage message = new MimeMessage(mailSession);
-      
+      message. setHeader ( "Content-Type" ,  "text/html; charset=UTF-8" );
       message.setFrom(new InternetAddress(from));
       
       message.addRecipient(Message.RecipientType.TO,
                                new InternetAddress(to));
       
-      message.setSubject("Antrag Bestätigen");
+      message.setSubject("Antrag Bestätigen","UTF-8");
      
 String messageContent =
  "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>"      
 +"<h1 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> Wiwi-IT Geräteausleihe</h1><br>"
 +"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" +
 
-"<p>"+s.getName()+" hat Sie bei unserem Geräteverleih "
-+ "als Mitarbeiter ausgewählt,um ihm/ihr zu bestätigen,"
+"<p>"+s.getName()+" hat Sie bei unserem Geräteverleih als Mitarbeiter ausgewählt,<br>um ihm/ihr zu bestätigen,"
 + "dass das folgende Gerät für die Fortführung des Studium benötigt wird.</p><br>"            
               
 + "<table border="+8+"cellspacing="+10+"cellpadding="+20+"> "
@@ -75,8 +74,8 @@ String messageContent =
        
         ;
      
-      
-      message.setContent(messageContent, "text/html");
+     
+      message.setContent(messageContent, "text/html;charset = UTF-8");
       //message.setText("Guten Tag" +s.getName());
       
       Transport.send(message);
