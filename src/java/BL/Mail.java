@@ -1,4 +1,3 @@
-
 package BL;
 
 import java.io.*;
@@ -52,9 +51,31 @@ public class Mail {
       message.addRecipient(Message.RecipientType.TO,
                                new InternetAddress(to));
       
-      message.setSubject("Buch");
+      message.setSubject("Antrag Bestätigen");
      
-      String messageContent = "<h1>Guten Tag " + s.getName() + "</h1>";
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>"      
++"<h1 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> Wiwi-IT Geräteausleihe</h1><br>"
++"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" +
+
+"<p>"+s.getName()+" hat Sie bei unserem Geräteverleih "
++ "als Mitarbeiter ausgewählt,um ihm/ihr zu bestätigen,"
++ "dass das folgende Gerät für die Fortführung des Studium benötigt wird.</p><br>"            
+              
++ "<table border="+8+"cellspacing="+10+"cellpadding="+20+"> "
++ "<tr><th align="+"left"+">Antragssteller: </th> <th>" + s.getName() + "</th> "
++ "<tr><th align="+"left"+">Antrag vom: </th> <th>" + s.getName() + "</th> "
++ "<tr><th align="+"left"+">Mitarbeiter: </th> <th>" + s.getName() + "</th> </tr>"
++ "<tr><th align="+"left"+">Bemerkung: </th><th>Auswahlverfahren</th> </tr>"
++ "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + s.getName() + "</th> </tr>"
++ "<tr><th align="+"left"+">Dauer: </th> <th>" + s.getName() + "</th> </tr>"
++ "<tr><th align="+"left"+">Status: </th> <th>Wartet auf bestätigung durch Mitarbeiter</th> </tr></table><br>"
++"<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
++" <li><a href="+"http://http://localhost:8080/Notebookverleih/Login_Start.jsp"+">"+"links"+"</a></li>"       
+       
+        ;
+     
+      
       message.setContent(messageContent, "text/html");
       //message.setText("Guten Tag" +s.getName());
       
