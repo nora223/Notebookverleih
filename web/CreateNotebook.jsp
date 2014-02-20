@@ -56,7 +56,9 @@
                     <option>ausgeliehen</option>
                     <option>unbestätigt</option>
               </select></p>
-              <p><input name="button" type="submit" value="Speichern"></p>
+              <p><button><input name="button" type="submit" value="Speichern"></button>
+                  <input name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
+              </p>
         </form>
         </div>
     </body>

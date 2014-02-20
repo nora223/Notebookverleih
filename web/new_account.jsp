@@ -11,6 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
+        <link rel="stylesheet" href ="calender/3-dynamically-created/tcal.css" type ="text/css" />
+        <script type="text/javascript" src="calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
+        
     <title>Create new Account</title>
           <div>
             <img id="pic" src="pic/logo.png" alt="Logo"/>
@@ -19,9 +22,7 @@
            </div>
     </head>
     <body>
-        <div>
-            
-        </div>
+         
         <div id="login">
          <form action="savestudent.jsp" methode="POST">
               <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
@@ -31,7 +32,7 @@
               <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
               <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
               <p>Passwort<br><input name="passwort2" type="password" size ="30" maxlength="40"></p>
-              <p>Geburtsdatum<br><input name="gebDat" type="text" size ="30" maxlength="40"></p>
+              <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" size ="30" maxlength="40"></p>
               <p>Matrikelnummer<br><input name="matNr" type="text" size ="30" maxlength="40"></p>
               <p>Kursnummer<br><input name="kurs" type="text" size ="30" maxlength="40"></p>
               <p><input name="button" type="submit" value="anlegen"></p>
