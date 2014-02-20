@@ -45,7 +45,7 @@
            
             Student s = new Student(geschlecht, vorname, nachname, email, date, matNummer,kurs, passwort, username);
             Student.saveStudent(s);
-            BL.Mail.eMailcreateStudent(s);
+            
          %>
          <div>
          <p>Hallo 

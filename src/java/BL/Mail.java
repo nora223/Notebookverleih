@@ -17,17 +17,36 @@ import javax.mail.PasswordAuthentication.*;
  */
 public class Mail {
     
+Student s;
+Dozent d;
+Administrator a;
+String mail;   
+
+public Mail(Student s){
+  this.s=s;  
+  String mail= s.geteMail();
+ }
+ 
+public Mail(Dozent d){
+  this.d=d;  
+  String mail= d.geteMail();
+ }
+  
+public Mail(Administrator a ){
+  this.a=a;  
+  String mail= a.geteMail();
+ }
     
-  public static void eMailcreateStudent(Student s){
+  public static void eMailcreate(String messageContent,String mail){
       
    String result;
    String from = "Buchausleihe.wwi12b3@gmail.com";
-   String to   = s.geteMail();
+   String to   =  mail;
     
 
-   String host = "smtp.gmail.com";
-   String login = "Buchausleihe.wwi12b3";
-   String passwort = "buchausleihe";
+   //String host = "smtp.gmail.com";
+   //String login = "Buchausleihe.wwi12b3";
+   //String passwort = "buchausleihe";
 
    
    Properties props =  new Properties();
@@ -39,53 +58,31 @@ public class Mail {
    
    
    Session mailSession = Session.getInstance(props, new javax.mail.Authenticator()
-     {protected PasswordAuthentication getPasswordAuthentication() 
-     {return new PasswordAuthentication("Buchausleihe.wwi12b3","buchausleihe");}
-     });
+       {protected PasswordAuthentication getPasswordAuthentication() 
+       {return new PasswordAuthentication("Buchausleihe.wwi12b3","buchausleihe");}
+       });
    try{
       
-      MimeMessage message = new MimeMessage(mailSession);
-      //message. setHeader ( "Content-Type" ,  "text/html; charset=UTF-8" );
-      message.setFrom(new InternetAddress(from));
-      
-      message.addRecipient(Message.RecipientType.TO,
-                               new InternetAddress(to));
-      
-      message.setSubject("Antrag Bestätigen","UTF-8");
+        MimeMessage message = new MimeMessage(mailSession);
      
-String messageContent =
- "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>"      
-+"<h1 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> Wiwi-IT Geräteausleihe</h1><br>"
-+"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" +
-
-"<p>"+s.getName()+" hat Sie bei unserem Geräteverleih als Mitarbeiter ausgewählt,<br>um ihm/ihr zu bestätigen,"
-+ "dass das folgende Gerät für die Fortführung des Studium benötigt wird.</p><br>"            
-              
-+ "<table border="+8+"cellspacing="+10+"cellpadding="+20+"> "
-+ "<tr><th align="+"left"+">Antragssteller: </th> <th>" + s.getName() + "</th> "
-+ "<tr><th align="+"left"+">Antrag vom: </th> <th>" + s.getName() + "</th> "
-+ "<tr><th align="+"left"+">Mitarbeiter: </th> <th>" + s.getName() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Bemerkung: </th><th>Auswahlverfahren</th> </tr>"
-+ "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + s.getName() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Dauer: </th> <th>" + s.getName() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Status: </th> <th>Wartet auf bestätigung durch Mitarbeiter</th> </tr></table><br>"
-+"<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
-+" <li><a href="+"http://localhost:8080/Notebookverleih/Login_Start.jsp"+">"+"links"+"</a></li>"       
-       
-        ;
-     
-     
-      message.setContent(messageContent, "text/html;charset = UTF-8");
-      //message.setText("Guten Tag" +s.getName());
+        message.setFrom(new InternetAddress(from));
       
-      Transport.send(message);
-      result = "successfully";
-       }catch (MessagingException mex) {
+        message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+      
+        message.setSubject("von NotebookVerleih","UTF-8");
+      
+        message.setContent(messageContent, "text/html;charset = UTF-8");
+      
+      
+          Transport.send(message);
+          result = "successfully";
+       }
+    catch (MessagingException mex) {
           mex.printStackTrace();
-            result = "Error";
+          result = "Error";
         } 
       
-     System.out.println(result);
+    System.out.println(result);
       
   }  
 }

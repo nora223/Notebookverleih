@@ -47,7 +47,7 @@ public class Student implements Serializable{
     
     public static void saveStudent(Student s){
         DAO.StudentDAO.createStudent(s);
-        Mail.eMailcreateStudent(s);   
+          
     }
 
     public long getId() {
