@@ -71,7 +71,7 @@ String messageContent =
 + "<tr><th align="+"left"+">Dauer: </th> <th>" + s.getName() + "</th> </tr>"
 + "<tr><th align="+"left"+">Status: </th> <th>Wartet auf bestätigung durch Mitarbeiter</th> </tr></table><br>"
 +"<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
-+" <li><a href="+"http://http://localhost:8080/Notebookverleih/Login_Start.jsp"+">"+"links"+"</a></li>"       
++" <li><a href="+"http://localhost:8080/Notebookverleih/Login_Start.jsp"+">"+"links"+"</a></li>"       
        
         ;
      
