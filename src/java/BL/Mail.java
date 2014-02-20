@@ -45,7 +45,7 @@ public class Mail {
    try{
       
       MimeMessage message = new MimeMessage(mailSession);
-      message. setHeader ( "Content-Type" ,  "text/html; charset=UTF-8" );
+      //message. setHeader ( "Content-Type" ,  "text/html; charset=UTF-8" );
       message.setFrom(new InternetAddress(from));
       
       message.addRecipient(Message.RecipientType.TO,

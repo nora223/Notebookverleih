@@ -17,6 +17,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="js/bootstrap.js"></script>
         <title>Start</title>
            <div>
             <img id="pic" src="pic/logo.png" alt="Logo"/>
@@ -25,11 +26,13 @@
            </div>
     </head>
     <body>
-       
+        <div class="container">
         
         <form action="Login_Start.jsp" methode="POST">
               <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
+  
               <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
+              
               <p><input name="button" type="submit" value="Login"></p>
              
         </form>
@@ -39,7 +42,7 @@
         </div>
                <li><a href="new_account.jsp">Neuer Zugang anlegen?</a></li>
                <li><a href="forgotton_PW.jsp">Passwort vergessen?</a></li>
-               <li><a href="testfall.html">Testfälle!</a></li>
-        
+               <li><a href="admin.jsp">Admin</a></li>
+        </div>
     </body>
 </html>
