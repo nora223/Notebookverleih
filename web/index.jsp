@@ -43,6 +43,7 @@
                <li><a href="new_account.jsp">Neuer Zugang anlegen?</a></li>
                <li><a href="forgotton_PW.jsp">Passwort vergessen?</a></li>
                <li><a href="admin.jsp">Admin</a></li>
+               <li><a href="testfaelle.jsp">Testfälle!</a></li>
         </div>
     </body>
 </html>
