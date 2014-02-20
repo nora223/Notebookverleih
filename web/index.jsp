@@ -31,6 +31,7 @@
               <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
               <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
               <p><input name="button" type="submit" value="Login"></p>
+             
         </form>
 
         <div>
@@ -38,6 +39,7 @@
         </div>
                <li><a href="new_account.jsp">Neuer Zugang anlegen?</a></li>
                <li><a href="forgotton_PW.jsp">Passwort vergessen?</a></li>
+               <li><a href="testfall.html">Testfälle!</a></li>
         
     </body>
 </html>

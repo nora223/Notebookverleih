@@ -6,6 +6,8 @@ package DAO;
 
 import BL.Notebook;
 import NotebookVerleih.HibernateUtil;
+import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -23,5 +25,13 @@ public class NotebookDAO {
         transaction.commit();    
         
     }
+     
+     public static List<?> countNotebooks(){
+               
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Query query = session.createQuery("select * from notebook");
+        List<?> result = query.list();
+        return result;
+     }
     
 }

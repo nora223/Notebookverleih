@@ -5,6 +5,7 @@
 package BL;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -42,6 +43,13 @@ public class Notebook implements Serializable{
         
     }
 
+    public static int countNotebooks(){
+        List<?> liste = DAO.NotebookDAO.countNotebooks();
+            
+        
+        return 1; 
+    }
+    
     public long getId() {
         return id;
     }
