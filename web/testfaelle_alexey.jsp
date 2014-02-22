@@ -75,7 +75,7 @@
       Ausleihe.saveAusleihe(a);
       //String messageContenta= BL.Mail_arts.notebook_ready(a,n,s);
       //BL.Mail.eMailcreate(messageContenta,ss.geteMail());
-         
+       //BL.Mail.eMailcreate(messageContenta,DAO.DozentDAO.all_name());  
          %>
          
         <!DOCTYPE html>

@@ -8,7 +8,7 @@ import javax.activation.*;
 import javax.mail.Authenticator.*;
 import javax.mail.PasswordAuthentication.*;
 import javax.mail.PasswordAuthentication.*;
-
+import java.util.List;
 
 
 /**
