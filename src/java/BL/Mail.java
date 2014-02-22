@@ -16,40 +16,17 @@ import javax.mail.PasswordAuthentication.*;
  * @author Alex
  */
 public class Mail {
-    
-Student s;
-Dozent d;
-Administrator a;
-String mail;   
 
-public Mail(Student s){
-  this.s=s;  
-  String mail= s.geteMail();
- }
  
-public Mail(Dozent d){
-  this.d=d;  
-  String mail= d.geteMail();
- }
-  
-public Mail(Administrator a ){
-  this.a=a;  
-  String mail= a.geteMail();
- }
     
   public static void eMailcreate(String messageContent,String mail){
       
    String result;
    String from = "Buchausleihe.wwi12b3@gmail.com";
-   String to   =  mail;
+   String to = mail;
     
-
-   //String host = "smtp.gmail.com";
-   //String login = "Buchausleihe.wwi12b3";
-   //String passwort = "buchausleihe";
-
    
-   Properties props =  new Properties();
+  Properties props =  new Properties();
 
    props.setProperty("mail.smtp.host", "smtp.gmail.com");
    props.setProperty("mail.smtp.port", "587");
