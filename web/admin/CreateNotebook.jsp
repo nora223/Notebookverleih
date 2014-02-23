@@ -9,22 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
-        <link rel="stylesheet" href ="calender/3-dynamically-created/tcal.css" type ="text/css" />
-        <script type="text/javascript" src="calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
-        
-    <title>Create new Notebook</title>
-          <div>
-            <img id="pic" src="pic/logo.png" alt="Logo"/>
+        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <title>Notebook anlegen</title>
+           <div>
+            <img id="pic" src=".../pic/logo.png" alt="Logo"/>
             <hr>
-            <p id="pic"><img src="pic/dh.jpg" alt="dh" />
+            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
          
         <div id="login">
-         <form action="saveNB.jsp" methode="POST">
+         <form action="admin/saveNB.jsp" methode="POST">
              <p> Bearbeiten /Erstellen </p>
               <p>Antragsdatum<input name="a_date" type="text" size="30" maxlength="40"></p>
               <p>Antragsteller<input name="a_name" type="text" size ="30" maxlength="40"></p>
@@ -56,7 +54,7 @@
                     <option>ausgeliehen</option>
                     <option>unbestätigt</option>
               </select></p>
-              <p><button><input name="button" type="submit" value="Speichern"></button>
+              <p><input id="button" name="button" type="submit" value="Speichern">
                   <input name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
               </p>
         </form>
