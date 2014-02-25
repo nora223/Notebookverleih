@@ -34,17 +34,13 @@
                     <option>Notebook&starf;&starf; </option>
                     <option>Notebook&starf;&starf;&starf;</option>
               </select></p>
-              <p>Gerät<select name="geraetname" maxlenght="40">
-                    <option>NB50</option>
-                    <option>NB60</option>
-                    <option>NB3</option>
-              </select></p>
+              <p>Gerät<input name="geraetname" maxlenght="40"></p>
               <p>Dauer<select name="dauer" maxlenght="40">
                   <option>lang</option>
                     <option>mittel</option>
                     <option>kurz</option>
               </select></p>
-              <p>Leihbeginn<input name="beginn" type="text" size ="30" maxlength="40"></p>
+              <p>Leihbeginn<input name="beginn" type="text" size ="30" ></p>
               <p>Leihend<input name="ende" type="text" size ="30" maxlength="40"></p>
               <p>abholung<input name="abholung" type="text" size ="30" maxlength="40"></p>
               <p>Rückgabe<input name="back" type="text" size ="30" maxlength="40"></p>
