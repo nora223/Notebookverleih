@@ -7,6 +7,9 @@ package DAO;
 import BL.Student;
 import BL.Mail;
 import NotebookVerleih.HibernateUtil;
+import java.util.Iterator;
+import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -23,6 +26,21 @@ public class StudentDAO {
         session.saveOrUpdate(s);
         transaction.commit();    
         
+    }
+    
+    public static String loginStudent(String email){
+        String sql = "select passwort from student where email = :email";
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Query query = session.createSQLQuery(sql);
+        List<String> erg = query.list();
+        String ergebnis=null;
+        Iterator<String> iterator = erg.iterator();
+	while (iterator.hasNext()) {
+		ergebnis = iterator.next();
+	}
+             
+        
+        return ergebnis; 
     }
     
 }

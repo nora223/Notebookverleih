@@ -13,6 +13,12 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        
+        <%
+            String email = request.getParameter("e_mail");
+            String passwort = request.getParameter("passwort");
+            
+            BL.Student.loginStudent(passwort, email);
+        %>
+            
     </body>
 </html>

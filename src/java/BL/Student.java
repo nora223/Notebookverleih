@@ -50,6 +50,20 @@ public class Student implements Serializable{
           
     }
 
+    public static boolean loginStudent(String email, String passwort1){
+        String passwort = DAO.StudentDAO.loginStudent(email);
+        
+        if(passwort.equals(passwort1)){
+            System.out.println("Gut");
+            return true;
+            
+        }else{
+            System.out.println("Schlecht");
+            return false; 
+        }
+    }
+    
+    
     public long getId() {
         return id;
     }
