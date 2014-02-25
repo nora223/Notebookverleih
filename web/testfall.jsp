@@ -89,8 +89,8 @@
                                 <th><%= matNr%></th>
                                 <th><%= kurs.toString()%></th>
                                 <th><input type="button" name="Bearbeiten" value="Bearbeiten"><th>
-                                    
-                               
+
+
 
 
                             </tr>
@@ -102,8 +102,69 @@
                     </table>
                     <!-- Ende Tabelle Student aus Datenbank--> 
                     
+                    
+                    <h1> Liste Administrator </h1>
+                    <p> Hier befinden sich die aktuell angelegten Administratoren der Notebookausleihe</p>
 
-                   
+                    <!-- Tabelle Administrator aus Datenbank-->       
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Id</th>
+                                <th>Geschlecht</th>
+                                <th>Vorname</th>
+                                <th>Nachname</th>
+                                <th>E-Mail</th>
+                                <th>Geburtsdatum</th>
+                                        
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+
+                                <%
+                                    List listAdmin = BL.Administrator.getAdministratorList();
+                                    for (int i = 0; i < listAdmin.size(); i++) {
+                                        Object test = listAdmin.get(i);
+                                        BL.Administrator administrator = (BL.Administrator) test;
+                                        long id = administrator.getId();
+                                        String geschlecht = administrator.getGeschlecht();
+                                        String vorname = administrator.getVorname();
+                                        String name = administrator.getName();
+                                        String eMail = administrator.geteMail();
+                                        Date geburtsdatum = administrator.getGebDat();
+                                        
+
+                                %>
+
+
+                                <th></th>
+                                <th><%= id%></th>
+                                <th><%= geschlecht.toString()%></th>
+                                <th><%= vorname.toString()%></th>
+                                <th><%= name.toString()%></th>
+                                <th><%= eMail.toString()%></th>
+                                <th><%= geburtsdatum%></th>
+                                <th><input type="button" name="Bearbeiten" value="Bearbeiten"><th>
+
+
+
+
+                            </tr>
+
+                        </tbody>
+                        <%
+                            }
+                        %>
+                    </table>
+                    <!-- Ende Tabelle Administrator aus Datenbank--> 
+
+
+
 
                 </div>
             </div>

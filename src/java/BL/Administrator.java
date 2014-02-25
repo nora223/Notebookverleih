@@ -7,6 +7,7 @@ package BL;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -49,6 +50,14 @@ public class Administrator implements Serializable{
     
     public static void saveAdministrator(Administrator a){
         DAO.AdministratorDAO.createAdmininstrator(a);
+        
+    }
+    
+    public static List getAdministratorList () {
+        
+        List listAdministrator = DAO.AdministratorDAO.getAdministratorListDAO();
+                       
+        return listAdministrator;
         
     }
 

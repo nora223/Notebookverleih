@@ -14,7 +14,7 @@
     <body>
         <h1>Testfälle</h1>
          <form action="testfall.jsp" methode="POST">
-         <p><input name="testbutton1" type="submit" value="Test Tabelle Student Ausgabe"></p>
+         <p><input name="testbutton1" type="submit" value="Test Tabellen aus Datenbank"></p>
          </form>
     </body>
 </html>
