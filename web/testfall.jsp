@@ -40,6 +40,9 @@
                 <div class="area">
                     <h1> Liste Studenten </h1>
                     <p> Hier befinden sich die aktuell angelegten Studenten der Notebookausleihe</p>
+
+                    <!-- Tabelle Student aus Datenbank-->       
+
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -63,28 +66,31 @@
                                     List list = BL.Student.getStudentList();
                                     for (int i = 0; i < list.size(); i++) {
                                         Object test = list.get(i);
-                                    BL.Student student = (BL.Student)test;
-                                    long id = student.getId();
-                                    String geschlecht = student.getGeschlecht();
-                                    String vorname = student.getVorname();
-                                    String name = student.getName();
-                                    String eMail = student.geteMail();
-                                    Date geburtsdatum = student.getGebDat();
-                                    int matNr = student.getMatNr();
-                                    String kurs = student.getKurs();
-                                    
+                                        BL.Student student = (BL.Student) test;
+                                        long id = student.getId();
+                                        String geschlecht = student.getGeschlecht();
+                                        String vorname = student.getVorname();
+                                        String name = student.getName();
+                                        String eMail = student.geteMail();
+                                        Date geburtsdatum = student.getGebDat();
+                                        int matNr = student.getMatNr();
+                                        String kurs = student.getKurs();
+
                                 %>
 
 
                                 <th></th>
                                 <th><%= id%></th>
-                                <th><%= geschlecht.toString() %></th>
-                                <th><%= vorname.toString() %></th>
-                                <th><%= name.toString() %></th>
-                                <th><%= eMail.toString() %></th>
-                                <th><%= geburtsdatum %></th>
-                                <th><%= matNr %></th>
-                                <th><%= kurs.toString() %></th>
+                                <th><%= geschlecht.toString()%></th>
+                                <th><%= vorname.toString()%></th>
+                                <th><%= name.toString()%></th>
+                                <th><%= eMail.toString()%></th>
+                                <th><%= geburtsdatum%></th>
+                                <th><%= matNr%></th>
+                                <th><%= kurs.toString()%></th>
+                                <th><input type="button" name="Bearbeiten" value="Bearbeiten"><th>
+                                    
+                               
 
 
                             </tr>
@@ -94,7 +100,10 @@
                             }
                         %>
                     </table>
+                    <!-- Ende Tabelle Student aus Datenbank--> 
+                    
 
+                   
 
                 </div>
             </div>

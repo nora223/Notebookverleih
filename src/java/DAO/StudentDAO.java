@@ -46,5 +46,18 @@ public class StudentDAO {
         
         return ergebnisse; 
     }
+     public static List getStudentListDAO () {
+        
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+           
+        Query query = session.createQuery("from Student");
+        List resultListStudent = query.list();
+        
+        transaction.commit();
+        
+        return resultListStudent;
+        
+    }
     
 }
