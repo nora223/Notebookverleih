@@ -32,7 +32,43 @@ hr {
    box-sizing: content-box;
    padding: 0px;
 }
+.footer{
+    background-color:  #e8eaeb;
+    border-style: solid;
+    border-color: #e8eaeb;
+    border-radius: 5px;
+    height: 45px;
+    margin: 5px;
+    padding: 5px;
+}
 
+.blue{
+    background-color: #428bca ;
+    border-style: solid;
+    border-color: #e8eaeb;
+    border-radius: 5px;
+    color: white; 
+    font-weight: bold;
+    height: 30px;
+  
+}
+
+.white{
+    background-color: #fff;
+    border-style: solid;
+    border-color: #e8eaeb;
+    border-width: 1px;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 30px;
+    margin: 0;
+  font: inherit;
+  color: inherit;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
 div form p
 {
     orphans: 3;
@@ -50,7 +86,7 @@ div form p
 
 #login{
     height: 100%;
-    width: 50%;
+    width: 80%;
     border-color: black;
     border-style: solid;
     border-width: 1px;

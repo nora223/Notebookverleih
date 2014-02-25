@@ -3,8 +3,17 @@
     Created on : 23.02.2014, 20:29:56
     Author     : CaReich
 --%>
-
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@ page import="BL.Student" 
+         import="java.util.*"
+         import="java.text.DateFormat"
+         
+         
+
+         %>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -20,6 +29,12 @@
            </div>
     </head>
     <body>
+        <%
+                                        int a = 5;
+                                        String b = "nicht im Angebot";
+                                        String c = "ab sofort (";
+                                        String d = " verfügbar)";
+        %>
                     <div> <!-- navigationsbereich Menu-->
         <div  class="row">
             <div class="col-md-3">
@@ -37,10 +52,10 @@
                 <div class="area">
                     <h1> Ausleihverwaltung </h1>
                     <p> Sie befinden sich im Ausleihverwaltung der Notebookausleihe!</p>
+                    Geräteauswahl
                     <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th></th>
                             <th>Modell</th>
                             <th>bis 7 Tage</th>
                             <th>bis 30 Tage</th>
@@ -50,82 +65,145 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td></td> <!--leer damit die Tabellenanzeige richtig ist, erste Spalte Leer-->
-                            <td>nb30</td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
+                            <td>Notebook &starf;</td> <!--Modell -->
+                            <td>
+                                <% 
+                                    if(false){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 7  -->
+                            <td>
+                                <% 
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 30 -->
+                            <td>
+                                <% 
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 90 -->
+                            <td>
+                                <%
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 180 -->
+                            
                           </tr>
                           <tr> 
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
+                            <td>Notebook &starf;&starf;</td> <!--Modell -->
+                            <td><% 
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 7  -->
+                            <td><%
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 30 -->
+                            <td><%
+                                    if(false){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 90 -->
+                            <td><% 
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 180 -->
                           </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
+                          <tr>
+                            <td>Notebook &starf;&starf;&starf;</td> <!--Modell -->
+                            <td><%
+                                    if(false){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 7  -->
+                            <td><% 
+                                    if(false){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 30 -->
+                            <td><%
+                                    if(true){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 90 -->
+                            <td><% 
+                                    if(false){
+                                        out.println(b);
+                                   }else{%>
+                                   <button class="white"><%
+                                        out.println(c);out.println(a); out.println(d);
+                                    }
+                                %> </button>
+                            </td> <!--bis 180 -->
                           </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
-                          </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
-                          </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
-                          </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
-                          </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
-                          </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--bis 7  -->
-                            <td></td> <!--bis 30 -->
-                            <td></td> <!--bis 90 -->
-                            <td></td> <!--bis 180 -->
-                          </tr>
+                      
+                         
+                  
                           
                         </tbody>
                       </table>
-
-                    
+               
+               <p>Bemerkung: <input name="bemerkung" type="text" size ="50" maxlength="40" value='z. B. geplanter Verwendungszweck des Notebooks'></p>
+               <p >Mitarbeiter<select name="status" widht="40"maxlenght="40">
+                  <option></option>
+                  <option></option>
+                  <option></option>
+              </select></p>  
+              
+              <footer class="footer">
+                  <input class="blue" name="button" type="submit" value="Speichern">
+                  <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
+              </footer>
                 </div>
             </div>
          

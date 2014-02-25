@@ -14,12 +14,77 @@
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Notebook Verwaltung</title>
            <div>
-            <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
+            <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
-        <h1>Hello World!</h1>
+       <div  class="row">
+            <div class="col-md-3">
+                 <div class="list-group">
+                    <a href="#" class="list-group-item active" >
+                    NAVIGATION
+                    </a>
+                    <a href="ausleihverwaltung.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Ausleih Verwaltung</a>
+                    <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
+                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div>
+                    <h1> Notebookverwaltung </h1>
+                    <p>Übersicht aller registrierten Notebooks</p>
+
+                    <table class="table table-hover">
+
+                    <thead><tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Seriennummer</th>
+                        <th>Klasse</th>
+                        <th>Leihdauer</th>
+                        <th>Ausleihstatus</th>
+                        <th>Funktionalität</th>
+                        <th>
+                            
+                            
+                        </th>
+                        <th>
+                            
+                        </th>
+                    </tr></thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
+                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td>Text</td>
+                            <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
+                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                        </tr>
+                    </tbody>
+
+                    </table>
+                </div>
+            </div>
+       </div>
     </body>
 </html>
