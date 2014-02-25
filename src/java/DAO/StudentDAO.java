@@ -29,18 +29,22 @@ public class StudentDAO {
     }
     
     public static String loginStudent(String email){
-        String sql = "select passwort from student where email = :email";
+        String sql = "select passwort from STUDENT where email = :email";
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Query query = session.createSQLQuery(sql);
-        List<String> erg = query.list();
-        String ergebnis=null;
-        Iterator<String> iterator = erg.iterator();
+        Transaction tx = session.beginTransaction();
+        Query query = session.createQuery(sql).setParameter(email, email);
+        List<Student> erg = query.list();
+        Student ergebnis=null;
+        String ergebnisse=null;
+        Iterator<Student> iterator = erg.iterator();
 	while (iterator.hasNext()) {
 		ergebnis = iterator.next();
+                ergebnisse = ergebnis.toString();
 	}
-             
+         
+        tx.commit();
         
-        return ergebnis; 
+        return ergebnisse; 
     }
     
 }
