@@ -43,6 +43,20 @@ public class DozentDAO {
   
    } 
    //TEST!!!!!!!!!!!!!!!
+   
+    public static List getDozentListDAO () {
+        
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+           
+        Query query = session.createQuery("from Dozent");
+        List resultListDozent = query.list();
+        
+        transaction.commit();
+        
+        return resultListDozent;
+        
+    }
 }
 
 

@@ -7,6 +7,7 @@ package BL;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -48,6 +49,14 @@ public class Dozent implements Serializable{
     
     public static void saveDozent(Dozent d){
         DAO.DozentDAO.createDozent(d);
+        
+    }
+    
+    public static List getDozentList () {
+        
+        List listDozent = DAO.DozentDAO.getDozentListDAO();
+                       
+        return listDozent;
         
     }
 

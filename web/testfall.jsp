@@ -101,8 +101,8 @@
                         %>
                     </table>
                     <!-- Ende Tabelle Student aus Datenbank--> 
-                    
-                    
+
+
                     <h1> Liste Administrator </h1>
                     <p> Hier befinden sich die aktuell angelegten Administratoren der Notebookausleihe</p>
 
@@ -118,7 +118,7 @@
                                 <th>Nachname</th>
                                 <th>E-Mail</th>
                                 <th>Geburtsdatum</th>
-                                        
+
                             </tr>
                         </thead>
 
@@ -137,7 +137,7 @@
                                         String name = administrator.getName();
                                         String eMail = administrator.geteMail();
                                         Date geburtsdatum = administrator.getGebDat();
-                                        
+
 
                                 %>
 
@@ -161,7 +161,67 @@
                             }
                         %>
                     </table>
-                    <!-- Ende Tabelle Administrator aus Datenbank--> 
+                    <!-- Ende Tabelle Administrator aus Datenbank-->
+
+                    <h1> Liste Dozent </h1>
+                    <p> Hier befinden sich die aktuell angelegten Dozenten der Notebookausleihe</p>
+
+                    <!-- Tabelle Dozent aus Datenbank-->       
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Id</th>
+                                <th>Geschlecht</th>
+                                <th>Vorname</th>
+                                <th>Nachname</th>
+                                <th>E-Mail</th>
+                                <th>Geburtsdatum</th>
+
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+
+                                <%
+                                    List listDozent = BL.Dozent.getDozentList();
+                                    for (int i = 0; i < listDozent.size(); i++) {
+                                        Object test = listDozent.get(i);
+                                        BL.Dozent dozent = (BL.Dozent) test;
+                                        long id = dozent.getId();
+                                        String geschlecht = dozent.getGeschlecht();
+                                        String vorname = dozent.getVorname();
+                                        String name = dozent.getName();
+                                        String eMail = dozent.geteMail();
+                                        Date geburtsdatum = dozent.getGebDat();
+
+
+                                %>
+
+
+                                <th></th>
+                                <th><%= id%></th>
+                                <th><%= geschlecht.toString()%></th>
+                                <th><%= vorname.toString()%></th>
+                                <th><%= name.toString()%></th>
+                                <th><%= eMail.toString()%></th>
+                                <th><%= geburtsdatum%></th>
+                                <th><input type="button" name="Bearbeiten" value="Bearbeiten"><th>
+
+
+
+
+                            </tr>
+
+                        </tbody>
+                        <%
+                            }
+                        %>
+                    </table>
+                    <!-- Ende Tabelle Administrator aus Datenbank-->
 
 
 
