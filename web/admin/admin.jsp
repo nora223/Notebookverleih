@@ -20,21 +20,45 @@
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Administration</title>
            <div>
-            <img id="pic" src=".../pic/logo.png" alt="Logo"/>
+            <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
-        <div class="list-group">
-            <a href="#" class="list-group-item active" >
-                NAVIGATION
-            </a>
-            <a href="ausleihverwaltung.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Ausleih Verwaltung</a>
-            <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
-            <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
-          
+            <div> <!-- navigationsbereich Menu-->
+        <div  class="row">
+            <div class="col-md-3">
+                 <div class="list-group">
+                    <a href="#" class="list-group-item active" >
+                    NAVIGATION
+                    </a>
+                    <a href="ausleihverwaltung.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Ausleih Verwaltung</a>
+                    <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
+                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="area">
+                    <h1> Herzlich Willkommen! </h1>
+                    <p> Sie befinden sich im Administrationsbereich der Notebookausleihe!</p>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active" >
+                        NAVIGATION
+                    </a>
+                    <div class="list-group-item">
+                
+               </div> 
         </div>
+        </div>
+        </div>    
+    
+       
    
     </body>
 </html>

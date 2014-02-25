@@ -14,7 +14,7 @@
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Notebook Verwaltung</title>
            <div>
-            <img id="pic" src=".../pic/logo.png" alt="Logo"/>
+            <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
