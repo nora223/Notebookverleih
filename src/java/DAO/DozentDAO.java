@@ -34,7 +34,8 @@ public class DozentDAO {
       List dozents = session.createQuery("select d.email from Dozent as d where d.name = Mueller").list();
       for (Iterator iter = dozents.iterator(); iter.hasNext();) {
          Dozent element = (Dozent) iter.next();
-      
+         
+             
         
       }
       

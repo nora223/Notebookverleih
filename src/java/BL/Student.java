@@ -4,12 +4,18 @@
  */
 package BL;
 
+import NotebookVerleih.HibernateUtil;
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 @Entity
 public class Student implements Serializable{
@@ -37,7 +43,15 @@ public class Student implements Serializable{
         this.eMail = eMail;
         this.gebDat = gebDat;
         this.matNr = matNr;
-        this.kurs = kurs;
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+           
+        Query query = session.createQuery("from Student");
+        List resultListStuden = query.list();
+        for(int i=0;i<resultListStuden.size();i++){
+        System.out.println(resultListStuden.get(i));
+        }
+        transaction.commit();  this.kurs = kurs;
         this.passwort = passwort;
         this.username = eMail;
     }
@@ -48,6 +62,20 @@ public class Student implements Serializable{
     public static void saveStudent(Student s){
         DAO.StudentDAO.createStudent(s);
           
+    }
+    
+    public static List getStudentList () {
+        
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+           
+        Query query = session.createQuery("from Student");
+        List resultListStuden = query.list();
+        
+        transaction.commit();
+        
+        return resultListStuden;
+        
     }
 
     public static boolean loginStudent(String email, String passwort1){
@@ -142,6 +170,11 @@ public class Student implements Serializable{
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + id + ", geschlecht=" + geschlecht + ", vorname=" + vorname + ", name=" + name + ", eMail=" + eMail + ", gebDat=" + gebDat + ", matNr=" + matNr + ", kurs=" + kurs + ", passwort=" + passwort + ", username=" + username + '}';
     }
     
     

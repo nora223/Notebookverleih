@@ -16,22 +16,26 @@
    Student s = new Student();
    
       s.setName("Alex");
+      s.setVorname("Karl");
       s.seteMail("solfit@web.de");
       s.setPasswort("solfit");
       s.setGeschlecht("Maenlich");
       s.setMatNr(123);
       s.setKurs("wwi");
+      s.setGebDat(new Date());
       Student.saveStudent(s);
       
       
    Student ss = new Student();
    
       ss.setName("Alex1");
+      ss.setVorname("Gudrun");
       ss.seteMail("solfit@web.de");
       ss.setPasswort("solfit1");
       ss.setGeschlecht("Maenlich");
       ss.setMatNr(1234);
       ss.setKurs("wwi");
+      ss.setGebDat(new Date());
       Student.saveStudent(ss);
       
       
@@ -65,6 +69,8 @@
       nn.setKlasse(3);
       nn.setVerliehen(false);
       Notebook.saveNotebook(nn);
+      
+      Student.getStudentList();
       
    Ausleihe a = new Ausleihe();
       
