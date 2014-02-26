@@ -87,7 +87,7 @@
                             <td><input class="white" name="button" type="submit" value="Löschen"></td>
                         </tr>
                   <% }%>
-                        <tr>
+                  <%--<tr>
                             <td>Text</td>
                             <td>Text</td>
                             <td>Text</td>
@@ -97,7 +97,7 @@
                             <td>Text</td>
                             <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td>
-                        </tr>
+                        </tr> --%>
                     </tbody>
 
                     </table>

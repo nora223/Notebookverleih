@@ -3,6 +3,8 @@
     Created on : 13.02.2014, 10:57:56
     Author     : Tino
 --%>
+<%@page import="BL.Mail"%>
+<%@page import="BL.Mail_arts"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -45,6 +47,8 @@
            
             Student s = new Student(geschlecht, vorname, nachname, email, date, matNummer,kurs, passwort, username);
             Student.saveStudent(s);
+            String messageContent = Mail_arts.Student_welcome(s);
+            Mail.eMailcreate(messageContent, s.geteMail());
             
          %>
          <div>
