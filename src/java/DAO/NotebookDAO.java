@@ -34,4 +34,19 @@ public class NotebookDAO {
         return result;
      }
     
+
+   
+   public static List getNotebookListDAO() {
+
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction tx = session.beginTransaction();
+      List notebookListe = session.createQuery("select* from Notebook").list();
+      tx.commit();
+      
+      return  notebookListe;
+   
+
+
+} 
+  
 }

@@ -68,7 +68,7 @@
                      for (Iterator iter = notebookList.iterator(); iter.hasNext();) {
                           Notebook element = (Notebook) iter.next();      
                      
-                         Long id = element.getId();
+                         long id = element.getId();
                          String name = element.getName();
                          String seriennummer= element.getSeriennummer();
                          int klasse=element.getKlasse();

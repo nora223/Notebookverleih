@@ -27,22 +27,7 @@ public class DozentDAO {
         transaction.commit();    
         
     }
-    //TEST!!!!!!!!!!!!!!!!!!!!!!!!!
-   public static void all_name() {
-      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-      Transaction tx = session.beginTransaction();
-      List dozents = session.createQuery("select d.email from Dozent as d where d.name = Mueller").list();
-      for (Iterator iter = dozents.iterator(); iter.hasNext();) {
-         Dozent element = (Dozent) iter.next();
-         
-             
-        
-      }
-      
-      tx.commit();
-  
-   } 
-   //TEST!!!!!!!!!!!!!!!
+   
 }
 
 

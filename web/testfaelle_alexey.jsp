@@ -82,19 +82,23 @@
 
 
     Notebook n = new Notebook();
-
+    n.setId(12345);
+    n.setName("ND1");
     n.setSeriennummer("1");
     n.setLeihdauer(7);
     n.setKlasse(2);
     n.setVerliehen(false);
     Notebook.saveNotebook(n);
+    
+    
 
     Notebook nn = new Notebook();
-
-    nn.setSeriennummer("2");
-    nn.setLeihdauer(12);
-    nn.setKlasse(3);
-    nn.setVerliehen(false);
+    nn.setId(6789);
+    n.setName("ND2");
+    n.setSeriennummer("2");
+    n.setLeihdauer(7);
+    n.setKlasse(1);
+    n.setVerliehen(false);
     Notebook.saveNotebook(nn);
 
     Student.getStudentList();
