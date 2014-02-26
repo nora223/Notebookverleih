@@ -68,12 +68,12 @@
                      for (Iterator iter = notebookList.iterator(); iter.hasNext();) {
                           Notebook element = (Notebook) iter.next();      
                      
-                         long id = element.getId();
-                         String name = element.getName();
-                         String seriennummer= element.getSeriennummer();
-                         int klasse=element.getKlasse();
-                         int leihdauer=element.getLeihdauer();
-                         boolean verliehen= element.isVerliehen();
+                          long id = element.getId();
+                          String name = element.getName();
+                          String seriennummer= element.getSeriennummer();
+                          int klasse=element.getKlasse();
+                          int leihdauer=element.getLeihdauer();
+                          boolean verliehen= element.isVerliehen();
                       
                            %>
                            <td><%= id %></td>

@@ -29,7 +29,7 @@ public class NotebookDAO {
      public static List<?> countNotebooks(){
                
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Query query = session.createQuery("select * from notebook");
+        Query query = session.createQuery("select * from Notebook");
         List<?> result = query.list();
         return result;
      }
@@ -40,7 +40,7 @@ public class NotebookDAO {
 
       Session session = HibernateUtil.getSessionFactory().getCurrentSession();
       Transaction tx = session.beginTransaction();
-      List notebookListe = session.createQuery("select* from Notebook").list();
+      List notebookListe = session.createQuery("from Notebook").list();
       tx.commit();
       
       return  notebookListe;

@@ -66,7 +66,7 @@
     a.setName("Mueller");
     a.seteMail("solfit@web.de");
     a.setGebDat(new Date());
-    a.setPasswort("admin");
+    a.setPasswort("");
     a.saveAdministrator(a);
 
     Administrator aa = new Administrator();
@@ -76,7 +76,7 @@
     aa.setName("Mueller1");
     aa.seteMail("solfit@web.de");
     aa.setGebDat(new Date());
-    aa.setPasswort("admin");
+    aa.setPasswort("");
     aa.saveAdministrator(aa);
 
 
