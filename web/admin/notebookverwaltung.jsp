@@ -5,7 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator" %>
+<%@page import="BL.Notebook" %>
+
 <!DOCTYPE html>
+
 <html>
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -58,17 +63,30 @@
 
                     <tbody>
                         <tr>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
+                            
+                  <% List notebookList= DAO.NotebookDAO.getNotebookListDAO();
+                     for (Iterator iter = notebookList.iterator(); iter.hasNext();) {
+                          Notebook element = (Notebook) iter.next();      
+                     
+                         Long id = element.getId();
+                         String name = element.getName();
+                         String seriennummer= element.getSeriennummer();
+                         int klasse=element.getKlasse();
+                         int leihdauer=element.getLeihdauer();
+                         boolean verliehen= element.isVerliehen();
+                      
+                           %>
+                           <td><%= id %></td>
+                            <td><%= name.toString()%></td>
+                            <td><%=seriennummer.toString()%></td>
+                            <td><%=klasse%></td>
+                            <td><%=leihdauer%></td>
+                            <td><%=verliehen%></td>
+                            
                             <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td>
                         </tr>
-
+                  <% }%>
                         <tr>
                             <td>Text</td>
                             <td>Text</td>
