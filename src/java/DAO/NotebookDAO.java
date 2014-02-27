@@ -33,5 +33,13 @@ public class NotebookDAO {
         List<?> result = query.list();
         return result;
      }
-    
+ public static List<Notebook> getNotebookListDAO() {
+
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction tx = session.beginTransaction();
+      List<Notebook> notebookListe = session.createQuery("from Notebook").list();
+      tx.commit();
+      
+      return  notebookListe;
+}
 }

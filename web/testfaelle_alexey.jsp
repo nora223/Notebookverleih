@@ -82,7 +82,7 @@
 
 
     Notebook n = new Notebook();
-
+    n.setName("ND1");
     n.setSeriennummer("1");
     n.setLeihdauer(7);
     n.setKlasse(2);
@@ -90,7 +90,7 @@
     Notebook.saveNotebook(n);
 
     Notebook nn = new Notebook();
-
+    nn.setName("ND2");
     nn.setSeriennummer("2");
     nn.setLeihdauer(12);
     nn.setKlasse(3);

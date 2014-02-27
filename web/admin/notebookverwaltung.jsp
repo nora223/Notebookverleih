@@ -1,10 +1,13 @@
-<%-- 
+<%--
     Document   : notebookverwaltung
     Created on : 23.02.2014, 20:32:17
     Author     : CaReich
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="BL.Notebook" %>
+<%@page import="DAO.NotebookDAO" %>
 <!DOCTYPE html>
 <html>
       <head>
@@ -58,6 +61,28 @@
 
                     <tbody>
                         <tr>
+                            
+                   <% List<Notebook> notebookList = DAO.NotebookDAO.getNotebookListDAO();
+                     
+                        for (Notebook element : notebookList) {
+                          long id = element.getId();
+                          String name = element.getName();
+                          String seriennummer= element.getSeriennummer();
+                          int klasse=element.getKlasse();
+                          int leihdauer=element.getLeihdauer();
+                          boolean verliehen= element.isVerliehen();
+                           %>
+                           <td><%=id%></td>
+                            <td><%=name%></td>
+                            <td><%=seriennummer %></td>
+                            <td><%=klasse%></td>
+                            <td><%=leihdauer%></td>
+                            <td><%=verliehen%></td>
+                            <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
+                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                        </tr>
+                   <%}%>
+                        <%--       <tr>
                             <td>Text</td>
                             <td>Text</td>
                             <td>Text</td>
@@ -68,18 +93,7 @@
                             <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td>
                         </tr>
-
-                        <tr>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
-                        </tr>
+                       --%>
                     </tbody>
 
                     </table>
