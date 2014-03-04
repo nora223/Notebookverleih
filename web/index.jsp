@@ -64,6 +64,7 @@
                     <li><a href="admin/admin.jsp">Admin</a></li>
                <li><a href="testfaelle.jsp">Testfälle!</a></li>
                <li><a href="testfaelle_alexey.jsp">Testfälle_Aleksey!</a></li>
+               <li><a href="testfaelle_notebook.jsp">Testfälle_notebook</a></li>
                </div> 
         </div>
         </div>
