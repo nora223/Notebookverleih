@@ -26,12 +26,20 @@ public class NotebookDAO {
         
     }
      
-     public static List<?> countNotebooks(){
+     public static Integer countNotebooks(){
+       
                
+        String sql ="select count (*) as c from notebook where leihdauer=7";
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Query query = session.createQuery("select * from notebook");
-        List<?> result = query.list();
-        return result;
+        Transaction tx = session.beginTransaction();
+        Query query = session.createSQLQuery(sql).addScalar("c");
+       
+        Integer erg = (Integer) query.uniqueResult();
+       
+             
+       tx.commit();
+       System.out.println(erg);
+       return erg;
      }
  public static List<Notebook> getNotebookListDAO() {
 

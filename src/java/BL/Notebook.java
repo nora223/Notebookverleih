@@ -44,10 +44,10 @@ public class Notebook implements Serializable{
     }
 
     public static int countNotebooks(){
-        List<?> liste = DAO.NotebookDAO.countNotebooks();
+        Integer erg = DAO.NotebookDAO.countNotebooks();
             
         
-        return 1; 
+        return erg; 
     }
     
     public long getId() {

@@ -88,6 +88,7 @@ Notebook a = new Notebook();
 
     Notebook n = new Notebook();
 
+    n.setName("bla");
     n.setSeriennummer("1");
     n.setLeihdauer(7);
     n.setKlasse(2);
@@ -96,6 +97,7 @@ Notebook a = new Notebook();
 
     Notebook nn = new Notebook();
 
+    nn.setName("asdf");
     nn.setSeriennummer("2");
     nn.setLeihdauer(12);
     nn.setKlasse(3);
