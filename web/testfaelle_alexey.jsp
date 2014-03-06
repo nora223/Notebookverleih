@@ -16,7 +16,7 @@
     Student s = new Student();
 
     s.setName("Alex");
-    s.setVorname("Karl");
+    s.setVorname("Tom");
     s.seteMail("solfit@web.de");
     s.setPasswort("solfit");
     s.setGeschlecht("Maenlich");
@@ -28,7 +28,7 @@
 
     Student ss = new Student();
 
-    ss.setName("Alex1");
+    ss.setName("Karl");
     ss.setVorname("Gudrun");
     ss.seteMail("solfit@web.de");
     ss.setPasswort("solfit1");
