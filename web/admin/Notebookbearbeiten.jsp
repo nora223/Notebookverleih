@@ -48,7 +48,9 @@
                            
                          
           <form action="saveNB.jsp" methode="POST">
-              <p> Bearbeiten /Erstellen </p>
+              
+                     
+              <p> Bearbeiten</p>
               <p>id<input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
               <p>name<input name="name" type="text" value="<%=name%>" size ="30" maxlength="40"></p>
               <p>Seriennummer<input name="Seriennummer" type="text" value="<%=seriennummer%>" size ="30" maxlength="40"></p>
@@ -56,7 +58,10 @@
               <p>Leihdauer<input name="Leihdauer" type="text"value="<%=leihdauer%>" size ="30" maxlength="40"></p> 
               <p>Ausleihstatus<input name="Auslehstatus" type="text" value="<%=ausleihstatus%>" size ="30" maxlength="40"></p> 
               <p><input id="button" name="button" type="submit" value="Speichern">
-         </form>
+                  
+              
+             
+          </form>
                     
            
                 </tbody>
