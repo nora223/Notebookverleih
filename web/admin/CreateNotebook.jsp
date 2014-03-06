@@ -15,6 +15,7 @@
         <title>Notebook anlegen</title>
            <div>
             <img id="pic" src=".../pic/logo.png" alt="Logo"/>
+            <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>

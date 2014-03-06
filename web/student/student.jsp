@@ -18,13 +18,13 @@
            <div>
                
             <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-            <a id="logout" href=".../logout.jsp"> Logout</a>
+            <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
-        <div> <!-- navigationsbereich Menu-->
+        <div> <!-- Navigationsbereich Menu-->
         <div  class="row">
             <div class="col-md-3">
                  <div class="list-group">
@@ -34,9 +34,6 @@
                     <a href="student.jsp" class="list-group-item">Startseite</a>
                     <a href="notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
                     <a href="uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-
-             
-              
                 </div>
             </div>
             
@@ -45,7 +42,6 @@
                     <h1> Willkommen </h1>    
                 </div>
             </div>
-         
         </div>    
     </body>
 </html>
