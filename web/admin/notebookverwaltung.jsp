@@ -80,22 +80,13 @@
                             <td><%=klasse%></td>
                             <td><%=leihdauer%></td>
                             <td><%=verliehen%></td>
-                            <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                            
+                            <td><a href="Notebookbearbeiten.jsp?id=<%=id%>&name=<%=name%>&seriennummer=<%=seriennummer%>&klasse=<%=klasse%>&leihdauer=<%=leihdauer%>&verliehen=<%=verliehen%>">Bearbeiten</a></td>
+                           
+                            <td><input class="white" name="button" type="submit" value="Löschen"></td> 
                         </tr>
                    <%}%>
-                        <%--       <tr>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td><a href="ChangeNB.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
-                        </tr>
-                       --%>
+                        
                     </tbody>
 
                     </table>
