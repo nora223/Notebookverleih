@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : 11.02.2014, 13:30:04
-    Author     : CaReich
+    Document   : logout
+    Created on : 25.02.2014, 15:27:47
+    Author     : cara123
 --%>
 
 <%@page import="java.text.SimpleDateFormat"%>
@@ -18,15 +18,16 @@
         <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <title>Start</title>
+        <title>Logout</title>
            <div>
-               <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
+               <a href='.../index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
             <hr>
             <p id="pic"><img src="pic/dh.jpg" alt="dh" />
            </div>
     </head>
     
     <body>
+             <%{session.invalidate();}%> <!-- session session beenden -->
         <div> <!-- navigationsbereich Menu-->
         <div  class="row">
             <div class="col-md-3">
@@ -40,16 +41,17 @@
                 </div>
             </div>
             
+            
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Herzlich Willkommen! </h1>                     
+                    Der Logoutvorgang wurde erfolgreich abgeschlossen!                
                 </div>
             </div>
             
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="#" class="list-group-item active" >
-                        LOGIN
+                       LOGIN
                     </a>
                     <div class="list-group-item">
                 <form action="Login_Start.jsp" methode="POST">
@@ -64,9 +66,8 @@
                     <li><a href="admin/admin.jsp">Admin</a></li>
                <li><a href="testfaelle.jsp">Testfälle!</a></li>
                <li><a href="testfaelle_alexey.jsp">Testfälle_Aleksey!</a></li>
-               <li><a href="testfaelle_notebook.jsp">Testfälle_notebook</a></li>
                <li><a href="student/student.jsp">Student</a></li>
-               <li><a href="dozent/dozent.jsp">Dozent</a></li>
+               <li><a href="logout.jsp">Logout</a></li>
                </div> 
         </div>
         </div>
