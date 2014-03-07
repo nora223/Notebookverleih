@@ -18,26 +18,21 @@
                            <%                         
                               String id = request.getParameter("id");
                               String name = request.getParameter("name");
-                              String seriennummer = request.getParameter("seriennummer");
-                              String klasse = request.getParameter("klasse");
-                              String leihdauer = request.getParameter("leihdauer");
-                              String ausleihstatus = request.getParameter("ausleihstatus");
-                           
+                              String seriennummer = request.getParameter("seriennummer");%>
+                              <%--Integer klasse = Integer.parseInt(request.getParameter("klasse"));;
+                              Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));--%>
+                              <%String ausleihstatus = request.getParameter("ausleihstatus");
                               long longid = Long.parseLong(id);
-                             %>
-                             <%-- int  intleihdauer = Integer.valueOf(leihdauer);
-                              int  intklasse = Integer.valueOf(klasse);--%>
-                             <%
-                              Notebook n = new Notebook();
+                             
+                               Notebook n = new Notebook();
                         
-                              n.setId(longid);
-                              n.setName(name);
-                              n.setSeriennummer(seriennummer);
-                              %>
-                              <%--n.setKlasse(intklasse);
-                              n.setLeihdauer(intleihdauer);--%>
+                                  n.setId(longid);
+                                  n.setName(name);
+                                  n.setSeriennummer(seriennummer);%>
+                                  <%--n.setKlasse(klasse);
+                                  n.setLeihdauer(leihdauer);--%>
                               <%
-                              Notebook.saveNotebook(n);
+                               Notebook.saveNotebook(n);
                             %>
                
     </body>
