@@ -14,7 +14,7 @@
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>User Verwaltung</title>
            <div>
-            <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
+            <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
             <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
@@ -48,13 +48,15 @@
                         <th>Geschlecht</th>
                         <th>E-Mail</th>
                         <th>Geburtsdatum</th>
-                        <th>Username</th>
+                        <th>Kurs</th>
                         <th>
-                            
-                            
+                            <!-- Platzhalter  Bearbeiten -->
                         </th>
                         <th>
-                            
+                            <!-- Platzhalter PW zurücksetzten-->
+                        </th>
+                        <th>
+                            <!-- Platzhalter Löschen-->
                         </th>
                     </tr></thead>
 
@@ -67,27 +69,17 @@
                             <td>Text</td>
                             <td>Text</td>
                             <td>Text</td>
-                            <td><a href="ChangeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
+                            <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
+                            <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td>
                         </tr>
 
-                        <tr>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td><a href="ChangeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
-                        </tr>
                     </tbody>
 
                     </table>
                     
                     <footer class="footer">
-                        <a href=".../create_student.jsp"><button class="blue">Hinzufügen</button></a>
+                        <a href="addStudent.jsp"><button class="blue">Hinzufügen</button></a>
                         <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
                     </footer>
                 </div>

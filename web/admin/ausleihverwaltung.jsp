@@ -188,10 +188,6 @@
                                 %> </button>
                             </td> <!--bis 180 -->
                           </tr>
-                      
-                         
-                  
-                          
                         </tbody>
                       </table>
                
