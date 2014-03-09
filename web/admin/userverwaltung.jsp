@@ -87,9 +87,12 @@
                             <td><%=geburtsdatum%></td>
                             <td><%=kurs%></td>
                             
-                            <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
+                           <%-- <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
                             <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                            <td><input class="white" name="button" type="submit" value="Löschen"></td> --%>
+                            
+                            <td> <a href="changeStudent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>&kurs=<%=kurs%>">Bearbeiten</a></td>
+                            <td><input class="white" name="button" type="submit" value="Löschen"></td> 
                         </tr>
                         <%}%>
 

@@ -4,6 +4,9 @@
     Author     : CaReich
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="BL.Notebook" %>
@@ -43,21 +46,34 @@
                     <h1> User Änderungen </h1>
                     <p> Es handelt sich hierbei um einen bereits registrierten Benutzer seien Sie vorsichtig bei der Bearbeitung dieser Daten!</p>
                
-                <div id="login">
+               
                              <%
-                          
-                           %>
+                             String id = request.getParameter("id");
+                             String name = request.getParameter("name");
+                             String vorname = request.getParameter("vorname");
+                             String geschlecht = request.getParameter("geschlecht");
+                             String e_Mail = request.getParameter("eMail");
+                             /* String x = request.getParameter("gebDat");
+                             DateFormat df = new SimpleDateFormat("dd:MM:yyyy");
+                            Date date = df.parse(x); */
+                            String kurs = request.getParameter("kurs");
+                            /* Integer matNummer = Integer.parseInt(request.getParameter("matNr")); */
+                            %>
+                           
+                           <div id="login">
+                               
                  <form action="userverwaltung.jsp" methode="POST">
-                      <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
-                          <input type="radio" name="radio" value="männlich">männlich</input></p>
-                      <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
-                      <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
-                      <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
-                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" size ="30" maxlength="40"></p>
-                      <p>Matrikelnummer<br><input name="matNr" type="text" size ="30" maxlength="40"></p>
-                      <p>Kursnummer<br><input name="kurs" type="text" size ="30" maxlength="40"></p>
+                     <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
+                       <input  accept=""type="radio" name="radio" value="männlich">männlich</input></p> 
+                      <p>Nachname<br><input name="nachname" type="text" value="<%=name%>" size="30" maxlength="40"></p>
+                      <p>Vorname<br><input name="vorname" type="text" value="<%=vorname%>" size ="30" maxlength="40"></p>
+                      <p>E-mail<br><input name="e_mail" type="text" value="<%=e_Mail%>"  size ="30" maxlength="40"></p>
+                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" <%-- value="<%=date%>" --%> size ="30" maxlength="40"></p>
+                      <p>Matrikelnummer<br><input name="matNr" type="text" <%-- value="<%=matNummer%>" --%>  size ="30" maxlength="40"></p>
+                      <p>Kursnummer<br><input name="kurs" type="text"  value="<%=kurs%>" size ="30" maxlength="40"></p>
                       <p><input name="button" type="submit" value="anlegen"></p>
                 </form>
+                           </tbody>
                 </div>
                 </div>
             </div>
