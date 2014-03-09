@@ -4,6 +4,9 @@
     Author     : CaReich
 --%>
 
+<%@page import="java.util.Date"%>
+<%@page import="BL.Student"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -62,17 +65,33 @@
 
                     <tbody>
                         <tr>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
-                            <td>Text</td>
+                            <% List<Student> studentList = BL.Student.getStudentList();
+                            
+                            for (Student element : studentList){
+                                long id = element.getId();
+                                String name = element.getName();
+                                String vorname = element.getVorname();
+                                String geschlecht = element.getGeschlecht();
+                                String eMail = element.geteMail();
+                                Date geburtsdatum = element.getGebDat();
+                                String kurs = element.getKurs();
+                                
+                                %>
+                            }
+                            
+                            <td><%=id%></td>
+                            <td><%=name%></td>
+                            <td><%=vorname%></td>
+                            <td><%=geschlecht%></td>
+                            <td><%=eMail%></td>
+                            <td><%=geburtsdatum%></td>
+                            <td><%=kurs%></td>
+                            
                             <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
                             <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td>
                         </tr>
+                        <%}%>
 
                     </tbody>
 
