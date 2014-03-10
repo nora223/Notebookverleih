@@ -24,11 +24,25 @@
     <%
 
         Integer[] feld = BL.Notebook.countNotebooks();
-
-
+        
+        Integer k1ld7 = feld[0];
+        Integer k1ld30 = feld[1];
+        Integer k1ld90 = feld[2];
+        Integer k1ld180 = feld[3];
+        Integer k2ld7 = feld[4];
+        Integer k2ld30 = feld[5];
+        Integer k2ld90 = feld[6];
+        Integer k2ld180 = feld[7];
+        Integer k3ld7 = feld[8];
+        Integer k3ld30 = feld[9];
+        Integer k3ld90 = feld[10];
+        Integer k3ld180 = feld[11];
+        
         String b = "nicht im Angebot";
         String c = "ab sofort (";
         String d = " verfügbar)";
+        String nichtvorhanden ="ab ";
+        String nichtvorhanden2 = " wieder verfügbar";
     %>
     <div> <!-- Navigationsbereich Menu-->
         <div  class="row">
@@ -65,77 +79,125 @@
                                     <%
                                         out.println(b);
                                     %> 
-                                </td> <!--bis 7  -->
+                                </td> <!--bis 7 Klasse 1  -->
                                 <td>
 
                                     <button class="white"><%
-                                        out.println(c + feld[1] + d);
+                                        if(k1ld30==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k1ld30 + d);  
+                                        }
+                                                                
 
                                         %> </button>
-                                </td> <!--bis 30 -->
+                                </td> <!--bis 30 Klasse 1-->
                                 <td>
                                     <button class="white">
                                         <%
-                                            out.println(c + feld[2] + d);
+                                            if(k1ld90==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k1ld90 + d);  
+                                        } 
+                                        
                                         %> </button>
-                                </td> <!--bis 90 -->
+                                </td> <!--bis 90 Klasse 1-->
                                 <td>
 
                                     <button class="white"><%
-                                        out.println(c + feld[3] + d);
-
-                                        %> </button>
-                                </td> <!--bis 180 -->
+                                         if(k1ld180==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k1ld180 + d);  
+                                        }
+                                            
+                                          %> </button>
+                                </td> <!--bis 180 Klasse 1 -->
                             </tr>
                             <tr> 
                                 <td>Notebook &starf;&starf;</td> <!--Modell -->
                                 <td> 
                                     <button class="white"><%
-                                        out.println(c + feld[4] + d);
+                                         if(k2ld7==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k2ld7 + d);  
+                                        }
+                                         
+                                         
                                         %> </button>
-                                </td> <!--bis 7  -->
+                                </td> <!--bis 7 Klasse 2 -->
                                 <td>
                                     <button class="white"><%
-                                        out.println(c + feld[5] + d);
+                                         
+                                          if(k2ld30==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k2ld30 + d);  
+                                        }
+                                      
                                         %> </button>
-                                </td> <!--bis 30 -->
+                                </td> <!--bis 30 Klasse 2-->
                                 <td>
                                     <button class="white"><%
-                                        out.println(c + feld[6] + d);
+                                         if(k2ld90==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k2ld90 + d);  
+                                        }
+                                          
+                                          
 
                                         %> </button>
-                                </td> <!--bis 90 -->
+                                </td> <!--bis 90 Klasse 2-->
                                 <td>
                                     <%
                                         out.println(b);
 
                                     %> </button>
-                                </td> <!--bis 180 -->
+                                </td> <!--bis 180 Klasse 2-->
                             </tr>
                             <tr>
                                 <td>Notebook &starf;&starf;&starf;</td> <!--Modell -->
                                 <td>
                                     <button class="white"><%
-                                        out.println(c + feld[8] + d);
+                                         if(k3ld7==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k3ld7 + d);  
+                                        }
+                                        
 
                                         %> </button>
-                                </td> <!--bis 7  -->
+                                </td> <!--bis 7 Klasse 3 -->
                                 <td>
                                     <button class="white"><%
-                                        out.println(c + feld[9] + d);
+                                         if(k3ld30==0){
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k3ld30 + d);  
+                                        }
+                                         
 
                                         %> </button>
-                                </td> <!--bis 30 -->
+                                </td> <!--bis 30 Klasse 3 -->
                                 <td>
                                     <button class="white"><%
-                                        out.println(c + feld[10] + d);
+                                         if(k3ld90==0){
+                                             
+                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                        }else{
+                                          out.println(c + k3ld90 + d);  
+                                        }
+                                         
                                         %> </button>
-                                </td> <!--bis 90 -->
+                                </td> <!--bis 90 Klasse 3 -->
                                 <td>
                                     <%
                                         out.println(b);
                                     %> </button>
-                                </td> <!--bis 180 -->
+                                </td> <!--bis 180 Klasse 3-->
                             </tr>
 
 
