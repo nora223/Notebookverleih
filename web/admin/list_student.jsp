@@ -52,6 +52,7 @@
                         <th>E-Mail</th>
                         <th>Geburtsdatum</th>
                         <th>Kurs</th>
+                        <th>Matrikelnummer<th>
                         <th>
                             <!-- Platzhalter  Bearbeiten -->
                         </th>
@@ -75,6 +76,7 @@
                                 String eMail = element.geteMail();
                                 Date geburtsdatum = element.getGebDat();
                                 String kurs = element.getKurs();
+                                int matNr =element.getMatNr();
                                 
                                 %>
                             }
@@ -86,12 +88,13 @@
                             <td><%=eMail%></td>
                             <td><%=geburtsdatum%></td>
                             <td><%=kurs%></td>
+                            <td><%=matNr%></td>
                             
                            <%-- <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
                             <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td> --%>
                             
-                            <td> <a href="changeStudent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>&kurs=<%=kurs%>">Bearbeiten</a></td>
+                            <td> <a href="changeStudent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>&kurs=<%=kurs%>&matNr=<%=matNr%>">Bearbeiten</a></td>
                             <td><input class="white" name="button" type="submit" value="Löschen"></td> 
                         </tr>
                         <%}%>
