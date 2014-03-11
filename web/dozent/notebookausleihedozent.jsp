@@ -4,6 +4,7 @@
     Author     : cara123
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,49 @@
             
             <div class="col-md-8">
                 <div class="area">
-                    <h1> Willkommen</h1>    
+                    
+              
+                    Diese Anfragen m&uuml;ssen noch best&auml;tigt oder abgelehnt werden:
+                    <!-- Tabelle -->
+                        <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Student</th>
+                            <th>Modell</th>
+                            <th>Von</th>
+                            <th>Bis</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> </td> <!-- Student -->
+                            <td> </td> <!-- Modell --> 
+                            <td> </td> <!--von --> 
+                            <td> </td> <!--bis -->
+                            <td><button class="blue">Best&auml;tigen</button></td>
+                            <td><button class="white">Ablehnen</button></td>
+                          </tr>
+                          <tr>
+                            <td> </td> <!-- Student -->
+                            <td> </td> <!-- Modell --> 
+                            <td> </td> <!--von --> 
+                            <td> </td> <!--bis -->
+                            <td><button class="blue">Best&auml;tigen</button></td>
+                            <td><button class="white">Ablehnen</button></td>
+                          </tr>
+                          <tr>
+                            <td> </td> <!-- Student -->
+                            <td> </td> <!-- Modell --> 
+                            <td> </td> <!--von --> 
+                            <td> </td> <!--bis -->
+                            <td><button class="blue">Best&auml;tigen</button></td>
+                            <td><button class="white">Ablehnen</button></td>
+                          </tr>
+                  
+                          
+                        </tbody>
+                      </table>
+                    
                 </div>
             </div>
         </div>    

@@ -39,6 +39,7 @@
                 <div class="area">
                     <h1> &Uuml;bersicht</h1> 
                     <p> Deine letzten Buchungen:
+                        <!-- Tabelle -->
                     <table class="table table-hover">
                         <thead>
                           <tr>
