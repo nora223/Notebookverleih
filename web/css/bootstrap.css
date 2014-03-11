@@ -55,7 +55,7 @@ hr {
 
 .white{
     background-color: #fff;
-    border-style: solid;
+    /*border-style: solid;
     border-color: #e8eaeb;
     border-width: 1px;
     border-radius: 5px;
@@ -67,7 +67,7 @@ hr {
   overflow: visible;
   text-transform: none;
   -webkit-appearance: button;
-  cursor: pointer;
+  cursor: pointer;*/
 }
 div form p
 {

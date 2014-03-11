@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 11.02.2014, 13:30:04
-    Author     : CaReich
+    Author     : Bitte eintragen!
 --%>
 
 <%@page import="java.text.SimpleDateFormat"%>
@@ -18,7 +18,7 @@
         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
-        <title>Administration</title>
+        <title>XXX</title>
            <div>
             <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
             <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
@@ -34,17 +34,17 @@
                     <a href="#" class="list-group-item active" >
                     NAVIGATION
                     </a>
-                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleih Verwaltung</a>
-                    <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
-                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
+                    <a href="XXX.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="XXX.jsp" class="list-group-item" >XXX</a>
+                    <a href="XXX.jsp" class="list-group-item">XXX</a>
+                    <a href="XXX.jsp" class="list-group-item">XXX</a>
                 </div>
             </div>
             
             <div class="col-md-6">
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>
-                    <p> Sie befinden sich im Administrationsbereich der Notebookausleihe!</p>
+                    <p> Dies ist die Vorlage JSP</p>
                 </div>
             </div>
         </div>    
