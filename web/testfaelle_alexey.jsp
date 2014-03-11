@@ -86,7 +86,7 @@
     n.setSeriennummer("1");
     n.setLeihdauer(7);
     n.setKlasse(2);
-    n.setVerliehen(false);
+    n.setVerliehen(true);
     Notebook.saveNotebook(n);
 
     Notebook nn = new Notebook();

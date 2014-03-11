@@ -45,7 +45,7 @@
                     String seriennummer = request.getParameter("seriennummer");
                     String klasse = request.getParameter("klasse");
                     String leihdauer = request.getParameter("leihdauer");
-                    String ausleihstatus = request.getParameter("ausleihstatus");
+                    String verliehen = request.getParameter("verliehen");
                 %>
 
                 <div id="login">               
@@ -53,10 +53,10 @@
 
                         <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
                         <p>Name<br><input name="name" type="text" value="<%=name%>" size ="30" maxlength="40"></p>
-                        <p>Seriennummer<br><input name="Seriennummer" type="text" value="<%=seriennummer%>" size ="30" maxlength="40"></p>
-                        <p>Klasse<br><input name="Klasse" type="text" value="<%=klasse%>" size ="30" maxlength="40"></p> 
-                        <p>Leihdauer<br><input name="Leihdauer" type="text"value="<%=leihdauer%>" size ="30" maxlength="40"></p> 
-                        <p>Ausleihstatus<br><input name="Auslehstatus" type="text" value="<%=ausleihstatus%>" size ="30" maxlength="40"></p> 
+                        <p>Seriennummer<br><input name="seriennummer" type="text" value="<%=seriennummer%>" size ="30" maxlength="40"></p>
+                        <p>Klasse<br><input name="klasse" type="text" value="<%=klasse%>" size ="30" maxlength="40"></p> 
+                        <p>Leihdauer<br><input name="leihdauer" type="text"value="<%=leihdauer%>" size ="30" maxlength="40"></p> 
+                        <p>Ausleihstatus<br><input name="auslehstatus" type="text" value="<%=verliehen%>" size ="30" maxlength="40"></p> 
                         <p><input id="button" name="button" type="submit" value="Speichern">
 
                     </form>
