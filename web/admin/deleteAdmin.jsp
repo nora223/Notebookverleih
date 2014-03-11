@@ -43,7 +43,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> User wurde erfolgreich gelöscht! </h1>
+                    <h1> Student wurde erfolgreich gelöscht! </h1>
                     <p> ...</p>
                 </div>
             </div>
