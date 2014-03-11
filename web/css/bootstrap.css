@@ -20,6 +20,8 @@ body {
 
 .area {
     margin: 15px 0px 0px 0px;
+    /*border-color: #ac2925;
+    border-style: solid;*/
 }
 hr {
    color: #ec1501; 
@@ -49,16 +51,16 @@ hr {
     border-radius: 5px;
     color: white; 
     font-weight: bold;
-    height: 30px;
+    /*height: 35px;*/
   
 }
 
 .white{
     background-color: #fff;
+    border-radius: 5px;
     /*border-style: solid;
     border-color: #e8eaeb;
     border-width: 1px;
-    border-radius: 5px;
     font-weight: bold;
     height: 30px;
     margin: 0;
@@ -76,6 +78,10 @@ div form p
     padding: 0px;
     margin: 10px;
     text-align: left;
+  }
+  
+  .rahmen{
+      
   }
   
 #pic {

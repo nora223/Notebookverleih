@@ -10,39 +10,37 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-      <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Studenten Verwaltung</title>
-           <div>
-            <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-            <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
-            <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
-           </div>
-    </head>
-    <body>
-       <div  class="row">
-            <div class="col-md-3">
-                 <div class="list-group">
-                    <a href="#" class="list-group-item active" >
+    <div>
+        <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <hr>
+        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+    </div>
+</head>
+<body>
+    <div  class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="#" class="list-group-item active" >
                     NAVIGATION
-                    </a>
-                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a> 
-                    <a href="ausleihverwaltung.jsp" class="list-group-item">Ausleih Verwaltung</a>
-                    <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
-                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
-                </div>
+                </a>
+                <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a> 
+                <a href="ausleihverwaltung.jsp" class="list-group-item">Ausleih Verwaltung</a>
+                <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
+                <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
             </div>
-            
-            <div class="col-md-8">
-                <div>
-                    <h1> Studentenverwaltung </h1>
-                    <p>Übersicht aller registrierten Studenten</p>
+        </div>
 
-                    <table class="table table-hover">
+        <div class="col-md-8">
+            <div>
+                <h1> Studentenverwaltung </h1>
+                <p>Übersicht aller registrierten Studenten</p>
 
                   <thead><tr>
                         <th>ID</th>
@@ -101,14 +99,14 @@
 
                     </tbody>
 
-                    </table>
-                    
-                    <footer class="footer">
-                        <a href="addStudent.jsp"><button class="blue">Hinzufügen</button></a>
-                        <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
-                    </footer>
-                </div>
+                </table>
+
+                <footer class="footer">
+                    <a href="addStudent.jsp"><button class="blue">Hinzufügen</button></a>
+                    <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'">
+                </footer>
             </div>
-       </div>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
