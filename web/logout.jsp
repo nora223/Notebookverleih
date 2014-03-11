@@ -28,7 +28,7 @@
     
     <body>
              <%{session.invalidate();}%> <!-- session beenden für logout -->
-        <div> <!-- navigationsbereich Menu-->
+        <div> <!-- Navigationsbereich-->
         <div  class="row">
             <div class="col-md-3">
                 <div class="list-group">
@@ -67,7 +67,7 @@
                <li><a href="testfaelle.jsp">Testfälle!</a></li>
                <li><a href="testfaelle_alexey.jsp">Testfälle_Aleksey!</a></li>
                <li><a href="student/student.jsp">Student</a></li>
-               <li><a href="logout.jsp">Logout</a></li>
+               <li><a href="dozent/dozent.jsp">Dozent</a></li>
                </div> 
         </div>
         </div>
