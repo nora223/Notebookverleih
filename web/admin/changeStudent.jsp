@@ -66,7 +66,9 @@
                            
                            <div id="login">
                                
-                    <form action="userverwaltung.jsp" methode="POST">
+                    <form action="addStudent.jsp" methode="POST">
+                        
+                        <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
                      
                      <% if (geschlecht.equals("w")) { %> 
                      <p>
@@ -88,7 +90,7 @@
                       <p>Kursnummer<br><input name="kurs" type="text"  value="<%=kurs%>"  size ="30" maxlength="40"></p>
                       <p><input name="button" type="submit" value="anlegen"></p>
                 </form>
-                          
+                          </tbody> 
                 </div>
                 </div>
             </div>
