@@ -80,7 +80,7 @@
                             <td><%=leihdauer%></td>
                             <td><%=verliehen%></td>
                             
-                            <td><a href="Notebookbearbeiten.jsp?id=<%=id%>&name=<%=name%>&seriennummer=<%=seriennummer%>&klasse=<%=klasse%>&leihdauer=<%=leihdauer%>&verliehen=<%=verliehen%>">Bearbeiten</a></td>
+                            <td><a href="Notebookbearbeiten.jsp?id=<%=id%>&name=<%=name%>&seriennummer=<%=seriennummer%>&klasse=<%=klasse%>&leihdauer=<%=leihdauer%>&verliehen=<%=verliehen%>" class="blue">Bearbeiten</a></td>
                             <!--<td><a href ="ChangeAusleihe.jsp">Bearbeiten</td>-->
                             <td><input class="white" name="button" type="submit" value="Löschen"></td> 
                         </tr>
