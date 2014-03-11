@@ -40,7 +40,7 @@
             <div class="col-md-8">
                 <div>
                     <h1> Notebookverwaltung </h1>
-                    <p>Übersicht aller registrierten Notebooks</p>
+                    <p>&Uuml;bersicht aller registrierten Notebooks</p>
 
                     <table class="table table-hover">
 

@@ -40,7 +40,7 @@
         <div class="col-md-8">
             <div>
                 <h1> Userverwaltung </h1>
-                <p>Übersicht aller registrierten User</p>
+                <p>&Uuml;bersicht aller registrierten User</p>
                 <table>
                     <tr>
                         <td><a href="list_student.jsp">Studenten</a></td>

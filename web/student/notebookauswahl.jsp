@@ -42,31 +42,47 @@
                     
                     <h1> Notebookauswahl: </h1> 
                     
-                    <form action=" wo willst dus hin" methode="POST">
-                        
-                    <p>Dozent
-                        <select name="dozent" maxlenght="40">
+                    
+                 <table> 
+                  <tr>
+                    <td>Dozent:</td>
+                    <td>
+                       <select name="dozent" maxlenght="40">
                             <option>Dozent 1</option>
                             <option>Dozent 2</option>
                             <option>Dozent 3</option>
-                        </select></p>
-                    <p>Notebook
-                        <select name="geraetclass" maxlenght="40">
+                        </select></p>   
+                    </td>  
+                 </tr> 
+                 <tr>
+                    <td>Notebook:</td>
+                    <td>
+                         <select name="geraetclass" maxlenght="40">
                             <option>Notebook&starf; </option>
                             <option>Notebook&starf;&starf; </option>
                             <option>Notebook&starf;&starf;&starf;</option>
-                        </select></p>
-                    <p>Dauer:
+                         </select> </p>
+                    </td> 
+                </tr>   
+                <tr>
+                    <td>Dauer:</td>
+                    <td>
                         <select name="dauer" maxlenght="40">
                             <option>7 Tage</option>
                             <option>30 Tage</option>
                             <option>90 Tage</option>
                             <option>180 Tage</option>
                         </select></p>
-              
-                    <p>Bemerkung: <input name="bemerkung" type="textarea" size ="50"  placeholder='Das was du schon vorher drinstehen haben willst'></p>
-                    <p><input id="button" name="Speichern" type="submit" value="Speichern">
-                    </form>
+                    </td>  
+                </tr>
+                <tr>
+                    <td>Bemerkung:</td> 
+                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Das was du schon vorher drinstehen haben willst'></p></td>
+                </tr>
+                <tr>
+                    <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
+                </tr>
+                </table>        
               
               
                 </div>

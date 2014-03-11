@@ -39,8 +39,8 @@
             
             <div class="col-md-8">
                 <div>
-                    <h1> Dozentenverwaltung </h1>
-                    <p>Übersicht aller registrierten Dozenten</p>
+                    <h1>Dozentenverwaltung </h1>
+                    <p>&Uuml;bersicht aller registrierten Dozenten</p>
 
                     <table class="table table-hover">
 

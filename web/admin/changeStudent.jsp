@@ -43,8 +43,8 @@
             
             <div class="col-md-6">
                 <div class="area">
-                    <h1> User Änderungen </h1>
-                    <p> Es handelt sich hierbei um einen bereits registrierten Benutzer seien Sie vorsichtig bei der Bearbeitung dieser Daten!</p>
+                    <h1> User &Auml;nderungen </h1>
+                    <p> Es handelt sich hierbei um einen bereits registrierten Benutzer. Seien Sie vorsichtig bei der Bearbeitung dieser Daten!</p>
                
                
                              <%

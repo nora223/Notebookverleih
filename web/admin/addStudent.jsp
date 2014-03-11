@@ -36,8 +36,8 @@
             
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Student hinzufügen </h1>
-                    <p> Bitte füllen Sie das folgende Formular aus um einen Studenten zu registrieren.</p>
+                    <h1> Student hinzuf&uuml;gen </h1>
+                    <p> Bitte f&uuml;llen Sie das folgende Formular aus um einen Studenten zu registrieren.</p>
                
                 <div id="login">
                  <form action=".../savestudent.jsp" methode="POST">

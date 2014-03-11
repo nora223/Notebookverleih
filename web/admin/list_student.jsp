@@ -40,7 +40,7 @@
             <div class="col-md-8">
                 <div>
                     <h1> Studentenverwaltung </h1>
-                    <p>Übersicht aller registrierten Studenten</p>
+                    <p>&Uuml;bersicht aller registrierten Studenten</p>
 
                     <table class="table table-hover">
 

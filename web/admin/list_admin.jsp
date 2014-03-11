@@ -40,7 +40,7 @@
             <div class="col-md-8">
                 <div>
                     <h1> Adminverwaltung </h1>
-                    <p>Übersicht aller registrierten Administratoren</p>
+                    <p>&Uuml;bersicht aller registrierten Administratoren</p>
 
                     <table class="table table-hover">
 

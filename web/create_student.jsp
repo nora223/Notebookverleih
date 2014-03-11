@@ -37,15 +37,15 @@
             <div class="col-md-6">
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>
-                    <p> Bitte füllen Sie das folgende Formular aus um sich als User zu registrieren</p>
+                    <p> Bitte f&uuml;llen Sie das folgende Formular aus um sich als User zu registrieren</p>
                
                 <div id="login">
                  <form action="savestudent.jsp" methode="POST">
                       <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
-                          <input type="radio" name="radio" value="männlich">männlich</input></p>
+                          <input type="radio" name="radio" value="männlich">m&auml;nnlich</input></p>
                       <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
                       <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
-                     <p>E-mail<br><input name="e_mail" type="email" placeholder="me@example.com" size ="30" maxlength="40"></p>
+                      <p>E-mail<br><input name="e_mail" type="email" placeholder="me@example.com" size ="30" maxlength="40"></p>
                       <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
                       <p>Passwort<br><input name="passwort2" type="password" size ="30" maxlength="40"></p>
                       <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" size ="30" maxlength="40"></p>

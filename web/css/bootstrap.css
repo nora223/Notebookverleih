@@ -92,12 +92,16 @@ div form p
     border-width: 1px;
     border-radius: 5px;
     margin: auto;
-    text-align: center;
+    text-align: left;
 }
 
 #logout{
     color: black;
     text-align: right;
+}
+
+#formular{
+    text-align: center;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {

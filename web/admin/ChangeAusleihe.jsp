@@ -27,45 +27,67 @@
                 <a href="#" class="list-group-item active" >
                     NAVIGATION
                 </a>
-                <a href="admin/admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
                 <a href="ausleihverwaltung.jsp" class="list-group-item">Ausleih Verwaltung</a>
                 <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
                 <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
             </div>
         </div>
+        
+         <div class="col-md-8" >
+            <div>   
+               <h1 id="formular"> Notebook bearbeiten </h1>
+            </div>
+         </div>
+        
         <div class="col-md-8">
-            <div class="area" class="area" style="border-style:solid; border-color: black; border-width: 1px">      
-
+            <div id="login">      
+               
                 <form action="admin/saveNB.jsp" methode="POST">
-                    <p>Antragsdatum<input name="a_date" type="text" size="30" maxlength="40"></p>
-                    <p>Antragsteller<input name="a_name" type="text" size ="30" maxlength="40"></p>
-                    <p>Mitarbeiter<input name="a_pers" type="text" size ="30" maxlength="40"></p>
-                    <p>Bestätigungs-ID<input name="best_ID" type="password" size ="30" maxlength="40"></p>
-                    <p>Geräteklasse
+                <table> 
+                  <tr>
+                      <td><p>Antragsdatum: </td><td><input name="a_date" type="text" size="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Antragsteller: </td><td><input name="a_name" type="text" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Mitarbeiter: </td><td><input name="a_pers" type="text" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Best&auml;tigungs-ID: </td><td><input name="best_ID" type="password" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Ger&auml;teklasse: </td><td>
                         <select name="geraetclass" maxlenght="40">
                             <option>Notebook&starf; </option>
                             <option>Notebook&starf;&starf; </option>
                             <option>Notebook&starf;&starf;&starf;</option>
-                        </select></p>
-                    <p>Gerät<input name="geraetname" maxlenght="40"></p>
-                    <p>Dauer<select name="dauer" maxlenght="40">
+                        </select></p></td>
+                  </tr>
+                  <tr><td><p>Ger&auml;t: </td><td><input name="geraetname" maxlenght="40"></p></td>
+                  </tr>
+                  <tr><td><p>Dauer: </td><td><select name="dauer" maxlenght="40">
                             <option>lang</option>
                             <option>mittel</option>
                             <option>kurz</option>
-                        </select></p>
-                    <p>Leihbeginn<input name="beginn" type="text" size ="30" ></p>
-                    <p>Leihend<input name="ende" type="text" size ="30" maxlength="40"></p>
-                    <p>abholung<input name="abholung" type="text" size ="30" maxlength="40"></p>
-                    <p>Rückgabe<input name="back" type="text" size ="30" maxlength="40"></p>
-                    <p>Bemerkung<input name="bemerkung" type="text" size ="30" maxlength="40"></p>
-                    <p>Status<select name="status" maxlenght="40">
+                        </select></p></td>
+                  </tr>
+                  <tr><td><p>Leihbeginn: </td><td><input name="beginn" type="text" size ="30" ></p></td>
+                  </tr>
+                  <tr><td><p>Leihend: </td><td><input name="ende" type="text" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Abholung: </td><td><input name="abholung" type="text" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>R&uuml;ckgabe: </td><td><input name="back" type="text" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Bemerkung: </td><td><input name="bemerkung" type="text" size ="30" maxlength="40"></p></td>
+                  </tr>
+                  <tr><td><p>Status: </td>
+                    <td><select name="status" maxlenght="40">
                             <option>frei</option>
                             <option>ausgeliehen</option>
                             <option>unbestätigt</option>
-                        </select></p>
-                    <p><input id="button" name="button" type="submit" value="Speichern">
-                        <input name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'">
-                    </p>
+                        </select></p></td>
+                  </tr>
+                  <tr><td><p><input class="blue" id="button" name="button" type="submit" value="Speichern">
+                        <input class="white" name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'"></p></td>
                 </form>
 
             </div>
