@@ -53,27 +53,43 @@
                              String vorname = request.getParameter("vorname");
                              String geschlecht = request.getParameter("geschlecht");
                              String e_Mail = request.getParameter("eMail");
-                             /* String x = request.getParameter("gebDat");
-                             DateFormat df = new SimpleDateFormat("dd:MM:yyyy");
-                            Date date = df.parse(x); */
+                             String x = request.getParameter("geburtsdatum");
+                             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                            Date date = new Date();
+                            date = df.parse(x) ;
+                             
+                             
+                             
+                            
                             String kurs = request.getParameter("kurs");
-                            /* Integer matNummer = Integer.parseInt(request.getParameter("matNr")); */
+                            Integer matNummer = Integer.parseInt(request.getParameter("matNr")); 
                             %>
                            
                            <div id="login">
                                
-                 <form action="userverwaltung.jsp" methode="POST">
-                     <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
-                       <input  accept=""type="radio" name="radio" value="männlich">männlich</input></p> 
+                    <form action="userverwaltung.jsp" methode="POST">
+                     
+                     <% if (geschlecht.equals("w")) { %> 
+                     <p>
+                       <input type="radio" name="radio" value="weiblich" checked>weiblich
+                       <input   type="radio" name="radio" value="männlich">männlich</p> 
+                     <% }
+                     else { %>
+                         <p>
+                         <input type="radio" name="radio" value="weiblich" >weiblich
+                         <input   type="radio" name="radio" value="männlich" checked>männlich</p> 
+                    
+                     <%    } %>
+                     
                       <p>Nachname<br><input name="nachname" type="text" value="<%=name%>" size="30" maxlength="40"></p>
                       <p>Vorname<br><input name="vorname" type="text" value="<%=vorname%>" size ="30" maxlength="40"></p>
                       <p>E-mail<br><input name="e_mail" type="text" value="<%=e_Mail%>"  size ="30" maxlength="40"></p>
-                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" <%-- value="<%=date%>" --%> size ="30" maxlength="40"></p>
-                      <p>Matrikelnummer<br><input name="matNr" type="text" <%-- value="<%=matNummer%>" --%>  size ="30" maxlength="40"></p>
+                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text"  value="<%=x%>"  size ="30" maxlength="40"></p>
+                      <p>Matrikelnummer<br><input name="matNr" type="text" value="<%=matNummer%>"  size ="30" maxlength="40"></p>
                       <p>Kursnummer<br><input name="kurs" type="text"  value="<%=kurs%>" size ="30" maxlength="40"></p>
                       <p><input name="button" type="submit" value="anlegen"></p>
                 </form>
-                           </tbody>
+                          
                 </div>
                 </div>
             </div>
