@@ -39,6 +39,7 @@
             
             <div class="col-md-8">
                 <div class="area">
+                    
                     <h1> Notebookauswahl: </h1> 
                     
                     <form action=" wo willst dus hin" methode="POST">
