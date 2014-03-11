@@ -51,7 +51,7 @@
                         <th>Klasse</th>
                         <th>Leihdauer</th>
                         <th>Ausleihstatus</th>
-                        <th>Funktionalität</th>
+                        
                         <th>
                             
                         </th>
