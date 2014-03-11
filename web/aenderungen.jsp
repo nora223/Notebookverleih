@@ -73,7 +73,7 @@ StudentDAO.java
                 //alert('dfdsgdhflkgfdhgsl');
                 return true;
             }
-                </script>
+        </script>
     <title>Create new Student</title>
           <div>
             <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>

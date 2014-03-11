@@ -6,6 +6,7 @@
 --%>
 
 
+<%@page import="BL.Student"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,6 +25,20 @@
            </div>
     </head>
     <body>
+        
+        <%
+        String email = request.getParameter("e_mail");
+        String passwort1 = request.getParameter("passwort");
+        
+        boolean erg = BL.Student.loginStudent(email, passwort1);
+        out.print(erg);    
+            if (erg){
+                 
+            }else{
+                out.print("Passwort falsch");   
+              }
+        %>
+        
         <div> <!-- Navigationsbereich Menu-->
         <div  class="row">
             <div class="col-md-3">

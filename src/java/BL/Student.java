@@ -7,6 +7,7 @@ package BL;
 import NotebookVerleih.HibernateUtil;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+import java.security.MessageDigest;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -65,18 +66,19 @@ public class Student implements Serializable{
     }
 
     public static boolean loginStudent(String email, String passwort1){
+   
         String passwort = DAO.StudentDAO.loginStudent(email);
+        boolean erg;
         
         if(passwort.equals(passwort1)){
-            System.out.println("Gut");
-            return true;
-            
-        }else{
-            System.out.println("Schlecht");
-            return false; 
+            erg = true;           
         }
+        else{
+            erg = false;
+        }
+         
+        return erg;
     }
-    
     
     public long getId() {
         return id;

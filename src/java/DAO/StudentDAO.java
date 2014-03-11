@@ -9,6 +9,7 @@ import BL.Mail;
 import NotebookVerleih.HibernateUtil;
 import java.util.Iterator;
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -28,25 +29,21 @@ public class StudentDAO {
         
     }
     
-    public static String loginStudent(String email){
-        String sql = "select passwort from STUDENT where email = :email";
+  public static String loginStudent(String email) {
+        String sql = "select passwort from student where email = :email";
+
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction tx = session.beginTransaction();
-        Query query = session.createQuery(sql).setParameter(email, email);
-        List<Student> erg = query.list();
-        Student ergebnis=null;
-        String ergebnisse=null;
-        Iterator<Student> iterator = erg.iterator();
-	while (iterator.hasNext()) {
-		ergebnis = iterator.next();
-                ergebnisse = ergebnis.toString();
-	}
-         
-        tx.commit();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createSQLQuery(sql).addScalar("passwort", Hibernate.STRING).setString("email", email);
         
-        return ergebnisse; 
-    }
-     public static List getStudentListDAO () {
+        String result = (String) query.uniqueResult();
+        
+        transaction.commit();
+        
+        return result;
+  }
+  
+  public static List getStudentListDAO () {
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();

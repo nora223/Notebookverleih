@@ -18,6 +18,73 @@
         <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src="js/bootstrap.js"></script>
+            
+        
+        <!--
+        <script type="text/javascript">
+              function login(event) {
+                    var email = document.getElementsByName("e_mail");
+                    var passwort1 = document.getElementsByName("passwort");
+                    
+                    window.alert(email);
+
+                    $.ajax("servlets/login", {
+                        isLocal: true,
+                        type: "POST",
+                        contentType: "text/plain",
+                        data: "LOGIN\n" + email + "\n" + passwort1,
+                        dataType: "text",
+                        success: function(data, status, xhr) {
+                            show_boxes();
+                            document.login_form.reset();
+                        },
+                        error: function(xhr) {
+                            var error = $.trim(xhr.responseText);
+                            show_message(get_error_text(error, "user"));
+                        }
+                    });
+
+                    return false;
+                }
+
+    
+       /*function checkPasswort(event) {
+            var email = document.getElementById("e_mail");
+            var passwort1 = document.getElementById("passwort");
+            
+            var erg = Student.loginStudent(email, passwort1);
+            
+            if (erg === true){
+                    alert("Passwort richtig!");
+                    return true;
+              }else{
+                    alert("Passwort falsch!");
+                    return false;
+              }
+        }
+            for (i = 0; i < document.forms[0].elements.length; ++i)
+            if (document.forms[0].elements[i].value === "") {
+            alert("Es wurden nicht alle Felder ausgefüllt!");
+            document.forms[0].elements[i].focus();
+            return false;
+            }       
+              
+            var email = request.getParameter("e_mail");  
+            var passwort1 = request.getParameter("passwort");
+
+            var erg = Student.loginStudent(email, passwort1);
+              
+            if (erg === true){
+                    alert("Passwort richtig!");
+                    return true;
+              }else{
+                    alert("Passwort falsch!");
+                    return false;
+              }*/
+            
+       </script> 
+       -->
+        
         <title>Start</title>
            <div>
                <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
@@ -52,10 +119,11 @@
                         LOGIN
                     </a>
                     <div class="list-group-item">
-                <form action="Login_Start.jsp" methode="POST">
+                        <form action="student.jsp" methode="POST">
                     <p>E-mail<br><input name="e_mail" type="text" maxlength="40"></p>
                     <p>Passwort<br><input name="passwort" type="password" maxlength="40"></p>
-                    <p><input name="button" type="submit" value="Login"></p>
+                    
+                    <p><input name="button" type="submit" value="Login" <!--onclick="login();"--> </p>
                 </form>
                <a href="create_student.jsp">Neuer Zugang anlegen?</a><br>
                <a href="forgotton_PW.jsp" >Passwort vergessen?</a>
