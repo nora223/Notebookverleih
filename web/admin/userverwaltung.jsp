@@ -41,72 +41,19 @@
             <div>
                 <h1> Userverwaltung </h1>
                 <p>Übersicht aller registrierten User</p>
-
-                <table class="table table-hover">
-                
-                    <thead><tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Vorname</th>
-                        <th>Geschlecht</th>
-                        <th>E-Mail</th>
-                        <th>Geburtsdatum</th>
-                        <th>Kurs</th>
-                        <th>Matrikelnummer</th>
-                        <th>
-                            <!-- Platzhalter  Bearbeiten -->
-                        </th>
-                        <th>
-                            <!-- Platzhalter PW zurücksetzten-->
-                        </th>
-                        <th>
-                            <!-- Platzhalter Löschen-->
-                        </th>
-                    </tr></thead>
-
-                    <tbody>
-                        <tr>
-                            <% List<Student> studentList = BL.Student.getStudentList();
-                            
-                            for (Student element : studentList){
-                                long id = element.getId();
-                                String name = element.getName();
-                                String vorname = element.getVorname();
-                                String geschlecht = element.getGeschlecht();
-                                String eMail = element.geteMail();
-                                Date geburtsdatum = element.getGebDat();
-                                String kurs = element.getKurs();
-                                int matNr = element.getMatNr();
-                                
-                                %>
-                            }
-                            
-                            <td><%=id%></td>
-                            <td><%=name%></td>
-                            <td><%=vorname%></td>
-                            <td><%=geschlecht%></td>
-                            <td><%=eMail%></td>
-                            <td><%=geburtsdatum%></td>
-                            <td><%=kurs%></td>
-                            <td><%=matNr%></td>
-                            
-                           <%-- <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td> --%>
-                            
-                            <td> <a href="changeStudent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>&kurs=<%=kurs%>&matNr=<%=matNr%>">Bearbeiten</a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td> 
-                        </tr>
-                        <%}%>
-
-                    </tbody>
-
-                    </table>
+                <table>
+                    <tr>
+                        <td><a href="list_student.jsp">Studenten</a></td>
+                    </tr>
+                    <tr>
+                         <td><a href="list_dozent.jsp">Dozenten</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="list_admin.jsp">Administratoren</a></td>
+                    </tr>
                     
-                    <footer class="footer">
-                        <a href="addStudent.jsp"><button class="blue">Hinzufügen</button></a>
-                        <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
-                    </footer>
+                </table>
+                    
                 </div>
             </div>
         </div>
