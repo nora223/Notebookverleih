@@ -34,17 +34,17 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="XXX.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="XXX.jsp" class="list-group-item" >XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
+                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleihverwaltung</a>
+                    <a href="notebookverwaltung.jsp" class="list-group-item">Notebookverwaltung</a>
+                    <a href="sserverwaltung.jsp" class="list-group-item">Userverwaltung</a>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Herzlich Willkommen! </h1>
-                    <p> Dies ist die Vorlage JSP</p>
+                    <h1> Student wurde erfolgreich gelöscht! </h1>
+                    <p> ...</p>
                 </div>
             </div>
         </div>    
