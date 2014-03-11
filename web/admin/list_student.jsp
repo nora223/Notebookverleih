@@ -41,7 +41,9 @@
             <div>
                 <h1> Studentenverwaltung </h1>
                 <p>Übersicht aller registrierten Studenten</p>
-
+                
+            <table class="table table-hover">
+                
                   <thead><tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -77,7 +79,7 @@
                                 int matNr =element.getMatNr();
                                 
                                 %>
-                            }
+                            
                             
                             <td><%=id%></td>
                             <td><%=name%></td>
