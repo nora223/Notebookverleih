@@ -13,25 +13,38 @@
     </head>
     <body>
        <div>
-         <p>Hallo du hast erfolgreich einen NB angelegt</p>
+         <p>Hallo du hast erfolgreich einen NB geändert und angelegt</p>
         </div>
                            <%                         
                               String id = request.getParameter("id");
-                              String name = request.getParameter("name");
-                              String seriennummer = request.getParameter("seriennummer");%>
-                              <%--Integer klasse = Integer.parseInt(request.getParameter("klasse"));;
-                              Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));--%>
-                              <%String ausleihstatus = request.getParameter("ausleihstatus");
                               long longid = Long.parseLong(id);
-                             
+                              String name = request.getParameter("name");
+                              String seriennummer = request.getParameter("seriennummer");
+                              Integer klasse = Integer.parseInt(request.getParameter("klasse"));
+                              Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
+                              
+                              
+                              boolean status;
+                              if(request.getParameter("verliehen")=="true"){
+                               status = true;
+                              }
+                              else{
+                               
+                               status = false;
+                              
+                              }
+                              
+                              
+                        
                                Notebook n = new Notebook();
                         
                                   n.setId(longid);
                                   n.setName(name);
-                                  n.setSeriennummer(seriennummer);%>
-                                  <%--n.setKlasse(klasse);
-                                  n.setLeihdauer(leihdauer);--%>
-                              <%
+                                  n.setSeriennummer(seriennummer);
+                                  n.setKlasse(klasse);
+                                  n.setLeihdauer(leihdauer);
+                                  n.setVerliehen(status);
+                               
                                Notebook.saveNotebook(n);
                             %>
                

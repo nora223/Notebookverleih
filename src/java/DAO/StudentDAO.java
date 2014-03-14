@@ -47,10 +47,7 @@ public class StudentDAO {
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-           
-        Query query = session.createQuery("from Student");
-        List resultListStudent = query.list();
-        
+        List<Student> resultListStudent = session.createQuery("from Student").list();
         transaction.commit();
         
         return resultListStudent;

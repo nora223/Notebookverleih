@@ -57,9 +57,9 @@ public class Student implements Serializable{
           
     }
     
-    public static List getStudentList () {
+    public static List<Student> getStudentList () {
         
-        List listStudent = DAO.StudentDAO.getStudentListDAO();
+        List<Student> listStudent = DAO.StudentDAO.getStudentListDAO();
                        
         return listStudent;
         

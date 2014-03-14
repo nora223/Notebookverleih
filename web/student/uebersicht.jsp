@@ -32,6 +32,7 @@
                     <a href="student.jsp" class="list-group-item">Startseite</a>
                     <a href="notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
                     <a href="uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
             
@@ -39,6 +40,7 @@
                 <div class="area">
                     <h1> &Uuml;bersicht</h1> 
                     <p> Deine letzten Buchungen:
+                        <!-- Tabelle -->
                     <table class="table table-hover">
                         <thead>
                           <tr>
