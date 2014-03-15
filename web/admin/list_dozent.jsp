@@ -89,7 +89,7 @@
                             <td><%=geburtsdatum%></td>
                             
                             <td> <a href="changedozent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                            <td><a href="deleteDozent.jsp?id=<%=id%>">Löschen</td>
                         </tr>
                         <%}%>
 
