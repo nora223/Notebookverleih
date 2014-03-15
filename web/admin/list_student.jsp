@@ -95,7 +95,7 @@
                             <td><input class="white" name="button" type="submit" value="Löschen"></td> --%>
                             
                             <td> <a href="changeStudent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>&kurs=<%=kurs%>&matNr=<%=matNr%>">Bearbeiten</a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td> 
+                            <td><a href="deleteStudent.jsp?id=<%=id%>">Löschen</td> 
                         </tr>
                         <%}%>
 

@@ -59,6 +59,11 @@ public class Dozent implements Serializable{
         return listDozent;
         
     }
+    
+    public static void deleteDozentByID(long id){
+        
+        DAO.DozentDAO.deleteDozentByIDDAO(id);
+    }
 
     public long getId() {
         return id;

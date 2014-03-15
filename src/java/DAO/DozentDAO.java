@@ -55,6 +55,17 @@ public class DozentDAO {
         return resultListDozent;
         
     }
+    public static void deleteDozentByIDDAO(long id){
+      
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction transaction = session.beginTransaction();
+      Dozent dozent = (Dozent)HibernateUtil.getSessionFactory().getCurrentSession().load(Dozent.class, id);
+      HibernateUtil.getSessionFactory().getCurrentSession().delete(dozent);
+      transaction.commit();
+      
+        
+        
+          }
 }
 
 

@@ -52,6 +52,11 @@ public class Student implements Serializable{
     public Student() {
     }
     
+    public static void deleteStudentByID(long id){
+        
+        DAO.StudentDAO.deleteStudentByIDDAO(id);
+    }
+    
     public static void saveStudent(Student s){
         DAO.StudentDAO.createStudent(s);
           
