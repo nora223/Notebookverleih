@@ -26,7 +26,7 @@
                               long longid = Long.parseLong(id);
                               String name = request.getParameter("name");
                               String vorname = request.getParameter("vorname");
-                              String eMail = request.getParameter("eMail");
+                              String e_Mail = request.getParameter("e_Mail");
                               String x = request.getParameter("geburtsdatum");
                               DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                               Date date = new Date();
@@ -40,13 +40,13 @@
                                   s.setId(longid);
                                   s.setName(name);
                                   s.setVorname(vorname);
-                                  s.seteMail(eMail);
+                                  s.seteMail(e_Mail);
                                   s.setGebDat(date);
                                   s.setKurs(kurs);
                                   s.setMatNr(matNr);
                                   s.setGeschlecht(geschlecht);
                                   
-                                  s.saveStudent(s);
+                                  Student.saveStudent(s);
                             %>
                
     </body>

@@ -53,5 +53,17 @@ public class StudentDAO {
         return resultListStudent;
         
     }
+  
+  public static void deleteStudentByIDDAO(long id){
+      
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction transaction = session.beginTransaction();
+      Student student = (Student)HibernateUtil.getSessionFactory().getCurrentSession().load(Student.class, id);
+      HibernateUtil.getSessionFactory().getCurrentSession().delete(student);
+      transaction.commit();
+      
+        
+        
+          }
     
 }

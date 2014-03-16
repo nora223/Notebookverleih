@@ -52,12 +52,17 @@ public class Dozent implements Serializable{
         
     }
     
-    public static List getDozentList () {
+    public static List<Dozent> getDozentList () {
         
-        List listDozent = DAO.DozentDAO.getDozentListDAO();
+        List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
                        
         return listDozent;
         
+    }
+    
+    public static void deleteDozentByID(long id){
+        
+        DAO.DozentDAO.deleteDozentByIDDAO(id);
     }
 
     public long getId() {

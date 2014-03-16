@@ -44,7 +44,13 @@
             <div class="col-md-6">
                 <div class="area">
                     <h1> Student wurde erfolgreich gelöscht! </h1>
-                    <p> ...</p>
+                    <%
+                        String id = request.getParameter("id");
+                        long  longid = Long.parseLong(id);
+                        
+                        Student.deleteStudentByID(longid);
+                        
+                    %>
                 </div>
             </div>
         </div>    

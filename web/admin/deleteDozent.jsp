@@ -4,6 +4,7 @@
     Author     : Bitte eintragen!
 --%>
 
+<%@page import="BL.Dozent"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,7 +45,14 @@
             <div class="col-md-6">
                 <div class="area">
                     <h1>Admin wurde erfolgreich gelöscht! </h1>
-                    <p> ...</p>
+                    <%
+                        String id = request.getParameter("id");
+                        long longid = Long.parseLong(id);
+                        
+                        Dozent.deleteDozentByID(longid);
+                        
+                        %>
+                        
                 </div>
             </div>
         </div>    

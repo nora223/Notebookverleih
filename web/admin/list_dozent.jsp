@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : notebookverwaltung
     Created on : 23.02.2014, 20:32:17
@@ -5,7 +6,7 @@
 --%>
 
 <%@page import="java.util.Date"%>
-<%@page import="BL.Student"%>
+<%@page import="BL.Dozent"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,7 +52,7 @@
                         <th>Geschlecht</th>
                         <th>E-Mail</th>
                         <th>Geburtsdatum</th>
-                        <th>Kurs</th>
+                        
                         <th>
                             <!-- Platzhalter  Bearbeiten -->
                         </th>
@@ -65,18 +66,19 @@
 
                     <tbody>
                         <tr>
-                            <% List<Student> studentList = BL.Student.getStudentList();
+                            <% List<Dozent> dozentList = BL.Dozent.getDozentList();
                             
-                            for (Student element : studentList){
+                            for (Dozent element : dozentList){
                                 long id = element.getId();
                                 String name = element.getName();
                                 String vorname = element.getVorname();
                                 String geschlecht = element.getGeschlecht();
                                 String eMail = element.geteMail();
                                 Date geburtsdatum = element.getGebDat();
-                                String kurs = element.getKurs();
+                               
                                 
                                 %>
+               
                             }
                             
                             <td><%=id%></td>
@@ -85,11 +87,9 @@
                             <td><%=geschlecht%></td>
                             <td><%=eMail%></td>
                             <td><%=geburtsdatum%></td>
-                            <td><%=kurs%></td>
                             
-                            <td><a href="changedozent.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td>
+                            <td> <a href="changedozent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a></td>
+                            <td><a href="deleteDozent.jsp?id=<%=id%>">Löschen</td>
                         </tr>
                         <%}%>
 

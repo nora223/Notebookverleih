@@ -44,19 +44,28 @@ public class DozentDAO {
    } 
    //TEST!!!!!!!!!!!!!!!
    
-    public static List getDozentListDAO () {
+    public static List<Dozent> getDozentListDAO () {
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-           
-        Query query = session.createQuery("from Dozent");
-        List resultListDozent = query.list();
+        List<Dozent> resultListDozent = session.createQuery("from Dozent").list();
         
         transaction.commit();
         
         return resultListDozent;
         
     }
+    public static void deleteDozentByIDDAO(long id){
+      
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction transaction = session.beginTransaction();
+      Dozent dozent = (Dozent)HibernateUtil.getSessionFactory().getCurrentSession().load(Dozent.class, id);
+      HibernateUtil.getSessionFactory().getCurrentSession().delete(dozent);
+      transaction.commit();
+      
+        
+        
+          }
 }
 
 

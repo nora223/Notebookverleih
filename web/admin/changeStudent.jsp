@@ -9,8 +9,8 @@
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="BL.Notebook" %>
-<%@page import="DAO.NotebookDAO" %>
+<%@page import="BL.Student" %>
+<%@page import="DAO.StudentDAO" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -70,26 +70,30 @@
                         
                         <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
                      
-                     <% if (geschlecht.equals("w")) { %> 
+                     <% if (geschlecht.equals("weiblich")) { %> 
                      <p>
-                       <input type="radio" name="radio" value="weiblich" checked>weiblich
-                       <input   type="radio" name="radio" value="männlich">männlich</p> 
+                       <input type="radio" name="radio" value="<%=geschlecht%>" checked>weiblich
+                       
+                       <input   type="radio" name="radio" value="<%=geschlecht%>">männlich</p> 
                      <% }
                      else { %>
                          <p>
-                         <input type="radio" name="radio" value="weiblich" >weiblich
-                         <input   type="radio" name="radio" value="männlich" checked>männlich</p> 
+                         <input type="radio" name="radio" value="<%=geschlecht%>" >weiblich
+                         <input   type="radio" name="radio" value="<%=geschlecht%>" checked>männlich</p> 
                     
                      <%    } %>
                      
-                      <p>Nachname<br><input name="nachname" type="text" value="<%=name%>" size="30" maxlength="40"></p>
+                      <p>Nachname<br><input name="name" type="text" value="<%=name%>" size="30" maxlength="40"></p>
                       <p>Vorname<br><input name="vorname" type="text" value="<%=vorname%>" size ="30" maxlength="40"></p>
-                      <p>E-mail<br><input name="e_mail" type="text" value="<%=e_Mail%>"  size ="30" maxlength="40"></p>
-                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" value="<%=x%>"  size ="30" maxlength="40"></p>
+                      <p>E-mail<br><input name="e_Mail" type="text" value="<%=e_Mail%>"  size ="30" maxlength="40"></p>
+                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" value="<%=date%>"  size ="30" maxlength="40"></p>
                       <p>Matrikelnummer<br><input name="matNr" type="text"  value="<%=matNr%>"  size ="30" maxlength="40"></p>
                       <p>Kursnummer<br><input name="kurs" type="text"  value="<%=kurs%>"  size ="30" maxlength="40"></p>
                       <p><input name="button" type="submit" value="anlegen"></p>
                 </form>
+                      <%
+                      out.println(geschlecht.toString());
+                      %>
                           </tbody> 
                 </div>
                 </div>
