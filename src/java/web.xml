@@ -4,6 +4,8 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 
+
+<!--
 <listener>
     <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
 </listener>
@@ -23,3 +25,4 @@ and open the template in the editor.
     <dispatcher>INCLUDE</dispatcher> 
     <dispatcher>ERROR</dispatcher>
 </filter-mapping>
+-->
