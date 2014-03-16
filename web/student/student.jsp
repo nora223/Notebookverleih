@@ -27,6 +27,7 @@
     <body>
         
         <%
+        try{
         String email = request.getParameter("e_mail");
         String passwort1 = request.getParameter("passwort");
         
@@ -37,6 +38,10 @@
             }else{
                 out.print("Passwort falsch");   
               }
+        } catch(Exception e){
+            out.print("Fehler student.jsp");
+            
+        }
         %>
         
         <div> <!-- Navigationsbereich Menu-->
