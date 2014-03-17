@@ -38,6 +38,13 @@ public class Notebook implements Serializable{
     public Notebook() {
     }
     
+    public static void deleteNotebookByID(long id){
+        
+        DAO.NotebookDAO.deleteNotebookByIDDAO(id);
+    }
+    
+    
+    
     public static void saveNotebook(Notebook n){
         DAO.NotebookDAO.createNotebook(n);
         

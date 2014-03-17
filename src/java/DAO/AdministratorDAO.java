@@ -5,6 +5,7 @@
 package DAO;
 
 import BL.Administrator;
+import BL.Student;
 import NotebookVerleih.HibernateUtil;
 import java.util.List;
 import org.hibernate.Query;
@@ -26,19 +27,28 @@ public class AdministratorDAO {
         
     }
     
-    public static List getAdministratorListDAO () {
+    public static List<Administrator> getAdministratorListDAO () {
         
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
            
-        Query query = session.createQuery("from Administrator");
-        List resultListAdministraotr = query.list();
+        List<Administrator> resultListAdministrator = session.createQuery("from Administrator").list();;
         
         transaction.commit();
         
-        return resultListAdministraotr;
+        return resultListAdministrator;
         
     }
 
+     public static void deleteAdministratorByIDDAO(long id){
+      
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction transaction = session.beginTransaction();
+      Administrator administrator = (Administrator)HibernateUtil.getSessionFactory().getCurrentSession().load(Administrator.class, id);
+      HibernateUtil.getSessionFactory().getCurrentSession().delete(administrator);
+      transaction.commit();
+    
+     }
+    
     
 }

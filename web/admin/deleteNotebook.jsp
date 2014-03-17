@@ -7,7 +7,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@ page import="BL.Administrator " 
+<%@ page import="BL.Notebook" 
          import="java.util.*"
          import="java.text.DateFormat"
          %>
@@ -36,19 +36,19 @@
                     </a>
                     <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
                     <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleihverwaltung</a>
-                    <a href="notebookverwaltung.jsp" class="list-group-item">Notebookverwaltung</a>
+                    <a href="list_notebook.jsp" class="list-group-item">Notebookverwaltung</a>
                     <a href="sserverwaltung.jsp" class="list-group-item">Userverwaltung</a>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Administrator wurde erfolgreich gelöscht! </h1>
-                   <%
+                    <h1> Notebook wurde erfolgreich gelöscht! </h1>
+                    <%
                         String id = request.getParameter("id");
                         long  longid = Long.parseLong(id);
                         
-                        Administrator.deleteAdministratorByID(longid);
+                        Notebook.deleteNotebookByID(longid);
                         
                     %>
                 </div>
