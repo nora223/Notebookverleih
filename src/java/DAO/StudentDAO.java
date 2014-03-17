@@ -30,6 +30,7 @@ public class StudentDAO {
     }
     
   public static String loginStudent(String email) {
+      
         String sql = "select passwort from student where email = :email";
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -39,7 +40,6 @@ public class StudentDAO {
         String result = (String) query.uniqueResult();
         
         transaction.commit();
-        
         return result;
   }
   

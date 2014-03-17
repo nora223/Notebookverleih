@@ -71,17 +71,17 @@ public class Student implements Serializable{
     }
 
     public static boolean loginStudent(String email, String passwort1){
-   
-        String passwort = DAO.StudentDAO.loginStudent(email);
-        boolean erg;
+        boolean erg = false;
         
+        String passwort = DAO.StudentDAO.loginStudent(email);
+                
         if(passwort.equals(passwort1)){
             erg = true;           
         }
         else{
             erg = false;
         }
-         
+        
         return erg;
     }
     
