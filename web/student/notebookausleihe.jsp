@@ -62,7 +62,7 @@
                     <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
-<form action="notebookauswahl.jsp" methode="GET">
+<!--<form action="notebookauswahl.jsp" methode="GET">-->
             <div class="col-md-8">
                 <div class="area">
                     <h1> Ausleihverwaltung </h1>
@@ -87,7 +87,9 @@
                                 </td> <!--bis 7 Klasse 1  -->
                                 <td>
 
-                                    <button class="white"><%
+                                   <a href="notebookauswahl.jsp?leihdauer=30&klasse=1"> <button class="white">
+                                                                                
+                                        <%
                                         if(k1ld30==0){
                                            out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(30, 1)+nichtvorhanden2);
                                         }else{
@@ -95,11 +97,10 @@
                                           
                                         }
                                         
-                                        leihdauer = 30;
-                                        klasse =  1;
+                                        
                                                                 
 
-                                        %> </button>
+                                        %></button></a> 
                                 </td> <!--bis 30 Klasse 1-->
                                 <td>
                                     <button class="white">
@@ -235,12 +236,14 @@
                         </tbody>
                     </table>
 
-
+                       
+                                
+                                
                 </div>
             </div>
 
         </div>    
-                                    </form>
+                                    <!--</form>-->
 </body>
 </html>
 

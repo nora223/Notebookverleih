@@ -43,12 +43,12 @@
                     <h1> Notebookauswahl: </h1> 
                     
                    
-                    <% /*
+                    <% 
                          Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
                          Integer klasse = Integer.parseInt(request.getParameter("klasse"));   
-                        */
                         
-                        out.println(request.getParameter("leihdauer"));
+                        
+                        
                     %> 
 
                     
@@ -69,9 +69,19 @@
                     <td>Notebook:</td>
                     <td>
                          <select name="geraetclass" maxlenght="40">
+                              <% if(klasse == 1){  %>
+                             
                             <option>Notebook&starf; </option>
+                             <%} else if(klasse == 2){%>
+                            
                             <option>Notebook&starf;&starf; </option>
+                           
+                             <%} else if (klasse == 3){%>
+                            
                             <option>Notebook&starf;&starf;&starf;</option>
+                           
+                                 <%}%>
+                            
                          </select> </p>
                     </td> 
                 </tr>   
@@ -79,10 +89,27 @@
                     <td>Dauer:</td>
                     <td>
                         <select name="dauer" maxlenght="40">
-                          
-                                   
-                    <option>Notebook&starf;&starf; </option>
+                         
                             
+                            <% if(leihdauer == 7){  %>
+                            <option>7 Tage</option>
+                            <%} else if(leihdauer == 30){%>
+
+
+                                   
+                                <option>7 Tage</option> 
+                               <option>30 Tage</option> 
+                            <%} else if(leihdauer == 90){%>
+                               <option>7 Tage</option> 
+                               <option>30 Tage</option> 
+                               <option>90 Tage</option>
+                            <%} else if (leihdauer == 180){%>
+                             <option>7 Tage</option> 
+                             <option>30 Tage</option>                             
+                             <option>90 Tage</option>
+                             <option>180 Tage</option>
+
+                            <%}%>
                             
                         </select></p>
                     </td>  
