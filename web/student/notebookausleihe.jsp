@@ -38,6 +38,11 @@
         Integer k3ld90 = feld[10];
         Integer k3ld180 = feld[11];
         
+        int leihdauer = 0;
+        
+        int klasse= 0 ; 
+        
+        
         String b = "nicht im Angebot";
         String c = "ab sofort (";
         String d = " verfügbar)";
@@ -57,7 +62,7 @@
                     <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
-<form action="notebookauswahl.jsp" methode="POST">
+<form action="notebookauswahl.jsp?leihdauer=<%=leihdauer%>&klasse=<%=klasse%>" methode="GET">
             <div class="col-md-8">
                 <div class="area">
                     <h1> Ausleihverwaltung </h1>
@@ -84,10 +89,14 @@
 
                                     <button class="white"><%
                                         if(k1ld30==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(30, 1)+nichtvorhanden2);
                                         }else{
-                                          out.println(c + k1ld30 + d);  
+                                          out.println(c + k1ld30 + d);
+                                          
                                         }
+                                        
+                                        leihdauer = 30;
+                                        klasse =  1;
                                                                 
 
                                         %> </button>
@@ -96,22 +105,29 @@
                                     <button class="white">
                                         <%
                                             if(k1ld90==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(90, 1)+nichtvorhanden2);
                                         }else{
                                           out.println(c + k1ld90 + d);  
                                         } 
-                                        
+ 
+                                                                                    
+                                        leihdauer = 90;
+                                        klasse =  1;
+                                            
                                         %> </button>
                                 </td> <!--bis 90 Klasse 1-->
                                 <td>
 
                                     <button class="white"><%
                                          if(k1ld180==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(180, 1)+nichtvorhanden2); 
                                         }else{
                                           out.println(c + k1ld180 + d);  
                                         }
                                             
+                                         leihdauer=180;
+                                         klasse=1;
+                                         
                                           %> </button>
                                 </td> <!--bis 180 Klasse 1 -->
                             </tr>
@@ -120,11 +136,12 @@
                                 <td> 
                                     <button class="white"><%
                                          if(k2ld7==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(7, 2)+nichtvorhanden2); 
                                         }else{
                                           out.println(c + k2ld7 + d);  
                                         }
-                                         
+                                         klasse=2;
+                                         leihdauer=7;
                                          
                                         %> </button>
                                 </td> <!--bis 7 Klasse 2 -->
@@ -132,28 +149,33 @@
                                     <button class="white"><%
                                          
                                           if(k2ld30==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(30,2)+nichtvorhanden2);; 
                                         }else{
                                           out.println(c + k2ld30 + d);  
                                         }
+                                          
+                                          leihdauer = 30;
+                                          klasse=  2;
                                       
                                         %> </button>
                                 </td> <!--bis 30 Klasse 2-->
                                 <td>
                                     <button class="white"><%
                                          if(k2ld90==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(90, 2)+nichtvorhanden2); 
                                         }else{
                                           out.println(c + k2ld90 + d);  
                                         }
                                           
-                                          
+                                         leihdauer = 90;
+                                         klasse = 2;
 
                                         %> </button>
                                 </td> <!--bis 90 Klasse 2-->
                                 <td>
                                     <%
                                         out.println(b);
+                                        
 
                                     %> </button>
                                 </td> <!--bis 180 Klasse 2-->
@@ -163,39 +185,46 @@
                                 <td>
                                     <button class="white"><%
                                          if(k3ld7==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(7, 3)+nichtvorhanden2);
                                         }else{
                                           out.println(c + k3ld7 + d);  
                                         }
                                         
+                                         leihdauer = 7;
+                                         klasse = 3;
 
                                         %> </button>
                                 </td> <!--bis 7 Klasse 3 -->
                                 <td>
                                     <button class="white"><%
                                          if(k3ld30==0){
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                           out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(30, 3)+nichtvorhanden2); 
                                         }else{
                                           out.println(c + k3ld30 + d);  
                                         }
                                          
+                                         leihdauer = 30;
+                                         klasse= 3;
 
                                         %> </button>
                                 </td> <!--bis 30 Klasse 3 -->
                                 <td>
                                     <button class="white"><%
                                          if(k3ld90==0){
-                                             
-                                           out.println(nichtvorhanden+nichtvorhanden2); 
+                                             out.println(nichtvorhanden+BL.Ausleihe.getNextFreeDate(90, 3)+nichtvorhanden2);
                                         }else{
                                           out.println(c + k3ld90 + d);  
                                         }
+                                         
+                                         leihdauer = 90;
+                                         klasse = 3;
                                          
                                         %> </button>
                                 </td> <!--bis 90 Klasse 3 -->
                                 <td>
                                     <%
                                         out.println(b);
+                                        
                                     %> </button>
                                 </td> <!--bis 180 Klasse 3-->
                             </tr>

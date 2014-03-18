@@ -1,4 +1,4 @@
-<%-- 
+ <%-- 
     Document   : notebookauswahl
     Created on : 10.03.2014, 17:40:41
     Author     : Nora
@@ -42,6 +42,10 @@
                     
                     <h1> Notebookauswahl: </h1> 
                     
+                   
+
+                    
+                    
                     
                  <table> 
                   <tr>
@@ -68,16 +72,26 @@
                     <td>Dauer:</td>
                     <td>
                         <select name="dauer" maxlenght="40">
-                            <option>7 Tage</option>
-                            <option>30 Tage</option>
-                            <option>90 Tage</option>
-                            <option>180 Tage</option>
+                          
+                                   
+                    <option>Notebook&starf;&starf; </option>
+                            
+                            
+                        </select></p>
+                    </td>  
+                </tr>
+                 <tr>
+                    <td>Betriebssystem:</td>
+                    <td>
+                        <select name="bs" maxlenght="40">
+                            <option>Linux</option>
+                            <option>Windows</option>
                         </select></p>
                     </td>  
                 </tr>
                 <tr>
                     <td>Bemerkung:</td> 
-                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Das was du schon vorher drinstehen haben willst'></p></td>
+                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information'></p></td>
                 </tr>
                 <tr>
                     <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
