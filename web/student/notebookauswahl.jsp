@@ -1,4 +1,6 @@
- <%-- 
+ <%@page import="BL.Dozent"%>
+<%@page import="java.util.List"%>
+<%-- 
     Document   : notebookauswahl
     Created on : 10.03.2014, 17:40:41
     Author     : Nora
@@ -59,16 +61,25 @@
                     <td>Dozent:</td>
                     <td>
                        <select name="dozent" maxlenght="40">
-                            <option>Dozent 1</option>
-                            <option>Dozent 2</option>
-                            <option>Dozent 3</option>
+                           <% List<Dozent> dozentList = BL.Dozent.getDozentList();
+                            
+                            for (Dozent element : dozentList){
+                                long id = element.getId();
+                                String name = element.getName();
+                                String vorname = element.getVorname();
+                               
+                                %>
+                           
+                           
+                            <option><%=name%>, <%=vorname%></option>
+                           <%}%>
                         </select></p>   
                     </td>  
                  </tr> 
                  <tr>
                     <td>Notebook:</td>
                     <td>
-                         <select name="geraetclass" maxlenght="40">
+                         
                               <% if(klasse == 1){  %>
                              
                             <option>Notebook&starf; </option>
@@ -82,7 +93,7 @@
                            
                                  <%}%>
                             
-                         </select> </p>
+                        </p>
                     </td> 
                 </tr>   
                 <tr>
@@ -130,8 +141,10 @@
                 <tr>
                     <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
                 </tr>
+                
+                
                 </table>        
-              
+               <a href="addAusleihe.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a>
               
                 </div>
             </div>
