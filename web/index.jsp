@@ -16,9 +16,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-            
+        <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />        
         
         <!--
         <script type="text/javascript">
@@ -47,42 +45,12 @@
                     return false;
                 }
 
-    
-       /*function checkPasswort(event) {
-            var email = document.getElementById("e_mail");
-            var passwort1 = document.getElementById("passwort");
-            
-            var erg = Student.loginStudent(email, passwort1);
-            
-            if (erg === true){
-                    alert("Passwort richtig!");
-                    return true;
-              }else{
-                    alert("Passwort falsch!");
-                    return false;
-              }
-        }
             for (i = 0; i < document.forms[0].elements.length; ++i)
             if (document.forms[0].elements[i].value === "") {
             alert("Es wurden nicht alle Felder ausgefüllt!");
             document.forms[0].elements[i].focus();
             return false;
-            }       
-              
-            var email = request.getParameter("e_mail");  
-            var passwort1 = request.getParameter("passwort");
-
-            var erg = Student.loginStudent(email, passwort1);
-              
-            if (erg === true){
-                    alert("Passwort richtig!");
-                    return true;
-              }else{
-                    alert("Passwort falsch!");
-                    return false;
-              }*/
-            
-       </script> 
+            }        
        -->
         
         <title>Start</title>
@@ -113,17 +81,37 @@
                 </div>
             </div>
             
+            <script>
+            function login(){
+                var email = document.getElementsById("e_mail").value;
+                var passwort1 = document.getElementsById("passwort").value;
+                
+                // post an server senden mit parameter email passwort1
+                //servlet mit email und passwort und dort die methode aufrufen
+                
+                //var erg = Student.loginStudent(email, passwort1);
+            
+                if (erg === true){
+                    window.alert("Passwort richtig!");
+                }else{
+                    window.alert("Passwort flasch!");
+                }
+            }
+            </script>
+            
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="#" class="list-group-item active" >
                         LOGIN
                     </a>
-                    <div class="list-group-item">
-                        <form action="student.jsp" methode="POST">
-                    <p>E-mail<br><input name="e_mail" type="text" maxlength="40"></p>
-                    <p>Passwort<br><input name="passwort" type="password" maxlength="40"></p>
                     
-                    <p><input name="button" type="submit" value="Login" <!--onclick="login();"--> </p>
+                    <div class="list-group-item">
+                        <form methode="POST">
+                    <p>E-mail<br><input id="e_mail" name="e_mail" type="text" maxlength="40"></p>
+                    <p>Passwort<br><input id="passwort" name="passwort" type="password" maxlength="40"></p>
+                                   
+                    <p><input name="button" type="submit" value="Login" onclick="login();"></p>
+                    
                 </form>
                <a href="create_student.jsp">Neuer Zugang anlegen?</a><br>
                <a href="forgotton_PW.jsp" >Passwort vergessen?</a>
@@ -139,5 +127,6 @@
         </div>
         </div>
         </div>
+        
     </body>
 </html>

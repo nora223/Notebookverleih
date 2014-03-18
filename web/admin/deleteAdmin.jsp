@@ -7,7 +7,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@ page import="BL.Student" 
+<%@ page import="BL.Administrator " 
          import="java.util.*"
          import="java.text.DateFormat"
          %>
@@ -43,8 +43,14 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Student wurde erfolgreich gelöscht! </h1>
-                    <p> ...</p>
+                    <h1> Administrator wurde erfolgreich gelöscht! </h1>
+                   <%
+                        String id = request.getParameter("id");
+                        long  longid = Long.parseLong(id);
+                        
+                        Administrator.deleteAdministratorByID(longid);
+                        
+                    %>
                 </div>
             </div>
         </div>    

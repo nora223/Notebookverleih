@@ -48,14 +48,22 @@ public class Administrator implements Serializable{
     public Administrator() {
     }
     
+    
+    
+    
+    public static void deleteAdministratorByID(long id){
+        
+        DAO.AdministratorDAO.deleteAdministratorByIDDAO(id);
+    }
+    
     public static void saveAdministrator(Administrator a){
         DAO.AdministratorDAO.createAdmininstrator(a);
         
     }
     
-    public static List getAdministratorList () {
+    public static List<Administrator> getAdministratorList () {
         
-        List listAdministrator = DAO.AdministratorDAO.getAdministratorListDAO();
+        List<Administrator> listAdministrator = DAO.AdministratorDAO.getAdministratorListDAO();
                        
         return listAdministrator;
         
