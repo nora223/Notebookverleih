@@ -38,7 +38,7 @@
         Integer k3ld90 = feld[10];
         Integer k3ld180 = feld[11];
         
-        int leihdauer = 0;
+        int leihdauer = 5;
         
         int klasse= 0 ; 
         
@@ -62,7 +62,7 @@
                     <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
-<form action="notebookauswahl.jsp?leihdauer=<%=leihdauer%>&klasse=<%=klasse%>" methode="GET">
+<form action="notebookauswahl.jsp" methode="GET">
             <div class="col-md-8">
                 <div class="area">
                     <h1> Ausleihverwaltung </h1>

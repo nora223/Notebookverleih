@@ -43,6 +43,13 @@
                     <h1> Notebookauswahl: </h1> 
                     
                    
+                    <% /*
+                         Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
+                         Integer klasse = Integer.parseInt(request.getParameter("klasse"));   
+                        */
+                        
+                        out.println(request.getParameter("leihdauer"));
+                    %> 
 
                     
                     
