@@ -28,7 +28,7 @@
                 </a>
                 <a href="admin/admin.jsp" class="list-group-item">Startseite</a> 
                 <a href="ausleihverwaltung.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Ausleih Verwaltung</a>
-                <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
+                <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
                 <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
             </div>
         </div>
@@ -49,14 +49,14 @@
                 %>
 
                 <div id="login">               
-                    <form action="saveNB.jsp" methode="POST">
+                    <form action="addNotebook.jsp" methode="POST">
 
                         <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
                         <p>Name<br><input name="name" type="text" value="<%=name%>" size ="30" maxlength="40"></p>
                         <p>Seriennummer<br><input name="seriennummer" type="text" value="<%=seriennummer%>" size ="30" maxlength="40"></p>
                         <p>Klasse<br><input name="klasse" type="text" value="<%=klasse%>" size ="30" maxlength="40"></p> 
                         <p>Leihdauer<br><input name="leihdauer" type="text"value="<%=leihdauer%>" size ="30" maxlength="40"></p> 
-                        <p>Ausleihstatus<br><input name="auslehstatus" type="text" value="<%=verliehen%>" size ="30" maxlength="40"></p> 
+                        <p>Ausleihstatus<br><input name="verliehen" type="text" value="<%=verliehen%>" size ="30" maxlength="40"></p> 
                         <p><input id="button" name="button" type="submit" value="Speichern">
 
                     </form>

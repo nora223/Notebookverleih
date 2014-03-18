@@ -5,6 +5,7 @@
 package DAO;
 
 import BL.Notebook;
+import BL.Student;
 import NotebookVerleih.HibernateUtil;
 import java.util.List;
 import org.hibernate.Query;
@@ -100,4 +101,16 @@ public class NotebookDAO {
       
       return  notebookListe;
 }
+ public static void deleteNotebookByIDDAO(long id){
+      
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction transaction = session.beginTransaction();
+      Notebook notebook = (Notebook)HibernateUtil.getSessionFactory().getCurrentSession().load(Notebook.class, id);
+      HibernateUtil.getSessionFactory().getCurrentSession().delete(notebook);
+      transaction.commit();
+
+ }
+
+
+
 }

@@ -32,7 +32,7 @@
                 </a>
                 <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a> 
                 <a href="ausleihverwaltung.jsp" class="list-group-item">Ausleih Verwaltung</a>
-                <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
+                <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
                 <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
             </div>
         </div>
@@ -49,7 +49,7 @@
                          <td><a href="list_dozent.jsp">Dozenten</a></td>
                     </tr>
                     <tr>
-                        <td><a href="list_admin.jsp">Administratoren</a></td>
+                        <td><a href="list_administrator.jsp">Administratoren</a></td>
                     </tr>
                     
                 </table>

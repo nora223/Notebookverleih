@@ -22,10 +22,12 @@
                               String seriennummer = request.getParameter("seriennummer");
                               Integer klasse = Integer.parseInt(request.getParameter("klasse"));
                               Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
-                              
+                              String verliehen = request.getParameter("verliehen");
                               
                               boolean status;
-                              if(request.getParameter("verliehen")=="true"){
+                              
+                              
+                              if(verliehen.equals("true")){
                                status = true;
                               }
                               else{
