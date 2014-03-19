@@ -35,11 +35,12 @@ public class StudentDAO {
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createSQLQuery(sql).addScalar("passwort", Hibernate.STRING).setString("email", email);
-        
+        Query query = session.createSQLQuery(sql).setString("email", email);
+        //Query query = session.createSQLQuery(sql).addScalar("passwort", Hibernate.STRING).setString("email", email);
+        transaction.commit();
+
         String result = (String) query.uniqueResult();
         
-        transaction.commit();
         return result;
   }
   

@@ -82,11 +82,14 @@
             </div>
             
             <script>
-            function login(event){
-                var email = document.getElementsByName("e_mail");
-                var passwort1 = document.getElementsByName("passwort");
+            function login(){
+                var email = document.getElementsById("e_mail").value;
+                var passwort1 = document.getElementsById("passwort").value;
                 
-                var erg = Student.loginStudent(email, passwort1);
+                // post an server senden mit parameter email passwort1
+                //servlet mit email und passwort und dort die methode aufrufen
+                
+                //var erg = Student.loginStudent(email, passwort1);
             
                 if (erg === true){
                     window.alert("Passwort richtig!");
@@ -104,8 +107,8 @@
                     
                     <div class="list-group-item">
                         <form methode="POST">
-                    <p>E-mail<br><input name="e_mail" type="text" maxlength="40"></p>
-                    <p>Passwort<br><input name="passwort" type="password" maxlength="40"></p>
+                    <p>E-mail<br><input id="e_mail" name="e_mail" type="text" maxlength="40"></p>
+                    <p>Passwort<br><input id="passwort" name="passwort" type="password" maxlength="40"></p>
                                    
                     <p><input name="button" type="submit" value="Login" onclick="login();"></p>
                     
@@ -124,5 +127,6 @@
         </div>
         </div>
         </div>
+        
     </body>
 </html>
