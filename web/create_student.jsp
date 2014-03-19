@@ -13,6 +13,86 @@
         <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
         <link rel="stylesheet" href ="calender/3-dynamically-created/tcal.css" type ="text/css" />
         <script type="text/javascript" src="calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
+        <script type="text/javascript">
+            
+          var  validatePassword = function() {
+              alert("PW");
+              //document.getElementById("passwordError").style.visibility = 'visible';
+              //document.getElementById("passwordError").innerHTML = 'Password not match';
+                temp = document.getElementByName("passwort");
+                alert(temp);
+                /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
+                    return true;
+                }else{
+                alert('Wrong Password!');
+                return false;
+                }*/
+        return false;
+        }
+        
+        var checkEntry = function(element){
+            id = element.id;
+            //alert("checkentry" + id);
+            temp = document.getElementById(id).value.length;
+            //alert (temp);
+            //sofern die Länger 10 ist also die Anzahl der Stellen bei der Datumsangabe, welche bei Value vorgegeben wurden, eigentlich ...
+            if(document.getElementById(id).value.length == 11){
+                document.getElementById(id).style.border="solid red 2px";
+                document.getElementById(id).title="Eintrag erforderlich!";
+                return false;
+            }
+            else if(temp == 0){ // ... so. Korrekte Abfrage sofern keine Angaben getätigt wurden, soll ein roter Rand erscheinen.
+                document.getElementById(id).style.border="solid red 2px";
+                document.getElementById(id).title="Eintrag erforderlich!";
+                return false;
+            }else{
+                //alert("true");
+                return true;
+            }
+        }
+        
+        var checkForm = function(){
+            //Prüfung des Form-Tags ob die Felder befüllt wurden
+            retValue = true;
+            //temp = document.adr.elements.length;
+            //alert(temp);
+            // document.adr.elements.length gibt die anzahl der Elemente die in diesem Form-Tag vorhanden sind.
+            for(var i=0; i<document.adr.elements.length; i++){
+                element = document.adr.elements[i];
+                // bei diesen ID's springt das Prog in die Methode CheckEntry, die ID's müssen unterschiedlich sein damit dem Programm die unterschiede bekannt werden, sonst behandelt es es nur als eins
+                if((element.id == 't') || (element.id == 't2') || (element.id == 't3') || (element.id == 't4') || (element.id == 't5') || (element.id == 't6') || (element.id == 't7') || (element.id == 't8')){
+                    if(checkEntry(element) == false){
+                    retValue=false;
+                 }
+                 
+                }
+                /*if((element.id = 't4') || (element.id = 't5')){
+                     if(checkEntry(element) == true){
+                        //validatePassword();
+                        if(validatePassword() == false){
+                            retValue=false;
+                        }
+                    }
+                 }*/
+             
+                }
+        return retValue;
+        }
+        
+        //Courser wird ins erste Feld gesetzt
+         function setFocus(){
+          if (document.forms.length > 0){
+            var field = document.forms[0];
+                for (i = 0; i < field.length; i++){
+                    if ((field.elements[i].type == "text") || (field.elements[i].type == "textarea") || (field.elements[i].type.toString().charAt(0) == "s")){
+                    document.forms[0].elements[i].focus();
+                    break;
+                    }
+                }
+            }
+         }
+         
+        </script>
         
     <title>Create new Student</title>
           <div>
@@ -22,7 +102,7 @@
             <p id="pic"><img src="pic/dh.jpg" alt="dh" />
            </div>
     </head>
-    <body>
+    <body onLoad="javascript:setFocus()">
          <div  class="row">
             <div class="col-md-3">
                  <div class="list-group">
@@ -30,7 +110,6 @@
                     NAVIGATION
                     </a>
                     <a href="index.jsp" class="list-group-item">Startseite</a> 
-                    
                 </div>
             </div>
             
@@ -38,19 +117,22 @@
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um sich als User zu registrieren</p>
-               
+              
                 <div id="login">
-                 <form action="savestudent.jsp" methode="POST">
+                 <form name="adr" action="savestudent.jsp" methode="POST" onsubmit="javascript:return checkForm()"> 
+                 <!--onsubmit="javascript:return checkForm()"-->
                       <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
                           <input type="radio" name="radio" value="männlich">m&auml;nnlich</input></p>
-                      <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
-                      <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
-                      <p>E-mail<br><input name="e_mail" type="email" placeholder="me@example.com" size ="30" maxlength="40"></p>
-                      <p>Passwort<br><input name="passwort" type="password" size ="30" maxlength="40"></p>
-                      <p>Passwort<br><input name="passwort2" type="password" size ="30" maxlength="40"></p>
-                      <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" size ="30" maxlength="40"></p>
-                      <p>Matrikelnummer<br><input name="matNr" type="text" size ="30" maxlength="40"></p>
-                      <p>Kursnummer<br><input name="kurs" type="text" size ="30" maxlength="40"></p>
+                      <p>Nachname<br><input id="t" name="nachname" type="text" size="30" maxlength="40"></p>
+                      <p>Vorname<br><input id="t2" name="vorname" type="text" size ="30" maxlength="40"></p>
+                      <p>E-mail<br><input id="t3" name="e_mail" type="email" placeholder="me@example.com" size ="30" maxlength="40"></p>
+                      <p>Passwort<br><input id="t4" name="passwort" type="password" size ="30" maxlength="40"></p>
+                      <p>Passwort<br><input id="t5" name="passwort2" type="password" size ="30" maxlength="40"></p>
+                      <p><div id="passwordError" style="visibility: hidden;"></div></p>
+                      <p>Geburtsdatum<br><input class="tcal tcalInput" id="t6" name="gebDat" value="dd:mm:yyyy " size ="30" title="Bitte GebDat eintragen" maxlength="40" onkeypress="return false" onblur="javascript:checkEntry(this)"></p>
+                      
+                      <p>Matrikelnummer<br><input id="t7" name="matNr" type="text" size ="30" maxlength="40"></p>
+                      <p>Kursnummer<br><input id="t8" name="kurs" type="text" size ="30" maxlength="40"></p>
                       <p><input name="button" type="submit" value="anlegen"></p>
                 </form>
                 </div>
