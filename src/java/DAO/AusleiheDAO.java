@@ -7,7 +7,12 @@ package DAO;
 import BL.Ausleihe;
 import BL.Notebook;
 import NotebookVerleih.HibernateUtil;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -33,4 +38,17 @@ public static List<Ausleihe> getAusleiheListDAO() {
       
       return  ausleiheListe;
 }
+
+public static List<Date> getNextFreeDate(int dauer, int klasse){
+    
+    String sql = "select BIS from ausleihe where leihnotebook_id = (Select id from notebook where leihdauer ="+dauer+"AND klasse ="+klasse+")";
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    Transaction tx = session.beginTransaction();
+    List<Date>  bla = session.createSQLQuery(sql).list();
+    tx.commit();
+    
+    return bla;
+}
+
+
 }

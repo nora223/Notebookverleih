@@ -1,4 +1,4 @@
-<%-- 
+ <%-- 
     Document   : notebookauswahl
     Created on : 10.03.2014, 17:40:41
     Author     : Nora
@@ -42,6 +42,17 @@
                     
                     <h1> Notebookauswahl: </h1> 
                     
+                   
+                    <% 
+                         Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
+                         Integer klasse = Integer.parseInt(request.getParameter("klasse"));   
+                        
+                        
+                        
+                    %> 
+
+                    
+                    
                     
                  <table> 
                   <tr>
@@ -58,9 +69,19 @@
                     <td>Notebook:</td>
                     <td>
                          <select name="geraetclass" maxlenght="40">
+                              <% if(klasse == 1){  %>
+                             
                             <option>Notebook&starf; </option>
+                             <%} else if(klasse == 2){%>
+                            
                             <option>Notebook&starf;&starf; </option>
+                           
+                             <%} else if (klasse == 3){%>
+                            
                             <option>Notebook&starf;&starf;&starf;</option>
+                           
+                                 <%}%>
+                            
                          </select> </p>
                     </td> 
                 </tr>   
@@ -68,16 +89,43 @@
                     <td>Dauer:</td>
                     <td>
                         <select name="dauer" maxlenght="40">
+                         
+                            
+                            <% if(leihdauer == 7){  %>
                             <option>7 Tage</option>
-                            <option>30 Tage</option>
-                            <option>90 Tage</option>
-                            <option>180 Tage</option>
+                            <%} else if(leihdauer == 30){%>
+
+
+                                   
+                                <option>7 Tage</option> 
+                               <option>30 Tage</option> 
+                            <%} else if(leihdauer == 90){%>
+                               <option>7 Tage</option> 
+                               <option>30 Tage</option> 
+                               <option>90 Tage</option>
+                            <%} else if (leihdauer == 180){%>
+                             <option>7 Tage</option> 
+                             <option>30 Tage</option>                             
+                             <option>90 Tage</option>
+                             <option>180 Tage</option>
+
+                            <%}%>
+                            
+                        </select></p>
+                    </td>  
+                </tr>
+                 <tr>
+                    <td>Betriebssystem:</td>
+                    <td>
+                        <select name="bs" maxlenght="40">
+                            <option>Linux</option>
+                            <option>Windows</option>
                         </select></p>
                     </td>  
                 </tr>
                 <tr>
                     <td>Bemerkung:</td> 
-                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Das was du schon vorher drinstehen haben willst'></p></td>
+                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information'></p></td>
                 </tr>
                 <tr>
                     <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
