@@ -49,7 +49,9 @@ public class Dozent implements Serializable{
     
     public static void saveDozent(Dozent d){
         DAO.DozentDAO.createDozent(d);
-        
+         
+        String messageContent = BL.Mail_arts.Dozent_welcome(d);
+        BL.Mail.eMailcreate(messageContent, d.geteMail());
     }
     
     public static List<Dozent> getDozentList () {

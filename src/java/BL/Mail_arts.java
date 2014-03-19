@@ -19,10 +19,9 @@ public class Mail_arts {
   
    
     
-    public static String application_confirm(Ausleihe a,Notebook n,Dozent d,Student s){
+public static String application_confirm(Ausleihe a,Notebook n,Dozent d,Student s){
 
-    
-     
+       
 String messageContent =
  "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Antrag Bestätigen</h1><br>"     
@@ -41,9 +40,7 @@ String messageContent =
 + "<tr><th align="+"left"+">Dauer: </th> <th>" + n.getLeihdauer() + "</th> </tr>"
 + "<tr><th align="+"left"+">Status: </th> <th>Wartet auf bestätigung durch Mitarbeiter</th> </tr></table><br>"
 +"<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
-+" <li><a href="+"http://localhost:8080/Notebookverleih/Login_Start.jsp"+">"+"links"+"</a></li>"       
-       
-        ;
++" <li><a href="+"http://localhost:8080/Notebookverleih/Login_Start.jsp"+">"+"links"+"</a></li>" ;
   return messageContent;
     
     }
@@ -52,15 +49,40 @@ public static String Student_welcome(Student s){
 String messageContent =
  "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Registrierung</h1><br>"     
-+"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> Wiwi-IT Geräteausleihe</h2><br>"
-+"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" 
-+"<p>Vielen Dank  für ihre Rigestrierung.Ihre Daten wurden erfoglreich geschpeichert</p><br>" ; 
-    
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + s.getVorname()+" "+ s.getName()+ ","+ "</p><br>" 
++"<p>Vielen Dank  für ihre Rigestrierung.Ihre Daten wurden erfoglreich geschpeichert.</p><br>"  
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;     
        
 }
-
-
+public static String Dozent_welcome(Dozent d){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Registrierung</h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + d.getVorname()+" "+ d.getName()+ ","+ "</p><br>" 
++"<p>Vielen Dank  für ihre Rigestrierung.Ihre Daten wurden erfoglreich geschpeichert.</p><br>" 
++"<p>Mit freundlichen Grüßen </p>"
++"<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;     
+       
+}
+public static String Administrator_welcome(Administrator a){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Registrierung</h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + a.getVorname()+" "+ a.getName()+ ","+ "</p><br>" 
++"<p>Vielen Dank  für ihre Rigestrierung.Ihre Daten wurden erfoglreich geschpeichert.</p><br>"  
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;   
+  return  messageContent;     
+       
+}
 public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Student s){
     
  String messageContent =
@@ -80,9 +102,7 @@ public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Studen
 +"<p>Bitte Beachten Sie: Verschiebungen aufgrund von verfrühter Rückgabe sind leider nicht auszuschließen</p><br>"        
 +"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
 +"<p>Bitte prüfen Sie den Status unter:</p><br>"
-+" <li><a href="+"http://localhost:8080/Notebookverleih/CreateNotebook.jsp"+">"+"Meine Ausleihen"+"</a></li>"       
-       
-        ;
++" <li><a href="+"http://localhost:8080/Notebookverleih/CreateNotebook.jsp"+">"+"Meine Ausleihen"+"</a></li>";
   return messageContent;
 }
 
@@ -103,10 +123,7 @@ public static String notebook_bei_preparation(Ausleihe a,Notebook n,Student s){
 + "<tr><th align="+"left"+">Status: </th> <th>In Vorbereitung durch Wiwi-IT</th> </tr></table><br>"
 +"<p>Bitte Beachten Sie: Verschiebungen aufgrund von verfrühter Rückgabe sind leider nicht auszuschließen</p><br>"        
 +"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
-+"<p>Die folgenden Geräten sind für diese Ausleihe verfügbar:</p><br>"
-
-       
-        ;
++"<p>Die folgenden Geräten sind für diese Ausleihe verfügbar:</p><br>";
   return messageContent;
 }
 
@@ -128,16 +145,10 @@ public static String notebook_ready(Ausleihe a,Notebook n,Student s){
 +"<p>Das Gerät kann ab sofort während unserer Öffnunszeiten abgeholt werden.</p><br>"        
 +"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
 +"<p>Sie können den Ausleihantrag  unter <a href="+"http://localhost:8080/Notebookverleih/CreateNotebook.jsp"
-+">"+"Meine Ausleihen"+"</li>"+" "+"löschen </p><br>"
-        
-        ;
++">"+"Meine Ausleihen"+"</li>"+" "+"löschen </p><br>";
   return messageContent;
 }
 
 
-
-
 }
 
-//String messageContent= BL.Mail_arts.Student_welcome(s);
-//BL.Mail(messageContent,s);
