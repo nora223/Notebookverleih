@@ -14,13 +14,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />
+        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <title>Registrierung erfolgreich</title>
     <div>
-        <img id="pic" src="pic/logo.png" alt="Logo"/>
+        <img id="pic" src=".../pic/logo.png" alt="Logo"/>
         <hr>
-        <p id="pic"><img src="pic/dh.jpg" alt="dh" />
+        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
@@ -50,11 +50,11 @@
         //BL.Mail.eMailcreate(messageContent, s.geteMail());
 %>
     <div>
-        <p>Hallo 
+        <p>Der Dozent 
             <% out.println(vorname);
                 out.println(nachname);
             %>
-            Es wurde erfolgreich ein Dozent angelegt. Es wurde eine Bestätigungs-Email an: 
+            wurde erfolgreich angelegt. Es wurde eine Bestätigungs-Email an: 
             <% out.println(email);%> gesendet. </p>
     </div>
 </body>
