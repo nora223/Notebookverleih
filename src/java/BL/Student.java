@@ -73,37 +73,7 @@ public class Student implements Serializable{
         return listStudent;
         
     }
-    
-    public static Student getStudentbyUsername(String username, String passwort){
-        
-        List<Student> listStudent = DAO.StudentDAO.getStudentListDAO();
-        Student a = new Student();
-        for (Student element : listStudent){
-            if(element.username == username){
-                if(element.passwort == passwort){
-                    a.eMail = element.eMail;
-                    a.gebDat = element.gebDat;
-                    a.geschlecht = element.geschlecht;
-                    a.id = element.id;
-                    a.kurs = element.kurs;
-                    a.matNr = element.matNr;
-                    a.name = element.name;
-                    a.passwort = element.passwort;
-                    a.username = element.username;
-                    a.vorname = element.vorname;
-                    
-                }
-            }else{ 
-                return a;
-            }
-            
-           
-            
-        }
-        return a; 
-        
-         
-    }
+   
     
     public long getId() {
         return id;

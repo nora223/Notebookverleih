@@ -62,33 +62,7 @@ public class Dozent implements Serializable{
         
     }
     
-    public static Dozent getDozentByName(String name){
-         List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
-        Dozent a = null;
-        for (Dozent element : listDozent){
-            if(element.name == name){
-                
-                    a.eMail = element.eMail;
-                    a.gebDat = element.gebDat;
-                    a.geschlecht = element.geschlecht;
-                    a.id = element.id;
-                    a.name = element.name;
-                    a.passwort = element.passwort;
-                    a.username = element.username;
-                    a.vorname = element.vorname;
-                    
-                
-            }else{ 
-                return null;
-            }
-            
-           
-            
-        }
-        return a; 
-        
-       
-    }
+    
     
     public static void deleteDozentByID(long id){
         
