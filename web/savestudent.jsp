@@ -57,6 +57,10 @@
             <% out.println(email);%> gesendet. </p>
         <p> Gehe nun zurück auf den Startbildschirm und loggt dich ein. Dann gehts auch schon los.
             ;-) </p>
+        
+        <%
+            out.println(s);
+            %>
     </div>
 </body>
 </html>

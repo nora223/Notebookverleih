@@ -69,21 +69,6 @@ public class Student implements Serializable{
         return listStudent;
         
     }
-
-    public static boolean loginStudent(String email, String passwort1){
-        boolean erg = false;
-        
-        String passwort = DAO.StudentDAO.loginStudent(email);
-                
-        if(passwort.equals(passwort1)){
-            erg = true;           
-        }
-        else{
-            erg = false;
-        }
-        
-        return erg;
-    }
     
     public long getId() {
         return id;
