@@ -60,35 +60,7 @@ public class Notebook implements Serializable{
         return feld; 
     }
     
-    public static Notebook getNotebookByDauerUndKlasse(Integer dauer, Integer klasse){
-        List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
-        Notebook a = null;
-        for (Notebook element : notebooklist){
-            if(element.leihdauer == dauer){
-                if(element.klasse == klasse){
-                    a.id = element.id;
-                    a.klasse = element.klasse;
-                    a.leihdauer = element.leihdauer;
-                    a.name = element.name;
-                    a.seriennummer = element.seriennummer;
-                    a.verliehen = element.verliehen;
-                    
-                    
-                }
-            }else{ 
-                return null;
-            }
-            
-           
-            
-        }
-        return a; 
         
-        
-        
-        
-    }
-    
     public long getId() {
         return id;
     }

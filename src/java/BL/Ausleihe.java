@@ -76,6 +76,7 @@ public class Ausleihe implements Serializable{
         
     }
     
+    
     public static Date getNextFreeDate(int dauer, int klasse){
         List<Date> erg = DAO.AusleiheDAO.getNextFreeDate(dauer, klasse);
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
