@@ -16,31 +16,37 @@
         <script type="text/javascript">
 
             var validatePassword = function() {
-                alert("PW");
-
+                //alert("PW");
                 // document.forms.adr.passwort1 
+                //var passwort = document.getElementById("t4").value;
                 var passwort = document.getElementById("t4").value;
                 var passwort2 = document.getElementById("t5").value;
-                alert(passwort);
-                alert(passwort2);
-                if (!passwort.value == passwort2.value) {
+                //alert(passwort);
+                //alert(passwort2);
+                if (passwort == passwort2) {
                     // Passwörter stimmen nicht überein
-                    alert("password ");
+                   //alert("true");
+                } else {
+                    //alert("password ");
                     document.getElementById("passwordError").style.visibility = 'visible';
-                    document.getElementById("passwordError").innerHTML = 'Password not match';
-                    retValue = false;
+                    document.getElementById("passwordError").innerHTML = '<p style="text-align:center; color: red"><b>Passwort stimmt nicht überein!</b></p>';
+                    document.getElementById("t4").style.border = "solid red 2px";
+                    document.getElementById("t5").style.border = "solid red 2px";
+                    return false;
                 }
-                //document.getElementById("passwordError").style.visibility = 'visible';
-                //document.getElementById("passwordError").innerHTML = 'Password not match';
-                //temp = document.getElementByName("passwort");
-                //alert(temp);
-                /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
-                 return true;
-                 }else{
-                 alert('Wrong Password!');
-                 return false;
-                 }*/
             }
+            
+            //document.getElementById("passwordError").style.visibility = 'visible';
+            //document.getElementById("passwordError").innerHTML = 'Password not match';
+            //temp = document.getElementByName("passwort");
+            //alert(temp);
+            /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
+             return true;
+             }else{
+             alert('Wrong Password!');
+             return false;
+             }*/
+            
 
             var checkEntry = function(element) {
                 id = element.id;
@@ -73,16 +79,21 @@
                 // document.adr.elements.length gibt die anzahl der Elemente die in diesem Form-Tag vorhanden sind.
                 for (var i = 0; i < document.adr.elements.length; i++) {
                     element = document.adr.elements[i];
-                    //alert("for");
                     // bei diesen ID's springt das Prog in die Methode CheckEntry, die ID's müssen unterschiedlich sein damit dem Programm die unterschiede bekannt werden, sonst behandelt es es nur als eins
                     if ((element.id == 't') || (element.id == 't2') || (element.id == 't3') || (element.id == 't4') || (element.id == 't5') || (element.id == 't6') || (element.id == 't7') || (element.id == 't8')) {
-                    checkEntry(element);
-                    if (checkEntry(element) == false) {
+                        checkEntry(element);
+                        if (checkEntry(element) == false) {
                             //alert("temp");
                             retValue = false;
                         }
+
                     }
+
                     //retValue = validatePassword();
+                }
+                validatePassword();
+                if (validatePassword() == false) {
+                    retValue = false;
                 }
                 /*if (element.id == 't7') {checkMatrikel();}*/
                 return retValue;
@@ -101,7 +112,7 @@
                         //alert(zeichen);
                         if (Set.indexOf(zeichen) == -1) {
                             alert('Bitte nur Ziffern eingeben');
-                            element.style.border = "solid red 2px";
+                            document.getElementById("t7").style.border = "solid red 2px";
                             element.title = "Nur Zeichen erlaubt!";
                             var g = "Eintrag erforderlich";
                             element.innerHTML = g;
@@ -171,7 +182,7 @@
                         <p><div id="passwordError" style="visibility: hidden;"></div></p>
                         <p>Geburtsdatum<br><input class="tcal tcalInput" id="t6" name="gebDat" value="DD:MM:YYYY" size ="30" title="Bitte GebDat eintragen" maxlength="40" onkeypress="return false" onblur="javascript:checkEntry(this)"></p>
 
-                        <p>Matrikelnummer<br><input id="t7" name="matNr" type="text" title="Matrikelnummer" size ="30" maxlength="40" onblur="javascript:checkMatrikel(this)">Matrikelnummer</p>
+                        <p>Matrikelnummer<br><input id="t7" name="matNr" type="text" title="Matrikelnummer" size ="30" maxlength="40" onblur="javascript:checkMatrikel(this)"></p>
                         <p>Kursnummer<br><input id="t8" name="kurs" type="text" size ="30" maxlength="40"></p>
                         <p><input name="button" type="submit" value="anlegen"></p>
                     </form>

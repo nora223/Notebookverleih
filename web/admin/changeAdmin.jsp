@@ -1,16 +1,18 @@
+
 <%-- 
-    Document   : changedozent
-    Created on : 09.03.2014, 12:48:56
+    Document   : new_account
+    Created on : 11.02.2014, 14:54:21
     Author     : CaReich
 --%>
 
-<%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="BL.Administrator" %>
-<%@page import="DAO.AdministratorDAO" %>
+<%@page import="BL.Student" %>
+<%@page import="DAO.StudentDAO" %>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,7 +21,7 @@
         <link rel="stylesheet" href =".../calender/3-dynamically-created/tcal.css" type ="text/css" />
         <script type="text/javascript" src=".../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
 
-        <title>Change Administrator</title>
+        <title>Change Admin</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
         <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
@@ -28,16 +30,17 @@
     </div>
 </head>
 <body>
-    <div  class="row">
+    <div class="row">
         <div class="col-md-3">
             <div class="list-group">
                 <a href="#" class="list-group-item active" >
                     NAVIGATION
                 </a>
-                <a href="admin/admin.jsp" class="list-group-item">Startseite</a> 
+                  <a href="admin/admin.jsp" class="list-group-item">Startseite</a> 
                 <a href="ausleihverwaltung.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Ausleih Verwaltung</a>
                 <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
                 <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
+
             </div>
         </div>
 
@@ -48,7 +51,7 @@
 
 
                 <%
-                    String id = request.getParameter("id");
+                   String id = request.getParameter("id");
                     String name = request.getParameter("name");
                     String vorname = request.getParameter("vorname");
                     String geschlecht = request.getParameter("geschlecht");
@@ -57,8 +60,6 @@
                     DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                     Date date = new Date();
                     date = df.parse(x);
-
-
                 %>
 
                 <div id="login">
@@ -85,6 +86,9 @@
 
                         <p><input name="button" type="submit" value="anlegen"></p>
                     </form>
+                    <%
+                        /*out.println(geschlecht.toString());*/
+                    %>
                 </div>
             </div>
         </div>
