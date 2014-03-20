@@ -1,5 +1,8 @@
 
 
+<%@page import="BL.Notebook"%>
+<%@page import="BL.Student"%>
+<%@page import="BL.Ausleihe"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.DateFormat"%>
@@ -23,29 +26,50 @@
         
         
                             
-                           <%                         
-                              String id = request.getParameter("id");
-                              long longid = Long.parseLong(id);
-                              String name = request.getParameter("name");
-                              String vorname = request.getParameter("vorname");
-                              String eMail = request.getParameter("eMail");
-                              String x = request.getParameter("geburtsdatum");
-                              DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                              Date date = new Date();
-                              String geschlecht = request.getParameter("geschlecht");
+                           <%  
+                                                             
+                              String username = request.getParameter("username");
+                             String passwort = request.getParameter("passwort");
+                             String name = request.getParameter("dozent");
                               
+                             
+                            String strklasse = request.getParameter("klasse");
+                            
+                            
+                            
+                              Integer klasse= Integer.parseInt(strklasse);
+                           
+                                                    
+                             String strdauer = request.getParameter("dauer");
+                              Integer dauer = Integer.parseInt(strdauer);
+                              
+                              
+                            
+                              String bs = request.getParameter("bs");
+                              String bemerkung = request.getParameter("bemerkung"); 
+                             
+                             
+                            Student antragssteller = BL.Student.getStudentbyUsername(username, passwort);
+                             Dozent mitarbeiter = BL.Dozent.getDozentByName(name);
+                             Notebook notebook = BL.Notebook.getNotebookByDauerUndKlasse(dauer, klasse);
+                             
+                             
+                             
+                             Ausleihe a = new Ausleihe();
+                           
+                             a.setBermerkung(bemerkung);
+                             a.setBetriebssystem(bs);
+                             a.setLeihNotebook(notebook);
+                             a.setDauer(dauer);
+                             a.setStatus("Verliehen");
+                             
+                             a.setMitarbeiter(mitarbeiter); 
+                             a.setAntragssteller(antragssteller);
+                             
+                             
+                             BL.Ausleihe.saveAusleihe(a);
+                               
                         
-                               Dozent d = new Dozent();
-                        
-                                  d.setId(longid);
-                                  d.setName(name);
-                                  d.setVorname(vorname);
-                                  d.seteMail(eMail);
-                                  d.setGebDat(date);
-                                  
-                                  d.setGeschlecht(geschlecht);
-                                  
-                                  Dozent.saveDozent(d);
                             %>
                
     </body>

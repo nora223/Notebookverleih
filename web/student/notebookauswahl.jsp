@@ -61,7 +61,7 @@
                        </td>
                        <td>
                            
-                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="username">
+                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="Bitte Username eingeben">
                            
                        </td>
                     
@@ -72,7 +72,7 @@
                        </td>
                        <td>
                           
-                           <input id="username" name="username" type="text" size="30" maxlength="40" value="passwort">
+                           <input id="passwort" name="passwort" type="text" size="30" maxlength="40" value="Bitte Passwort eingeben">
                            
                        </td>
                     
@@ -92,7 +92,7 @@
                                 %>
                            
                            
-                            <option value="id"><%=name%>, <%=vorname%>, <%=id%></option>
+                            <option><%=name%></option>
                            <%}%>
                         </select></p>   
                     </td>  
@@ -102,14 +102,14 @@
                     <td>
                          
                               <% if(klasse == 1){  %>
-                             <input name="klasse" type="textarea" size ="50"  placeholder='Information' value="Notebook&starf;">
+                              <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="1" readonly="readonly">Notebook&starf;
                             
                              <%} else if(klasse == 2){%>
-                            <input name="klasse" type="textarea" size ="50"  placeholder='Information' value="Notebook&starf;&starf;">
+                            <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="2" readonly="readonly">Notebook&starf;&starf;
                          
                            
                              <%} else if (klasse == 3){%>
-                            <input name="klasse" type="textarea" size ="50"  placeholder='Information' value="Notebook&starf;&starf;&starf;">
+                            <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="3" readonly="readonly">Notebook&starf;&starf;&starf;
                            
                            
                                  <%}%>
@@ -118,28 +118,26 @@
                     </td> 
                 </tr>   
                 <tr>
-                    <td>Dauer:</td>
+                    <td>Dauer (in Tagen):</td>
                     <td>
                         <select name="dauer" maxlenght="40" >
                          
                             
                             <% if(leihdauer == 7){  %>
-                            <option value="leihdauer">7 Tage</option>
+                            <option>7</option>
                             <%} else if(leihdauer == 30){%>
 
-
-                                   
-                                <option value="leihdauer">7 Tage</option> 
-                               <option value="leihdauer">30 Tage</option> 
+                                <option>7</option> 
+                               <option>30</option> 
                             <%} else if(leihdauer == 90){%>
-                               <option value="leihdauer">7 Tage</option> 
-                               <option value="leihdauer">30 Tage</option> 
-                               <option value="leihdauer">90 Tage</option>
+                               <option>7</option> 
+                               <option>30</option> 
+                               <option>90</option>
                             <%} else if (leihdauer == 180){%>
-                             <option value="leihdauer">7 Tage</option> 
-                             <option value="leihdauer">30 Tage</option>                             
-                             <option value="leihdauer">90 Tage</option>
-                             <option value="leihdauer">180 Tage</option>
+                             <option>7</option> 
+                             <option>30</option>                             
+                             <option>90</option>
+                             <option>180</option>
 
                             <%}%>
                             
