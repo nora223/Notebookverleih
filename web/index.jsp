@@ -19,32 +19,6 @@
         <link rel="stylesheet" href ="css/bootstrap.css" type ="text/css" />        
         
         <!--
-        <script type="text/javascript">
-              function login(event) {
-                    var email = document.getElementsByName("e_mail");
-                    var passwort1 = document.getElementsByName("passwort");
-                    
-                    window.alert(email);
-
-                    $.ajax("servlets/login", {
-                        isLocal: true,
-                        type: "POST",
-                        contentType: "text/plain",
-                        data: "LOGIN\n" + email + "\n" + passwort1,
-                        dataType: "text",
-                        success: function(data, status, xhr) {
-                            show_boxes();
-                            document.login_form.reset();
-                        },
-                        error: function(xhr) {
-                            var error = $.trim(xhr.responseText);
-                            show_message(get_error_text(error, "user"));
-                        }
-                    });
-
-                    return false;
-                }
-
             for (i = 0; i < document.forms[0].elements.length; ++i)
             if (document.forms[0].elements[i].value === "") {
             alert("Es wurden nicht alle Felder ausgefüllt!");
@@ -79,25 +53,7 @@
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>                     
                 </div>
-            </div>
-            
-            <script>
-            function login(){
-                var email = document.getElementsById("e_mail").value;
-                var passwort1 = document.getElementsById("passwort").value;
-                
-                // post an server senden mit parameter email passwort1
-                //servlet mit email und passwort und dort die methode aufrufen
-                
-                //var erg = Student.loginStudent(email, passwort1);
-            
-                if (erg === true){
-                    window.alert("Passwort richtig!");
-                }else{
-                    window.alert("Passwort flasch!");
-                }
-            }
-            </script>
+            </div>            
             
             <div class="col-md-3">
                 <div class="list-group">
@@ -106,13 +62,13 @@
                     </a>
                     
                     <div class="list-group-item">
-                        <form methode="POST">
+                    
+                    <form method="POST" action="servlets/login">
                     <p>E-mail<br><input id="e_mail" name="e_mail" type="text" maxlength="40"></p>
                     <p>Passwort<br><input id="passwort" name="passwort" type="password" maxlength="40"></p>
-                                   
-                    <p><input name="button" type="submit" value="Login" onclick="login();"></p>
-                    
-                </form>
+                    <p><input name="button" type="submit" value="Login"></p>
+                    </form>
+                        
                <a href="create_student.jsp">Neuer Zugang anlegen?</a><br>
                <a href="forgotton_PW.jsp" >Passwort vergessen?</a>
                

@@ -32,7 +32,7 @@ public class AdministratorDAO {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
            
-        List<Administrator> resultListAdministrator = session.createQuery("from Administrator").list();;
+        List<Administrator> resultListAdministrator = session.createQuery("from Administrator").list();
         
         transaction.commit();
         

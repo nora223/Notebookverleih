@@ -27,9 +27,7 @@
 </head>
 
 <body>
-    <%{
-            session.invalidate();
-        }%> <!-- session beenden für logout -->
+    
     <div> <!-- Navigationsbereich-->
         <div  class="row">
             <div class="col-md-3">
