@@ -49,14 +49,35 @@
                          Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
                          Integer klasse = Integer.parseInt(request.getParameter("klasse"));   
                         
-                        
-                        
                     %> 
 
-                    
+                    <form action="addAusleihe.jsp" methode ="POST">
                     
                     
                  <table> 
+                     <tr>
+                    <td>
+                       Username: 
+                       </td>
+                       <td>
+                           
+                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="username">
+                           
+                       </td>
+                    
+                </tr>
+                   <tr>
+                    <td>
+                       Passwort: 
+                       </td>
+                       <td>
+                          
+                           <input id="username" name="username" type="text" size="30" maxlength="40" value="passwort">
+                           
+                       </td>
+                    
+                </tr>
+                     
                   <tr>
                     <td>Dozent:</td>
                     <td>
@@ -71,7 +92,7 @@
                                 %>
                            
                            
-                            <option><%=name%>, <%=vorname%></option>
+                            <option value="id"><%=name%>, <%=vorname%>, <%=id%></option>
                            <%}%>
                         </select></p>   
                     </td>  
@@ -81,15 +102,15 @@
                     <td>
                          
                               <% if(klasse == 1){  %>
-                             
-                            <option>Notebook&starf; </option>
-                             <%} else if(klasse == 2){%>
+                             <input name="klasse" type="textarea" size ="50"  placeholder='Information' value="Notebook&starf;">
                             
-                            <option>Notebook&starf;&starf; </option>
+                             <%} else if(klasse == 2){%>
+                            <input name="klasse" type="textarea" size ="50"  placeholder='Information' value="Notebook&starf;&starf;">
+                         
                            
                              <%} else if (klasse == 3){%>
-                            
-                            <option>Notebook&starf;&starf;&starf;</option>
+                            <input name="klasse" type="textarea" size ="50"  placeholder='Information' value="Notebook&starf;&starf;&starf;">
+                           
                            
                                  <%}%>
                             
@@ -99,26 +120,26 @@
                 <tr>
                     <td>Dauer:</td>
                     <td>
-                        <select name="dauer" maxlenght="40">
+                        <select name="dauer" maxlenght="40" >
                          
                             
                             <% if(leihdauer == 7){  %>
-                            <option>7 Tage</option>
+                            <option value="leihdauer">7 Tage</option>
                             <%} else if(leihdauer == 30){%>
 
 
                                    
-                                <option>7 Tage</option> 
-                               <option>30 Tage</option> 
+                                <option value="leihdauer">7 Tage</option> 
+                               <option value="leihdauer">30 Tage</option> 
                             <%} else if(leihdauer == 90){%>
-                               <option>7 Tage</option> 
-                               <option>30 Tage</option> 
-                               <option>90 Tage</option>
+                               <option value="leihdauer">7 Tage</option> 
+                               <option value="leihdauer">30 Tage</option> 
+                               <option value="leihdauer">90 Tage</option>
                             <%} else if (leihdauer == 180){%>
-                             <option>7 Tage</option> 
-                             <option>30 Tage</option>                             
-                             <option>90 Tage</option>
-                             <option>180 Tage</option>
+                             <option value="leihdauer">7 Tage</option> 
+                             <option value="leihdauer">30 Tage</option>                             
+                             <option value="leihdauer">90 Tage</option>
+                             <option value="leihdauer">180 Tage</option>
 
                             <%}%>
                             
@@ -128,7 +149,7 @@
                  <tr>
                     <td>Betriebssystem:</td>
                     <td>
-                        <select name="bs" maxlenght="40">
+                        <select name="bs" maxlenght="40" value="betriebssystem">
                             <option>Linux</option>
                             <option>Windows</option>
                         </select></p>
@@ -136,7 +157,8 @@
                 </tr>
                 <tr>
                     <td>Bemerkung:</td> 
-                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information'></p></td>
+                    
+                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information' value="bemerkung"></p></td>
                 </tr>
                 <tr>
                     <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
@@ -144,8 +166,9 @@
                 
                 
                 </table>        
-               <a href="addAusleihe.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a>
-              
+     
+                
+                    </form>
                 </div>
             </div>
         </div>    
