@@ -171,7 +171,7 @@
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um einen Administrator zu registrieren</p>
 
                     <div id="login">
-                        <form name="adr" action="savedozent.jsp" methode="POST" onsubmit="javascript:return checkForm()"> 
+                        <form name="adr" action="saveAdmin.jsp" methode="POST" onsubmit="javascript:return checkForm()"> 
                             <!--onsubmit="javascript:return checkForm()"-->
                             <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
                                 <input type="radio" name="radio" value="männlich">m&auml;nnlich</input></p>

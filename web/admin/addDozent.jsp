@@ -152,7 +152,7 @@
 </head>
     <body>
                             <%                 
-                              String id = request.getParameter("id");
+                              /*String id = request.getParameter("id");
                               long longid = Long.parseLong(id);
                               String name = request.getParameter("name");
                               String vorname = request.getParameter("vorname");
@@ -173,7 +173,7 @@
                                   
                                   d.setGeschlecht(geschlecht);
                                   
-                                  Dozent.saveDozent(d);
+                                  Dozent.saveDozent(d);*/
                             %>
 
     <body onLoad="javascript:setFocus()">
