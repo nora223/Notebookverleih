@@ -1,4 +1,6 @@
- <%-- 
+ <%@page import="BL.Dozent"%>
+<%@page import="java.util.List"%>
+<%-- 
     Document   : notebookauswahl
     Created on : 10.03.2014, 17:40:41
     Author     : Nora
@@ -47,67 +49,95 @@
                          Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
                          Integer klasse = Integer.parseInt(request.getParameter("klasse"));   
                         
-                        
-                        
                     %> 
 
-                    
+                    <form action="addAusleihe.jsp" methode ="POST">
                     
                     
                  <table> 
+                     <tr>
+                    <td>
+                       Username: 
+                       </td>
+                       <td>
+                           
+                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="Bitte Username eingeben">
+                           
+                       </td>
+                    
+                </tr>
+                   <tr>
+                    <td>
+                       Passwort: 
+                       </td>
+                       <td>
+                          
+                           <input id="passwort" name="passwort" type="text" size="30" maxlength="40" value="Bitte Passwort eingeben">
+                           
+                       </td>
+                    
+                </tr>
+                     
                   <tr>
                     <td>Dozent:</td>
                     <td>
                        <select name="dozent" maxlenght="40">
-                            <option>Dozent 1</option>
-                            <option>Dozent 2</option>
-                            <option>Dozent 3</option>
+                           <% List<Dozent> dozentList = BL.Dozent.getDozentList();
+                            
+                            for (Dozent element : dozentList){
+                                long id = element.getId();
+                                String name = element.getName();
+                                String vorname = element.getVorname();
+                               
+                                %>
+                           
+                           
+                            <option><%=name%></option>
+                           <%}%>
                         </select></p>   
                     </td>  
                  </tr> 
                  <tr>
                     <td>Notebook:</td>
                     <td>
-                         <select name="geraetclass" maxlenght="40">
+                         
                               <% if(klasse == 1){  %>
-                             
-                            <option>Notebook&starf; </option>
-                             <%} else if(klasse == 2){%>
+                              <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="1" readonly="readonly">Notebook&starf;
                             
-                            <option>Notebook&starf;&starf; </option>
+                             <%} else if(klasse == 2){%>
+                            <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="2" readonly="readonly">Notebook&starf;&starf;
+                         
                            
                              <%} else if (klasse == 3){%>
-                            
-                            <option>Notebook&starf;&starf;&starf;</option>
+                            <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="3" readonly="readonly">Notebook&starf;&starf;&starf;
+                           
                            
                                  <%}%>
                             
-                         </select> </p>
+                        </p>
                     </td> 
                 </tr>   
                 <tr>
-                    <td>Dauer:</td>
+                    <td>Dauer (in Tagen):</td>
                     <td>
-                        <select name="dauer" maxlenght="40">
+                        <select name="dauer" maxlenght="40" >
                          
                             
                             <% if(leihdauer == 7){  %>
-                            <option>7 Tage</option>
+                            <option>7</option>
                             <%} else if(leihdauer == 30){%>
 
-
-                                   
-                                <option>7 Tage</option> 
-                               <option>30 Tage</option> 
+                                <option>7</option> 
+                               <option>30</option> 
                             <%} else if(leihdauer == 90){%>
-                               <option>7 Tage</option> 
-                               <option>30 Tage</option> 
-                               <option>90 Tage</option>
+                               <option>7</option> 
+                               <option>30</option> 
+                               <option>90</option>
                             <%} else if (leihdauer == 180){%>
-                             <option>7 Tage</option> 
-                             <option>30 Tage</option>                             
-                             <option>90 Tage</option>
-                             <option>180 Tage</option>
+                             <option>7</option> 
+                             <option>30</option>                             
+                             <option>90</option>
+                             <option>180</option>
 
                             <%}%>
                             
@@ -117,7 +147,7 @@
                  <tr>
                     <td>Betriebssystem:</td>
                     <td>
-                        <select name="bs" maxlenght="40">
+                        <select name="bs" maxlenght="40" value="betriebssystem">
                             <option>Linux</option>
                             <option>Windows</option>
                         </select></p>
@@ -125,14 +155,18 @@
                 </tr>
                 <tr>
                     <td>Bemerkung:</td> 
-                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information'></p></td>
+                    
+                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information' value="bemerkung"></p></td>
                 </tr>
                 <tr>
                     <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
                 </tr>
+                
+                
                 </table>        
-              
-              
+     
+                
+                    </form>
                 </div>
             </div>
         </div>    

@@ -31,35 +31,35 @@ public class Mail {
    props.setProperty("mail.smtp.host", "smtp.gmail.com");
    props.setProperty("mail.smtp.port", "587");
    props.setProperty("mail.smtp.auth", "true");
-   props.setProperty ("mail.smtp.starttls.enable", "true");
+   props.setProperty("mail.smtp.starttls.enable", "true");
    
    
-   Session mailSession = Session.getInstance(props, new javax.mail.Authenticator()
-       {protected PasswordAuthentication getPasswordAuthentication() 
-       {return new PasswordAuthentication("Buchausleihe.wwi12b3","buchausleihe");}
-       });
+  Session mailSession = Session.getInstance(props, new javax.mail.Authenticator()
+    {protected PasswordAuthentication getPasswordAuthentication() 
+    {return new PasswordAuthentication("Buchausleihe.wwi12b3","buchausleihe");}
+    });
    try{
       
         MimeMessage message = new MimeMessage(mailSession);
      
-        message.setFrom(new InternetAddress(from));
+           message.setFrom(new InternetAddress(from));
       
-        message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+           message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
       
-        message.setSubject("von NotebookVerleih","UTF-8");
+           message.setSubject("von NotebookVerleih","UTF-8");
       
-        message.setContent(messageContent, "text/html;charset = UTF-8");
+           message.setContent(messageContent, "text/html;charset = UTF-8");
       
       
-          Transport.send(message);
-          result = "successfully";
+           Transport.send(message);
+           result = "Erfolgreich";
        }
-    catch (MessagingException mex) {
-          mex.printStackTrace();
-          result = "Error";
+     catch (MessagingException mex) {
+           mex.printStackTrace();
+           result = "Fehler";
         } 
       
-    System.out.println(result);
+       System.out.println(result);
       
   }  
 }

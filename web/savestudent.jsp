@@ -45,9 +45,9 @@
 
         Student s = new Student(geschlecht, vorname, nachname, email, date, matNummer, kurs, passwort, username);
         Student.saveStudent(s);
-        String messageContent = BL.Mail_arts.Student_welcome(s);
-        BL.Mail.eMailcreate(messageContent, s.geteMail());
-    %>
+        %>
+       
+        
     <div>
         <p>Hallo 
             <% out.println(vorname);
