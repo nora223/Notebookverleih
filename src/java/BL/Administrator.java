@@ -58,7 +58,9 @@ public class Administrator implements Serializable{
     
     public static void saveAdministrator(Administrator a){
         DAO.AdministratorDAO.createAdmininstrator(a);
-        
+         
+        String messageContent = BL.Mail_arts.Administrator_welcome(a);
+        BL.Mail.eMailcreate(messageContent, a.geteMail());
     }
     
     public static List<Administrator> getAdministratorList () {

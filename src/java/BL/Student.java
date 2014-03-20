@@ -17,7 +17,8 @@ import javax.persistence.Temporal;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import BL.Mail_arts;
+import BL.Mail;
 @Entity
 public class Student implements Serializable{
     
@@ -59,6 +60,9 @@ public class Student implements Serializable{
     
     public static void saveStudent(Student s){
         DAO.StudentDAO.createStudent(s);
+        
+        String messageContent = BL.Mail_arts.Student_welcome(s);
+        BL.Mail.eMailcreate(messageContent, s.geteMail());
           
     }
     
