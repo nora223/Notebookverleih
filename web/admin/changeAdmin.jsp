@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : new_account
     Created on : 11.02.2014, 14:54:21
@@ -9,8 +10,8 @@
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="BL.Dozent" %>
-<%@page import="DAO.DozentDAO" %>
+<%@page import="BL.Student" %>
+<%@page import="DAO.StudentDAO" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +21,7 @@
         <link rel="stylesheet" href =".../calender/3-dynamically-created/tcal.css" type ="text/css" />
         <script type="text/javascript" src=".../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
 
-        <title>Change Student</title>
+        <title>Change Admin</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
         <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
@@ -50,7 +51,7 @@
 
 
                 <%
-                    String id = request.getParameter("id");
+                   String id = request.getParameter("id");
                     String name = request.getParameter("name");
                     String vorname = request.getParameter("vorname");
                     String geschlecht = request.getParameter("geschlecht");
@@ -63,19 +64,21 @@
 
                 <div id="login">
 
-                    <form action="saveChangeD.jsp" methode="POST">
+                    <form action="saveChangeAdmin.jsp" methode="POST">
+
                         <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
 
                         <% if (geschlecht.equals("weiblich")) {%> 
                         <p>
                             <input type="radio" name="radio" value="weiblich" checked>weiblich
-                            <input   type="radio" name="radio" value="m&auml;nnlich">m&auml;nnlich</p> 
+                            <input   type="radio" name="radio" value="männlich">männlich</p> 
                             <% } else {%>
                         <p>
                             <input type="radio" name="radio" value="weiblich" >weiblich
-                            <input   type="radio" name="radio" value="m&auml;nnlich" checked>m&auml;nnlich</p> 
+                            <input   type="radio" name="radio" value="männlich" checked>männlich</p> 
 
                         <%    }%>
+
                         <p>Nachname<br><input name="name" type="text" value="<%=name%>" size="30" maxlength="40"></p>
                         <p>Vorname<br><input name="vorname" type="text" value="<%=vorname%>" size ="30" maxlength="40"></p>
                         <p>E-mail<br><input name="e_Mail" type="text" value="<%=eMail%>"  size ="30" maxlength="40"></p>
@@ -83,7 +86,9 @@
 
                         <p><input name="button" type="submit" value="anlegen"></p>
                     </form>
-                 
+                    <%
+                        /*out.println(geschlecht.toString());*/
+                    %>
                 </div>
             </div>
         </div>

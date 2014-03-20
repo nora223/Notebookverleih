@@ -44,7 +44,8 @@ function f_tcalGetHTML (d_date) {
 		s_format = A_TCALCONF.format;
 
 	// today from config or client date
-	var d_today = f_tcalParseDate(A_TCALCONF.today, A_TCALCONF.format);
+	//var d_today = f_tcalParseDate(A_TCALCONF.today, A_TCALCONF.format);
+        d_today = new Date(1990, 1, 0);
 	if (!d_today)
 		d_today = f_tcalResetTime(new Date());
 
@@ -59,6 +60,7 @@ function f_tcalGetHTML (d_date) {
 	d_date = d_date ? f_tcalResetTime(d_date) : new Date(d_selected);
 
 	var d_firstDay = new Date(d_date);
+        
 	d_firstDay.setDate(1);
 	d_firstDay.setDate(1 - (7 + d_firstDay.getDay() - A_TCALCONF.weekstart) % 7);
 
@@ -77,6 +79,8 @@ function f_tcalGetHTML (d_date) {
 
 	// print calendar table
 	var n_date, n_month, d_current = new Date(d_firstDay);
+        //var n_date, n_month, d_current = new Date(1990, 01, 01);
+        
 	while (d_current.getMonth() == d_date.getMonth() ||
 		d_current.getMonth() == d_firstDay.getMonth()) {
 

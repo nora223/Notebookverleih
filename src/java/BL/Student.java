@@ -17,7 +17,8 @@ import javax.persistence.Temporal;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import BL.Mail_arts;
+import BL.Mail;
 @Entity
 public class Student implements Serializable{
     
@@ -59,6 +60,9 @@ public class Student implements Serializable{
     
     public static void saveStudent(Student s){
         DAO.StudentDAO.createStudent(s);
+        
+        String messageContent = BL.Mail_arts.Student_welcome(s);
+        BL.Mail.eMailcreate(messageContent, s.geteMail());
           
     }
     
@@ -68,6 +72,52 @@ public class Student implements Serializable{
                        
         return listStudent;
         
+    }
+    
+    public static Student getStudentbyUsername(String username, String passwort){
+        
+        List<Student> listStudent = DAO.StudentDAO.getStudentListDAO();
+        Student a = new Student();
+        for (Student element : listStudent){
+            if(element.username == username){
+                if(element.passwort == passwort){
+                    a.eMail = element.eMail;
+                    a.gebDat = element.gebDat;
+                    a.geschlecht = element.geschlecht;
+                    a.id = element.id;
+                    a.kurs = element.kurs;
+                    a.matNr = element.matNr;
+                    a.name = element.name;
+                    a.passwort = element.passwort;
+                    a.username = element.username;
+                    a.vorname = element.vorname;
+                    
+                }
+            }else{ 
+                return a;
+            }
+            
+           
+            
+        }
+        return a; 
+        
+         
+   }
+
+    public static boolean loginStudent(String email, String passwort1){
+        boolean erg = false;
+        
+        String passwort = DAO.StudentDAO.loginStudent(email);
+                
+        if(passwort.equals(passwort1)){
+            erg = true;           
+        }
+        else{
+            erg = false;
+        }
+        
+        return erg;
     }
     
     public long getId() {

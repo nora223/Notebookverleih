@@ -30,10 +30,10 @@
         String nachname = request.getParameter("nachname");
         String vorname = request.getParameter("vorname");
         String email = request.getParameter("e_mail");
-        String kurs = request.getParameter("kurs");
-        /*out.println(kurs);*/
-        Integer matNummer = Integer.parseInt(request.getParameter("matNr"));
-        /*out.println(matNummer);*/
+        /*String kurs = request.getParameter("kurs");
+         out.println(kurs);
+         Integer matNummer = Integer.parseInt(request.getParameter("matNr"));
+         /*out.println(matNummer);*/
         String x = request.getParameter("gebDat");
         /*out.println(x);*/
         DateFormat df = new SimpleDateFormat("dd:MM:yyyy");
@@ -41,26 +41,21 @@
         Date date = df.parse(x);
         /*out.println(date);*/
         String passwort = request.getParameter("passwort");
-        String username = request.getParameter("username");
+        String username = request.getParameter("e_mail");
 
-        Student s = new Student(geschlecht, vorname, nachname, email, date, matNummer, kurs, passwort, username);
-        Student.saveStudent(s);
-        %>
-       
-        
+        Dozent s = new Dozent(geschlecht, vorname, nachname, email, date, passwort, username);
+        Dozent.saveDozent(s);
+        //Alexey
+        //String messageContent = BL.Mail_arts.Dozent_welcome(s);
+        //BL.Mail.eMailcreate(messageContent, s.geteMail());
+%>
     <div>
         <p>Hallo 
             <% out.println(vorname);
                 out.println(nachname);
             %>
-            du hast dich erfolgreich auf der Seite angemeldet. Es wurde eine Bestätigungs-Email an: 
+            Es wurde erfolgreich ein Dozent angelegt. Es wurde eine Bestätigungs-Email an: 
             <% out.println(email);%> gesendet. </p>
-        <p> Gehe nun zurück auf den Startbildschirm und loggt dich ein. Dann gehts auch schon los.
-            ;-) </p>
-        
-        <%
-            out.println(s);
-            %>
     </div>
 </body>
 </html>

@@ -5,7 +5,14 @@
 package BL;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -43,8 +50,10 @@ public class Ausleihe implements Serializable{
     private String status;
     @OneToOne
     private Notebook leihNotebook;
+    private String betriebssystem;
 
-    public Ausleihe(Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook) {
+    public Ausleihe(long id, Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook, String betriebssystem) {
+        this.id = id;
         this.auftragsdatum = auftragsdatum;
         this.antragssteller = antragssteller;
         this.mitarbeiter = mitarbeiter;
@@ -54,7 +63,10 @@ public class Ausleihe implements Serializable{
         this.bermerkung = bermerkung;
         this.status = status;
         this.leihNotebook = leihNotebook;
+        this.betriebssystem = betriebssystem;
     }
+
+    
 
     public Ausleihe() {
     }
@@ -62,6 +74,30 @@ public class Ausleihe implements Serializable{
     public static void saveAusleihe(Ausleihe aus){
         DAO.AusleiheDAO.createAusleihe(aus);
         
+    }
+    
+    public static Date getNextFreeDate(int dauer, int klasse){
+        List<Date> erg = DAO.AusleiheDAO.getNextFreeDate(dauer, klasse);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date ergebnis = new Date();
+        for(Iterator i = erg.iterator(); i.hasNext(); ){
+            Date zs = (Date) i.next();
+            if(ergebnis.after(zs)){
+                ergebnis = zs;
+            }else{
+                ergebnis = ergebnis;
+            }
+        }
+        String a = ergebnis.toString();
+        Date date = ergebnis;
+        try {
+            date = df.parse(a);
+        } catch (ParseException ex) {
+            Logger.getLogger(Ausleihe.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return date;
     }
 
     public long getId() {
@@ -143,6 +179,16 @@ public class Ausleihe implements Serializable{
     public void setLeihNotebook(Notebook leihNotebook) {
         this.leihNotebook = leihNotebook;
     }
+
+    public String getBetriebssystem() {
+        return betriebssystem;
+    }
+
+    public void setBetriebssystem(String betriebssystem) {
+        this.betriebssystem = betriebssystem;
+    }
+
+    
     
     
     
