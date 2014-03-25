@@ -24,6 +24,9 @@
         <hr>
         <p id="pic"><img src="pic/dh.jpg" alt="dh" />
     </div>
+    
+    <% session.invalidate(); %>
+    
 </head>
 
 <body>
@@ -44,7 +47,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    Der Logoutvorgang wurde erfolgreich abgeschlossen!                
+                    Der Logoutvorgang wurde erfolgreich abgeschlossen!
                 </div>
             </div>
 
