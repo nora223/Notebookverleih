@@ -25,15 +25,19 @@ public class Notebook implements Serializable{
     private String seriennummer;
     private int klasse;
     private int leihdauer;
-    private boolean verliehen;
+    //mögliche Eingaben: defekt, verliehen, bestätigungAustehend, verfügbar, inBearbeitung,
+    private String notebookStatus;
 
-    public Notebook(String name, String seriennummer, int klasse, int leihdauer, boolean verliehen) {
+    public Notebook(long id, String name, String seriennummer, int klasse, int leihdauer, String notebookStatus) {
+        this.id = id;
         this.name = name;
         this.seriennummer = seriennummer;
         this.klasse = klasse;
         this.leihdauer = leihdauer;
-        this.verliehen = verliehen;
+        this.notebookStatus = notebookStatus;
     }
+
+    
 
     public Notebook() {
     }
@@ -59,8 +63,7 @@ public class Notebook implements Serializable{
         Integer[] feld = DAO.NotebookDAO.countNotebooks();
         return feld; 
     }
-    
-        
+
     public long getId() {
         return id;
     }
@@ -101,14 +104,15 @@ public class Notebook implements Serializable{
         this.leihdauer = leihdauer;
     }
 
-    public boolean isVerliehen() {
-        return verliehen;
+    public String getNotebookStatus() {
+        return notebookStatus;
     }
 
-    public void setVerliehen(boolean verliehen) {
-        this.verliehen = verliehen;
+    public void setNotebookStatus(String notebookStatus) {
+        this.notebookStatus = notebookStatus;
     }
     
-    
+        
+   
     
 }
