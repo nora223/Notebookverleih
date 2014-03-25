@@ -38,16 +38,6 @@
                 }
             }
 
-            //document.getElementById("passwordError").style.visibility = 'visible';
-            //document.getElementById("passwordError").innerHTML = 'Password not match';
-            //temp = document.getElementByName("passwort");
-            //alert(temp);
-            /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
-             return true;
-             }else{
-             alert('Wrong Password!');
-             return false;
-             }*/
             var checkEntry = function(element) {
                 id = element.id;
                 //alert("checkentry" + id);
@@ -95,37 +85,6 @@
                 }
                 /*if (element.id == 't7') {checkMatrikel();}*/
                 return retValue;
-            }
-
-            var checkMatrikel = function(element) {
-                var Feld = "t7";
-                var Set = '1234567890';
-                var anzahl = 7;
-                var test = element.value;
-                var laenge = test.length;
-
-                if (laenge > 0) {
-                    for (i = 0; i <= laenge; i++) {
-                        zeichen = test.charAt(i);
-                        //alert(zeichen);
-                        if (Set.indexOf(zeichen) == -1) {
-                            alert('Bitte nur Ziffern eingeben');
-                            document.getElementById("t7").style.border = "solid red 2px";
-                            element.title = "Nur Zeichen erlaubt!";
-                            var g = "Eintrag erforderlich";
-                            element.innerHTML = g;
-                            element.focus();
-                            return false;
-                            i = test.length;
-                        }
-                    }
-                }
-                if (laenge < anzahl) {
-                    alert("Bitte" + anzahl + " Zeichen für die Matrikelnummer eintragen!");
-                    document.getElementById("t7").focus();
-                    return;
-                }
-
             }
 
             //Courser wird ins erste Feld gesetzt
