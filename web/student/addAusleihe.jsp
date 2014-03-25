@@ -70,12 +70,14 @@
 
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
+            
             for (Notebook element : notebooklist) {
 
                 if (element.getLeihdauer() == dauer) {
-
+                        out.println(klasse +"<--Klasse, element.klasse -->"+ element.getKlasse());
+                        out.println(dauer+"<---leihdauer, element.leihdauer-->"+element.getLeihdauer());
                     if (element.getKlasse() == klasse) {
-                        out.println(element.getId()+"bla");
+                        out.println(element.getId()+" bla");
                         notebook.setId(element.getId());
                         notebook.setKlasse(element.getKlasse());
                         notebook.setLeihdauer(element.getLeihdauer());
