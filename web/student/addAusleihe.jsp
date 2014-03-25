@@ -16,6 +16,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Notebookausleihe gespeichert</title>
+        
+         <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Student")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+        %>
+        
     </head>
     <body>
         <div>
@@ -41,7 +52,6 @@
 
             String bs = request.getParameter("bs");
             String bemerkung = request.getParameter("bemerkung");
-            out.println(username + passwort);
 
             List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
             Dozent dozent = new Dozent();
@@ -55,24 +65,17 @@
                     dozent.setVorname(element.getVorname());
                     dozent.setId(element.getId());
                     dozent.setName(element.getName());
-
                 }
-
             }
 
-            out.println(dauer +""+ klasse);
-            System.out.println(dauer +""+ klasse);
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
             for (Notebook element : notebooklist) {
-                
-                
+
                 if (element.getLeihdauer() == dauer) {
-                   
+
                     if (element.getKlasse() == klasse) {
-                      
-                        
-                        
+                        out.println(element.getId()+"bla");
                         notebook.setId(element.getId());
                         notebook.setKlasse(element.getKlasse());
                         notebook.setLeihdauer(element.getLeihdauer());
@@ -82,7 +85,6 @@
                         break;
                     }
                 }
-
             }
 
             List<Student> listStudent = BL.Student.getStudentList();
@@ -109,21 +111,19 @@
 
             }
 
-           
             Ausleihe a = new Ausleihe();
 
             a.setBermerkung(bemerkung);
 
             a.setBetriebssystem(bs);
 
-            //a.setLeihNotebook(notebook);
-
+          //  a.setLeihNotebook(notebook);
             a.setDauer(dauer);
 
             a.setStatus(
                     "Verliehen");
 
-            a.setMitarbeiter(dozent); 
+            a.setMitarbeiter(dozent);
             a.setAntragssteller(student);
 
             BL.Ausleihe.saveAusleihe(a);

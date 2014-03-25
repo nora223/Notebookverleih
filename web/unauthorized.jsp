@@ -1,6 +1,6 @@
 <%-- 
-    Document   : loginError
-    Created on : 20.03.2014, 13:24:50
+    Document   : unauthorized
+    Created on : 23.03.2014, 14:58:42
     Author     : Boss
 --%>
 
@@ -44,8 +44,7 @@
             
             <div class="col-md-6">
                 <div class="area">
-                    <h3>Login leider nicht erfolgreich!</h3><br>
-                    Vertippt? Oder haben Sie Ihr <a href=".../forgotton_PW.jsp" >Passwort vergessen?</a>                  
+                    <h3>Sie sind nicht autorisiert diesen Bereich einzusehen!</h3>                 
                 </div>
             </div>            
             
@@ -54,4 +53,3 @@
         
     </body>
 </html>
-
