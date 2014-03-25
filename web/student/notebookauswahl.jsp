@@ -1,4 +1,5 @@
- <%@page import="BL.Dozent"%>
+ <%@page import="BL.Ausleihe"%>
+<%@page import="BL.Dozent"%>
 <%@page import="java.util.List"%>
 <%-- 
     Document   : notebookauswahl
@@ -32,6 +33,16 @@
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
         }
+        
+        
+        String s = session.getAttribute("id").toString();
+        long id = Long.parseLong(s);
+        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
+        for(Ausleihe element : listAusleihe){
+            
+            
+        }
+        
         %>
    
     </head>
@@ -43,10 +54,10 @@
                     <a href="#" class="list-group-item active" >
                     NAVIGATION
                     </a>
-                    <a href="student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
-                    <a href="uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-                    <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
+                    <a href=".../student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href=".../notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
+                    <a href=".../uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href=".../account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
             

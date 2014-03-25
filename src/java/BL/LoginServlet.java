@@ -71,13 +71,14 @@ public class LoginServlet extends HttpServlet {
                     hit = true;
                     break;
                 }
-                if(i >= listStudent.lastIndexOf(element)){
+                if(i >= listStudent.size()){
                     System.out.print("Student: Passwort falsch!");
                     break;
                 }
                 if(i <= listStudent.size()){
                     i++;
                 }
+                
             }
         }
         
@@ -95,7 +96,7 @@ public class LoginServlet extends HttpServlet {
                     hit = true;
                     break;
                 }
-                if(x >= listDozent.lastIndexOf(element)){
+                if(x >= listDozent.size()){
                     System.out.print("Dozent: Passwort falsch!");
                     break;
                 }
@@ -119,7 +120,7 @@ public class LoginServlet extends HttpServlet {
                      hit = true;
                      break;
                 }
-                if(y >= listAdmin.lastIndexOf(element)){
+                if(y >= listAdmin.size()){
                     System.out.print("Admin: Passwort falsch!");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/loginError.jsp" );
                     dispatcher.forward ( request, response );
