@@ -1,4 +1,5 @@
- <%@page import="BL.Dozent"%>
+
+<%@page import="BL.Dozent"%>
 <%@page import="java.util.List"%>
 <%-- 
     Document   : notebookauswahl
