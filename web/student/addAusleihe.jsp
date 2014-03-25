@@ -19,6 +19,8 @@
         
          <%
         String t = session.getAttribute("typ").toString();
+        String i = session.getAttribute("id").toString();
+        long id = Long.parseLong(i);
         if (t.equals("Student")){
            
         }else{
@@ -39,8 +41,7 @@
 
         <%
 
-            String username = request.getParameter("username");
-            String passwort = request.getParameter("passwort");
+            
             String name = request.getParameter("dozent");
 
             String strklasse = request.getParameter("klasse");
@@ -70,12 +71,14 @@
 
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
+            
             for (Notebook element : notebooklist) {
 
                 if (element.getLeihdauer() == dauer) {
-
+                        out.println(klasse +"<--Klasse, element.klasse -->"+ element.getKlasse());
+                        out.println(dauer+"<---leihdauer, element.leihdauer-->"+element.getLeihdauer());
                     if (element.getKlasse() == klasse) {
-                        out.println(element.getId()+"bla");
+                        out.println(element.getId()+" bla");
                         notebook.setId(element.getId());
                         notebook.setKlasse(element.getKlasse());
                         notebook.setLeihdauer(element.getLeihdauer());
@@ -93,9 +96,8 @@
             Student student = new Student();
 
             for (Student element : listStudent) {
-                if (username.equals(element.getUsername())) {
-                    if (passwort.equals(element.getPasswort())) {
-
+                if (id == element.getId()) {
+                    
                         student.seteMail(element.geteMail());
                         student.setGebDat(element.getGebDat());
                         student.setGeschlecht(element.getGeschlecht());
@@ -107,7 +109,7 @@
                         student.setUsername(element.getUsername());
                         student.setVorname(element.getVorname());
 
-                    }
+                    
                 }
 
             }

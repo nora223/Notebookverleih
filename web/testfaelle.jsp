@@ -16,6 +16,9 @@
          <form action="testfall.jsp" methode="POST">
          <p><input name="testbutton1" type="submit" value="Test Tabellen aus Datenbank"></p>
          </form>
+        
+        <a href="testfaelle_dozenten.jsp">Dozenten</a>
+        <a href="testfall_student.jsp">Student</a>
         <h1>Testfälle Notebook von Nora </h1>
         <form action="testfall_asdf.jsp" methode="POST">
             <input name="testbutton2" type="submit" value="Test Count"></p>

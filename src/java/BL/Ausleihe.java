@@ -100,6 +100,13 @@ public class Ausleihe implements Serializable{
         
         return date;
     }
+    
+    public static List<Ausleihe> getListAusleihe(){
+        
+        List<Ausleihe> listAusleihe = DAO.AusleiheDAO.getAusleiheListDAO();
+        
+        return listAusleihe;
+    }
 
     public static List<Ausleihe> getAusleiheList (){
         List<Ausleihe> ausleihelist = DAO.AusleiheDAO.getAusleiheListDAO();
