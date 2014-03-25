@@ -28,8 +28,8 @@ public class Notebook implements Serializable{
     //mögliche Eingaben: defekt, verliehen, bestätigungAustehend, verfügbar, inBearbeitung,
     private String notebookStatus;
 
-    public Notebook(long id, String name, String seriennummer, int klasse, int leihdauer, String notebookStatus) {
-        this.id = id;
+    public Notebook(String name, String seriennummer, int klasse, int leihdauer, String notebookStatus) {
+        
         this.name = name;
         this.seriennummer = seriennummer;
         this.klasse = klasse;

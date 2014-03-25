@@ -86,7 +86,7 @@
     n.setSeriennummer("1");
     n.setLeihdauer(7);
     n.setKlasse(2);
-    n.setVerliehen(true);
+    n.setNotebookStatus("verügbar");
     Notebook.saveNotebook(n);
 
     Notebook nn = new Notebook();
@@ -94,7 +94,7 @@
     nn.setSeriennummer("2");
     nn.setLeihdauer(12);
     nn.setKlasse(3);
-    nn.setVerliehen(false);
+    nn.setNotebookStatus("verügbar");
     Notebook.saveNotebook(nn);
 
     Student.getStudentList();
