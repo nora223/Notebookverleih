@@ -2,7 +2,6 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.text.DateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@page import="java.util.List"%>
 <%@page import="BL.Administrator" %>
 <%@page import="DAO.AdministratorDAO" %>

@@ -90,7 +90,7 @@
 
                 </table>
                 <footer class="footer">
-                    <a href="addAdmin.jsp"><button class="blue">Hinzufügen</button></a>
+                    <a href="addNotebook.jsp"><button class="blue">Hinzufügen</button></a>
                     <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'">
                 </footer>
             </div>
