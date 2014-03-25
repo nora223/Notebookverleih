@@ -13,46 +13,48 @@
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <link rel="stylesheet" href =".../calender/3-dynamically-created/tcal.css" type ="text/css" />
         <script type="text/javascript" src=".../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
-        <script type="text/javascript">
+             <script type="text/javascript">
 
             var validatePassword = function() {
-                alert("PW");
-
+                //alert("PW");
                 // document.forms.adr.passwort1 
+                //var passwort = document.getElementById("t4").value;
                 var passwort = document.getElementById("t4").value;
                 var passwort2 = document.getElementById("t5").value;
-                alert(passwort);
-                alert(passwort2);
-                if (!passwort.value == passwort2.value) {
+                //alert(passwort);
+                //alert(passwort2);
+                if (passwort == passwort2) {
                     // Passwörter stimmen nicht überein
-                    alert("password ");
+                    //alert("true");
+                } else {
+                    //alert("password ");
                     document.getElementById("passwordError").style.visibility = 'visible';
-                    document.getElementById("passwordError").innerHTML = 'Password not match';
-                    retValue = false;
+                    document.getElementById("passwordError").innerHTML = '<p style="text-align:center; color: red"><b>Passwort stimmt nicht überein!</b></p>';
+                    document.getElementById("t4").style.border = "solid red 2px";
+                    document.getElementById("t5").style.border = "solid red 2px";
+                    return false;
                 }
-                //document.getElementById("passwordError").style.visibility = 'visible';
-                //document.getElementById("passwordError").innerHTML = 'Password not match';
-                //temp = document.getElementByName("passwort");
-                //alert(temp);
-                /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
-                 return true;
-                 }else{
-                 alert('Wrong Password!');
-                 return false;
-                 }*/
             }
 
+            //document.getElementById("passwordError").style.visibility = 'visible';
+            //document.getElementById("passwordError").innerHTML = 'Password not match';
+            //temp = document.getElementByName("passwort");
+            //alert(temp);
+            /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
+             return true;
+             }else{
+             alert('Wrong Password!');
+             return false;
+             }*/
             var checkEntry = function(element) {
-                //id = element.id;
+                id = element.id;
                 //alert("checkentry" + id);
                 temp = document.getElementById(id).value.length;
                 //alert (temp);
-                //sofern die Länger 10 ist also die Anzahl der Stellen bei der Datumsangabe, welche bei Value vorgegeben wurden, eigentlich ...
+                //sofern value DD.MM.YYYY ist und das derzeitige element t6 ist, dann Roter Rand!!
 
-                if (element.value == "dd.mm.YYYY") {
-                    //
-                }
-                if ((document.getElementById(id) == "t6") && (document.getElementById(id).value.length == 11)) {
+                /*if (element.value == "dd.mm.YYYY") { // }*/
+                if ((document.getElementById(id) == "t6") && (document.getElementById(id).value == "DD.MM.YYYY")) {
                     alert("t6");
                     document.getElementById(id).style.border = "solid red 2px";
                     document.getElementById(id).title = "Eintrag erforderlich!";
@@ -72,23 +74,24 @@
                 //Prüfung des Form-Tags ob die Felder befüllt wurden
                 retValue = true;
                 //temp = document.adr.elements.length;
-                //alert(temp);
                 // document.adr.elements.length gibt die anzahl der Elemente die in diesem Form-Tag vorhanden sind.
                 for (var i = 0; i < document.adr.elements.length; i++) {
                     element = document.adr.elements[i];
                     // bei diesen ID's springt das Prog in die Methode CheckEntry, die ID's müssen unterschiedlich sein damit dem Programm die unterschiede bekannt werden, sonst behandelt es es nur als eins
                     if ((element.id == 't') || (element.id == 't2') || (element.id == 't3') || (element.id == 't4') || (element.id == 't5') || (element.id == 't6') || (element.id == 't7') || (element.id == 't8')) {
+                        checkEntry(element);
                         if (checkEntry(element) == false) {
+                            //alert("temp");
                             retValue = false;
                         }
                     }
-                    alert("for");
                     //retValue = validatePassword();
                 }
-
-                /*if (element.id == 't7') {
-                    checkMatrikel();
-                }*/
+                validatePassword();
+                if (validatePassword() == false) {
+                    retValue = false;
+                }
+                /*if (element.id == 't7') {checkMatrikel();}*/
                 return retValue;
             }
 
@@ -105,7 +108,7 @@
                         //alert(zeichen);
                         if (Set.indexOf(zeichen) == -1) {
                             alert('Bitte nur Ziffern eingeben');
-                            element.style.border = "solid red 2px";
+                            document.getElementById("t7").style.border = "solid red 2px";
                             element.title = "Nur Zeichen erlaubt!";
                             var g = "Eintrag erforderlich";
                             element.innerHTML = g;

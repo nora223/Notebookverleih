@@ -25,7 +25,7 @@
                 //alert(passwort2);
                 if (passwort == passwort2) {
                     // Passwörter stimmen nicht überein
-                   //alert("true");
+                    //alert("true");
                 } else {
                     //alert("password ");
                     document.getElementById("passwordError").style.visibility = 'visible';
@@ -35,7 +35,7 @@
                     return false;
                 }
             }
-            
+
             //document.getElementById("passwordError").style.visibility = 'visible';
             //document.getElementById("passwordError").innerHTML = 'Password not match';
             //temp = document.getElementByName("passwort");
@@ -46,8 +46,6 @@
              alert('Wrong Password!');
              return false;
              }*/
-            
-
             var checkEntry = function(element) {
                 id = element.id;
                 //alert("checkentry" + id);
@@ -86,9 +84,7 @@
                             //alert("temp");
                             retValue = false;
                         }
-
                     }
-
                     //retValue = validatePassword();
                 }
                 validatePassword();

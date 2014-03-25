@@ -1,14 +1,17 @@
 <%-- 
-    Document   : savestudent
+    Document   : saveAdmin
     Created on : 13.02.2014, 10:57:56
-    Author     : Tino
+    Author     : CaReich
 --%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@ page import="BL.*" 
-         import="java.util.*"
-         import="java.text.DateFormat"
+
+         <%@page import="java.text.SimpleDateFormat"%>
+        <%@page import="java.util.Date"%>
+        <%@page import="java.text.DateFormat"%>
+        <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+        <%@page import="java.util.List"%>
+        <%@page import="BL.Administrator" %>
+        <%@page import="DAO.AdministratorDAO" %>
 
          %>
 <html>
@@ -43,14 +46,14 @@
         String passwort = request.getParameter("passwort");
         String username = request.getParameter("e_mail");
 
-        Dozent s = new Dozent(geschlecht, vorname, nachname, email, date, passwort, username);
-        Dozent.saveDozent(s);
+        Administrator a = new Administrator(geschlecht, vorname, nachname, email, date, passwort, username);
+        Administrator.saveAdministrator(a);
         //Alexey
         //String messageContent = BL.Mail_arts.Dozent_welcome(s);
         //BL.Mail.eMailcreate(messageContent, s.geteMail());
 %>
     <div>
-        <p>Der Dozent 
+        <p>Der Administrator
             <% out.println(vorname);
                 out.println(nachname);
             %>
