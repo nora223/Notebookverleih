@@ -49,7 +49,7 @@
                 %>
 
                 <div id="login">               
-                    <form action="addNotebook.jsp" methode="POST">
+                    <form action="saveChangeNB.jsp" methode="POST">
 
                         <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
                         <p>Name<br><input name="name" type="text" value="<%=name%>" size ="30" maxlength="40"></p>

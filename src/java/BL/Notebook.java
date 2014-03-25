@@ -43,6 +43,11 @@ public class Notebook implements Serializable{
         DAO.NotebookDAO.deleteNotebookByIDDAO(id);
     }
     
+    public static List<Notebook> getNotebookList (){
+        List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
+        return notebooklist;
+    }
+    
     
     
     public static void saveNotebook(Notebook n){
@@ -55,6 +60,7 @@ public class Notebook implements Serializable{
         return feld; 
     }
     
+        
     public long getId() {
         return id;
     }

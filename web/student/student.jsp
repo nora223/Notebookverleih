@@ -23,26 +23,19 @@
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
+   
+    <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Student")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+   
     </head>
     <body>
-        
-        <%
-        try{
-        String email = request.getParameter("e_mail");
-        String passwort1 = request.getParameter("passwort");
-        
-        boolean erg = BL.Student.loginStudent(email, passwort1);
-        out.print(erg);    
-            if (erg){
-                 
-            }else{
-                out.print("Passwort falsch");   
-              }
-        } catch(Exception e){
-            out.print("Fehler student.jsp");
-            
-        }
-        %>
         
         <div> <!-- Navigationsbereich Menu-->
         <div  class="row">
@@ -60,7 +53,14 @@
             
             <div class="col-md-8">
                 <div class="area">
-                    <h1> Willkommen </h1>    
+                    <h1> Willkommen </h1>
+                    
+                    <%
+                        out.println("ID des Users: " + session.getAttribute("id").toString());            
+                        out.println("Typ des Users: " + session.getAttribute("typ").toString());
+                        
+                    %>
+                    
                 </div>
             </div>
         </div>    

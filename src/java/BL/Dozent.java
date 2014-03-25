@@ -62,6 +62,8 @@ public class Dozent implements Serializable{
         
     }
     
+    
+    
     public static void deleteDozentByID(long id){
         
         DAO.DozentDAO.deleteDozentByIDDAO(id);

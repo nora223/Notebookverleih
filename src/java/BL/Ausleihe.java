@@ -50,8 +50,10 @@ public class Ausleihe implements Serializable{
     private String status;
     @OneToOne
     private Notebook leihNotebook;
+    private String betriebssystem;
 
-    public Ausleihe(Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook) {
+    public Ausleihe(long id, Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook, String betriebssystem) {
+        this.id = id;
         this.auftragsdatum = auftragsdatum;
         this.antragssteller = antragssteller;
         this.mitarbeiter = mitarbeiter;
@@ -61,7 +63,10 @@ public class Ausleihe implements Serializable{
         this.bermerkung = bermerkung;
         this.status = status;
         this.leihNotebook = leihNotebook;
+        this.betriebssystem = betriebssystem;
     }
+
+    
 
     public Ausleihe() {
     }
@@ -70,6 +75,7 @@ public class Ausleihe implements Serializable{
         DAO.AusleiheDAO.createAusleihe(aus);
         
     }
+    
     
     public static Date getNextFreeDate(int dauer, int klasse){
         List<Date> erg = DAO.AusleiheDAO.getNextFreeDate(dauer, klasse);
@@ -174,6 +180,16 @@ public class Ausleihe implements Serializable{
     public void setLeihNotebook(Notebook leihNotebook) {
         this.leihNotebook = leihNotebook;
     }
+
+    public String getBetriebssystem() {
+        return betriebssystem;
+    }
+
+    public void setBetriebssystem(String betriebssystem) {
+        this.betriebssystem = betriebssystem;
+    }
+
+    
     
     
     

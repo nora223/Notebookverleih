@@ -24,8 +24,8 @@
     </div>
 </head>
 <body>
-    <div  class="row">
-        <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-3">
             <div class="list-group">
                 <a href="#" class="list-group-item active" >
                     NAVIGATION
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="col-md-8">
+            <div class="col-md-8">
             <div>
                 <h1> Administratorverwaltung </h1>
                 <p>Übersicht aller registrierten Administratoren</p>
@@ -74,22 +74,15 @@
                                 String eMail = element.geteMail();
                                 Date geburtsdatum = element.getGebDat(); 
                                 %>
-                            
-                            
                             <td><%=id%></td>
                             <td><%=name%></td>
                             <td><%=vorname%></td>
                             <td><%=geschlecht%></td>
                             <td><%=eMail%></td>
                             <td><%=geburtsdatum%></td>
-                            
-                            
-                           <%-- <td><a href="changeStudent.jsp"><button class="blue">Bearbeiten</button></a></td>
-                            <td><a href="PW_back.jsp"><button class="blue">PW reset</button></a></td>
-                            <td><input class="white" name="button" type="submit" value="Löschen"></td> --%>
-                            
-                            <td> <a href="changeAdmin.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a></td>
-                            <td><a href="deleteAdmin.jsp?id=<%=id%>">Löschen</td> 
+
+                           <td><a href="changeAdmin.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a></td>
+                           <td><a href="deleteAdmin.jsp?id=<%=id%>">Löschen</td> 
                         </tr>
                         <%}%>
 
@@ -98,7 +91,7 @@
                 </table>
 
                 <footer class="footer">
-                    <a href="addStudent.jsp"><button class="blue">Hinzufügen</button></a>
+                    <a href="addAdmin.jsp"><button class="blue">Hinzufügen</button></a>
                     <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'">
                 </footer>
             </div>
