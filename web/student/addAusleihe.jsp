@@ -19,6 +19,8 @@
         
          <%
         String t = session.getAttribute("typ").toString();
+        String i = session.getAttribute("id").toString();
+        long id = Long.parseLong(i);
         if (t.equals("Student")){
            
         }else{
@@ -39,8 +41,7 @@
 
         <%
 
-            String username = request.getParameter("username");
-            String passwort = request.getParameter("passwort");
+            
             String name = request.getParameter("dozent");
 
             String strklasse = request.getParameter("klasse");
@@ -104,9 +105,8 @@
             Student student = new Student();
 
             for (Student element : listStudent) {
-                if (username.equals(element.getUsername())) {
-                    if (passwort.equals(element.getPasswort())) {
-
+                if (id == element.getId()) {
+                    
                         student.seteMail(element.geteMail());
                         student.setGebDat(element.getGebDat());
                         student.setGeschlecht(element.getGeschlecht());
@@ -118,7 +118,7 @@
                         student.setUsername(element.getUsername());
                         student.setVorname(element.getVorname());
 
-                    }
+                    
                 }
 
             }
