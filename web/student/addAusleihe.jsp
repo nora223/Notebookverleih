@@ -41,7 +41,6 @@
 
             String bs = request.getParameter("bs");
             String bemerkung = request.getParameter("bemerkung");
-            out.println(username + passwort);
 
             List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
             Dozent dozent = new Dozent();
@@ -55,25 +54,17 @@
                     dozent.setVorname(element.getVorname());
                     dozent.setId(element.getId());
                     dozent.setName(element.getName());
-
                 }
-
             }
 
-            out.println(dauer + "" + klasse);
-            System.out.println(dauer + "" + klasse);
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
             for (Notebook element : notebooklist) {
 
-                
-                out.println(element.getKlasse()+" hallo asdfasdfasdfasdf+ klasse"+ klasse);
                 if (element.getLeihdauer() == dauer) {
-                    out.println(dauer+ " ist gleich wie "+ element.getLeihdauer());
 
                     if (element.getKlasse() == klasse) {
-                        out.println(klasse + " FICKEN "+ element.getKlasse());
-
+                        out.println(element.getId()+"bla");
                         notebook.setId(element.getId());
                         notebook.setKlasse(element.getKlasse());
                         notebook.setLeihdauer(element.getLeihdauer());
@@ -83,7 +74,6 @@
                         break;
                     }
                 }
-
             }
 
             List<Student> listStudent = BL.Student.getStudentList();
@@ -116,7 +106,7 @@
 
             a.setBetriebssystem(bs);
 
-            //a.setLeihNotebook(notebook);
+          //  a.setLeihNotebook(notebook);
             a.setDauer(dauer);
 
             a.setStatus(
