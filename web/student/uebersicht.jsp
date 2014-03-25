@@ -40,10 +40,10 @@
                     <a href="#" class="list-group-item active" >
                     NAVIGATION
                     </a>
-                    <a href="student.jsp" class="list-group-item">Startseite</a>
-                    <a href="notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
-                    <a href="uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-                    <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
+                    <a href=".../student/student.jsp" class="list-group-item">Startseite</a>
+                    <a href=".../student/notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
+                    <a href=".../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href=".../student/account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
             

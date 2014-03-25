@@ -29,6 +29,7 @@ public class AusleiheDAO {
         transaction.commit();    
         
     }
+     
 public static List<Ausleihe> getAusleiheListDAO() {
 
       Session session = HibernateUtil.getSessionFactory().getCurrentSession();
