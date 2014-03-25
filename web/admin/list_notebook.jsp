@@ -71,16 +71,16 @@
                                     String seriennummer = element.getSeriennummer();
                                     int klasse = element.getKlasse();
                                     int leihdauer = element.getLeihdauer();
-                                    boolean verliehen = element.isVerliehen();
+                                    String status = element.getNotebookStatus();
                             %>
                             <td><%=id%></td>
                             <td><%=name%></td>
                             <td><%=seriennummer%></td>
                             <td><%=klasse%></td>
                             <td><%=leihdauer%></td>
-                            <td><%=verliehen%></td>
+                            <td><%=status%></td>
 
-                            <td><a href="changeNotebook.jsp?id=<%=id%>&name=<%=name%>&seriennummer=<%=seriennummer%>&klasse=<%=klasse%>&leihdauer=<%=leihdauer%>&verliehen=<%=verliehen%>" class="blue">Bearbeiten</a></td>
+                            <td><a href="changeNotebook.jsp?id=<%=id%>&name=<%=name%>&seriennummer=<%=seriennummer%>&klasse=<%=klasse%>&leihdauer=<%=leihdauer%>&verliehen=<%=status%>" class="blue">Bearbeiten</a></td>
                             <!--<td><a href ="ChangeAusleihe.jsp">Bearbeiten</td>-->
                             <td><a href="deleteNotebook.jsp?id=<%=id%>">Löschen</td> 
                         </tr>

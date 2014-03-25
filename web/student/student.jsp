@@ -54,13 +54,6 @@
             <div class="col-md-8">
                 <div class="area">
                     <h1> Willkommen </h1>
-                    
-                    <%
-                        out.println("ID des Users: " + session.getAttribute("id").toString());            
-                        out.println("Typ des Users: " + session.getAttribute("typ").toString());
-                        
-                    %>
-                    
                 </div>
             </div>
         </div>    

@@ -28,6 +28,12 @@
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
         }
+        
+        
+        String i = session.getAttribute("id").toString();
+        long id = Long.parseLong(i);
+        
+        
     %>
     
 </head>

@@ -31,7 +31,7 @@ public class Ausleihe implements Serializable{
     @GeneratedValue
     private long id;
     
-     @Temporal (javax.persistence.TemporalType.DATE)
+    @Temporal (javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
     @OneToOne
     private Student antragssteller;
