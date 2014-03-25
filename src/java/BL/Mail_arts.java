@@ -102,7 +102,7 @@ public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Studen
 +"<p>Bitte Beachten Sie: Verschiebungen aufgrund von verfrühter Rückgabe sind leider nicht auszuschließen</p><br>"        
 +"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
 +"<p>Bitte prüfen Sie den Status unter:</p><br>"
-+" <li><a href="+"http://localhost:8080/Notebookverleih/index.jsp"+">"+"Meine Ausleihen"+"</a></li>";
++" <li><a href="+"http://localhost:8080/Notebookverleih/admin.jsp"+">"+"Meine Ausleihen"+"</a></li>";
   return messageContent;
 }
 
