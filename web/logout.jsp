@@ -69,7 +69,7 @@
                     <li><a href="admin/admin.jsp">Admin</a></li>
                     <li><a href="testfaelle.jsp">Testfälle!</a></li>
                     <li><a href="testfaelle_alexey.jsp">Testfälle_Aleksey!</a></li>
-                    <li><a href="student/student.jsp">Student</a></li>
+                    <!--<li><a href="student/student.jsp">Student</a></li>-->
                     <li><a href="dozent/dozent.jsp">Dozent</a></li>
                 </div> 
             </div>

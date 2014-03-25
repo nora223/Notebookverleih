@@ -80,10 +80,9 @@
                     //retValue = validatePassword();
                 }
                 validatePassword();
-                if (validatePassword() == false) {
-                    retValue = false;
-                }
-                /*if (element.id == 't7') {checkMatrikel();}*/
+                    if (validatePassword() == false) {
+                        retValue = false;
+                    }
                 return retValue;
             }
 
@@ -99,7 +98,6 @@
                     }
                 }
             }
-
         </script>
          
     <div>

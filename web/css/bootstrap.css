@@ -10,7 +10,7 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 10%;
   -ms-text-size-adjust: 10%;
-  width: 300
+  width: 100em;
 }
 
 body {
@@ -28,7 +28,7 @@ hr {
    background-color: #ec1501; 
    height: 21px; 
    border: #ec1501;
-   width: 190%;
+   width: 100%;
    margin: 0px 0px 0px 15px;
    -moz-box-sizing: content-box;
    box-sizing: content-box;
@@ -102,7 +102,7 @@ div form p
 }
 
 #logout{
-    color: black;
+    color: #cccccc;
     text-align: right;
 }
 
