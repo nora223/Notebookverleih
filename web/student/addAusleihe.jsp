@@ -80,7 +80,8 @@
                         notebook.setKlasse(element.getKlasse());
                         notebook.setLeihdauer(element.getLeihdauer());
                         notebook.setName(element.getName());
-                        notebook.setVerliehen(true);
+                        String notebookStatus = "bestätigungAusstehend";
+                        notebook.setNotebookStatus(notebookStatus);
                         notebook.setSeriennummer(element.getSeriennummer());
                         break;
                     }
@@ -117,14 +118,15 @@
 
             a.setBetriebssystem(bs);
 
-          //  a.setLeihNotebook(notebook);
+            a.setLeihNotebook(notebook);
             a.setDauer(dauer);
 
             a.setStatus(
-                    "Verliehen");
+                    "bestätigungAusstehend");
 
             a.setMitarbeiter(dozent);
             a.setAntragssteller(student);
+            
 
             BL.Ausleihe.saveAusleihe(a);
 
