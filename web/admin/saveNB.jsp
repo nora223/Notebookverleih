@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 11.02.2014, 13:30:04
-    Author     : Bitte eintragen!
+    Author     : CaReich
 --%>
 
 <%@page import="java.text.SimpleDateFormat"%>
