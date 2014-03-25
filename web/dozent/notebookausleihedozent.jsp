@@ -21,6 +21,17 @@
             <hr>
             <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
            </div>
+   
+   <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Dozent")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+   
     </head>
     <body>
                     <div> <!-- Navigationsbereich Menu-->
@@ -39,6 +50,11 @@
             <div class="col-md-8">
                 <div class="area">
                     
+                    <%
+                        String s = session.getAttribute("id").toString();
+                        long l = Long.parseLong(s);
+                        out.println("ID des Dozenten: " + l);
+                    %>
               
                     Diese Anfragen m&uuml;ssen noch best&auml;tigt oder abgelehnt werden:
                     <!-- Tabelle -->

@@ -19,6 +19,17 @@
         <hr>
         <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
     </div>
+    
+     <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Student")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+    
 </head>
 <body>
     <%

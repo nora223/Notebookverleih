@@ -16,6 +16,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Notebookausleihe gespeichert</title>
+        
+         <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Student")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+        %>
+        
     </head>
     <body>
         <div>
