@@ -55,7 +55,7 @@
         Integer k3ld90 = feld[10];
         Integer k3ld180 = feld[11];
         
-        int leihdauer = 5;
+        int leihdauer = 0;
         
         int klasse= 0 ; 
         
@@ -114,7 +114,8 @@
                                           
                                         }
                                         
-                                        
+                                        leihdauer = 30;
+                                        klasse =  1;
                                                                 
 
                                         %></button></a> 

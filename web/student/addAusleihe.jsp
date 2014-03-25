@@ -46,7 +46,7 @@
             String strklasse = request.getParameter("klasse");
 
             int klasse = Integer.parseInt(strklasse);
-
+            
             String strdauer = request.getParameter("dauer");
             int dauer = Integer.parseInt(strdauer);
 
@@ -67,14 +67,25 @@
                     dozent.setName(element.getName());
                 }
             }
-
+            
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
+            int i = 1;
             for (Notebook element : notebooklist) {
+                
+                out.println("Dauer:"+dauer);
+                        out.println("Dauer aus der Liste"+ element.getLeihdauer());
+                        out.println("Klasse:"+klasse);
+                        out.println("Klasse aus der Liste"+element.getKlasse());
 
-                if (element.getLeihdauer() == dauer) {
-
-                    if (element.getKlasse() == klasse) {
+                if (element.getLeihdauer() == dauer && element.getKlasse() == klasse) {
+                    out.print(i +"**************");
+                        out.println("Dauer:"+dauer);
+                        out.println("Dauer aus der Liste"+ element.getLeihdauer());
+                        out.println("Klasse:"+klasse);
+                        out.println("Klasse aus der Liste"+element.getKlasse());
+                        i++;
+                    
                         out.println(element.getId()+"bla");
                         notebook.setId(element.getId());
                         notebook.setKlasse(element.getKlasse());
@@ -84,7 +95,7 @@
                         notebook.setNotebookStatus(notebookStatus);
                         notebook.setSeriennummer(element.getSeriennummer());
                         break;
-                    }
+                    
                 }
             }
 
