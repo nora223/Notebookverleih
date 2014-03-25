@@ -60,19 +60,20 @@
 
             }
 
-            out.println(dauer +""+ klasse);
-            System.out.println(dauer +""+ klasse);
+            out.println(dauer + "" + klasse);
+            System.out.println(dauer + "" + klasse);
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
             for (Notebook element : notebooklist) {
+
                 
-                
+                out.println(element.getKlasse()+" hallo asdfasdfasdfasdf+ klasse"+ klasse);
                 if (element.getLeihdauer() == dauer) {
-                   
+                    out.println(dauer+ " ist gleich wie "+ element.getLeihdauer());
+
                     if (element.getKlasse() == klasse) {
-                      
-                        
-                        
+                        out.println(klasse + " FICKEN "+ element.getKlasse());
+
                         notebook.setId(element.getId());
                         notebook.setKlasse(element.getKlasse());
                         notebook.setLeihdauer(element.getLeihdauer());
@@ -109,7 +110,6 @@
 
             }
 
-           
             Ausleihe a = new Ausleihe();
 
             a.setBermerkung(bemerkung);
@@ -117,13 +117,12 @@
             a.setBetriebssystem(bs);
 
             //a.setLeihNotebook(notebook);
-
             a.setDauer(dauer);
 
             a.setStatus(
                     "Verliehen");
 
-            a.setMitarbeiter(dozent); 
+            a.setMitarbeiter(dozent);
             a.setAntragssteller(student);
 
             BL.Ausleihe.saveAusleihe(a);
