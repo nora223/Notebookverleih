@@ -4,6 +4,9 @@
     Author     : cara123
 --%>
 
+<%@page import="BL.Student"%>
+<%@page import="java.util.List"%>
+<%@page import="BL.Ausleihe"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,10 +32,27 @@
             dispatcher.forward ( request, response );
         }
         
+        String s = session.getAttribute("id").toString();
+        long i = Long.parseLong(s);
         
-        String i = session.getAttribute("id").toString();
-        long id = Long.parseLong(i);
-        
+        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
+        for(Ausleihe element : listAusleihe){
+            int n = 0;
+            Student neu = new Student();
+            neu = element.getAntragssteller();
+            if(i == neu.getId()){
+                out.println("Student hat schon ein Notebook!");
+                break;
+            }
+            if(n >= listAusleihe.size()){
+                    out.println("Student hat noch kein Notebook ausgeliehen");
+                    break;
+                }
+            if(n <= listAusleihe.size()){
+                    n++;
+            }
+            
+        }
         
     %>
     

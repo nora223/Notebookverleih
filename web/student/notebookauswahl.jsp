@@ -34,15 +34,6 @@
             dispatcher.forward ( request, response );
         }
         
-        
-        String s = session.getAttribute("id").toString();
-        long id = Long.parseLong(s);
-        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
-        for(Ausleihe element : listAusleihe){
-            
-            
-        }
-        
         %>
    
     </head>
