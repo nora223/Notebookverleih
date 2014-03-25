@@ -71,7 +71,7 @@
             
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
-            int i = 1;
+           
             for (Notebook element : notebooklist) {
                 
                 out.println("Dauer:"+dauer);
@@ -85,7 +85,7 @@
                         out.println("Dauer aus der Liste"+ element.getLeihdauer());
                         out.println("Klasse:"+klasse);
                         out.println("Klasse aus der Liste"+element.getKlasse());
-                        i++;
+                        
                     
                         out.println(element.getId()+"bla");
                         notebook.setId(element.getId());

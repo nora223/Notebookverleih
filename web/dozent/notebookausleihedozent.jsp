@@ -68,7 +68,8 @@
                             <th>ID</th>
                             <th>Vorname</th>
                             <th>Nachname</th>
-                            <th>Leidauer</th>
+                            <th>Kurs</th>
+                            <th>Leihdauer</th>
                             <th>Notebookkategorie</th>
                           </tr>
                         </thead>
@@ -98,16 +99,8 @@
                                         <td><%=kategorie%></td>
                                         
                                    
-                                
-                           
-                                
-                            
-                            
-                            
-                           
-                         
-                            <td> <a href="changeStudent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>&kurs=<%=kurs%>&matNr=<%=matNr%>">Bearbeiten</a></td>
-                            <td><a href="deleteStudent.jsp?id=<%=id%>">Löschen</td> 
+                                        <td> <a href="NBaccept.jsp">Akzeptieren</a></td>
+                                        <td><a href="NBdecline.jsp">Ablehnen</a></td> 
                         </tr>
                         <%} 
                                 }%>
