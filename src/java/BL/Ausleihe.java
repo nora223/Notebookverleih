@@ -31,7 +31,7 @@ public class Ausleihe implements Serializable{
     @GeneratedValue
     private long id;
     
-     @Temporal (javax.persistence.TemporalType.DATE)
+    @Temporal (javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
     @OneToOne
     private Student antragssteller;
@@ -98,10 +98,21 @@ public class Ausleihe implements Serializable{
             Logger.getLogger(Ausleihe.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
         return date;
     }
+    
+    public static List<Ausleihe> getListAusleihe(){
+        
+        List<Ausleihe> listAusleihe = DAO.AusleiheDAO.getAusleiheListDAO();
+        
+        return listAusleihe;
+    }
 
+    public static List<Ausleihe> getAusleiheList (){
+        List<Ausleihe> ausleihelist = DAO.AusleiheDAO.getAusleiheListDAO();
+        return ausleihelist;
+    }
+    
     public long getId() {
         return id;
     }
