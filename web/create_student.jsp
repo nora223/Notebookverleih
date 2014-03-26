@@ -141,10 +141,10 @@
 
         </script>
 
-        <title>Create new Student</title>
+        <title>Neuen Student anlegen</title>
     <div>
         <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>

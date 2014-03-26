@@ -33,10 +33,10 @@ public class Ausleihe implements Serializable{
     
     @Temporal (javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Student antragssteller;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Dozent mitarbeiter;
     private int dauer;
     

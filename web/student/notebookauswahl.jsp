@@ -20,13 +20,16 @@
            <div>
                
             <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-            <div id="logout"><a id="logout" href=".../logout.jsp"> Logout </a></div> <!-- Link für Logout-->
+            <div id="logout"><a id="logout" href=".../logout.jsp"> (Logout) </a></div> <!-- Link für Logout-->
             <hr>
             <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
    
         <%
         String t = session.getAttribute("typ").toString();
+        
+        
+        
         if (t.equals("Student")){
            
         }else{
@@ -68,28 +71,7 @@
                     
                     
                  <table> 
-                     <tr>
-                    <td>
-                       Username: 
-                       </td>
-                       <td>
-                           
-                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="Bitte Username eingeben">
-                           
-                       </td>
                     
-                </tr>
-                   <tr>
-                    <td>
-                       Passwort: 
-                       </td>
-                       <td>
-                          
-                           <input id="passwort" name="passwort" type="text" size="30" maxlength="40" value="Bitte Passwort eingeben">
-                           
-                       </td>
-                    
-                </tr>
                      
                   <tr>
                     <td>Dozent:</td>
@@ -136,22 +118,29 @@
                         <select name="dauer" maxlenght="40" >
                          
                             
-                            <% if(leihdauer == 7){  %>
+                            <% if(leihdauer == 7 && klasse != 1){  %>
                             <option>7</option>
-                            <%} else if(leihdauer == 30){%>
-
+                            <%} else if(leihdauer == 30 && klasse != 1){%>
+                                <option>30</option> 
                                 <option>7</option> 
-                               <option>30</option> 
-                            <%} else if(leihdauer == 90){%>
+                               
+                            <%} else if(leihdauer == 90 && klasse != 1){%>
+                               
+                               <option>90</option>
                                <option>7</option> 
                                <option>30</option> 
-                               <option>90</option>
-                            <%} else if (leihdauer == 180){%>
-                             <option>7</option> 
-                             <option>30</option>                             
+                           
+                             <%} else if (leihdauer == 30 && klasse == 1){%>
+                              <option>30</option>
+                              <%} else if (leihdauer == 90 && klasse == 1){%>
+                                                          
                              <option>90</option>
+                             <option>30</option> 
+                              <%} else if (leihdauer == 180 && klasse == 1){%>
+                             
                              <option>180</option>
-
+                              <option>30</option>                             
+                             <option>90</option>
                             <%}%>
                             
                         </select></p>

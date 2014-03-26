@@ -18,7 +18,7 @@
         <title>Notebook ausleihen</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -80,7 +80,7 @@
         Integer k3ld90 = feld[10];
         Integer k3ld180 = feld[11];
         
-        int leihdauer = 5;
+        int leihdauer = 0;
         
         int klasse= 0 ; 
         
@@ -139,7 +139,8 @@
                                           
                                         }
                                         
-                                        
+                                        leihdauer = 30;
+                                        klasse =  1;
                                                                 
 
                                         %></button></a> 

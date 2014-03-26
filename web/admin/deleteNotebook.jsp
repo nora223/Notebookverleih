@@ -21,7 +21,7 @@
         <title>XXX</title>
     <div>
         <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -43,7 +43,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Notebook wurde erfolgreich gelöscht! </h1>
+                    <h1> Notebook wurde erfolgreich gel&ouml;scht! </h1>
                     <%
                         String id = request.getParameter("id");
                         long  longid = Long.parseLong(id);

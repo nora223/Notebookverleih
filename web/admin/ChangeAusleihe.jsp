@@ -15,7 +15,7 @@
         <title>Notebook bearbeiten</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -83,7 +83,7 @@
                     <td><select name="status" maxlenght="40">
                             <option>frei</option>
                             <option>ausgeliehen</option>
-                            <option>unbestätigt</option>
+                            <option>unbest&auml;tigt</option>
                         </select></p></td>
                   </tr>
                   <tr><td><p><input class="blue" id="button" name="button" type="submit" value="Speichern">
