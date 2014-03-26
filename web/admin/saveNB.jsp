@@ -38,14 +38,8 @@
         int leihdauer = Integer.parseInt(l);
         String status = request.getParameter("status");
         
-        out.println("Name: " + name);
-        out.println("Seriennummer: " + seriennummer);
-        out.println("Klasse: " + klasse);
-        out.println("Leihdauer: " + leihdauer);
-        out.println("Status: " + status);
-        
-        //Notebook n = new Notebook(name, seriennummer, klasse, leihdauer, status);
-        //Notebook.saveNotebook(n);
+        Notebook n = new Notebook(name, seriennummer, klasse, leihdauer, status);
+        Notebook.saveNotebook(n);
     %> 
     
     <div> <!-- navigationsbereich Menu-->

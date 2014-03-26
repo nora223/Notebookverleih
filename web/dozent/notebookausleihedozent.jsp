@@ -57,7 +57,6 @@
                     <%
                         String s = session.getAttribute("id").toString();
                         long l = Long.parseLong(s);
-                        out.println("ID des Dozenten: " + l);
                     %>
               
                     Diese Anfragen m&uuml;ssen noch best&auml;tigt oder abgelehnt werden:

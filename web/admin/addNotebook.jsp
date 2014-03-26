@@ -92,28 +92,28 @@
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um ein Notebook hinzuzufügen.</p>
 
                     <div id="login">
-                        <form name="adr" action=".../saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
+                        <form name="adr" action="saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
                             <p>Name<br><input id="t" name="name" type="text" size="30" maxlength="40"></p>
                             <p>Seriennummer<br><input id="t1" name="seriennummer" type="text" size ="30" maxlength="40"></p>
                             <p>Klasse   
                                 <select maxlenght="40" widht="40" name="klasse">
-                                    <option>&starf;</option>
-                                    <option>&starf;&starf;</option>
-                                    <option>&starf;&starf;&starf;</option>
+                                    <option value="1">&starf;</option>
+                                    <option value="2">&starf;&starf;</option>
+                                    <option value="3">&starf;&starf;&starf;</option>
                                 </select>
                             </p>
                             <p>Leihdauer
                                 <select maxlenght="40" widht="40" name="leihdauer">
                                  
-                                    <option>7 Tage</option>
-                                    <option>30 Tage</option>
-                                    <option>90 Tage</option>
+                                    <option value="7">7 Tage</option>
+                                    <option value="30">30</option>
+                                    <option value="30">90 Tage</option>
                                     <option>180 Tage</option>
                                 </select>
                             </p>
                             <p>Status
                                 <select maxlenght="40" widht="40" name="status">
-                                    <option>verfügbar</option>
+                                    <option>verf&uuml;gbar</option>
                                     <option>in Bearbeitung</option>
                                     <option>defekt</option>
                                 </select>
