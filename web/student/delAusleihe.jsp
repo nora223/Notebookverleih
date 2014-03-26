@@ -57,10 +57,19 @@
                     <p>Ihre Notebookausleihe wurde erfolgreich storniert</p>
                     
                     <%
-                        String s = request.getParameter("id");
-                        long  id = Long.parseLong(s);
+                        String s = session.getAttribute("id").toString();
+                        long l = Long.parseLong(s);
                         
-                        Ausleihe.deleteAusleiheByID(id);
+                        List<Ausleihe> ausleiheList = BL.Ausleihe.getListAusleihe();
+                                
+                        for (Ausleihe element : ausleiheList){
+                            if(l == element.getAntragssteller().getId()){
+                                long id = element.getId();
+                                Ausleihe.deleteAusleiheByID(id);
+                            }
+                        }
+                        
+                        
                         
                     %>
                 </div>

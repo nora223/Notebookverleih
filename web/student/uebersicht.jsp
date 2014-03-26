@@ -63,6 +63,7 @@
                     <table class="table table-hover">
                         <thead>
                           <tr>
+                            <th>ID</th>
                             <th>Auftragsdatum</th>
                             <th>Modell</th>
                             <th>Betriebssystem</th>
@@ -80,6 +81,7 @@
                                 
                                 for (Ausleihe element : ausleiheList){
                                     if(l == element.getAntragssteller().getId()){
+                                        Long id = element.getId();
                                         Date auftragsdatum = element.getAuftragsdatum();
                                         Notebook n = element.getLeihNotebook();
                                         String modell = n.getName();
@@ -91,6 +93,7 @@
                                         
                                         %>
                                         
+                                        <td><%=id%></td>
                                         <td><%=auftragsdatum%></td>
                                         <td><%=modell%></td>
                                         <td><%=betriebssystem%></td>
