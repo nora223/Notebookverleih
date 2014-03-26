@@ -83,6 +83,21 @@ String messageContent =
   return  messageContent;     
        
 }
+
+public static String Student_delete(Student s){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Eine Stornierung von Bestellung</h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" 
++"<p>Ihre Bestellung wurde erfoglreich storniert.</p><br>"  
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;     
+       
+}
+
 public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Student s){
     
  String messageContent =

@@ -66,6 +66,11 @@
                             if(l == element.getAntragssteller().getId()){
                                 long id = element.getId();
                                 Ausleihe.deleteAusleiheByID(id);
+                                String name = element.getAntragssteller().getName();
+                                String email = element.getAntragssteller().geteMail();
+                                String messageContent = BL.Mail_arts.Student_delete(element.getAntragssteller());
+                                BL.Mail.eMailcreate(messageContent,email);
+                                
                             }
                         }
                         
