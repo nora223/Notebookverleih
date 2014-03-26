@@ -124,7 +124,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Admin anlegen </h1>
+                    <h1> Administrator anlegen </h1>
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um einen Administrator zu registrieren</p>
 
                     <div id="login">

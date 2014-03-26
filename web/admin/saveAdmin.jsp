@@ -72,7 +72,7 @@
                             <% out.println(vorname);
                                 out.println(nachname);
                             %>
-                            wurde erfolgreich angelegt. Es wurde eine Bestätigungs-Email an: 
+                            wurde erfolgreich angelegt. Es wurde eine Best&auml;tigungs-Email an: 
                             <% out.println(email);%> gesendet. </p>
               
 

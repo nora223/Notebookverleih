@@ -85,7 +85,7 @@
                      <td><select name="status" maxlenght="40">
                           <option>frei</option>
                           <option>ausgeliehen</option>
-                          <option>unbestätigt</option>
+                          <option>unbest&auml;tigt</option>
                          </select></p></td>
                  </tr>
                  <tr><td><input class="blue" id="button" name="button" type="submit" value="Speichern">

@@ -40,7 +40,7 @@
             <div class="col-md-8">
             <div>
                 <h1> Administratorverwaltung </h1>
-                <p>Übersicht aller registrierten Administratoren</p>
+                <p>&Uuml;bersicht aller registrierten Administratoren</p>
                 
             <table class="table table-hover">
                 
@@ -82,7 +82,7 @@
                             <td><%=geburtsdatum%></td>
 
                            <td><a href="changeAdmin.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a></td>
-                           <td><a href="deleteAdmin.jsp?id=<%=id%>">Löschen</td> 
+                           <td><a href="deleteAdmin.jsp?id=<%=id%>">L&ouml;schen</td> 
                         </tr>
                         <%}%>
 
@@ -91,7 +91,7 @@
                 </table>
 
                 <footer class="footer">
-                    <a href="addAdmin.jsp"><button class="blue">Hinzufügen</button></a>
+                    <a href="addAdmin.jsp"><button class="blue">Hinzuf&uuml;gen</button></a>
                     <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'">
                 </footer>
             </div>

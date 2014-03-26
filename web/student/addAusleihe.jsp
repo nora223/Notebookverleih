@@ -32,8 +32,8 @@
     </head>
     <body>
         <div>
-            <p>Die Notebookausleihe wurde ergolgreich gespeichert. Es wurde eine E-Mail an Sie zur Bestätigung gesendet.
-                Desweiteren wurde eine E-Mail an Ihren Dozenten gesendest, damit dieser die Ausleihe bestätigen kann.
+            <p>Die Notebookausleihe wurde ergolgreich gespeichert. Es wurde eine E-Mail an Sie zur Best&auml;tigung gesendet.
+                Desweiteren wurde eine E-Mail an Ihren Dozenten gesendest, damit dieser die Ausleihe best&auml;tigen kann.
             </p>
         </div>
 

@@ -79,7 +79,7 @@
                     </table>
 
                     <p>Bemerkung: <input name="bemerkung" type="text" size ="50" maxlength="40" placeholder='z. B. geplanter Verwendungszweck des Notebooks'></p>
-                    <p >Mitarbeiter<select name="status" widht="40"maxlenght="40">
+                    <p>Mitarbeiter<select name="status" widht="40"maxlenght="40">
                             <option></option>
                             <option></option>
                             <option></option>

@@ -43,7 +43,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Notebook wurde erfolgreich gelöscht! </h1>
+                    <h1> Notebook wurde erfolgreich gel&ouml;scht! </h1>
                     <%
                         String id = request.getParameter("id");
                         long  longid = Long.parseLong(id);
