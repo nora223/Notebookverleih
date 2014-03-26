@@ -20,7 +20,7 @@
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
         <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
     
      <%
@@ -41,7 +41,12 @@
             Student neu = new Student();
             neu = element.getAntragssteller();
             if(i == neu.getId()){
-                out.println("Student hat schon ein Notebook!");
+    %>
+    <script>
+            window.alert("Sie haben bereits ein Notebook ausgeliehen!");
+            window.location = '.../student/student.jsp';
+    </script>
+    <%
                 break;
             }
             if(n >= listAusleihe.size()){

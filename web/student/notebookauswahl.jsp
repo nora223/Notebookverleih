@@ -1,4 +1,4 @@
- <%@page import="BL.Ausleihe"%>
+<%@page import="BL.Ausleihe"%>
 <%@page import="BL.Dozent"%>
 <%@page import="java.util.List"%>
 <%-- 
@@ -22,7 +22,7 @@
             <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
             <div id="logout"><a id="logout" href=".../logout.jsp"> Logout </a></div> <!-- Link für Logout-->
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
    
         <%
@@ -32,15 +32,6 @@
         }else{
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
-        }
-        
-        
-        String s = session.getAttribute("id").toString();
-        long id = Long.parseLong(s);
-        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
-        for(Ausleihe element : listAusleihe){
-            
-            
         }
         
         %>
