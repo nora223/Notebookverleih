@@ -4,6 +4,9 @@
     Author     : cara123
 --%>
 
+<%@page import="BL.Student"%>
+<%@page import="java.util.List"%>
+<%@page import="BL.Ausleihe"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +18,7 @@
         <title>Notebook ausleihen</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -29,10 +32,27 @@
             dispatcher.forward ( request, response );
         }
         
+        String s = session.getAttribute("id").toString();
+        long i = Long.parseLong(s);
         
-        String i = session.getAttribute("id").toString();
-        long id = Long.parseLong(i);
-        
+        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
+        for(Ausleihe element : listAusleihe){
+            int n = 0;
+            Student neu = new Student();
+            neu = element.getAntragssteller();
+            if(i == neu.getId()){
+                out.println("Student hat schon ein Notebook!");
+                break;
+            }
+            if(n >= listAusleihe.size()){
+                    out.println("Student hat noch kein Notebook ausgeliehen");
+                    break;
+                }
+            if(n <= listAusleihe.size()){
+                    n++;
+            }
+            
+        }
         
     %>
     
@@ -55,7 +75,7 @@
         Integer k3ld90 = feld[10];
         Integer k3ld180 = feld[11];
         
-        int leihdauer = 5;
+        int leihdauer = 0;
         
         int klasse= 0 ; 
         
@@ -114,7 +134,8 @@
                                           
                                         }
                                         
-                                        
+                                        leihdauer = 30;
+                                        klasse =  1;
                                                                 
 
                                         %></button></a> 

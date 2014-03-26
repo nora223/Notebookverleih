@@ -102,7 +102,7 @@
          
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -124,7 +124,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Admin anlegen </h1>
+                    <h1> Administrator anlegen </h1>
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um einen Administrator zu registrieren</p>
 
                     <div id="login">

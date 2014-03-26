@@ -18,7 +18,7 @@
         <title>Notebook Verwaltung</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -82,7 +82,7 @@
 
                             <td><a href="changeNotebook.jsp?id=<%=id%>&name=<%=name%>&seriennummer=<%=seriennummer%>&klasse=<%=klasse%>&leihdauer=<%=leihdauer%>&verliehen=<%=status%>" class="blue">Bearbeiten</a></td>
                             <!--<td><a href ="ChangeAusleihe.jsp">Bearbeiten</td>-->
-                            <td><a href="deleteNotebook.jsp?id=<%=id%>">Löschen</td> 
+                            <td><a href="deleteNotebook.jsp?id=<%=id%>">L&ouml;schen</td> 
                         </tr>
                         <%}%>
 
@@ -90,7 +90,7 @@
 
                 </table>
                 <footer class="footer">
-                    <a href="addNotebook.jsp"><button class="blue">Hinzufügen</button></a>
+                    <a href="addNotebook.jsp"><button class="blue">Hinzuf&uuml;gen</button></a>
                     <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href = 'admin.jsp'">
                 </footer>
             </div>

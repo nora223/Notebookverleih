@@ -74,7 +74,7 @@ StudentDAO.java
                 return true;
             }
         </script>
-    <title>Create new Student</title>
+    <title>Neuer Student anlegen</title>
           <div>
             <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
             <hr>

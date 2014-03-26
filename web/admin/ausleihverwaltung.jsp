@@ -24,7 +24,7 @@
         <title>Ausleihverwaltung</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
         <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -79,7 +79,7 @@
                     </table>
 
                     <p>Bemerkung: <input name="bemerkung" type="text" size ="50" maxlength="40" placeholder='z. B. geplanter Verwendungszweck des Notebooks'></p>
-                    <p >Mitarbeiter<select name="status" widht="40"maxlenght="40">
+                    <p>Mitarbeiter<select name="status" widht="40"maxlenght="40">
                             <option></option>
                             <option></option>
                             <option></option>
