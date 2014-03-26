@@ -4,6 +4,9 @@
     Author     : cara123
 --%>
 
+<%@page import="BL.Student"%>
+<%@page import="java.util.List"%>
+<%@page import="BL.Ausleihe"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,9 +18,9 @@
         <title>Notebook ausleihen</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
     
      <%
@@ -28,6 +31,34 @@
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
         }
+        
+        String s = session.getAttribute("id").toString();
+        long i = Long.parseLong(s);
+        
+        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
+        for(Ausleihe element : listAusleihe){
+            int n = 0;
+            Student neu = new Student();
+            neu = element.getAntragssteller();
+            if(i == neu.getId()){
+    %>
+    <script>
+            window.alert("Sie haben bereits ein Notebook ausgeliehen!");
+            window.location = '.../student/student.jsp';
+    </script>
+    <%
+                break;
+            }
+            if(n >= listAusleihe.size()){
+                    out.println("Student hat noch kein Notebook ausgeliehen");
+                    break;
+                }
+            if(n <= listAusleihe.size()){
+                    n++;
+            }
+            
+        }
+        
     %>
     
 </head>
@@ -49,7 +80,7 @@
         Integer k3ld90 = feld[10];
         Integer k3ld180 = feld[11];
         
-        int leihdauer = 5;
+        int leihdauer = 0;
         
         int klasse= 0 ; 
         
@@ -67,10 +98,10 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
-                    <a href="uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-                    <a href="account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
+                    <a href=".../student/student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href=".../student/notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
+                    <a href=".../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href=".../student/account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
 <!--<form action="notebookauswahl.jsp" methode="GET">-->
@@ -108,7 +139,8 @@
                                           
                                         }
                                         
-                                        
+                                        leihdauer = 30;
+                                        klasse =  1;
                                                                 
 
                                         %></button></a> 

@@ -13,10 +13,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
@@ -31,12 +31,12 @@ public class Ausleihe implements Serializable{
     @GeneratedValue
     private long id;
     
-     @Temporal (javax.persistence.TemporalType.DATE)
+    @Temporal (javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Student antragssteller;
     
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Dozent mitarbeiter;
     private int dauer;
     
@@ -48,12 +48,13 @@ public class Ausleihe implements Serializable{
     
     private String bermerkung;
     private String status;
-    @OneToOne
+    
+    @OneToOne(cascade = CascadeType.ALL)
     private Notebook leihNotebook;
     private String betriebssystem;
 
-    public Ausleihe(long id, Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook, String betriebssystem) {
-        this.id = id;
+    public Ausleihe(Date auftragsdatum, Student antragssteller, Dozent mitarbeiter, int dauer, Date von, Date bis, String bermerkung, String status, Notebook leihNotebook, String betriebssystem) {
+        
         this.auftragsdatum = auftragsdatum;
         this.antragssteller = antragssteller;
         this.mitarbeiter = mitarbeiter;
@@ -97,10 +98,26 @@ public class Ausleihe implements Serializable{
             Logger.getLogger(Ausleihe.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
         return date;
     }
+    
+    public static List<Ausleihe> getListAusleihe(){
+        
+        List<Ausleihe> listAusleihe = DAO.AusleiheDAO.getAusleiheListDAO();
+        
+        return listAusleihe;
+    }
 
+    public static List<Ausleihe> getAusleiheList (){
+        List<Ausleihe> ausleihelist = DAO.AusleiheDAO.getAusleiheListDAO();
+        return ausleihelist;
+    }
+    
+    public static void deleteAusleiheByID(long id){
+        
+        DAO.AusleiheDAO.deleteAusleiheByIDDAO(id);
+    }
+    
     public long getId() {
         return id;
     }

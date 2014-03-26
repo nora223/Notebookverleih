@@ -18,7 +18,7 @@
     <div>
         <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
         <hr>
-        <p id="pic"><img src="pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src="pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
@@ -36,7 +36,7 @@
         <div class="col-md-6">
             <div class="area">
                 <h1> Passwort vergessen </h1>
-                <p> Bitte füllen Sie das folgende Formular aus:</p>
+                <p> Bitte f&uuml;llen Sie das folgende Formular aus:</p>
 
                 <div id="login">
                     <form action=PW_sent_Admin.jsp" methode="POST">

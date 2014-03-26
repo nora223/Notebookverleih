@@ -17,9 +17,9 @@
         <title>Dozenten Verwaltung</title>
            <div>
             <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-            <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+            <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
@@ -87,7 +87,7 @@
                             <td><%=geburtsdatum%></td>
                             
                             <td> <a href="changedozent.jsp?id=<%=id%>&name=<%=name%>&vorname=<%=vorname%>&geschlecht=<%=geschlecht%>&eMail=<%=eMail%>&geburtsdatum=<%=geburtsdatum%>">Bearbeiten</a></td>
-                            <td><a href="deleteDozent.jsp?id=<%=id%>">Löschen</td>
+                            <td><a href="deleteDozent.jsp?id=<%=id%>">L&ouml;schen</td>
                         </tr>
                         <%}%>
 
@@ -96,7 +96,7 @@
                     </table>
                     
                     <footer class="footer">
-                        <a href="addDozent.jsp"><button class="blue">Hinzufügen</button></a>
+                        <a href="addDozent.jsp"><button class="blue">Hinzuf&uuml;gen</button></a>
                         <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
                     </footer>
                 </div>

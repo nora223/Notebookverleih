@@ -66,9 +66,9 @@
         <title>Notebook hinzufügen</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
     <body onLoad="javascript:setFocus()">
@@ -92,26 +92,32 @@
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um ein Notebook hinzuzufügen.</p>
 
                     <div id="login">
-                        <form name="adr" action=".../saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
+                        <form name="adr" action="saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
                             <p>Name<br><input id="t" name="name" type="text" size="30" maxlength="40"></p>
-                            <p>Seriennummer<br><input id="t2" name="seriennummer" type="text" size ="30" maxlength="40"></p>
+                            <p>Seriennummer<br><input id="t1" name="seriennummer" type="text" size ="30" maxlength="40"></p>
                             <p>Klasse   
-                                <select maxlenght="40" widht="40" name="status">
-                                    <option>&starf;</option>
-                                    <option>&starf;&starf;</option>
-                                    <option>&starf;&starf;&starf;</option>
+                                <select maxlenght="40" widht="40" name="klasse">
+                                    <option value="1">&starf;</option>
+                                    <option value="2">&starf;&starf;</option>
+                                    <option value="3">&starf;&starf;&starf;</option>
                                 </select>
                             </p>
                             <p>Leihdauer
-                                <select maxlenght="40" widht="40" name="status">
+                                <select maxlenght="40" widht="40" name="leihdauer">
                                  
-                                    <option>7 Tage</option>
-                                    <option>14 Tage</option>
-                                    <option>30 Tage</option>
-                                    <option>90 Tage</option>
+                                    <option value="7">7 Tage</option>
+                                    <option value="30">30</option>
+                                    <option value="30">90 Tage</option>
+                                    <option>180 Tage</option>
                                 </select>
                             </p>
-                            <p>Status<br><input id="t5" name="Status" type="text" size ="30" maxlength="40"></p>
+                            <p>Status
+                                <select maxlenght="40" widht="40" name="status">
+                                    <option>verf&uuml;gbar</option>
+                                    <option>in Bearbeitung</option>
+                                    <option>defekt</option>
+                                </select>
+                            </p>
                             <p><input name="button" type="submit" value="anlegen"></p>
                         </form>
                     </div>

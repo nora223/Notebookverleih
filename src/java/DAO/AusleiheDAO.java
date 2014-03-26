@@ -29,6 +29,7 @@ public class AusleiheDAO {
         transaction.commit();    
         
     }
+     
 public static List<Ausleihe> getAusleiheListDAO() {
 
       Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -50,6 +51,15 @@ public static List<Date> getNextFreeDate(int dauer, int klasse){
     return bla;
 }
 
+public static void deleteAusleiheByIDDAO(long id){
+      
+      Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+      Transaction transaction = session.beginTransaction();
+      Ausleihe ausleihe = (Ausleihe)HibernateUtil.getSessionFactory().getCurrentSession().load(Ausleihe.class, id);
+      HibernateUtil.getSessionFactory().getCurrentSession().delete(ausleihe);
+      transaction.commit();
+
+ }
 
 
 

@@ -4,6 +4,7 @@
     Author     : CaReich
 --%>
 
+<%@page import="BL.Notebook"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,15 +19,29 @@
         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
-        <title>XXX</title>
+        <title>Notebook erfolgreich angelegt</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
+    
+    <%
+        String name = request.getParameter("name");
+        String seriennummer = request.getParameter("seriennummer");
+        String s = request.getParameter("klasse");
+        int klasse = Integer.parseInt(s);
+        String l = request.getParameter("leihdauer");
+        int leihdauer = Integer.parseInt(l);
+        String status = request.getParameter("status");
+        
+        Notebook n = new Notebook(name, seriennummer, klasse, leihdauer, status);
+        Notebook.saveNotebook(n);
+    %> 
+    
     <div> <!-- navigationsbereich Menu-->
         <div  class="row">
             <div class="col-md-3">
@@ -34,17 +49,16 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="XXX.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="XXX.jsp" class="list-group-item" >XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
+                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="ausleihverwaltung.jsp" class="list-group-item" >XXX</a>
+                    <a href="list_notebook.jsp" class="list-group-item">XXX</a>
+                    <a href="userverwaltung.jsp" class="list-group-item">XXX</a>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Herzlich Willkommen! </h1>
-                    <p> Dies ist die Vorlage JSP</p>
+                    <p>Das Notebook wurde erfolgreich angelegt!</p>
                 </div>
             </div>
         </div>    

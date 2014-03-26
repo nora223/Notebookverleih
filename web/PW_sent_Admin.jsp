@@ -18,12 +18,12 @@
         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
-        <title>XXX</title>
+        <title></title>
            <div>
             <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-            <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+            <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src="pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
@@ -44,10 +44,10 @@
             <div class="col-md-6">
                 <div class="area">
                     <h1> Vielen Dank für ihre Anfrage! </h1>
-                    <p> Es wurde eine Email an den Administrator versand. In kürze sollten Sie eine Email mit ihrem neuen Passwort erhalten. <br>
-                    Sobald Sie sich mit diesem Passwort eingeloggt haben, wird es empfohlen schnellstmöglich ein von Ihnen individuell ausgewähltest Passwort zu vergeben.<br>
+                    <p> Es wurde eine Email an den Administrator versand. In K&uuml;rze sollten Sie eine Email mit ihrem neuen Passwort erhalten. <br>
+                    Sobald Sie sich mit diesem Passwort eingeloggt haben, wird es empfohlen schnellstm&ouml;glich ein von Ihnen individuell ausgew&auml;hltes Passwort zu vergeben.<br>
                     
-                    Viele Grüße
+                    Viele Gr&uuml;&szlig;e
                     Ihr Administrator-Team</p>
                 </div>
             </div>

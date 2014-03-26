@@ -14,9 +14,9 @@
         <title>Notebook Verwaltung</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
@@ -45,7 +45,10 @@
                     String seriennummer = request.getParameter("seriennummer");
                     String klasse = request.getParameter("klasse");
                     String leihdauer = request.getParameter("leihdauer");
-                    String verliehen = request.getParameter("verliehen");
+                    String verliehen = new String(request.getParameter("verliehen").getBytes("UTF-8"), "UTF-8");
+                   
+                    
+                    
                 %>
 
                 <div id="login">               
@@ -56,7 +59,49 @@
                         <p>Seriennummer<br><input name="seriennummer" type="text" value="<%=seriennummer%>" size ="30" maxlength="40"></p>
                         <p>Klasse<br><input name="klasse" type="text" value="<%=klasse%>" size ="30" maxlength="40"></p> 
                         <p>Leihdauer<br><input name="leihdauer" type="text"value="<%=leihdauer%>" size ="30" maxlength="40"></p> 
-                        <p>Ausleihstatus<br><input name="verliehen" type="text" value="<%=verliehen%>" size ="30" maxlength="40"></p> 
+                        
+                        <p>Status
+                          <%out.println("verliehen "+ verliehen);%>
+                                <select maxlenght="40" widht="40" name="status">
+                                   <% if(verliehen.equals("verfügbar")){ %>
+                                    <option>verfügbar</option>
+                                    <option>inBearbeitung</option>
+                                    <option>defekt</option>
+                                    <option>verliehen</option>
+                                    <option>bestätigungAusstehend</option>
+                                  <%  }else if(verliehen.equals("inBearbeitung")){ %>
+                                    <option>inBearbeitung</option>
+                                    <option>defekt</option>
+                                    <option>verliehen</option>
+                                    <option>bestätigungAusstehend</option>
+                                    <option>verfügbar</option>
+                                   <% }else if(verliehen.equals("defekt")){ %>
+                                    <option>defekt</option>
+                                    <option>verliehen</option>
+                                    <option>bestätigungAusstehend</option>
+                                    <option>verfügbar</option>
+                                    <option>inBearbeitung</option>
+                                   <% }else if(verliehen.equals("verliehen")){ %>
+                                    <option>verliehen</option>
+                                    <option>bestätigungAusstehend</option>
+                                    <option>verfügbar</option>
+                                    <option>inBearbeitung</option>
+                                    <option>defekt</option>
+                                  <%  }else if(verliehen.equals("bestätigungAusstehend")){ %>
+                                    <option>bestätigungAusstehend</option>
+                                    <option>verfügbar</option>
+                                    <option>inBearbeitung</option>
+                                    <option>defekt</option>
+                                    <option>verliehen</option>
+                                   <% } %>
+                                    
+                                    
+                                    
+                                </select>
+                            </p>
+                        
+                        
+                        
                         <p><input id="button" name="button" type="submit" value="Speichern">
 
                     </form>

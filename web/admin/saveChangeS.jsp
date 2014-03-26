@@ -15,12 +15,12 @@
         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
-        <title>Student change</title>
+        <title>Student &auml;ndern</title>
     <div>
         <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-6">
             <div class="area">
-                <p>Hallo du hast erfolgreich einen NB geändert und angelegt</p>
+                <p>Hallo, du hast erfolgreich einen Student ge&auml;ndert und angelegt</p>
             </div>         
             <%
                 String id = request.getParameter("id");
