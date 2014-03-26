@@ -106,9 +106,9 @@
                                 <select maxlenght="40" widht="40" name="leihdauer">
                                  
                                     <option>7 Tage</option>
-                                    <option>14 Tage</option>
                                     <option>30 Tage</option>
                                     <option>90 Tage</option>
+                                    <option>180 Tage</option>
                                 </select>
                             </p>
                             <p>Status

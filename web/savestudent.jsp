@@ -20,7 +20,7 @@
     <div>
         <img id="pic" src="pic/logo.png" alt="Logo"/>
         <hr>
-        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src="pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
