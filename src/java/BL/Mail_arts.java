@@ -51,7 +51,7 @@ String messageContent =
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Registrierung</h1><br>"     
 +"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
 +"<p><font size="+3+ ">Guten Tag " + s.getVorname()+" "+ s.getName()+ ","+ "</p><br>" 
-+"<p>Vielen Dank  für ihre Rigestrierung.Ihre Daten wurden erfoglreich geschpeichert.</p><br>"  
++"<p>Vielen Dank  für ihre Registrierung.Ihre Daten wurden erfoglreich gespeichert.</p><br>"  
 +"<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;     
