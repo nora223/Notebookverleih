@@ -79,7 +79,7 @@
                         out.println("Klasse:"+klasse);
                         out.println("Klasse aus der Liste"+element.getKlasse());
 
-                if (element.getLeihdauer() == dauer && element.getKlasse() == klasse) {
+                if (element.getLeihdauer() == dauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
                     out.print(i +"**************");
                         out.println("Dauer:"+dauer);
                         out.println("Dauer aus der Liste"+ element.getLeihdauer());

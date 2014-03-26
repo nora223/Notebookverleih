@@ -27,6 +27,9 @@
    
         <%
         String t = session.getAttribute("typ").toString();
+        
+        
+        
         if (t.equals("Student")){
            
         }else{
@@ -77,28 +80,7 @@
                     
                     
                  <table> 
-                     <tr>
-                    <td>
-                       Username: 
-                       </td>
-                       <td>
-                           
-                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="Bitte Username eingeben">
-                           
-                       </td>
                     
-                </tr>
-                   <tr>
-                    <td>
-                       Passwort: 
-                       </td>
-                       <td>
-                          
-                           <input id="passwort" name="passwort" type="text" size="30" maxlength="40" value="Bitte Passwort eingeben">
-                           
-                       </td>
-                    
-                </tr>
                      
                   <tr>
                     <td>Dozent:</td>

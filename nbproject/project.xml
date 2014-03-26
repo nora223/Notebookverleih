@@ -11,6 +11,10 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
+                    <file>${file.reference.activation-2.2.1.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
                     <file>${file.reference.derby.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -19,10 +23,8 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.activation.jar.zip-1}</file>
-                </library>
-                <library dirs="200">
-                    <file>${file.reference.mail.jar.zip}</file>
+                    <file>${file.reference.mail.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
