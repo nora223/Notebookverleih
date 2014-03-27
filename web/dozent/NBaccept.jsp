@@ -43,6 +43,8 @@
                 <div class="area">
                     <h1> Notebookausleihe akzeptiert! </h1>
                     <p> Hiermit haben Sie die Ausleihe für den Laptop ... an den Studenten.... akzeptiert.</p>
+                    
+             
                 </div>
             </div>
         </div>    
