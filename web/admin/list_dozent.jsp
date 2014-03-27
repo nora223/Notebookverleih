@@ -11,15 +11,15 @@
 <html>
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-         <script type="text/javascript" src=".../js/bootstrap.js"></script>
+         <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+         <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+         <script type="text/javascript" src="../js/bootstrap.js"></script>
         <title>Dozenten Verwaltung</title>
            <div>
-            <div class="col-md-2"><a href='admin.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
-             <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
+            <div class="col-md-2"><a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a></div>
+             <div id="logout" class="col-md-2"> <a id="logout" href="../logout.jsp"> (Logout) </a></div> 
             <hr>
-            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src="../pic/dh.jpg" alt="dh" />
            </div>
     </head>
     <body>
@@ -97,7 +97,7 @@
                     
                     <footer class="footer">
                         <a href="addDozent.jsp"><button class="blue">Hinzuf&uuml;gen</button></a>
-                        <input class="white"name="button" type="button" value="Zurück" onClick="self.location.href='admin.jsp'">
+                        <input class="white"name="button" type="button" value="Zur&uuml;ck" onClick="self.location.href='admin.jsp'">
                     </footer>
                 </div>
             </div>
