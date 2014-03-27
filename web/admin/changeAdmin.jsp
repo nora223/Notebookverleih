@@ -16,17 +16,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <link rel="stylesheet" href =".../calender/3-dynamically-created/tcal.css" type ="text/css" />
-        <script type="text/javascript" src=".../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <link rel="stylesheet" href ="../calender/3-dynamically-created/tcal.css" type ="text/css" />
+        <script type="text/javascript" src="../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
 
-        <title>Change Admin</title>
+        <title>Administrator &auml;ndern</title>
     <div>
-        <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
+       <div class="col-md-2"><a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a></div>
+       <div id="logout" class="col-md-2"> <a id="logout" href="../logout.jsp"> (Logout) </a></div> 
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p id="pic"><img src="../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
