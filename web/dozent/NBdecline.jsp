@@ -16,15 +16,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
-        <title>XXX</title>
-    <div>
-        <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+        <title>Notebook ablehnen</title>
+     <div>
+        <div>
+            <a href='dozent.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+        </div>
+        <div id="logout" > 
+            <a style="color: grey" href="../logout.jsp"> (Logout) </a>
+        </div> <!-- Link für Logout-->
         <hr>
-        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
 </head>
 <body>
@@ -35,10 +39,9 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="XXX.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="XXX.jsp" class="list-group-item" >XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
+                    <a href="dozent.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="notebookausleihedozent.jsp" class="list-group-item" >Ausleihe</a>
+
                 </div>
             </div>
 

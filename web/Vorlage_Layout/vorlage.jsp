@@ -15,15 +15,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
         <title>XXX</title>
     <div>
-        <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> Logout </a></div>
+        <a href='../index.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+        <div id="logout"> <a id="logout" href="../logout.jsp"> Logout </a></div>
         <hr>
-        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src="../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>

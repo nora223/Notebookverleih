@@ -11,10 +11,10 @@
 <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="icon" href="../pic/logo.JPG" type="image/JPG"/>
-         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css"/>
-         <!--<script type="text/javascript" src=".../js/bootstrap.js"></script>-->
-         <link rel="stylesheet" href =".../calender/3-dynamically-created/tcal.css" type ="text/css"/>
-         <script type="text/javascript" src=".../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
+         <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css"/>
+         <!--<script type="text/javascript" src="../js/bootstrap.js"></script>-->
+         <link rel="stylesheet" href ="../calender/3-dynamically-created/tcal.css" type ="text/css"/>
+         <script type="text/javascript" src="../calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
                 <script type="text/javascript">
 
             var validatePassword = function() {
@@ -101,10 +101,14 @@
         </script>
          
     <div>
-        <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
+        <div>
+            <a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+        </div>
+        <div id="logout" > 
+            <a style="color: grey" href="../logout.jsp"> (Logout) </a>
+        </div> <!-- Link für Logout-->
         <hr>
-        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
 </head>
 

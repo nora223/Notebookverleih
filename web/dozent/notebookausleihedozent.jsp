@@ -18,13 +18,16 @@
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Notebook best&auml;tigen</title>
-           <div>
-               
-            <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-            <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
-            <hr>
-            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
-           </div>
+             <div>
+        <div>
+            <a href='../dozent.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+        </div>
+        <div id="logout" > 
+            <a style="color: grey" href="../logout.jsp"> (Logout) </a>
+        </div> <!-- Link für Logout-->
+        <hr>
+        <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
+    </div>
    
    <%
         String t = session.getAttribute("typ").toString();
@@ -46,7 +49,7 @@
                     NAVIGATION
                     </a>
                     <a href="dozent.jsp" class="list-group-item">Startseite</a>
-                    <a href="notebookausleihedozent.jsp" class="list-group-item">Notebooks best&auml;tigen</a>
+
            
                 </div>
             </div>
