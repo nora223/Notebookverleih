@@ -20,7 +20,7 @@
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Benutzer Men&uuml;</title>
            <div>
-            <a href='index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
+            <a href='student.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
             <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
             <hr>
             <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
