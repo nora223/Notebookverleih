@@ -61,7 +61,7 @@
                         <p>Leihdauer<br><input name="leihdauer" type="text"value="<%=leihdauer%>" size ="30" maxlength="40"></p> 
                         
                         <p>Status
-                          <%out.println("verliehen "+ verliehen);%>
+                          
                                 <select maxlenght="40" widht="40" name="status">
                                    <% if(verliehen.equals("verfügbar")){ %>
                                     <option>verfügbar</option>
