@@ -22,7 +22,6 @@
             String i = session.getAttribute("id").toString();
             long id = Long.parseLong(i);
             if (t.equals("Student")) {
-
             } else {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp");
                 dispatcher.forward(request, response);
@@ -41,7 +40,8 @@
 
         <%
             String name = request.getParameter("dozent");
-
+            String strleihdauer = request.getParameter("leihdauer");
+            int leihdauer = Integer.parseInt(strleihdauer);
             String strklasse = request.getParameter("klasse");
 
             int klasse = Integer.parseInt(strklasse);
@@ -72,10 +72,9 @@
 
             for (Notebook element : notebooklist) {
 
-                out.println("Dauer:" + dauer);
 
-                if (element.getLeihdauer() == dauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
-
+                if (element.getLeihdauer() == leihdauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
+                    out.println("Leihdauer: " + leihdauer + "Element" + element.getLeihdauer());
                     notebook.setId(element.getId());
                     notebook.setKlasse(element.getKlasse());
                     notebook.setLeihdauer(element.getLeihdauer());

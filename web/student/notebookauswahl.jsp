@@ -28,8 +28,6 @@
         <%
         String t = session.getAttribute("typ").toString();
         
-        
-        
         if (t.equals("Student")){
            
         }else{
@@ -62,8 +60,9 @@
                     
                    
                     <% 
-                         Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
-                         Integer klasse = Integer.parseInt(request.getParameter("klasse"));   
+                         int leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
+                         int dauerRichtig = Integer.parseInt(request.getParameter("dauerRichtig"));
+                         int klasse = Integer.parseInt(request.getParameter("klasse"));  
                         
                     %> 
 
@@ -109,6 +108,7 @@
                            
                            
                                  <%}%>
+                                 <input name="leihdauer" type="hidden" size="20" value="<%=leihdauer%>"/>
                             
                         </p>
                     </td> 
@@ -131,13 +131,17 @@
                                <option>7</option> 
                                <option>30</option> 
                            
-                             <%} else if (leihdauer == 30 && klasse == 1){%>
+                             <%} else if (leihdauer == 30 && klasse == 1 && dauerRichtig == 0){%>
                               <option>30</option>
-                              <%} else if (leihdauer == 90 && klasse == 1){%>
+                              <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 0){%>
                                                           
                              <option>90</option>
-                             <option>30</option> 
-                              <%} else if (leihdauer == 180 && klasse == 1){%>
+                             <option>30</option>
+                             
+                             <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 30){%>
+                             <option>30</option>
+                             
+                             <%} else if (leihdauer == 180 && klasse == 1){%>
                              
                              <option>180</option>
                               <option>30</option>                             
