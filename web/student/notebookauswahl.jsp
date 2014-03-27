@@ -1,6 +1,4 @@
-<%@page import="BL.Ausleihe"%>
-<%@page import="BL.Dozent"%>
-<%@page import="java.util.List"%>
+
 <%-- 
     Document   : notebookauswahl
     Created on : 10.03.2014, 17:40:41
@@ -10,6 +8,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%@page import="BL.Ausleihe"%>
+<%@page import="BL.Dozent"%>
+<%@page import="java.util.List"%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -75,8 +78,8 @@
                                 <td>Dozent:</td>
                                 <td>
                                     <select name="dozent" maxlenght="40">
-                                        <% List<Dozent> dozentList = BL.Dozent.getDozentList();
-
+                                        <% List<Dozent> dozentList = BL.Dozent.getDozentList();%>
+                                        
                        </select></p>   
                     </td>  
                  </tr> 

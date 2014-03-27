@@ -68,35 +68,6 @@
         }
 
     %>
-    
-    <%--
-         Date d= new Date();
-        
-         List<Ausleihe> listeAusleihe = Ausleihe.getAusleiheList();
-            
-           for(Ausleihe element : listeAusleihe){
-            
-           String Status = element.getLeihNotebook().getNotebookStatus();
-           Date auftragsdatum = element.getAuftragsdatum();
-           
-           long id = element.getId();
-           
-           long auftragsdatumMS = auftragsdatum.getTime();
-           auftragsdatumMS = auftragsdatumMS + 7*86400000;
-           Date auftragsdatumPlus7 = new Date(auftragsdatumMS);
-           
-           If(Status == bestätigungAustehend){
-            if ( d.compareTo(auftragsdatumPlus7)>0)
-              BL.Ausleihe.deleteAusleiheByID(id);
-        }
-           
-        }
-        }
-
-
-
-
---%>
 </head>
 <body>
     <%
