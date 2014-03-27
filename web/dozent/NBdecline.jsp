@@ -4,6 +4,7 @@
     Author     : Bitte eintragen!
 --%>
 
+<%@page import="BL.Ausleihe"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,8 +47,32 @@
                     <h1>Anfrage ablehnen!</h1>
                     <p> Sie haben die Anfrage des Studenten nicht akzeptiert. </p>
                     <p>Bitte tragen Sie eine kurze Begründung für Ihre Entscheidung ein: <br><input name="begründung" type="text" width="100" height="200"></p>
-                    <input type="button" name="senden" value="Senden!">
-                    
+
+                    <form action="notebookabgelehnt.jsp" method="POST">
+                        <input type="button" name="senden" value="Senden!">
+
+
+                        <%
+                            String Str_id = request.getParameter("id");
+                            long id = Long.parseLong(Str_id);
+
+                            List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
+                            long auslId = 0;
+                            for (Ausleihe element : list) {
+                                if (id == element.getAntragssteller().getId()) {
+
+                                    auslId = element.getId();
+                                    break;
+
+                                }
+
+                            }
+
+                            BL.Ausleihe.deleteAusleiheByID(auslId);
+                        %>
+
+
+                    </form>  
                 </div>
             </div>
         </div>    

@@ -9,12 +9,15 @@ import BL.Notebook;
 import NotebookVerleih.HibernateUtil;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import sun.util.calendar.Gregorian;
 
 /**
  *
@@ -38,6 +41,21 @@ public static List<Ausleihe> getAusleiheListDAO() {
       tx.commit();
       
       return  ausleiheListe;
+}
+
+public static void updateAusleihe(Long id){
+    
+    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+    Transaction tx = session.beginTransaction();
+    Ausleihe ausleihe  = (Ausleihe) HibernateUtil.getSessionFactory().getCurrentSession().load(Ausleihe.class, id);
+    HibernateUtil.getSessionFactory().getCurrentSession().update(ausleihe);
+    Date d = new Date();
+    ausleihe.setVon(d);
+    GregorianCalendar cal = new GregorianCalendar();
+    cal.setTime(d);
+    cal.add(Calendar.DAY_OF_MONTH, 7);
+    ausleihe.setBis(cal.getTime());
+    tx.commit();
 }
 
 public static List<Date> getNextFreeDate(int dauer, int klasse){

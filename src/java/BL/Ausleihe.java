@@ -77,6 +77,13 @@ public class Ausleihe implements Serializable{
         
     }
     
+    public static void updateAusleihe (long id){
+       
+        
+       DAO.AusleiheDAO.updateAusleihe(id);
+    }
+   
+    
     
     public static Date getNextFreeDate(int dauer, int klasse){
         List<Date> erg = DAO.AusleiheDAO.getNextFreeDate(dauer, klasse);
