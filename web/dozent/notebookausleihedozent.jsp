@@ -46,7 +46,7 @@
                     NAVIGATION
                     </a>
                     <a href="dozent.jsp" class="list-group-item">Startseite</a>
-                    <a href="notebookausleihedozent.jsp" class="list-group-item">Notebooks best&auml;tigen</a>
+
            
                 </div>
             </div>
