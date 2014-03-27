@@ -16,16 +16,16 @@
         <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script> 
-        <title>Notebookauswahl</title>
-    <div>
-
-        <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"><a id="logout" href=".../logout.jsp"> (Logout) </a></div> <!-- Link für Logout-->
-        <hr>
-        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
-    </div>
-
-    <%
+        <title>Notebookauswahl:</title>
+           <div>
+               
+           <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
+           <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
+            <hr>
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
+           </div>
+   
+        <%
         String t = session.getAttribute("typ").toString();
 
 

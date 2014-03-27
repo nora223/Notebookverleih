@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
         <script type="text/javascript">
 
             var checkEntry = function(element) {
@@ -65,8 +65,8 @@
         </script>
         <title>Notebook hinzufügen</title>
     <div>
-        <a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div>
+        <div class="col-md-2"><a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a></div>
+        <div id="logout" class="col-md-2"> <a id="logout" href="../logout.jsp"> (Logout) </a></div> 
         <hr>
         <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
@@ -78,7 +78,7 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href=".../admin.jsp" class="list-group-item">Startseite</a> 
+                    <a href="../admin.jsp" class="list-group-item">Startseite</a> 
                     <a href="ausleihverwaltung.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Ausleih Verwaltung</a>
                     <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
                     <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
@@ -92,7 +92,7 @@
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um ein Notebook hinzuzufügen.</p>
 
                     <div id="login">
-                        <form name="adr" action="saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
+                        <form name="adr" action="../saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
                             <p>Name<br><input id="t" name="name" type="text" size="30" maxlength="40"></p>
                             <p>Seriennummer<br><input id="t1" name="seriennummer" type="text" size ="30" maxlength="40"></p>
                             <p>Klasse   

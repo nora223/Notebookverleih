@@ -19,8 +19,8 @@
         <script type="text/javascript" src="../js/bootstrap.js"></script>
         <title>Administrator speichern</title>
     <div>
-        <a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href="../logout.jsp"> (Logout) </a></div>
+       <div class="col-md-2"><a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a></div>
+      <div id="logout" class="col-md-2"> <a id="logout" href="../logout.jsp"> (Logout) </a></div> 
         <hr>
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" />
     </div>
