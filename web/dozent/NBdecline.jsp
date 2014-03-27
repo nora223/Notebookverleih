@@ -43,8 +43,11 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Herzlich Willkommen! </h1>
-                    <p> Dies ist die Vorlage JSP</p>
+                    <h1>Anfrage ablehnen!</h1>
+                    <p> Sie haben die Anfrage des Studenten nicht akzeptiert. </p>
+                    <p>Bitte tragen Sie eine kurze Begründung für Ihre Entscheidung ein: <br><input name="begründung" type="text" width="100" height="200"></p>
+                    <input type="button" name="senden" value="Senden!">
+                    
                 </div>
             </div>
         </div>    
