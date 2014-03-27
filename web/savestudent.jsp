@@ -19,13 +19,13 @@
         <title>Registrierung erfolgreich</title>
     <div>
         <div>
-            <a href='index.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+            <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
         </div>
         <div id="logout" > 
-            <a style="color: grey" href="../logout.jsp"> (Logout) </a>
+            <a style="color: grey" href="logout.jsp"> (Logout) </a>
         </div> <!-- Link für Logout-->
         <hr>
-        <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
+        <p><img id="pic2" src="pic/dh.jpg" alt="dh" /></p>
     </div>
 </head>
 <body>
