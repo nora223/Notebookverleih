@@ -4,6 +4,11 @@
     Author     : cara123
 --%>
 
+<%@page import="BL.Dozent"%>
+<%@page import="BL.Notebook"%>
+<%@page import="java.util.Date"%>
+<%@page import="BL.Ausleihe"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +23,7 @@
            <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
            <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
    
     <%
@@ -29,6 +34,9 @@
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
         }
+        
+        String s = session.getAttribute("id").toString();
+        long l = Long.parseLong(s);
     %>
    
     </head>
@@ -55,34 +63,50 @@
                     <table class="table table-hover">
                         <thead>
                           <tr>
-                            <th></th>
+                            <th>ID</th>
+                            <th>Auftragsdatum</th>
                             <th>Modell</th>
-                            <th>Datum</th>
-                            <th> </th><!--buttons  -->   
+                            <th>Betriebssystem</th>
+                            <th>Ausleihdauer</th>
+                            <th>Dozent</th>
+                            <th>Status</th>
+                            <th> </th><!--buttons  --> 
                           </tr>
                         </thead>
                         
                         <tbody>
                           <tr>
-                            <td></td> <!--leer-->
-                            <td>Think Pad</td> <!--Modell -->
-                            <td>test</td> <!--Datum  -->
-                          </tr> 
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--Datum  -->
+                            
+                            <% List<Ausleihe> ausleiheList = BL.Ausleihe.getListAusleihe();
+                                
+                                for (Ausleihe element : ausleiheList){
+                                    if(l == element.getAntragssteller().getId()){
+                                        Long id = element.getId();
+                                        Date auftragsdatum = element.getAuftragsdatum();
+                                        Notebook n = element.getLeihNotebook();
+                                        String modell = n.getName();
+                                        String betriebssystem = element.getBetriebssystem();
+                                        int ausleihdauer = element.getDauer();
+                                        Dozent d = element.getMitarbeiter();
+                                        String dozent = d.getName();
+                                        String status = element.getStatus();                     
+                                        
+                                        %>
+                                        
+                                        <td><%=id%></td>
+                                        <td><%=auftragsdatum%></td>
+                                        <td><%=modell%></td>
+                                        <td><%=betriebssystem%></td>
+                                        <td><%=ausleihdauer%></td>
+                                        <td><%=dozent%></td>
+                                        <td><%=status%></td>
+                                        
+                                        <td> <a href="delAusleihe.jsp">Stornieren</a></td>
+                                                           
                           </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--Datum  -->     
-                          </tr>
-                          <tr><!--Modell -->
-                            <td></td>
-                            <td></td> <!--Modell -->
-                            <td></td> <!--Datum  --> 
-                          </tr>
+                          <%} 
+                                }%>
+                         
                         </tbody>
                       </table>
         

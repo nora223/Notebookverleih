@@ -21,7 +21,7 @@
            <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
            <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> <!-- Link für Logout-->
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
    
     <%

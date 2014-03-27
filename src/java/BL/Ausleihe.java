@@ -33,10 +33,10 @@ public class Ausleihe implements Serializable{
     
     @Temporal (javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Student antragssteller;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Dozent mitarbeiter;
     private int dauer;
     
@@ -77,6 +77,13 @@ public class Ausleihe implements Serializable{
         
     }
     
+    public static void updateAusleihe (long id){
+       
+        
+       DAO.AusleiheDAO.updateAusleihe(id);
+    }
+   
+    
     
     public static Date getNextFreeDate(int dauer, int klasse){
         List<Date> erg = DAO.AusleiheDAO.getNextFreeDate(dauer, klasse);
@@ -111,6 +118,11 @@ public class Ausleihe implements Serializable{
     public static List<Ausleihe> getAusleiheList (){
         List<Ausleihe> ausleihelist = DAO.AusleiheDAO.getAusleiheListDAO();
         return ausleihelist;
+    }
+    
+    public static void deleteAusleiheByID(long id){
+        
+        DAO.AusleiheDAO.deleteAusleiheByIDDAO(id);
     }
     
     public long getId() {

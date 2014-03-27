@@ -16,19 +16,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Notebookausleihe gespeichert</title>
-        
-         <%
-        String t = session.getAttribute("typ").toString();
-        String i = session.getAttribute("id").toString();
-        long id = Long.parseLong(i);
-        if (t.equals("Student")){
-           
-        }else{
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
-            dispatcher.forward ( request, response );
-        }
+
+        <%
+            String t = session.getAttribute("typ").toString();
+            String i = session.getAttribute("id").toString();
+            long id = Long.parseLong(i);
+            if (t.equals("Student")) {
+
+            } else {
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp");
+                dispatcher.forward(request, response);
+            }
         %>
-        
+
     </head>
     <body>
         <div>
@@ -40,14 +40,12 @@
 
 
         <%
-
-            
             String name = request.getParameter("dozent");
 
             String strklasse = request.getParameter("klasse");
 
             int klasse = Integer.parseInt(strklasse);
-            
+
             String strdauer = request.getParameter("dauer");
             int dauer = Integer.parseInt(strdauer);
 
@@ -68,35 +66,25 @@
                     dozent.setName(element.getName());
                 }
             }
-            
+
             List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
             Notebook notebook = new Notebook();
-           
-            for (Notebook element : notebooklist) {
-                
-                out.println("Dauer:"+dauer);
-                        out.println("Dauer aus der Liste"+ element.getLeihdauer());
-                        out.println("Klasse:"+klasse);
-                        out.println("Klasse aus der Liste"+element.getKlasse());
 
-                if (element.getLeihdauer() == dauer && element.getKlasse() == klasse) {
-                    out.print(i +"**************");
-                        out.println("Dauer:"+dauer);
-                        out.println("Dauer aus der Liste"+ element.getLeihdauer());
-                        out.println("Klasse:"+klasse);
-                        out.println("Klasse aus der Liste"+element.getKlasse());
-                        
-                    
-                        out.println(element.getId()+"bla");
-                        notebook.setId(element.getId());
-                        notebook.setKlasse(element.getKlasse());
-                        notebook.setLeihdauer(element.getLeihdauer());
-                        notebook.setName(element.getName());
-                        String notebookStatus = "bestätigungAusstehend";
-                        notebook.setNotebookStatus(notebookStatus);
-                        notebook.setSeriennummer(element.getSeriennummer());
-                        break;
-                    
+            for (Notebook element : notebooklist) {
+
+                out.println("Dauer:" + dauer);
+
+                if (element.getLeihdauer() == dauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
+
+                    notebook.setId(element.getId());
+                    notebook.setKlasse(element.getKlasse());
+                    notebook.setLeihdauer(element.getLeihdauer());
+                    notebook.setName(element.getName());
+                    String notebookStatus = "bestätigungAusstehend";
+                    notebook.setNotebookStatus(notebookStatus);
+                    notebook.setSeriennummer(element.getSeriennummer());
+                    break;
+
                 }
             }
 
@@ -106,19 +94,18 @@
 
             for (Student element : listStudent) {
                 if (id == element.getId()) {
-                    
-                        student.seteMail(element.geteMail());
-                        student.setGebDat(element.getGebDat());
-                        student.setGeschlecht(element.getGeschlecht());
-                        student.setId(element.getId());
-                        student.setKurs(element.getKurs());
-                        student.setMatNr(element.getMatNr());
-                        student.setName(element.getName());
-                        student.setPasswort(element.getPasswort());
-                        student.setUsername(element.getUsername());
-                        student.setVorname(element.getVorname());
 
-                    
+                    student.seteMail(element.geteMail());
+                    student.setGebDat(element.getGebDat());
+                    student.setGeschlecht(element.getGeschlecht());
+                    student.setId(element.getId());
+                    student.setKurs(element.getKurs());
+                    student.setMatNr(element.getMatNr());
+                    student.setName(element.getName());
+                    student.setPasswort(element.getPasswort());
+                    student.setUsername(element.getUsername());
+                    student.setVorname(element.getVorname());
+
                 }
 
             }
@@ -131,13 +118,13 @@
 
             a.setLeihNotebook(notebook);
             a.setDauer(dauer);
+            a.setAuftragsdatum(new Date());
 
             a.setStatus(
                     "bestätigungAusstehend");
 
             a.setMitarbeiter(dozent);
             a.setAntragssteller(student);
-            
 
             BL.Ausleihe.saveAusleihe(a);
 

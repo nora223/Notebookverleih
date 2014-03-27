@@ -20,7 +20,7 @@
       <div class="col-md-2"><a href='admin.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
       <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
@@ -32,7 +32,7 @@
                 </a>
                 <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a> 
                 <a href="ausleihverwaltung.jsp" class="list-group-item">Ausleih Verwaltung</a>
-                <a href="notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
+                <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
                 <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
             </div>
         </div>

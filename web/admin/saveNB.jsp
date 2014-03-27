@@ -24,7 +24,7 @@
        <div class="col-md-2"><a href='admin.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
       <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
 <body>
@@ -38,14 +38,8 @@
         int leihdauer = Integer.parseInt(l);
         String status = request.getParameter("status");
         
-        out.println("Name: " + name);
-        out.println("Seriennummer: " + seriennummer);
-        out.println("Klasse: " + klasse);
-        out.println("Leihdauer: " + leihdauer);
-        out.println("Status: " + status);
-        
-        //Notebook n = new Notebook(name, seriennummer, klasse, leihdauer, status);
-        //Notebook.saveNotebook(n);
+        Notebook n = new Notebook(name, seriennummer, klasse, leihdauer, status);
+        Notebook.saveNotebook(n);
     %> 
     
     <div> <!-- navigationsbereich Menu-->

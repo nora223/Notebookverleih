@@ -29,18 +29,18 @@ public class NotebookDAO {
      
      public static Integer[] countNotebooks(){
                       
-        String sql0 = "select count (*) as c from notebook where leihdauer=7 AND Klasse = 1";
-        String sql1 = "select count (*) as c from notebook where leihdauer=30 AND Klasse = 1";
-        String sql2 = "select count (*) as c from notebook where leihdauer = 90 AND Klasse = 1";
-        String sql3 = "select count (*) as c from notebook where leihdauer = 180 AND Klasse = 1";
-        String sql4 = "select count (*) as c from notebook where leihdauer=7 AND Klasse = 2";
-        String sql5 = "select count (*) as c from notebook where leihdauer=30 AND Klasse = 2";
-        String sql6 = "select count (*) as c from notebook where leihdauer = 90 AND Klasse = 2";
-        String sql7 = "select count (*) as c from notebook where leihdauer = 180 AND Klasse = 2";
-        String sql8 = "select count (*) as c from notebook where leihdauer=7 AND Klasse = 3";
-        String sql9 = "select count (*) as c from notebook where leihdauer=30 AND Klasse = 3";
-        String sql10= "select count (*) as c from notebook where leihdauer = 90 AND Klasse = 3";
-        String sql11 = "select count (*) as c from notebook where leihdauer = 180 AND Klasse = 3";
+        String sql0 = "select count (*) as c from notebook where leihdauer=7 AND Klasse = 1 AND notebookstatus='verfügbar'";
+        String sql1 = "select count (*) as c from notebook where leihdauer=30 AND Klasse = 1 AND Notebookstatus ='verfügbar'";
+        String sql2 = "select count (*) as c from notebook where leihdauer = 90 AND Klasse = 1 AND Notebookstatus ='verfügbar'";
+        String sql3 = "select count (*) as c from notebook where leihdauer = 180 AND Klasse = 1 AND Notebookstatus ='verfügbar'";
+        String sql4 = "select count (*) as c from notebook where leihdauer=7 AND Klasse = 2 AND Notebookstatus ='verfügbar'";
+        String sql5 = "select count (*) as c from notebook where leihdauer=30 AND Klasse = 2 AND Notebookstatus ='verfügbar'";
+        String sql6 = "select count (*) as c from notebook where leihdauer = 90 AND Klasse = 2 AND Notebookstatus ='verfügbar'";
+        String sql7 = "select count (*) as c from notebook where leihdauer = 180 AND Klasse = 2 AND Notebookstatus ='verfügbar'";
+        String sql8 = "select count (*) as c from notebook where leihdauer=7 AND Klasse = 3 AND Notebookstatus ='verfügbar'";
+        String sql9 = "select count (*) as c from notebook where leihdauer=30 AND Klasse = 3 AND Notebookstatus ='verfügbar'";
+        String sql10= "select count (*) as c from notebook where leihdauer = 90 AND Klasse = 3 AND Notebookstatus ='verfügbar'";
+        String sql11 = "select count (*) as c from notebook where leihdauer = 180 AND Klasse = 3 AND Notebookstatus ='verfügbar'";
         
         Integer[] feld = new Integer[12];
        

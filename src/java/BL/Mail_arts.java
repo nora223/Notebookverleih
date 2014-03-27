@@ -51,7 +51,7 @@ String messageContent =
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Registrierung</h1><br>"     
 +"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
 +"<p><font size="+3+ ">Guten Tag " + s.getVorname()+" "+ s.getName()+ ","+ "</p><br>" 
-+"<p>Vielen Dank  für ihre Rigestrierung.Ihre Daten wurden erfoglreich geschpeichert.</p><br>"  
++"<p>Vielen Dank  für ihre Registrierung.Ihre Daten wurden erfoglreich gespeichert.</p><br>"  
 +"<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;     
@@ -83,6 +83,21 @@ String messageContent =
   return  messageContent;     
        
 }
+
+public static String Student_delete(Student s){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Eine Stornierung von Bestellung</h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" 
++"<p>Ihre Bestellung wurde erfoglreich storniert.</p><br>"  
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;     
+       
+}
+
 public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Student s){
     
  String messageContent =
@@ -102,7 +117,7 @@ public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Studen
 +"<p>Bitte Beachten Sie: Verschiebungen aufgrund von verfrühter Rückgabe sind leider nicht auszuschließen</p><br>"        
 +"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
 +"<p>Bitte prüfen Sie den Status unter:</p><br>"
-+" <li><a href="+"http://localhost:8080/Notebookverleih/index.jsp"+">"+"Meine Ausleihen"+"</a></li>";
++" <li><a href="+"http://localhost:8080/Notebookverleih/admin.jsp"+">"+"Meine Ausleihen"+"</a></li>";
   return messageContent;
 }
 

@@ -1,4 +1,4 @@
- <%@page import="BL.Ausleihe"%>
+<%@page import="BL.Ausleihe"%>
 <%@page import="BL.Dozent"%>
 <%@page import="java.util.List"%>
 <%-- 
@@ -22,25 +22,19 @@
            <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
            <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
    
         <%
         String t = session.getAttribute("typ").toString();
+        
+        
+        
         if (t.equals("Student")){
            
         }else{
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
-        }
-        
-        
-        String s = session.getAttribute("id").toString();
-        long l = Long.parseLong(s);
-        List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
-        for(Ausleihe element : listAusleihe){
-            
-            
         }
         
         %>
@@ -77,28 +71,7 @@
                     
                     
                  <table> 
-                     <tr>
-                    <td>
-                       Username: 
-                       </td>
-                       <td>
-                           
-                           <input id="username" name="username" type="text" size="30" maxlength="40" value ="Bitte Username eingeben">
-                           
-                       </td>
                     
-                </tr>
-                   <tr>
-                    <td>
-                       Passwort: 
-                       </td>
-                       <td>
-                          
-                           <input id="passwort" name="passwort" type="text" size="30" maxlength="40" value="Bitte Passwort eingeben">
-                           
-                       </td>
-                    
-                </tr>
                      
                   <tr>
                     <td>Dozent:</td>
@@ -116,7 +89,8 @@
                            
                             <option><%=name%></option>
                            <%}%>
-                        </select></p>   
+
+                       </select></p>   
                     </td>  
                  </tr> 
                  <tr>

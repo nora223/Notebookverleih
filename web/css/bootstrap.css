@@ -10,7 +10,8 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 10%;
   -ms-text-size-adjust: 10%;
-  width: 100em;
+  /* width:83em;*/
+  width: 98.3%;
 }
 
 body {
@@ -79,17 +80,21 @@ div form p
     margin: 10px;
     text-align: left;
   }
-  
-  .rahmen{
-      
-  }
-  
+
 #pic {
     padding: 8px 0px 0px 15px;
 -moz-box-sizing: content-box;
    box-sizing: content-box;
 }
 
+#pic2 {
+       /*margin: 0px 0px 0px 15px;
+       padding: 0px;*/
+    padding: 8px 0px 0px 15px;
+    -moz-box-sizing: content-box;
+   box-sizing: content-box;
+   width: 100%;
+}
 #login{
     height: 100%;
     width: 80%;

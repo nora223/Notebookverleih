@@ -68,7 +68,7 @@
         <div class="col-md-2"><a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a></div>
         <div id="logout" class="col-md-2"> <a id="logout" href="../logout.jsp"> (Logout) </a></div> 
         <hr>
-        <p id="pic"><img src="../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
 </head>
     <body onLoad="javascript:setFocus()">
@@ -97,23 +97,23 @@
                             <p>Seriennummer<br><input id="t1" name="seriennummer" type="text" size ="30" maxlength="40"></p>
                             <p>Klasse   
                                 <select maxlenght="40" widht="40" name="klasse">
-                                    <option>&starf;</option>
-                                    <option>&starf;&starf;</option>
-                                    <option>&starf;&starf;&starf;</option>
+                                    <option value="1">&starf;</option>
+                                    <option value="2">&starf;&starf;</option>
+                                    <option value="3">&starf;&starf;&starf;</option>
                                 </select>
                             </p>
                             <p>Leihdauer
                                 <select maxlenght="40" widht="40" name="leihdauer">
                                  
-                                    <option>7 Tage</option>
-                                    <option>14 Tage</option>
-                                    <option>30 Tage</option>
-                                    <option>90 Tage</option>
+                                    <option value="7">7 Tage</option>
+                                    <option value="30">30</option>
+                                    <option value="30">90 Tage</option>
+                                    <option>180 Tage</option>
                                 </select>
                             </p>
                             <p>Status
                                 <select maxlenght="40" widht="40" name="status">
-                                    <option>verfügbar</option>
+                                    <option>verf&uuml;gbar</option>
                                     <option>in Bearbeitung</option>
                                     <option>defekt</option>
                                 </select>

@@ -23,7 +23,7 @@
             <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
             <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
             <hr>
-            <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+            <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
            </div>
    
    <%
@@ -57,7 +57,6 @@
                     <%
                         String s = session.getAttribute("id").toString();
                         long l = Long.parseLong(s);
-                        out.println("ID des Dozenten: " + l);
                     %>
               
                     Diese Anfragen m&uuml;ssen noch best&auml;tigt oder abgelehnt werden:
@@ -99,8 +98,8 @@
                                         <td><%=kategorie%></td>
                                         
                                    
-                                        <td> <a href="NBaccept.jsp">Akzeptieren</a></td>
-                                        <td><a href="NBdecline.jsp">Ablehnen</a></td> 
+                                        <td> <a href="../dozent/NBaccept.jsp?id=<%=id%>">Akzeptieren</a></td>
+                                        <td><a href="../dozent/NBdecline.jsp?id=<%=id%>">Ablehnen</a></td> 
                         </tr>
                         <%} 
                                 }%>

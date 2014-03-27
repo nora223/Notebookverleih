@@ -4,6 +4,7 @@
     Author     : Bitte eintragen!
 --%>
 
+<%@page import="BL.Ausleihe"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,8 +24,19 @@
         <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
         <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
         <hr>
-        <p id="pic"><img src=".../pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src=".../pic/dh.jpg" alt="dh" />
     </div>
+    
+    <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Dozent")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+    
 </head>
 <body>
     <div> <!-- navigationsbereich Menu-->
@@ -38,11 +50,46 @@
                     <a href="notebookausleihedozent.jsp" class="list-group-item" >Ausleihe</a>
                 </div>
             </div>
-
+            
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Notebookausleihe akzeptiert! </h1>
-                    <p> Hiermit haben Sie die Ausleihe für den Laptop ... an den Studenten.... akzeptiert.</p>
+                    <h1> Notebookausleihe genehmigt! </h1>
+                   <% String Str_id = request.getParameter("id");
+                   long id = Long.parseLong(Str_id);
+                   String stuName=null;
+                   String stuVorname = null;
+                       
+                       List<Student> listStudent = BL.Student.getStudentList();
+
+            for (Student element : listStudent) {
+                if (id == element.getId()) {
+
+                    stuName=element.getName();
+                    stuVorname=element.getVorname();
+               
+                }
+
+            }%>
+                    
+                    <p> Hiermit haben Sie die Ausleihe für den Studenten <% out.println(stuVorname+" "+stuName); %> akzeptiert.</p>
+                  
+                    <%
+                     List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
+                     long auslId = 0;
+                     for (Ausleihe element : list) {
+                           if (id == element.getAntragssteller().getId()) {
+
+                            auslId = element.getId();
+                            break;
+               
+                }
+
+            }
+              
+                        BL.Ausleihe.updateAusleihe(auslId);
+                    %>
+                    
+                    <a href="../dozent/notebookausleihedozent.jsp">Zurück!</a>
                 </div>
             </div>
         </div>    
