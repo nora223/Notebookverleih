@@ -7,6 +7,11 @@
 <%@page import="BL.Student"%>
 <%@page import="java.util.List"%>
 <%@page import="BL.Ausleihe"%>
+<%@page import= "java.text.DateFormat"%>
+<%@page import= "java.text.SimpleDateFormat"%>
+<%@page import= "java.util.Calendar"%>
+<%@page import= "java.util.Date"%>
+<%@page import= "java.util.GregorianCalendar"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -65,6 +70,34 @@
         
     %>
     
+    <%--
+         Date d= new Date();
+        
+         List<Ausleihe> listeAusleihe = Ausleihe.getAusleiheList();
+            
+           for(Ausleihe element : listeAusleihe){
+            
+           String Status = element.getLeihNotebook().getNotebookStatus();
+           Date auftragsdatum = element.getAuftragsdatum();
+           
+           long id = element.getId();
+           
+           long auftragsdatumMS = auftragsdatum.getTime();
+           auftragsdatumMS = auftragsdatumMS + 7*86400000;
+           Date auftragsdatumPlus7 = new Date(auftragsdatumMS);
+           
+           If(Status == bestätigungAustehend){
+            if ( d.compareTo(auftragsdatumPlus7)>0)
+              BL.Ausleihe.deleteAusleiheByID(id);
+        }
+           
+        }
+        }
+
+
+
+
+--%>
 </head>
 <body>
     <%
