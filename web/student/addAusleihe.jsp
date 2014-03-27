@@ -21,7 +21,7 @@
         <title>Notebookausleihe gespeichert</title>
     <div>
         <div>
-            <a href='../student.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+            <a href='student.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
         </div>
         <div id="logout" > 
             <a style="color: grey" href="../logout.jsp"> (Logout) </a>
@@ -49,10 +49,10 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href=".../student/student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href=".../student/notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
-                    <a href=".../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-                    <a href=".../student/account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
+                    <a href="../student/student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="../student/notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
+                    <a href="../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href="../student/account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 <div class="area">
                     <h1>Notebookausleihe erfolgreich!</h1>
                     <p></p>
-                    <p>Ihre Notebookausleihe wurde ergolgreich gespeichert. <br>
+                    <p>Ihre Notebookausleihe wurde erfolgreich gespeichert. <br>
                         Es wurde eine E-Mail an Ihren zuständigen Dozenten gesendet, damit dieser die Ausleihe best&auml;tigen kann.
                     </p>
                 </div>

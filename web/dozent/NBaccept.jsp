@@ -16,13 +16,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
         <title>Notebook Best&auml;tigung</title>
     <div>
         <div>
-            <a href='../dozent.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+            <a href='dozent.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
         </div>
         <div id="logout" > 
             <a style="color: grey" href="../logout.jsp"> (Logout) </a>
