@@ -77,10 +77,19 @@
                             <tr>
                                 <td>Dozent:</td>
                                 <td>
+                                    
                                     <select name="dozent" maxlenght="40">
-                                        <% List<Dozent> dozentList = BL.Dozent.getDozentList();%>
+                                       <% List<Dozent> dozentList = BL.Dozent.getDozentList();
+                                          for (Dozent element: dozentList) {
+                                            long id = element.getId ();
+                                            String name = element.getName ();
+                                            String vorname = element.getVorname ();
+                                        %>
+                                        <option><%=name%></option>
                                         
-                       </select></p>   
+                                        
+                                         <%}%>
+                             </select></p>   
                     </td>  
                  </tr> 
                  <tr>
