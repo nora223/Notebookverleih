@@ -164,11 +164,11 @@
 
                                         } else {
                                             %>
-                                            <a href="notebookauswahl.jsp?klasse=1&leihdauer=30&dauerRichtig=0">
+                                            <a href="notebookauswahl.jsp?klasse=1&leihdauer=30&dauerRichtig=0"><button class="white">
                                             <%
                                             out.println(c + k1ld30 + d);
                                             %>
-                                            </a>
+                                            </button></a>
                                             <%
                                             leihdauer = 30;
                                             klasse = 1;
