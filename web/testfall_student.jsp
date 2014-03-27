@@ -24,8 +24,8 @@
              s.setName("Reich");
              s.setVorname("Caroline");
              s.setPasswort("12");
-             s.setUsername("reichc@hotmail.de");
-             s.seteMail("reichc@hotmail.de");
+             s.setUsername("test@web.de");
+             s.seteMail("test@web.de");
            
            BL.Student.saveStudent(s);
                
