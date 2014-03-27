@@ -38,10 +38,12 @@ public class LoginServlet extends HttpServlet {
         boolean hit = false;
         String email;
         String passwort;
+        int leihdauer;
+        int dauerRichtig;
         
         // Session erzeugen und die ID des Users und einer Kategorie zuweisen (Student, Dozent oder ADMIN)         
         ServletContext context = this.getServletContext();
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(true);       
         
         //eingegebene E-Mail und Passwort auslesen
         email = request.getParameter("e_mail");

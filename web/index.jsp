@@ -77,8 +77,8 @@
                <li><a href="testfaelle.jsp">Testf&auml;lle!</a></li>
                <li><a href="testfaelle_alexey.jsp">Testf&auml;lle_Aleksey!</a></li>
                <li><a href="testfaelle_notebook.jsp">Testf&auml;lle_notebook</a></li>
-               <!--<li><a href="student/student.jsp">Student</a></li>-->
-               <li><a href="dozent/dozent.jsp">Dozent</a></li>
+               <!--<li><a href="student/student.jsp">Student</a></li>
+               <li><a href="dozent/dozent.jsp">Dozent</a></li>-->
                </div> 
         </div>
         </div>

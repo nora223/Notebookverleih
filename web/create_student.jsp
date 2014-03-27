@@ -14,7 +14,6 @@
         <link rel="stylesheet" href ="calender/3-dynamically-created/tcal.css" type ="text/css" />
         <script type="text/javascript" src="calender/3-dynamically-created/tcal.js" language="JavaScript"></script>
         <script type="text/javascript">
-
             var validatePassword = function() {
                 //alert("PW");
                 // document.forms.adr.passwort1 
@@ -36,16 +35,6 @@
                 }
             }
 
-            //document.getElementById("passwordError").style.visibility = 'visible';
-            //document.getElementById("passwordError").innerHTML = 'Password not match';
-            //temp = document.getElementByName("passwort");
-            //alert(temp);
-            /*if(document.getElementById("passwort") === document.getElementById("passwort2")){
-             return true;
-             }else{
-             alert('Wrong Password!');
-             return false;
-             }*/
             var checkEntry = function(element) {
                 id = element.id;
                 //alert("checkentry" + id);
@@ -91,7 +80,12 @@
                 if (validatePassword() == false) {
                     retValue = false;
                 }
-                /*if (element.id == 't7') {checkMatrikel();}*/
+                /*checkKurs();
+                if(checkKurs() == false){
+                    alert("Check Kurs");
+                    retValue = false;
+                }
+                if (element.id == 't7') {checkMatrikel();}*/
                 return retValue;
             }
 
@@ -137,7 +131,11 @@
                     }
                 }
             }
-
+            
+            /*function checkKurs(){
+                var kurs = document.getElementById("t8").value;
+                var fach = kurs.substring(0, 3);
+            }*/
         </script>
 
         <title>Neuen Student anlegen</title>

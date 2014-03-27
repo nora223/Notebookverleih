@@ -20,21 +20,18 @@
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <title>Logout</title>
     <div>
-        <a href='../index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
+        <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
         <hr>
         <p><img id="pic2" src="pic/dh.jpg" alt="dh" />
     </div>
-    
-    <% 
+
+    <%
         session.invalidate();
-        
-    
     %>
-    
+
 </head>
 
 <body>
-    
     <div> <!-- Navigationsbereich-->
         <div  class="row">
             <div class="col-md-3">
@@ -47,7 +44,6 @@
                     <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
                 </div>
             </div>
-
 
             <div class="col-md-6">
                 <div class="area">
@@ -73,8 +69,8 @@
                     <li><a href="admin/admin.jsp">Admin</a></li>
                     <li><a href="testfaelle.jsp">Testfälle!</a></li>
                     <li><a href="testfaelle_alexey.jsp">Testfälle_Aleksey!</a></li>
-                    <!--<li><a href="student/student.jsp">Student</a></li>-->
-                    <li><a href="dozent/dozent.jsp">Dozent</a></li>
+                    <!--<li><a href="student/student.jsp">Student</a></li>
+                    <li><a href="dozent/dozent.jsp">Dozent</a></li>-->
                 </div> 
             </div>
         </div>
