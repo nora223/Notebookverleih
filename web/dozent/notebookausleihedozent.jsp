@@ -98,8 +98,8 @@
                                         <td><%=kategorie%></td>
                                         
                                    
-                                        <td> <a href="dozent/NBaccept.jsp">Akzeptieren</a></td>
-                                        <td><a href="dozent/NBdecline.jsp">Ablehnen</a></td> 
+                                        <td> <a href="NBaccept.jsp">Akzeptieren</a></td>
+                                        <td><a href="NBdecline.jsp">Ablehnen</a></td> 
                         </tr>
                         <%} 
                                 }%>
