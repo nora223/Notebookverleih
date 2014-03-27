@@ -123,7 +123,6 @@
                     document.getElementById("t7").focus();
                     return;
                 }
-
             }
 
             //Courser wird ins erste Feld gesetzt
@@ -143,10 +142,14 @@
 
         <title>Neuen Student anlegen</title>
     <div>
-        <div class="col-md-2"><a href='.../index.jsp'><img id="pic" src=".../pic/logo.png" alt="Logo"/></a></div>
-        <div id="logout" class="col-md-2"> <a id="logout" href=".../logout.jsp"> (Logout) </a></div> 
+        <div>
+            <a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+        </div>
+        <div id="logout" > 
+            <a style="color: grey" href="../logout.jsp"> (Logout) </a>
+        </div> <!-- Link für Logout-->
         <hr>
-        <p><img id="pic2" src="pic/dh.jpg" alt="dh" />
+        <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
 </head>
 <body onLoad="javascript:setFocus()">
