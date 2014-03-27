@@ -109,7 +109,8 @@ div form p
 #logout{
     color: grey;
     text-align: right;
-    margin: 20px 0px 40px 600px; /*oben-rechts-unten-links*/
+    margin: -85px 0px 85px 0px;
+   /* margin: 20px 0px 40px 600px; /*oben-rechts-unten-links*/
     
 }
 
