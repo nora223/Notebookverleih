@@ -41,10 +41,10 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Notebookausleihe akzeptiert! </h1>
-                    <p> Hiermit haben Sie die Ausleihe für den Laptop ... an den Studenten.... akzeptiert.</p>
+                    <h1> Notebookausleihe genehmigt! </h1>
+                    <p> Hiermit haben Sie die Ausleihe für den Studenten akzeptiert.</p>
                     
-             
+                    <a href="../dozent/notebookausleihedozent.jsp">Zurück!</a>
                 </div>
             </div>
         </div>    
