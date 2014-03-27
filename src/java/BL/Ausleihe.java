@@ -113,6 +113,11 @@ public class Ausleihe implements Serializable{
         return ausleihelist;
     }
     
+    public static void deleteAusleiheByID(long id){
+        
+        DAO.AusleiheDAO.deleteAusleiheByIDDAO(id);
+    }
+    
     public long getId() {
         return id;
     }
