@@ -63,6 +63,10 @@ public class Notebook implements Serializable{
         Integer[] feld = DAO.NotebookDAO.countNotebooks();
         return feld; 
     }
+    
+    public static void updateNotebook(Notebook nid){
+        DAO.NotebookDAO.updateNotebook(nid);
+    }
 
     public long getId() {
         return id;
