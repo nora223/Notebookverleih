@@ -19,7 +19,7 @@
         <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src="../js/bootstrap.js"></script> 
         <title>Notebookausleihe gespeichert</title>
-      
+
 
     </head>
     <body>
@@ -101,8 +101,6 @@
 
                     for (Notebook element : notebooklist) {
 
-                        //out.println("Dauer:" + dauer);
-
                         if (element.getLeihdauer() == dauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
 
                             notebook.setId(element.getId());
@@ -162,5 +160,5 @@
             </div>
         </div>
     </div>
- </body>
+</body>
 </html>

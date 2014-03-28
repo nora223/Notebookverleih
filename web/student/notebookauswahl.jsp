@@ -124,29 +124,24 @@
                             <%} else if(leihdauer == 30 && klasse != 1){%>
                                 <option>30</option> 
                                 <option>7</option> 
-                               
                             <%} else if(leihdauer == 90 && klasse != 1){%>
-                               
                                <option>90</option>
                                <option>7</option> 
                                <option>30</option> 
-                           
-                             <%} else if (leihdauer == 30 && klasse == 1 && dauerRichtig == 0){%>
-                              <option>30</option>
-                              <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 0){%>
-                                                          
-                             <option>90</option>
-                             <option>30</option>
-                             
-                             <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 30){%>
-                             <option>30</option>
-                             
-                             <%} else if (leihdauer == 180 && klasse == 1){%>
-                             
-                             <option>180</option>
+                            <%} else if (leihdauer == 30 && klasse == 1 && dauerRichtig == 0){%>
+                               <option>30</option>
+                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 0){%>
+                               <option>90</option>
+                               <option>30</option>
+                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 30){%>
+                               <option>30</option>
+                            <%} else if (leihdauer == 180 && klasse == 1){%>
+                              <option>180</option>
                               <option>30</option>                             
-                             <option>90</option>
+                              <option>90</option>
                             <%}%>
+                            
+                            <!-- If-Schleife muss noch angepasst werden --> 
                             
                         </select></p>
                     </td>  
