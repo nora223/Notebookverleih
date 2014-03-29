@@ -30,6 +30,17 @@
         <hr>
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" />
     </div>
+    
+    <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Dozent")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+    
 </head>
 <body>
     <div> <!-- navigationsbereich Menu-->
