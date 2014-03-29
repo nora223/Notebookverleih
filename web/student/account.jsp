@@ -15,9 +15,9 @@
 <html>
    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
                 <script type="text/javascript">
             var validatePassword = function() {
                 //alert("PW");
@@ -144,7 +144,7 @@
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
    
-            <%
+        <%
         String t = session.getAttribute("typ").toString();
         if (t.equals("Student")){
            
@@ -152,6 +152,34 @@
             RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
             dispatcher.forward ( request, response );
         }
+        
+        //ID des aktuell eingelogten Studenten herausfinden
+        String l = session.getAttribute("id").toString();
+        long id = Long.parseLong(l);
+        
+        //Daten des eingeloggten Studenten aus der Datenbank abfragen
+        String geschlecht;
+        String vorname;
+        String name;
+        String e_Mail;
+        Date date;
+        int matNr;
+        String kurs;
+        String passwort;
+        
+        List<Student> listStudent =  Student.getStudentList();
+        for(Student element : listStudent){
+                if(id == element.getId()){
+                    geschlecht = element.getGeschlecht();
+                    vorname = element.getVorname();
+                    name = element.getName();
+                    e_Mail = element.geteMail();
+                    date = element.getGebDat();
+                    matNr = element.getMatNr();
+                    kurs = element.getKurs();
+                    passwort = element.getPasswort();
+                    
+             
     %>
    
     </head>
@@ -173,25 +201,41 @@
             <div class="col-md-6">
                 <div class="area">
                     <h1> Benutzerkontoeinstellungen </h1>
-                    <p> Sie befinden sich in Ihrem Benutzerkonto Men&uuml;.<br><br>
-                    Sie können hier Ihre persönlichen Daten ändern.</p>
+                    <p>Sie können hier Ihre persönlichen Daten ändern!</p>
                      <div id="login">
-                    <form name="adr" action="savestudent.jsp" methode="POST" onsubmit="javascript:return checkForm()"> 
-                        <!--onsubmit="javascript:return checkForm()"-->
-                        <p> <input type="radio" name="radio" value="weiblich">weiblich&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
-                            <input type="radio" name="radio" value="m&auml;nnlich">m&auml;nnlich</input></p>
-                        <p>Nachname<br><input id="t" name="nachname" type="text" size="30" maxlength="40"></p>
-                        <p>Vorname<br><input id="t2" name="vorname" type="text" size ="30" maxlength="40"></p>
-                        <p>E-mail<br><input id="t3" name="e_mail" type="email" placeholder="me@example.com" size ="30" maxlength="40"></p>
-                        <p>Passwort<br><input id="t4" name="passwort" type="password" size ="30" maxlength="40"></p>
-                        <p>Passwort<br><input id="t5" name="passwort2" type="password" size ="30" maxlength="40"></p>
-                        <p><div id="passwordError" style="visibility: hidden;"></div></p>
-                        <p>Geburtsdatum<br><input class="tcal tcalInput" id="t6" name="gebDat" value="DD:MM:YYYY" size ="30" title="Bitte GebDat eintragen" maxlength="40" onkeypress="return false" onblur="javascript:checkEntry(this)"></p>
+                    
+                    <form name="adr" action="saveAccount.jsp" methode="POST" onsubmit="javascript:return checkForm();">
+                        <p><input name="id" type="hidden" value="<%=id%>" size="30" maxlength="40"></p>
 
-                        <p>Matrikelnummer<br><input id="t7" name="matNr" type="text" title="" size ="30" maxlength="40" onblur="javascript:checkMatrikel(this)"></p>
-                        <p>Kursnummer<br><input id="t8" name="kurs" type="text" size ="30" maxlength="40"></p>
+                        <% if (geschlecht.equals("weiblich")) {%> 
+                        <p>
+                            <input type="radio" name="radio" value="<%=geschlecht%>" checked>weiblich
+                            <input type="radio" name="radio" value="<%=geschlecht%>">männlich</p> 
+                            <% } else {%>
+                        <p>
+                            <input type="radio" name="radio" value="<%=geschlecht%>" >weiblich
+                            <input type="radio" name="radio" value="<%=geschlecht%>" checked>männlich</p> 
+
+                        <% }%>
+
+                        <p>Nachname<br><input id="t" name="name" type="text" value="<%=name%>" size="30" maxlength="40"></p>
+                        <p>Vorname<br><input id="t2" name="vorname" type="text" value="<%=vorname%>" size ="30" maxlength="40"></p>
+                        <p>E-mail<br><input id="t3" name="e_Mail" type="email" value="<%=e_Mail%>"  size ="30" maxlength="40"></p>
+                        <p>Passwort<br><input id="t4" name="passwort" type="password" value="<%=passwort%>" size ="30" maxlength="40"></p>
+                        <p>Passwort<br><input id="t5" name="passwort2" type="password" value="<%=passwort%>" size ="30" maxlength="40"></p>
+                        <p><div id="passwordError" style="visibility: hidden;"></div></p>
+                        <p>Geburtsdatum<br><input class="tcal tcalInput" name="gebDat" type="text" value="<%=date%>"  size ="30" maxlength="40"></p>
+                        <p>Matrikelnummer<br><input id="t7" name="matNr" type="text"  value="<%=matNr%>"  size ="30" maxlength="40" onblur="javascript:checkMatrikel(this);"></p>
+                        <p>Kursnummer<br><input id="t8" name="kurs" type="text"  value="<%=kurs%>"  size ="30" maxlength="40"></p>
+                       
                         <p><input name="button" type="submit" value="anlegen"></p>
-                    </form>
+                    </form>     
+                
+        <%
+                }
+            }
+        %>
+                     
                 </div>
                 </div>
             </div>
@@ -201,3 +245,5 @@
    
     </body>
 </html>
+
+
