@@ -186,7 +186,7 @@
                         <p><div id="passwordError" style="visibility: hidden;"></div></p>
                         <p>Geburtsdatum<br><input class="tcal tcalInput" id="t6" name="gebDat" value="dd:mm:yyyy " size ="30" title="Bitte GebDat eintragen" maxlength="40" onkeypress="return false" onblur="javascript:checkEntry(this)"></p>
 
-                        <p>Matrikelnummer<br><input id="t7" name="matNr" type="text" title="Matrikelnummer" size ="30" maxlength="40" onblur="javascript:checkMatrikel(this)">Matrikelnummer</p>
+                        <p>Matrikelnummer<br><input id="t7" name="matNr" type="text" title="Matrikelnummer" size ="30" maxlength="40" onblur="javascript:checkMatrikel(this)"></p>
                         <p>Kursnummer<br><input id="t8" name="kurs" type="text" size ="30" maxlength="40"></p>
                         <p><input name="button" type="submit" value="anlegen"></p>
                     </form>

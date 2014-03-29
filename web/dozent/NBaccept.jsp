@@ -4,6 +4,7 @@
     Author     : Bitte eintragen!
 --%>
 
+<%@page import="BL.Notebook"%>
 <%@page import="BL.Ausleihe"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -80,17 +81,21 @@
                     <%
                      List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
                      long auslId = 0;
+                     int dauer = 0;
+                     Notebook nid = null;
                      for (Ausleihe element : list) {
                            if (id == element.getAntragssteller().getId()) {
 
                             auslId = element.getId();
+                            dauer = element.getDauer();
+                            nid = element.getLeihNotebook();
                             break;
                
                 }
 
             }
               
-                        BL.Ausleihe.updateAusleihe(auslId);
+                        BL.Ausleihe.updateAusleihe(auslId, dauer, nid);
                     %>
                     
                     <a href="../dozent/notebookausleihedozent.jsp">Zurück!</a>

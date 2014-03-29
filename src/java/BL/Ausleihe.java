@@ -8,7 +8,9 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -77,10 +79,16 @@ public class Ausleihe implements Serializable{
         
     }
     
-    public static void updateAusleihe (long id){
+    public static void updateAusleihe (long id, int dauer, Notebook nid){
+       Date von = new Date();
+       GregorianCalendar cal = new GregorianCalendar();
+       cal.setTime(von);
+       cal.add(Calendar.DAY_OF_MONTH, dauer);
+       Date bis = cal.getTime();
        
-        
-       DAO.AusleiheDAO.updateAusleihe(id);
+       BL.Notebook.updateNotebook(nid);
+       
+       DAO.AusleiheDAO.updateAusleihe(id, von, bis);
     }
    
     

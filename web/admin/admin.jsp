@@ -49,6 +49,10 @@
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>
                     <p> Sie befinden sich im Administrationsbereich der Notebookausleihe!</p>
+                    <p><a href="Mahnung.jsp" class="blue">Mahnung</p>
+                    <p><a href="gueltigkeit_derAnfrage.jsp" class="blue">G&uuml;ltigkeit der Anfrage</p>
+                
+                
                 </div>
             </div>
         </div>    
