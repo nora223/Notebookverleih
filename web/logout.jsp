@@ -57,9 +57,9 @@
                         LOGIN
                     </a>
                     <div class="list-group-item">
-                        <form action="Login_Start.jsp" methode="POST">
-                            <p>E-mail<br><input name="e_mail" type="text" maxlength="40"></p>
-                            <p>Passwort<br><input name="passwort" type="password" maxlength="40"></p>
+                        <form method="POST" action="servlets/login">
+                            <p>E-mail<br><input id="e_mail" name="e_mail" type="text" maxlength="40"></p>
+                            <p>Passwort<br><input id="passwort" name="passwort" type="password" maxlength="40"></p>
                             <p><input name="button" type="submit" value="Login"></p>
                         </form>
                         <a href="create_student.jsp">Neuer Zugang anlegen?</a><br>
