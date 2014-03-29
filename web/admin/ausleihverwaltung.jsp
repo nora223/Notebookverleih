@@ -3,6 +3,9 @@
     Created on : 23.02.2014, 20:29:56
     Author     : CaReich
 --%>
+<%@page import="BL.Notebook"%>
+<%@page import="BL.Dozent"%>
+<%@page import="BL.Ausleihe"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -58,32 +61,55 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Klasse</th>
-                                <th>Name</th>
-                                <th>Seriennummer</th>
-                                <th>Leihdauer</th>
-                                <th>Ausleihstatus</th>
-                                <th>Ausgeliehen von</th>
-                                <th>Verantwortlicher</th>
-
+                                <th>Antragsteller</th>
+                                <th>Auftragsdatum</th>
+                                <th>Dozent</th>
+                                <th>Notebook</th>
+                                <th>Von: </th>
+                                <th>Bis: </th>
+                                <th>Status</th>
+                                <th>Betriebssystem</th>
+                                <th>Bemerkung</th>
+                             
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            </tr>
-                            <tr> 
-                            </tr>
-                            <tr>
-                            </tr>
+                            <% 
+                               List<Ausleihe> erg =  BL.Ausleihe.getListAusleihe();
+                                for (Ausleihe element : erg){
+                                long id = element.getId();
+                                Student antragsteller = element.getAntragssteller();
+                                Dozent mitarbeiter = element.getMitarbeiter();
+                                Date date = element.getAuftragsdatum();
+                                String bemerkung = element.getBermerkung();
+                                String betriebssystem = element.getBetriebssystem();
+                                Date bis = element.getBis();
+                                int dauer = element.getDauer();
+                                Notebook notebook = element.getLeihNotebook();
+                                String status = element.getStatus();
+                                Date von = element.getVon();
+                                
+                                
+        %>
+        <tr>
+                            <td><%=id%></td>
+                            <td><%=antragsteller.getVorname()+" "+antragsteller.getName()%></td>
+                            <td><%=date%></td>
+                            <td><%=mitarbeiter.getVorname()+" "+mitarbeiter.getName()%></td>
+                            <td><%=notebook.getId()%></td>
+                            <td><%=von%></td>
+                            <td><%=bis%></td>
+                            <td><%=status%></td>
+                            <td><%=betriebssystem%></td>
+                            <td><%=bemerkung%></td>
+                            
+        <td><a href="deleteAusleihe.jsp?id=<%=id%>&notebook=<%=notebook.getId()%>">L&ouml;schen</td>
+        </tr>
+         <%}%>
                         </tbody>
                     </table>
 
-                    <p>Bemerkung: <input name="bemerkung" type="text" size ="50" maxlength="40" placeholder='z. B. geplanter Verwendungszweck des Notebooks'></p>
-                    <p>Mitarbeiter<select name="status" widht="40"maxlenght="40">
-                            <option></option>
-                            <option></option>
-                            <option></option>
-                        </select></p>  
+                   
 
                     <footer class="footer">
                         <input class="blue" name="button" type="submit" value="Speichern">

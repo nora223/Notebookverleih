@@ -58,16 +58,7 @@ public static void updateAusleihe(Long id, Date von, Date bis){
     tx.commit();
 }
 
-public static List<Date> getNextFreeDate(int dauer, int klasse){
-    
-    String sql = "select BIS from ausleihe where leihnotebook_id = (Select id from notebook where leihdauer ="+dauer+"AND klasse ="+klasse+")";
-    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-    Transaction tx = session.beginTransaction();
-    List<Date>  bla = session.createSQLQuery(sql).list();
-    tx.commit();
-    
-    return bla;
-}
+
 
 public static void deleteAusleiheByIDDAO(long id){
       
