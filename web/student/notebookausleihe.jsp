@@ -139,21 +139,21 @@
                                                 leihdauer = 90;
                                                 dauerRichtig = 30;
                                     %>
-                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=90&dauerRichtig=30">
+                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=90&dauerRichtig=30"><button class="white">
                                         <%
                                             out.println(c + k1ld30 + d);
                                         %>
-                                    </a>
+                                    </button></a>
                                     <%
                                         } else if (k1ld90 == 0 && k1ld180 >= 1) {
                                             k1ld30 = 1;
                                             leihdauer = 180;
                                             dauerRichtig = 30;
                                              %>
-                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=180&dauerRichtig=30">
+                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=180&dauerRichtig=30"><button class="white">
                                         <%
                                             out.println(c + k1ld30 + d);
-                                            
+                                            %></button></a>  <%     
                                         } else if (k1ld90 == 0 && k1ld180 == 0) {
                                             out.println(nichtvorhanden + BL.Ausleihe.getNextFreeDate(30, 1) + nichtvorhanden2);
                                             //Hier muss ein Aufruf für die Warteschlange aufgerufen werden
@@ -165,7 +165,7 @@
                                     <a href="notebookauswahl.jsp?klasse=1&leihdauer=30&dauerRichtig=0"><button class="white">
                                             <%
                                                 out.println(c + k1ld30 + d);
-                                        //Button entfernen?!?!?!
+                                        
                                                 %>
                                         </button></a>
                                         
@@ -188,11 +188,11 @@
                                                 leihdauer = 180;
                                                 dauerRichtig = 90;
                                     %>
-                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=180&dauerRichtig=90">
+                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=180&dauerRichtig=90"><button class="white">
                                         <%
                                             out.println(c + k1ld90 + d);
                                         %>
-                                    </a>
+                                        </button></a>
                                     <%
                                         }  else if (k1ld90 == 0 && k1ld180 == 0) {
                                             out.println(nichtvorhanden + BL.Ausleihe.getNextFreeDate(90, 1) + nichtvorhanden2);
@@ -256,28 +256,27 @@
                                                 dauerRichtig = 7;
                                                       
                                     %>
-                                    <a href="notebookauswahl.jsp?klasse=2&leihdauer=30&dauerRichtig=7">
+                                    <a href="notebookauswahl.jsp?klasse=2&leihdauer=30&dauerRichtig=7"><button class="white">
                                         <%
                                             out.println(c + k2ld7 + d);
                                         %>
-                                    </a>
+                                        </button></a>
                                     <%
                                         } else if (k2ld30 == 0 && k2ld90 >= 1) {
                                             k2ld7 = 1;
                                             leihdauer = 90;
                                             dauerRichtig = 7;
                                              %>
-                                    <a href="notebookauswahl.jsp?klasse=2&leihdauer=90&dauerRichtig=7">
+                                             <a href="notebookauswahl.jsp?klasse=2&leihdauer=90&dauerRichtig=7"><button class="white">
                                         <%
                                             out.println(c + k2ld7 + d);
-                                            
+                                            %></button></a><%  
                                         }                           
                                         else if (k2ld90 == 0 && k2ld30 == 0) {
                                             out.println(nichtvorhanden + BL.Ausleihe.getNextFreeDate(7, 2) + nichtvorhanden2);
                                             //Hier muss ein Aufruf für die Warteschlange aufgerufen werden
 
                                         }
-
                                     } else {
                                     %>
                                     <a href="notebookauswahl.jsp?klasse=2&leihdauer=7&dauerRichtig=0"><button class="white">
@@ -305,11 +304,11 @@
                                                 leihdauer = 90;
                                                 dauerRichtig = 30;
                                     %>
-                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=90&dauerRichtig=30">
+                                    <a href="notebookauswahl.jsp?klasse=1&leihdauer=90&dauerRichtig=30"><button class="white">
                                         <%
                                             out.println(c + k2ld30 + d);
                                         %>
-                                    </a>
+                                        </button></a>
                                     <%
                                         }  else if (k1ld90 == 0 ) {
                                             out.println(nichtvorhanden + BL.Ausleihe.getNextFreeDate(30, 2) + nichtvorhanden2);
@@ -380,21 +379,21 @@
                                                 dauerRichtig = 7;
                                                       
                                     %>
-                                    <a href="notebookauswahl.jsp?klasse=3&leihdauer=30&dauerRichtig=7">
+                                    <a href="notebookauswahl.jsp?klasse=3&leihdauer=30&dauerRichtig=7"><button class="white">
                                         <%
                                             out.println(c + k3ld7 + d);
                                         %>
-                                    </a>
+                                        </button></a>
                                     <%
                                         } else if (k3ld30 == 0 && k3ld90 >= 1) {
                                             k3ld7 = 1;
                                             leihdauer = 90;
                                             dauerRichtig = 7;
                                              %>
-                                    <a href="notebookauswahl.jsp?klasse=3&leihdauer=90&dauerRichtig=7">
+                                             <a href="notebookauswahl.jsp?klasse=3&leihdauer=90&dauerRichtig=7"><button class="white">
                                         <%
                                             out.println(c + k3ld7 + d);
-                                            
+                                            %></button></a>  <%
                                         }                           
                                         else if (k3ld90 == 0 && k3ld30 == 0) {
                                             out.println(nichtvorhanden + BL.Ausleihe.getNextFreeDate(7, 3) + nichtvorhanden2);
@@ -429,11 +428,11 @@
                                                 leihdauer = 90;
                                                 dauerRichtig = 30;
                                     %>
-                                    <a href="notebookauswahl.jsp?klasse=3&leihdauer=90&dauerRichtig=30">
+                                    <a href="notebookauswahl.jsp?klasse=3&leihdauer=90&dauerRichtig=30"><button class="white">
                                         <%
                                             out.println(c + k3ld30 + d);
                                         %>
-                                    </a>
+                                        </button></a>
                                     <%
                                         }  else if (k3ld90 == 0 ) {
                                             out.println(nichtvorhanden + BL.Ausleihe.getNextFreeDate(30, 3) + nichtvorhanden2);

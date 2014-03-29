@@ -80,6 +80,9 @@
 
                     String bs = request.getParameter("bs");
                     String bemerkung = request.getParameter("bemerkung");
+                    
+                    String leihdauerStr = request.getParameter("leihdauer");
+                    int leihdauer = Integer.parseInt(leihdauerStr);
 
                     List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
                     Dozent dozent = new Dozent();
@@ -101,7 +104,7 @@
 
                     for (Notebook element : notebooklist) {
 
-                        if (element.getLeihdauer() == dauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
+                        if (element.getLeihdauer() == leihdauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
 
                             notebook.setId(element.getId());
                             notebook.setKlasse(element.getKlasse());

@@ -20,7 +20,7 @@
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script> 
         <title>Notebookauswahl:</title>
-           <div>
+    <div>
         <div>
             <a href='../student.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
         </div>
@@ -30,15 +30,14 @@
         <hr>
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
-   
-        <%
+
+    <%
         String t = session.getAttribute("typ").toString();
-        
-        if (t.equals("Student")){
-           
-        }else{
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
-            dispatcher.forward ( request, response );
+
+        if (t.equals("Student")) {
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp");
+            dispatcher.forward(request, response);
         }
 
     %>
@@ -61,115 +60,126 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    
+
                     <h1> Notebookauswahl: </h1> 
-                    
-                   
-                    <% 
-                         int leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
-                         int dauerRichtig = Integer.parseInt(request.getParameter("dauerRichtig"));
-                         int klasse = Integer.parseInt(request.getParameter("klasse"));  
-                        
+
+
+                    <%
+                        int leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
+                        int dauerRichtig = Integer.parseInt(request.getParameter("dauerRichtig"));
+                        int klasse = Integer.parseInt(request.getParameter("klasse"));
+
                     %> 
                     <div id="login"  style="width: 40em; padding: 15px">
-                    <form action="addAusleihe.jsp" methode ="POST">
-                        <table> 
-                            <tr>
-                                <td>Dozent:</td>
-                                <td>
-                                    
-                                    <select name="dozent" maxlenght="40">
-                                       <% List<Dozent> dozentList = BL.Dozent.getDozentList();
-                                          for (Dozent element: dozentList) {
-                                            long id = element.getId ();
-                                            String name = element.getName ();
-                                            String vorname = element.getVorname ();
-                                        %>
-                                        <option><%=name%></option>
-                                        
-                                        
-                                         <%}%>
-                             </select></p>   
-                    </td>  
-                 </tr> 
-                 <tr>
-                    <td>Notebook:</td>
-                    <td>
-                         
-                              <% if(klasse == 1){  %>
-                              <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="1" readonly="readonly">Notebook&starf;
-                            
-                             <%} else if(klasse == 2){%>
-                            <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="2" readonly="readonly">Notebook&starf;&starf;
-                         
-                           
-                             <%} else if (klasse == 3){%>
-                            <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="3" readonly="readonly">Notebook&starf;&starf;&starf;
-                           
-                           
-                                 <%}%>
-                                 <input name="leihdauer" type="hidden" size="20" value="<%=leihdauer%>"/>
-                            
-                        </p>
-                    </td> 
-                </tr>   
-                <tr>
-                    <td>Dauer (in Tagen):</td>
-                    <td>
-                        <select name="dauer" maxlenght="40" >
-                         
-                            
-                            <% if(leihdauer == 7 && klasse != 1){  %>
-                            <option>7</option>
-                            <%} else if(leihdauer == 30 && klasse != 1){%>
-                                <option>30</option> 
-                                <option>7</option> 
-                            <%} else if(leihdauer == 90 && klasse != 1){%>
-                               <option>90</option>
-                               <option>7</option> 
-                               <option>30</option> 
-                            <%} else if (leihdauer == 30 && klasse == 1 && dauerRichtig == 0){%>
-                               <option>30</option>
-                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 0){%>
-                               <option>90</option>
-                               <option>30</option>
-                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 30){%>
-                               <option>30</option>
-                            <%} else if (leihdauer == 180 && klasse == 1){%>
-                              <option>180</option>
-                              <option>30</option>                             
-                              <option>90</option>
-                            <%}%>
-                            
-                            <!-- If-Schleife muss noch angepasst werden --> 
-                            
-                        </select></p>
-                    </td>  
-                </tr>
-                 <tr>
-                    <td>Betriebssystem:</td>
-                    <td>
-                        <select name="bs" maxlenght="40" value="betriebssystem">
-                            <option>Linux</option>
-                            <option>Windows</option>
-                        </select></p>
-                    </td>  
-                </tr>
-                <tr>
-                    <td>Bemerkung:</td> 
-                    
-                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information' value="bemerkung"></p></td>
-                </tr>
-                <tr>
-                    <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
-                </tr>
-                
-                
-                </table>        
-     
-                
-                    </form>
-                </div>
+                        <form action="addAusleihe.jsp" methode ="POST">
+                            <table> 
+                                <tr>
+                                    <td>Dozent:</td>
+                                    <td>
+
+                                        <select name="dozent" maxlenght="40">
+                                            <% List<Dozent> dozentList = BL.Dozent.getDozentList();
+                                                for (Dozent element : dozentList) {
+                                                    long id = element.getId();
+                                                    String name = element.getName();
+                                                    String vorname = element.getVorname();
+                                            %>
+                                            <option><%=name%></option>
+
+
+                                            <%}%>
+                                        </select></p>   
+                                    </td>  
+                                </tr> 
+                                <tr>
+                                    <td>Notebook:</td>
+                                    <td>
+
+                                        <% if (klasse == 1) {%>
+                                        <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="1" readonly="readonly">Notebook&starf;
+
+                                        <%} else if (klasse == 2) {%>
+                                        <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="2" readonly="readonly">Notebook&starf;&starf;
+
+
+                                        <%} else if (klasse == 3) {%>
+                                        <input name="klasse" type="hidden" size ="20"  placeholder='Information' value="3" readonly="readonly">Notebook&starf;&starf;&starf;
+
+
+                                        <%}%>
+                                        <input name="leihdauer" type="hidden" size="20" value="<%=leihdauer%>"/>
+
+                                        </p>
+                                    </td> 
+                                </tr>   
+                                <tr>
+                                    <td>Dauer (in Tagen):</td>
+                                    <td>
+                                        <select name="dauer" maxlenght="40" >
+
+                                            <!-- Klasse 2 und 3 -->
+                                            <% if (leihdauer == 7 && klasse != 1 && dauerRichtig == 0) {%>
+                                            <option>7</option>
+                                            <%} else if (leihdauer == 30 && klasse != 1 && dauerRichtig == 7) {%>
+                                            <option>7</option>
+                                             <%} else if (leihdauer == 90 && klasse != 1 && dauerRichtig == 7) {%>
+                                            <option>7</option>
+                                            <%} else if (leihdauer == 30 && klasse != 1 && dauerRichtig == 0) {%>
+                                            <option>30</option> 
+                                            <option>7</option> 
+                                            <%} else if (leihdauer == 90 && klasse != 1 && dauerRichtig == 30) {%>
+                                            <option>30</option>
+                                            <%} else if (leihdauer == 90 && klasse != 1 && dauerRichtig == 0) {%>
+                                            <option>90</option>
+                                            <option>7</option> 
+                                            <option>30</option>
+                                            
+                                            <!-- Klasse 1 -->
+                                            <%} else if (leihdauer == 30 && klasse == 1 && dauerRichtig == 0) {%>
+                                            <option>30</option>
+                                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 0) {%>
+                                            <option>90</option>
+                                            <option>30</option>
+                                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 30) {%>
+                                            <option>30</option>
+                                            <%} else if (leihdauer == 180 && klasse == 1 && dauerRichtig == 90) {%>
+                                            <option>90</option>
+                                            <option>180</option>
+                                            <%} else if (leihdauer == 180 && klasse == 1 && dauerRichtig == 0) {%>
+                                            <option>180</option>
+                                            <option>30</option>                             
+                                            <option>90</option>
+                                            <%}%>
+
+                                            
+
+                                        </select></p>
+                                    </td>  
+                                </tr>
+                                <tr>
+                                    <td>Betriebssystem:</td>
+                                    <td>
+                                        <select name="bs" maxlenght="40" value="betriebssystem">
+                                            <option>Linux</option>
+                                            <option>Windows</option>
+                                        </select></p>
+                                    </td>  
+                                </tr>
+                                <tr>
+                                    <td>Bemerkung:</td> 
+
+                                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information' value="bemerkung"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
+                                </tr>
+
+
+                            </table>        
+
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
