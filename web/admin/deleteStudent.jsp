@@ -18,7 +18,7 @@
         <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>XXX</title>
+        <title>Student löschen!</title>
    <div>
         <div>
             <a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
@@ -41,7 +41,7 @@
                     <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
                     <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleihverwaltung</a>
                     <a href="notebookverwaltung.jsp" class="list-group-item">Notebookverwaltung</a>
-                    <a href="sserverwaltung.jsp" class="list-group-item">Userverwaltung</a>
+                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
                 </div>
             </div>
 

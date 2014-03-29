@@ -15,9 +15,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
         <title>Stornierungsbestätigung</title>
    <div>
         <div>
@@ -49,10 +49,10 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href=".../student/student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href=".../student/notebookausleihe.jsp" class="list-group-item" >Notebooks ausleihen</a>
-                    <a href=".../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-                    <a href=".../student/account.jsp" class="list-group-item">Benutzerkontoeinstellunge</a>
+                    <a href="../student/student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="../student/notebookausleihe.jsp" class="list-group-item" >Notebooks ausleihen</a>
+                    <a href="../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href="../student/account.jsp" class="list-group-item">Benutzerkontoeinstellunge</a>
                 </div>
             </div>
 
