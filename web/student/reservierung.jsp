@@ -16,9 +16,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src="../js/bootstrap.js"></script> 
+        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src=".../js/bootstrap.js"></script> 
         <title>Notebookauswahl:</title>
     <div>
         <div>
@@ -51,10 +51,10 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="../student/student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="../student/notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
-                    <a href="../student/uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
-                    <a href="../student/account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
+                    <a href=".../student.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href=".../notebookausleihe.jsp" class="list-group-item">Notebooks ausleihen</a>
+                    <a href=".../uebersicht.jsp" class="list-group-item">&Uuml;bersicht</a>
+                    <a href=".../account.jsp" class="list-group-item">Benutzerkontoeinstellungen</a>
                 </div>
             </div>
 
@@ -66,12 +66,12 @@
 
                     <%
                         int leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
-                        int dauerRichtig = Integer.parseInt(request.getParameter("dauerRichtig"));
+                        
                         int klasse = Integer.parseInt(request.getParameter("klasse"));
 
                     %> 
                     <div id="login"  style="width: 40em; padding: 15px">
-                        <form action="addAusleihe.jsp" methode ="POST">
+                        <form action="addReservierung.jsp" methode ="POST">
                             <table> 
                                 <tr>
                                     <td>Dozent:</td>
@@ -115,45 +115,24 @@
                                 <tr>
                                     <td>Dauer (in Tagen):</td>
                                     <td>
-                                        <select name="dauer" maxlenght="40" >
+                                            <% if (leihdauer == 7) {%>
+                                        <input name="leihdauer" type="hidden" size ="20"  placeholder='Information' value="7" readonly="readonly">7
 
-                                            <!-- Klasse 2 und 3 -->
-                                            <% if (leihdauer == 7 && klasse != 1 && dauerRichtig == 0) {%>
-                                            <option>7</option>
-                                            <%} else if (leihdauer == 30 && klasse != 1 && dauerRichtig == 7) {%>
-                                            <option>7</option>
-                                             <%} else if (leihdauer == 90 && klasse != 1 && dauerRichtig == 7) {%>
-                                            <option>7</option>
-                                            <%} else if (leihdauer == 30 && klasse != 1 && dauerRichtig == 0) {%>
-                                            <option>30</option> 
-                                            <option>7</option> 
-                                            <%} else if (leihdauer == 90 && klasse != 1 && dauerRichtig == 30) {%>
-                                            <option>30</option>
-                                            <%} else if (leihdauer == 90 && klasse != 1 && dauerRichtig == 0) {%>
-                                            <option>90</option>
-                                            <option>7</option> 
-                                            <option>30</option>
-                                            
-                                            <!-- Klasse 1 -->
-                                            <%} else if (leihdauer == 30 && klasse == 1 && dauerRichtig == 0) {%>
-                                            <option>30</option>
-                                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 0) {%>
-                                            <option>90</option>
-                                            <option>30</option>
-                                            <%} else if (leihdauer == 90 && klasse == 1 && dauerRichtig == 30) {%>
-                                            <option>30</option>
-                                            <%} else if (leihdauer == 180 && klasse == 1 && dauerRichtig == 90) {%>
-                                            <option>90</option>
-                                            <option>180</option>
-                                            <%} else if (leihdauer == 180 && klasse == 1 && dauerRichtig == 0) {%>
-                                            <option>180</option>
-                                            <option>30</option>                             
-                                            <option>90</option>
-                                            <%}%>
+                                        <%} else if (leihdauer == 30) {%>
+                                        <input name="leihdauer" type="hidden" size ="20"  placeholder='Information' value="30" readonly="readonly">30
 
-                                            
 
-                                        </select></p>
+                                        <%} else if (leihdauer == 90) {%>
+                                        <input name="leihdauer" type="hidden" size ="20"  placeholder='Information' value="90" readonly="readonly">90
+
+
+                                        <%}else if (leihdauer == 180) {%>
+                                        <input name="leihdauer" type="hidden" size ="20"  placeholder='Information' value="180" readonly="readonly">180
+
+
+                                        <%}%>
+                                        
+                                       </p>
                                     </td>  
                                 </tr>
                                 <tr>
@@ -165,11 +144,7 @@
                                         </select></p>
                                     </td>  
                                 </tr>
-                                <tr>
-                                    <td>Bemerkung:</td> 
-
-                                    <td> <input name="bemerkung" type="textarea" size ="50"  placeholder='Information' value="bemerkung"></p></td>
-                                </tr>
+                              
                                 <tr>
                                     <td><input id="button" name="Speichern" type="submit" value="Speichern"></td>
                                 </tr>

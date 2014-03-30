@@ -20,16 +20,6 @@
         <script type="text/javascript" src="../js/bootstrap.js"></script> 
         <title>Notebookausleihe gespeichert</title>
 
-        <%
-            String t = session.getAttribute("typ").toString();
-            String i = session.getAttribute("id").toString();
-            long id = Long.parseLong(i);
-            if (t.equals("Student")) {
-            } else {
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp");
-                dispatcher.forward(request, response);
-            }
-        %>
 
     </head>
     <body>
@@ -90,6 +80,9 @@
 
                     String bs = request.getParameter("bs");
                     String bemerkung = request.getParameter("bemerkung");
+                    
+                    String leihdauerStr = request.getParameter("leihdauer");
+                    int leihdauer = Integer.parseInt(leihdauerStr);
 
                     List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
                     Dozent dozent = new Dozent();
@@ -111,9 +104,7 @@
 
                     for (Notebook element : notebooklist) {
 
-                        //out.println("Dauer:" + dauer);
-
-                        if (element.getLeihdauer() == dauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
+                        if (element.getLeihdauer() == leihdauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
 
                             notebook.setId(element.getId());
                             notebook.setKlasse(element.getKlasse());
@@ -172,98 +163,5 @@
             </div>
         </div>
     </div>
-
-        <%
-            String name = request.getParameter("dozent");
-            String strleihdauer = request.getParameter("leihdauer");
-            int leihdauer = Integer.parseInt(strleihdauer);
-            String strklasse = request.getParameter("klasse");
-
-            int klasse = Integer.parseInt(strklasse);
-
-            String strdauer = request.getParameter("dauer");
-            int dauer = Integer.parseInt(strdauer);
-
-            String bs = request.getParameter("bs");
-            String bemerkung = request.getParameter("bemerkung");
-
-            List<Dozent> listDozent = DAO.DozentDAO.getDozentListDAO();
-            Dozent dozent = new Dozent();
-            for (Dozent element : listDozent) {
-                if (name.equals(element.getName())) {
-                    dozent.seteMail(element.geteMail());
-                    dozent.setGebDat(element.getGebDat());
-                    dozent.setGeschlecht(element.getGeschlecht());
-                    dozent.setPasswort(element.getPasswort());
-                    dozent.setUsername(element.getUsername());
-                    dozent.setVorname(element.getVorname());
-                    dozent.setId(element.getId());
-                    dozent.setName(element.getName());
-                }
-            }
-
-            List<Notebook> notebooklist = DAO.NotebookDAO.getNotebookListDAO();
-            Notebook notebook = new Notebook();
-
-            for (Notebook element : notebooklist) {
-
-
-                if (element.getLeihdauer() == leihdauer && element.getKlasse() == klasse && element.getNotebookStatus().equals("verfügbar")) {
-                    out.println("Leihdauer: " + leihdauer + "Element" + element.getLeihdauer());
-                    notebook.setId(element.getId());
-                    notebook.setKlasse(element.getKlasse());
-                    notebook.setLeihdauer(element.getLeihdauer());
-                    notebook.setName(element.getName());
-                    String notebookStatus = "bestätigungAusstehend";
-                    notebook.setNotebookStatus(notebookStatus);
-                    notebook.setSeriennummer(element.getSeriennummer());
-                    break;
-
-                }
-            }
-
-            List<Student> listStudent = BL.Student.getStudentList();
-
-            Student student = new Student();
-
-            for (Student element : listStudent) {
-                if (id == element.getId()) {
-
-                    student.seteMail(element.geteMail());
-                    student.setGebDat(element.getGebDat());
-                    student.setGeschlecht(element.getGeschlecht());
-                    student.setId(element.getId());
-                    student.setKurs(element.getKurs());
-                    student.setMatNr(element.getMatNr());
-                    student.setName(element.getName());
-                    student.setPasswort(element.getPasswort());
-                    student.setUsername(element.getUsername());
-                    student.setVorname(element.getVorname());
-
-                }
-
-            }
-
-            Ausleihe a = new Ausleihe();
-
-            a.setBermerkung(bemerkung);
-
-            a.setBetriebssystem(bs);
-
-            a.setLeihNotebook(notebook);
-            a.setDauer(dauer);
-            a.setAuftragsdatum(new Date());
-
-            a.setStatus(
-                    "bestätigungAusstehend");
-
-            a.setMitarbeiter(dozent);
-            a.setAntragssteller(student);
-
-            BL.Ausleihe.saveAusleihe(a);
-
-
-        %>
-
-    </body>
+</body>
 </html>

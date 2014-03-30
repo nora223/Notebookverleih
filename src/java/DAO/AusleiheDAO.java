@@ -43,31 +43,22 @@ public static List<Ausleihe> getAusleiheListDAO() {
       return  ausleiheListe;
 }
 
-public static void updateAusleihe(Long id){
+public static void updateAusleihe(Long id, Date von, Date bis){
     
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     Transaction tx = session.beginTransaction();
     Ausleihe ausleihe  = (Ausleihe) HibernateUtil.getSessionFactory().getCurrentSession().load(Ausleihe.class, id);
     HibernateUtil.getSessionFactory().getCurrentSession().update(ausleihe);
-    Date d = new Date();
-    ausleihe.setVon(d);
-    GregorianCalendar cal = new GregorianCalendar();
-    cal.setTime(d);
-    cal.add(Calendar.DAY_OF_MONTH, 7);
-    ausleihe.setBis(cal.getTime());
+    
+    ausleihe.setVon(von);
+    ausleihe.setStatus("verliehen");
+    ausleihe.setBis(bis);
+    
+    
     tx.commit();
 }
 
-public static List<Date> getNextFreeDate(int dauer, int klasse){
-    
-    String sql = "select BIS from ausleihe where leihnotebook_id = (Select id from notebook where leihdauer ="+dauer+"AND klasse ="+klasse+")";
-    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-    Transaction tx = session.beginTransaction();
-    List<Date>  bla = session.createSQLQuery(sql).list();
-    tx.commit();
-    
-    return bla;
-}
+
 
 public static void deleteAusleiheByIDDAO(long id){
       

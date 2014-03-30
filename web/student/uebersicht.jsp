@@ -14,9 +14,9 @@
 <html>
    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href=".../pic/logo.JPG" type="image/JPG" />
-        <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
-        <script type="text/javascript" src=".../js/bootstrap.js"></script>
+        <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
+        <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
         <title>&Uuml;bersicht</title>
            <div>
         <div>
