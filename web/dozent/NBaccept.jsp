@@ -80,6 +80,7 @@
                   
                     <%
                      List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
+                     Ausleihe a = new Ausleihe();
                      long auslId = 0;
                      int dauer = 0;
                      Notebook nid = null;
@@ -89,6 +90,14 @@
                             auslId = element.getId();
                             dauer = element.getDauer();
                             nid = element.getLeihNotebook();
+                            
+                            
+                            //Code Alexey für E-Mail
+                           String email = element.getAntragssteller().geteMail();
+                           String messageContent = BL.Mail_arts.application_confirmed(element);
+                           BL.Mail.eMailcreate(messageContent, email);
+                           //**********************************************************************
+                            
                             break;
                
                 }
