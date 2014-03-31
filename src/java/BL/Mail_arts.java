@@ -98,14 +98,16 @@ String messageContent =
        
 }
 
-public static String Notebook_nichtBestätigt(String name){
+public static String Notebook_nichtBestätigt(String name,String begründung){
     
 String messageContent =
  "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Stornierung von Bestellung</h1><br>"     
 +"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
 +"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
-+"<p>Ihre Bestellung wurde nicht bestätigt und deswegen storniert.</p><br>"  
++"<p>Ihre Bestellung wurde nicht bestätigt und deswegen storniert.</p><br>" 
++"<p>Begründung:</p><br>"
++"<p>"+ begründung + "</p><br>"        
 +"<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;
