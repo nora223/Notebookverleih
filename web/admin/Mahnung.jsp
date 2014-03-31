@@ -21,23 +21,26 @@
         <link rel="stylesheet" href =".../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src=".../js/bootstrap.js"></script>
         <title>Überprüft</title>
-        
+    </head>  
+    <body>     
         <%
-         Date d= new Date();
+         
         
          List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
             
-           for(Ausleihe element : listAusleihe){
-             
+         for(Ausleihe element : listAusleihe){
              String name = element.getAntragssteller().getName();
              String mail = element.getAntragssteller().geteMail();
              Date bis = element.getBis();
-             
+             Date d= new Date();
            if(d.compareTo(bis)>0){
                  
              String messageContent = BL.Mail_arts.Student_Mahnung(name);
              BL.Mail.eMailcreate(messageContent, mail);  
              }
                
-           }
+         }
        %>
+                                <p>überprüft</p>
+    </body>                     
+</html>  

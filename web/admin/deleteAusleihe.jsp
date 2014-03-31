@@ -7,7 +7,6 @@
 <%@page import="BL.Warteschlange"%>
 <%@page import="BL.Ausleihe"%>
 <%@page import="BL.Notebook"%>
-<%@page import="BL.Dozent"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -61,6 +60,7 @@
                         
                         
                         Ausleihe.deleteAusleiheByID(longid);
+                        
                         Warteschlange.checkWarteschlange(notebookId);
                         
                         
