@@ -57,6 +57,15 @@
 
             <div class="col-md-6">
                 <div class="area">
+                    
+                     <%String begründung = request.getParameter("begründung");
+                       String stname = request.getParameter("stname");
+                       String email = request.getParameter("email");
+                       String messageContent = BL.Mail_arts.Notebook_nichtBestätigt(stname,begründung);
+                       BL.Mail.eMailcreate(messageContent, email);
+                     
+                     
+                     %>
                     <h1> Sie haben die Ausleihe dieses Notebooks erfolgreich abgelehnt </h1>
                     <p> Eine E-mail wurde an den entsprechenden Studenten gesandt.</p>
                 </div>
