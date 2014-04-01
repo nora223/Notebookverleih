@@ -28,7 +28,8 @@
                 <a href="#" class="list-group-item active" >
                     NAVIGATION
                 </a>
-                <a href="index.jsp" class="list-group-item">Startseite</a> 
+                <a href="../index.jsp" class="list-group-item">Startseite</a> 
+                <a href="../userinf.jsp" class="list-group-item">User Informationen</a>
 
             </div>
         </div>

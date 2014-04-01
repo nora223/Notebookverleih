@@ -20,7 +20,7 @@
         <title>Notebook best&auml;tigen</title>
              <div>
         <div>
-            <a href='../dozent.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+            <a href='../dozent/notebookausleihedozent.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
         </div>
         <div id="logout" > 
             <a style="color: grey" href="../logout.jsp"> (Logout) </a>
@@ -48,7 +48,7 @@
                     <a href="#" class="list-group-item active" >
                     NAVIGATION
                     </a>
-                    <a href="dozent.jsp" class="list-group-item">Startseite</a>
+                    <a href="../dozent/notebookausleihedozent.jsp" class="list-group-item">Startseite</a>
 
            
                 </div>

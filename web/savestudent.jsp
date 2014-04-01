@@ -21,9 +21,7 @@
         <div>
             <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
         </div>
-        <div id="logout" > 
-            <!--<a style="color: grey" href="logout.jsp"> (Logout) </a>-->
-        </div> <!-- Link für Logout-->
+        
         <hr>
         <p><img id="pic2" src="pic/dh.jpg" alt="dh" /></p>
     </div>
@@ -37,7 +35,6 @@
                         NAVIGATION
                     </a>
                     <a href="index.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px"><b>Startseite</b></a>
-                    <a href="notebookview.jsp" class="list-group-item">Notebook Verwaltung</a>
                     <a href="userinf.jsp" class="list-group-item">User Informationen</a>
                 </div>
             </div>
@@ -71,14 +68,14 @@
 
 
                 <div>
-                    <p>Hallo 
-                        <% out.println(vorname);
+                    <p>Guten Tag Herr/Frau 
+                        <% //out.println(vorname);
                             out.println(nachname);
-                        %>
-                        du hast dich erfolgreich auf der Seite angemeldet. Es wurde eine Bestätigungs-Email an: 
+                        %>, <br><br>
+                        Sie haben sich erfolgreich auf der Seite angemeldet. Es wurde eine Bestätigungs-Email an folgende Adresse: 
                         <% out.println(email);%> gesendet. </p>
-                    <p> Gehe nun zurück auf den Startbildschirm und loggt dich ein. Dann gehts auch schon los.
-                        ;-) </p>
+                    <p> Gehen Sie nun zurück auf die Startseite und melden sich an! 
+                    </p>
                 </div>
             </div>
         </div>
