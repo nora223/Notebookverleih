@@ -52,15 +52,16 @@ public class PasswortVergessen extends HttpServlet {
                                 passwort = element.getPasswort();
                                 
                                 //neues Passwort erzeugen
-                                String x = passwort;
-                                DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
-                                Date date = new Date();
-                                String s = (String) df.format(date);
-                                newPW = passwort + s;
-                                newPW = newPW.replaceAll(" ", "");
+                                //String x = passwort;
+                                //DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
+                                //Date date = new Date();
+                                //String s = (String) df.format(date);
+                                //newPW = passwort + s;
+                                //newPW = newPW.replaceAll(" ", "");
+                                
                                 
                                 //E-Mail mit dem Passwort an die obige Variable "email" senden
-                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),newPW);
+                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),passwort);
                                 BL.Mail.eMailcreate(messageContent,element.geteMail());
                                 
                                 //Weiterleitung auf PW_sent_Admin.jsp
@@ -81,15 +82,15 @@ public class PasswortVergessen extends HttpServlet {
                                 passwort = element.getPasswort();
                                 
                                 //neues Passwort erzeugen
-                                String x = passwort;
-                                DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
-                                Date date = new Date();
-                                String s = (String) df.format(date);
-                                newPW = passwort + s;
-                                newPW = newPW.replaceAll(" ", "");
+                                //String x = passwort;
+                                //DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
+                                //Date date = new Date();
+                                //String s = (String) df.format(date);
+                                //newPW = passwort + s;
+                                //newPW = newPW.replaceAll(" ", "");
                                 
                                 //E-Mail mit dem Passwort an die obige Variable "email" senden
-                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),newPW);
+                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),passwort);
                                 BL.Mail.eMailcreate(messageContent,element.geteMail());
                                 
                                 //Weiterleitung auf PW_sent_Admin.jsp
@@ -109,15 +110,15 @@ public class PasswortVergessen extends HttpServlet {
                                 passwort = element.getPasswort();
                                 
                                 //neues Passwort erzeugen
-                                String x = passwort;
-                                DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
-                                Date date = new Date();
-                                String s = (String) df.format(date);
-                                newPW = passwort + s;
-                                newPW = newPW.replaceAll(" ", "");
+                                //String x = passwort;
+                                //DateFormat df = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
+                                //Date date = new Date();
+                                //String s = (String) df.format(date);
+                                //newPW = passwort + s;
+                                //newPW = newPW.replaceAll(" ", "");
                                 
                                 //E-Mail mit dem Passwort an die obige Variable "email" senden
-                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),newPW);
+                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),passwort);
                                 BL.Mail.eMailcreate(messageContent,element.geteMail());
                                 
                                 //Weiterleitung auf PW_sent_Admin.jsp
