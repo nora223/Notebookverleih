@@ -46,7 +46,7 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h2>Der Logoutvorgang wurde erfolgreich abgeschlossen!</h2>
+                    Der Logoutvorgang wurde erfolgreich abgeschlossen!
                 </div>
             </div>
 
