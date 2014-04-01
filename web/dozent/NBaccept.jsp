@@ -81,6 +81,7 @@
                      Ausleihe a = new Ausleihe();
                      long auslId = 0;
                      int dauer = 0;
+                     String email;
                      Notebook nid = null;
                      for (Ausleihe element : list) {
                            if (id == element.getId()) {
@@ -90,10 +91,11 @@
                             nid = element.getLeihNotebook();
                             
                             
+                            
                             //Code Alexey für E-Mail
-                           //String email = element.getAntragssteller().geteMail();
-                           //String messageContent = BL.Mail_arts.application_confirmed(element);
-                           //BL.Mail.eMailcreate(messageContent, email);
+                            email = element.getAntragssteller().geteMail();
+                            String messageContent = BL.Mail_arts.application_confirmed(element);
+                            BL.Mail.eMailcreate(messageContent, email);
                            //**********************************************************************
                             
                             break;
@@ -101,8 +103,10 @@
                 }
 
             }
-              
+                         
+                           
                         BL.Ausleihe.updateAusleihe(auslId, dauer, nid);
+                        
                     %>
                     
                 </div>
