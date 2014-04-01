@@ -48,17 +48,17 @@
             String seriennummer = request.getParameter("seriennummer");
             Integer klasse = Integer.parseInt(request.getParameter("klasse"));
             Integer leihdauer = Integer.parseInt(request.getParameter("leihdauer"));
-            String verliehen = request.getParameter("verliehen");
+            String status = request.getParameter("status");
 
-            boolean status;
+            //boolean status;
 
 
-            if (verliehen.equals("true")) {
-                status = true;
-            } else {
+            //if (verliehen.equals("true")) {
+                //status = true;
+            //} else {
 
-                status = false;
-            }
+                //status = false;
+            //}
 
             Notebook n = new Notebook();
 
@@ -67,7 +67,7 @@
             n.setSeriennummer(seriennummer);
             n.setKlasse(klasse);
             n.setLeihdauer(leihdauer);
-            n.setVerliehen(status);
+            n.setNotebookStatus(status);
 
             Notebook.saveNotebook(n);
         %>
