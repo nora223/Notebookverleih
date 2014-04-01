@@ -51,7 +51,11 @@
             
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Herzlich Willkommen! </h1>                     
+                    <h1> Herzlich Willkommen! </h1>
+                    <p>Sehr geehrter Studierender, <br> hier befindest du dich im Portal zum Ausleihen von Notebooks. <br> Um diese Funktionalität nutzen zu können 
+                    muss du dich jedoch hierfür registrieren. Bist du bereits registriert, dann logg dich ein und schon gehts los. 
+                    Um weitere Informationen zu erhalten, les dir einfach unter Userinformationen bzw. Notebook Verwaltung alles weitere durch.
+                    <br> <br> Mit freundlichen Grüßen <br> <br> Die Administratoren</p>
                 </div>
             </div>            
             
