@@ -21,7 +21,6 @@
         <title>User Informationen</title>
     <div>
         <a href='index.jsp'><img id="pic" src="pic/logo.png" alt="Logo"/></a>
-        <div id="logout"> <a id="logout" href="logout.jsp"> Logout </a></div>
         <hr>
         <p><img id="pic2" src="pic/dh.jpg" alt="dh" />
     </div>
@@ -35,7 +34,6 @@
                         NAVIGATION
                     </a>
                     <a href="index.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="notebookview.jsp" class="list-group-item" >Notebook Verwaltung</a>
                     <a href="userinf.jsp" class="list-group-item">User Informationen</a>
                     
                 </div>
@@ -43,8 +41,18 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Herzlich Willkommen! </h1>
-                    <p> Dies ist die Vorlage JSP</p>
+                    <h1> Sind Sie das erste mal auf dieser Website? </h1>
+                    <p> Guten Tag! Um die Funktionalit&auml;ten dieser Seite 
+                        nutzen zu k&ouml;nnen, m&uuml;ssen Sie sich einen 
+                        Nutzerzugang f&uuml;r diese Website anlegen. 
+                    Gehen Sie dazu bitte wie folgt vor:<br>
+                    <ol>
+                        <li>F&uuml;llen Sie das Formular <a href="create_student.jsp"><u>Neuer Zugang</u></a> mit Ihren Angaben aus.</li>
+                        <li>Sie erhalten umgehend eine Benachrichtigung an die von Ihnen angegebene E-Mail-Adresse.</li>
+                        <li>Nun haben Sie einen Nutzerzugang zur Website. Zuk&uuml;nftig m&uuml;ssen Sie jedes Mal den bei 
+                            Ihrer Registrierung gew&auml;hlten Anmeldenamen und das Kennwort (im Login-Block auf dieser Seite) eingeben, um sich einzuloggen.</li>
+                    </ol></p><br>
+                    <div style="text-align: center"><a href="create_student.jsp"><button class="blue" >Neuer Zugang anlegen?</button></a></div>
                 </div>
             </div>
         </div>    
