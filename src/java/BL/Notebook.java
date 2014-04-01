@@ -64,9 +64,28 @@ public class Notebook implements Serializable{
         return feld; 
     }
     
-    public static void updateNotebook(Notebook nid){
-        DAO.NotebookDAO.updateNotebook(nid);
+    public static void updateNotebookStatus(Notebook nid, String s){
+        DAO.NotebookDAO.updateNotebookStatus(nid, s);
     }
+    
+    public static Notebook getNotebookById(long id){
+        List<Notebook> erg = DAO.NotebookDAO.getNotebookListDAO();
+        Notebook notebook = new Notebook();
+        for(Notebook element : erg){
+            if(element.getId()==id){
+               notebook.setId(element.getId());
+               notebook.setKlasse(element.getKlasse());
+               notebook.setLeihdauer(element.getLeihdauer());
+               notebook.setName(element.getName());
+               notebook.setNotebookStatus(element.getNotebookStatus());
+               notebook.setSeriennummer(element.getSeriennummer());
+               
+                break; 
+            }
+        }
+        return notebook;
+    }
+    
 
     public long getId() {
         return id;
