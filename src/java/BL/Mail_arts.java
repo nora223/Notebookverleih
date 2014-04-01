@@ -26,11 +26,9 @@ String messageContent =
  "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Antrag Bestätigen</h1><br>"     
 +"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+">IT Geräteausleihe</h2><br>"
-+"<p><font size="+3+ ">Guten Tag " + d.getName()+ ","+ "</p><br>" +
-
-"<p>"+s.getName()+" hat Sie bei unserem Geräteverleih als Mitarbeiter ausgewählt,<br>um ihm/ihr zu bestätigen,"
++"<p><font size="+3+ ">Guten Tag " + d.getName()+ ","+ "</p><br>" 
++"<p>"+s.getName()+" hat Sie bei unserem Geräteverleih als Mitarbeiter ausgewählt,<br>um ihm/ihr zu bestätigen,"
 + "dass das folgende Gerät für die Fortführung des Studium benötigt wird.</p><br>"            
-              
 + "<table border="+8+"cellspacing="+10+"cellpadding="+20+"> "
 + "<tr><th align="+"left"+">Antragssteller: </th> <th>" + s.getName() + "</th> "
 + "<tr><th align="+"left"+">Antrag vom: </th> <th>" + a.getAuftragsdatum() + "</th> "
@@ -39,8 +37,10 @@ String messageContent =
 + "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + n.getKlasse() + "</th> </tr>"
 + "<tr><th align="+"left"+">Dauer: </th> <th>" + n.getLeihdauer() + "</th> </tr>"
 + "<tr><th align="+"left"+">Status: </th> <th>Wartet auf bestätigung durch Mitarbeiter</th> </tr></table><br>"
-+"<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
-+" <li><a href="+"http://localhost:8080/Notebookverleih/dozent/notebookausleihedozent.jsp"+">"+"links"+"</a></li>" ;
++ "<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
++ " <li><a href="+"http://localhost:8080/Notebookverleih/"+">"+"links"+"</a></li>" 
++ "<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ; 
   return messageContent;
     
     }
@@ -97,6 +97,21 @@ String messageContent =
   return  messageContent;     
        
 }
+
+public static String Notebook_nichtBestätigt(String name,String begründung){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Stornierung von Bestellung</h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
++"<p>Ihre Bestellung wurde nicht bestätigt und deswegen storniert.</p><br>" 
++"<p>Begründung:</p><br>"
++"<p>"+ begründung + "</p><br>"        
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;
+}
 public static String Student_Mahnung(String name){
     
 String messageContent =
@@ -104,32 +119,32 @@ String messageContent =
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Mahnung</h1><br>"     
 +"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
 +"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
-+"<p>Ausleihzeit von Notebook ist beendet.Bitte,bringen Sie das Ausgeliehenen Notebook zurück. </p><br>"  
++"<p>Ausleihzeit von Notebook ist beendet.Bitte,bringen Sie das ausgeliehenen Notebook zurück. </p><br>"  
 +"<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;
 }
-public static String application_confirmed(Ausleihe a,Notebook n,Dozent d,Student s){
+public static String application_confirmed(Ausleihe a){
     
  String messageContent =
  "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
 +"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Antrag bestätigt</h1><br>"     
-+"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> Wiwi-IT Geräteausleihe</h2><br>"
-+"<p><font size="+3+ ">Guten Tag " + s.getName()+ ","+ "</p><br>" 
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+">IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + a.getAntragssteller().getName()+ ","+ "</p><br>" 
 +"<p>Der folgende Antrag wurde durch den Mitarbeiter genehmigt:</p><br>"            
 + "<table border="+8+"cellspacing="+10+"cellpadding="+20+"> "
-+ "<tr><th align="+"left"+">Name: </th> <th>" + s.getName() + "</th> "
-+ "<tr><th align="+"left"+">Antrag vom: </th> <th>" + a.getAuftragsdatum() + "</th> "
-+ "<tr><th align="+"left"+">Mitarbeiter: </th> <th>" + d.getName() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Laufzeit: </th><th>"+a.getVon()+"-"+a.getBis()+"</th> </tr>"
-+ "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + n.getKlasse() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Dauer: </th> <th>" + n.getLeihdauer() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Status: </th> <th>In Vorbereitung durch Wiwi-IT</th> </tr></table><br>"
++ "<tr><th align="+"left"+">Name: </th> <th>" + a.getAntragssteller().getName() + "</th> "
++ "<tr><th align="+"left"+">Mitarbeiter: </th> <th>" + a.getMitarbeiter().getName() + "</th> </tr>"
++ "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + a.getClass() + "</th> </tr>"
++ "<tr><th align="+"left"+">Dauer: </th> <th>" + a.getLeihNotebook().getLeihdauer() + "</th> </tr>"
++ "<tr><th align="+"left"+">Status: </th> <th>In Vorbereitung durch IT</th> </tr></table><br>"
 +"<p>Bitte Beachten Sie: Verschiebungen aufgrund von verfrühter Rückgabe sind leider nicht auszuschließen</p><br>"        
 +"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
 +"<p>Bitte prüfen Sie den Status unter:</p><br>"
-+" <li><a href="+"http://localhost:8080/Notebookverleih/admin.jsp"+">"+"Meine Ausleihen"+"</a></li>";
-  return messageContent;
++" <li><a href="+"http://localhost:8080/Notebookverleih/"+">"+"Meine Ausleihen"+"</a></li>"
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;  
+ return messageContent;
 }
 
 public static String notebook_bei_preparation(Ausleihe a,Notebook n,Student s){

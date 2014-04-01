@@ -58,15 +58,8 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1>Anfrage ablehnen!</h1>
-                    <p> Sie haben die Anfrage des Studenten nicht akzeptiert. </p>
-                    <p>Bitte tragen Sie eine kurze Begründung für Ihre Entscheidung ein: <br><input name="begründung" type="text" width="100" height="200"></p>
-
-                    <form action="notebookabgelehnt.jsp" method="POST">
-                        <input type="button" name="senden" value="Senden!">
-
-
-                        <%
+                    
+                      <%
                             String Str_id = request.getParameter("id");
                             long id = Long.parseLong(Str_id);
 
@@ -74,19 +67,29 @@
                             long auslId = 0;
                             for (Ausleihe element : list) {
                                 if (id == element.getAntragssteller().getId()) {
-
+                                    String stname= element.getAntragssteller().getName();
+                                    String email= element.getAntragssteller().getName();
                                     auslId = element.getId();
                                     break;
 
                                 }
 
                             }
-
-                            BL.Ausleihe.deleteAusleiheByID(auslId);
-                        %>
-
+                       %>
+                           
+                    <form action="notebookabgelehnt.jsp" method="POST">   
+                    <h1>Anfrage ablehnen!</h1>
+                    <p> Sie haben die Anfrage des Studenten nicht akzeptiert. </p>
+                    <p>Bitte tragen Sie eine kurze Begründung für Ihre Entscheidung ein: <br><input name="begründung" type="text" width="100" height="200"></p>
+                    <p><input name="stname" type="hidden" value="<%=stname%>" size="30" maxlength="40"></p> 
+                    <p><input name="email" type="hidden" value="<%=email%>" size="30" maxlength="40"></p> 
+                   
+                    <input type="button" name="senden" value="Senden!">
 
                     </form>  
+               
+                        <% BL.Ausleihe.deleteAusleiheByID(auslId);%>
+                
                 </div>
             </div>
         </div>    

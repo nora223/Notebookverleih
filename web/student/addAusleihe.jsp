@@ -80,7 +80,7 @@
 
                     String bs = request.getParameter("bs");
                     String bemerkung = request.getParameter("bemerkung");
-                    
+
                     String leihdauerStr = request.getParameter("leihdauer");
                     int leihdauer = Integer.parseInt(leihdauerStr);
 
@@ -157,6 +157,9 @@
                     a.setAntragssteller(student);
 
                     BL.Ausleihe.saveAusleihe(a);
+
+                    String messageContent = BL.Mail_arts.application_confirm(a, notebook, dozent, student);
+                    BL.Mail.eMailcreate(messageContent, dozent.geteMail());
 
 
                 %>
