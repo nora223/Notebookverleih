@@ -30,7 +30,7 @@ public class WarteschlangeDAO {
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
-        List<Warteschlange> warteschlangeListe = session.createQuery("from Ausleihe").list();
+        List<Warteschlange> warteschlangeListe = session.createQuery("from Warteschlange").list();
         tx.commit();
 
         return warteschlangeListe;
