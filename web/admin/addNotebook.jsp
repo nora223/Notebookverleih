@@ -96,7 +96,7 @@
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um ein Notebook hinzuzufügen.</p>
 
                     <div id="login">
-                        <form name="adr" action="../saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
+                        <form name="adr" action="../admin/saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
                             <p>Name<br><input id="t" name="name" type="text" size="30" maxlength="40"></p>
                             <p>Seriennummer<br><input id="t1" name="seriennummer" type="text" size ="30" maxlength="40"></p>
                             <p>Klasse   
