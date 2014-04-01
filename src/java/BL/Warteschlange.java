@@ -28,9 +28,9 @@ public class Warteschlange {
     private long id;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne//(cascade = CascadeType.ALL)
     private Dozent mitarbeiter;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne//(cascade = CascadeType.ALL)
     private Student antragssteller;
     int kategorie;
     int leihdauer;
@@ -134,7 +134,7 @@ public class Warteschlange {
             
             
        
-        BL.Ausleihe.saveAusleihe(warte);
+        DAO.AusleiheDAO.saveAusleiheDAO(warte);
         BL.Warteschlange.deleteWarteschlangeByID(wid);
         
         return true;
