@@ -60,7 +60,8 @@ public class PasswortVergessen extends HttpServlet {
                                 newPW = newPW.replaceAll(" ", "");
                                 
                                 //E-Mail mit dem Passwort an die obige Variable "email" senden
-                                
+                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),newPW);
+                                BL.Mail.eMailcreate(messageContent,element.geteMail());
                                 
                                 //Weiterleitung auf PW_sent_Admin.jsp
                                 RequestDispatcher dispatcher = request.getRequestDispatcher("/PW_sent_Admin.jsp" );
@@ -88,7 +89,8 @@ public class PasswortVergessen extends HttpServlet {
                                 newPW = newPW.replaceAll(" ", "");
                                 
                                 //E-Mail mit dem Passwort an die obige Variable "email" senden
-                                
+                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),newPW);
+                                BL.Mail.eMailcreate(messageContent,element.geteMail());
                                 
                                 //Weiterleitung auf PW_sent_Admin.jsp
                                 RequestDispatcher dispatcher = request.getRequestDispatcher("/PW_sent_Admin.jsp" );
@@ -115,7 +117,8 @@ public class PasswortVergessen extends HttpServlet {
                                 newPW = newPW.replaceAll(" ", "");
                                 
                                 //E-Mail mit dem Passwort an die obige Variable "email" senden
-                                
+                                String messageContent = BL.Mail_arts.Passwort_foget(element.getName(),newPW);
+                                BL.Mail.eMailcreate(messageContent,element.geteMail());
                                 
                                 //Weiterleitung auf PW_sent_Admin.jsp
                                 RequestDispatcher dispatcher = request.getRequestDispatcher("/PW_sent_Admin.jsp" );
