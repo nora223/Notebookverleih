@@ -43,7 +43,7 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="XXX.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
                     <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleih Verwaltung</a>
                     <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
                     <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
@@ -52,8 +52,8 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Danke </h1>
-                    <p>Die Gültigkeit wurde überprüft</p>
+                    <h1>Danke!</h1>
+                    <p>Die Gültigkeit wurde überprüft.Alle nicht bestätigte Notebooks wurden gelöscht.</p>
                 
                 
                       
@@ -66,6 +66,7 @@
        for(Ausleihe element : listeAusleihe){
            Date d = new Date();
            long id = element.getId();
+           
            String status = element.getStatus();
            Date auftragsdatum = element.getAuftragsdatum();
            String name= element.getAntragssteller().getName();
@@ -76,8 +77,9 @@
            auftragsdatumMS = auftragsdatumMS + 7*86400000;
            Date auftragsdatumPlus7 = new Date(auftragsdatumMS);
            
+           
           
-            if(status=="bestätigungAustehend"){
+             if(status.equals("bestätigungAusstehend")){
                
                 if ( d.compareTo(auftragsdatumPlus7)>0){
                  
@@ -85,11 +87,11 @@
                  BL.Mail.eMailcreate(messageContent, email);
                  BL.Ausleihe.deleteAusleiheByID(id);
                  }
-            }
+            } 
               
-         
+        
                                
-         }
+        }
             
                               
  %>

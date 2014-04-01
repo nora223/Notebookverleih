@@ -51,41 +51,39 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="dozent.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="notebookausleihedozent.jsp" class="list-group-item" >Ausleihe</a>
+                    <a href="notebookausleihedozent.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
                 </div>
             </div>
             
             <div class="col-md-6">
                 <div class="area">
                     <h1> Notebookausleihe genehmigt! </h1>
-                   <% String Str_id = request.getParameter("id");
-                   long id = Long.parseLong(Str_id);
-                   String stuName=null;
-                   String stuVorname = null;
-                       
-                       List<Student> listStudent = BL.Student.getStudentList();
+                   <% 
+                        String Str_id = request.getParameter("id");
+                        long id = Long.parseLong(Str_id);
+                        String stuName=null;
+                        String stuVorname = null;
+                        
+                        List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
+                        
+                            for (Ausleihe element : list) {
+                                if (id == element.getId()) {
+                                    stuName=element.getAntragssteller().getName();
+                                    stuVorname=element.getAntragssteller().getVorname();                                
+                                }
 
-            for (Student element : listStudent) {
-                if (id == element.getId()) {
-
-                    stuName=element.getName();
-                    stuVorname=element.getVorname();
-               
-                }
-
-            }%>
+                            }
+            %>
                     
                     <p> Hiermit haben Sie die Ausleihe für den Studenten <% out.println(stuVorname+" "+stuName); %> akzeptiert.</p>
                   
                     <%
-                     List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
                      Ausleihe a = new Ausleihe();
                      long auslId = 0;
                      int dauer = 0;
                      Notebook nid = null;
                      for (Ausleihe element : list) {
-                           if (id == element.getAntragssteller().getId()) {
+                           if (id == element.getId()) {
 
                             auslId = element.getId();
                             dauer = element.getDauer();
@@ -107,7 +105,6 @@
                         BL.Ausleihe.updateAusleihe(auslId, dauer, nid);
                     %>
                     
-                    <a href="../dozent/notebookausleihedozent.jsp">Zurück!</a>
                 </div>
             </div>
         </div>    
