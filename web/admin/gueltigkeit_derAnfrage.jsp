@@ -52,8 +52,8 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Danke </h1>
-                    <p>Die Gültigkeit wurde überprüft</p>
+                    <h1>Danke!</h1>
+                    <p>Die Gültigkeit wurde überprüft.Alle nicht bestätigte Notebooks wurden gelöscht.</p>
                 
                 
                       
@@ -66,6 +66,7 @@
        for(Ausleihe element : listeAusleihe){
            Date d = new Date();
            long id = element.getId();
+           
            String status = element.getStatus();
            Date auftragsdatum = element.getAuftragsdatum();
            String name= element.getAntragssteller().getName();
@@ -76,8 +77,9 @@
            auftragsdatumMS = auftragsdatumMS + 7*86400000;
            Date auftragsdatumPlus7 = new Date(auftragsdatumMS);
            
+           
           
-            if(status=="bestätigungAustehend"){
+             if(status.equals("bestätigungAusstehend")){
                
                 if ( d.compareTo(auftragsdatumPlus7)>0){
                  
@@ -85,11 +87,11 @@
                  BL.Mail.eMailcreate(messageContent, email);
                  BL.Ausleihe.deleteAusleiheByID(id);
                  }
-            }
+            } 
               
-         
+        
                                
-         }
+        }
             
                               
  %>

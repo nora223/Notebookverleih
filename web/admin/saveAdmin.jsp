@@ -68,9 +68,9 @@
 
                         Administrator a = new Administrator(geschlecht, vorname, nachname, email, date, passwort, username);
                         Administrator.saveAdministrator(a);
-                        //Alexey
-                        //String messageContent = BL.Mail_arts.Dozent_welcome(s);
-                        //BL.Mail.eMailcreate(messageContent, s.geteMail());
+                        
+                        String messageContent = BL.Mail_arts.Administrator_welcome(a);
+                        BL.Mail.eMailcreate(messageContent, a.geteMail());
                     %>
                         <p>Folgende/r Administrator/in wurde erfolgreich angelegt:
                             <% out.println(vorname);

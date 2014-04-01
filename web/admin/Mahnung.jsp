@@ -52,8 +52,8 @@
 
             <div class="col-md-6">
                 <div class="area">
-                    <h1> Danke </h1>
-                    <p>Sie haben die Mahnung verschickt</p>
+                    <h1> Danke! </h1>
+                    <p>Die Tabelle Ausleihe wurde geprüft und die entsprechende Mahnungen verschickt.</p>
                 
                 
                       

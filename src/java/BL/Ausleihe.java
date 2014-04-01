@@ -218,4 +218,10 @@ public class Ausleihe implements Serializable {
         this.betriebssystem = betriebssystem;
     }
 
+    @Override
+    public String toString() {
+        return "Ausleihe{" + "id=" + id + ", auftragsdatum=" + auftragsdatum + ", antragssteller=" + antragssteller + ", mitarbeiter=" + mitarbeiter + ", dauer=" + dauer + ", von=" + von + ", bis=" + bis + ", bermerkung=" + bermerkung + ", status=" + status + ", leihNotebook=" + leihNotebook + ", betriebssystem=" + betriebssystem + '}';
+    }
+
+    
 }

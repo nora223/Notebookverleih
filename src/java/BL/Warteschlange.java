@@ -103,7 +103,9 @@ public class Warteschlange {
         Date date = new Date();
         long wid = 0;
         for(Warteschlange element : erg){
+            System.out.println("Zeile 106 for Schleife Warteschlange");
             if(element.getLeihdauer() <= note.getLeihdauer() && element.getKategorie()==note.getKlasse() && date.after(element.getAuftragsdatum())){
+                System.out.println("Zeile 108 if Abfrage");
                 Student s = element.getAntragssteller();
                 Date auftragsdatum = element.getAuftragsdatum();
                 String bs = element.getBs();
@@ -121,6 +123,8 @@ public class Warteschlange {
                 warte.setMitarbeiter(dozent);
                 warte.setBermerkung("Student wartet schon länger auf das Notebook. Bitte um baldige Bestätigung.");
                 warte.setStatus("bestätigungAusstehend");
+                
+                System.out.println(warte);
                 wid = element.getId();
                 
                 date = element.getAuftragsdatum();

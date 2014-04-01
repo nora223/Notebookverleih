@@ -81,7 +81,7 @@
                                 <% List<Ausleihe> ausleiheList = BL.Ausleihe.getListAusleihe();
                                 
                                 for (Ausleihe element : ausleiheList){
-                                    if(l== element.getMitarbeiter().getId()){
+                                    if(l== element.getMitarbeiter().getId() && element.getStatus().equals("bestätigungAusstehend")){
                                         long id = element.getId();
                                         String vorname = element.getAntragssteller().getVorname();
                                         String name = element.getAntragssteller().getName();
