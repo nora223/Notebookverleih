@@ -96,7 +96,7 @@
                     <p> Bitte f&uuml;llen Sie das folgende Formular aus um ein Notebook hinzuzufügen.</p>
 
                     <div id="login">
-                        <form name="adr" action="../saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
+                        <form name="adr" action="../admin/saveNB.jsp" methode="POST" onsubmit="javascript:return checkForm()">
                             <p>Name<br><input id="t" name="name" type="text" size="30" maxlength="40"></p>
                             <p>Seriennummer<br><input id="t1" name="seriennummer" type="text" size ="30" maxlength="40"></p>
                             <p>Klasse   
@@ -110,9 +110,9 @@
                                 <select maxlenght="40" widht="40" name="leihdauer">
                                  
                                     <option value="7">7 Tage</option>
-                                    <option value="30">30</option>
-                                    <option value="30">90 Tage</option>
-                                    <option>180 Tage</option>
+                                    <option value="30">30 Tage</option>
+                                    <option value="90">90 Tage</option>
+                                    <option value="180">180 Tage</option>
                                 </select>
                             </p>
                             <p>Status

@@ -117,6 +117,7 @@
 
                         }
                     }
+                    BL.Notebook.updateNotebookStatus(notebook, "bestätigungAusstehend");
 
                     List<Student> listStudent = BL.Student.getStudentList();
 
