@@ -38,10 +38,10 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="XXX.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="XXX.jsp" class="list-group-item" >XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
-                    <a href="XXX.jsp" class="list-group-item">XXX</a>
+                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleih Verwaltung</a>
+                    <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
+                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
                 </div>
             </div>
 
@@ -72,11 +72,11 @@
                         //String messageContent = BL.Mail_arts.Dozent_welcome(s);
                         //BL.Mail.eMailcreate(messageContent, s.geteMail());
                     %>
-                        <p>Der Administrator
+                        <p>Folgende/r Administrator/in wurde erfolgreich angelegt:
                             <% out.println(vorname);
                                 out.println(nachname);
                             %>
-                            wurde erfolgreich angelegt. Es wurde eine Best&auml;tigungs-Email an: 
+                            <br> Es wurde eine Best&auml;tigungs-Email an: 
                             <% out.println(email);%> gesendet. </p>
               
 

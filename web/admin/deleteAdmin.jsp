@@ -18,7 +18,7 @@
         <link rel="icon" href="../pic/logo.JPG" type="image/JPG" />
         <link rel="stylesheet" href ="../css/bootstrap.css" type ="text/css" />
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>XXX</title>
+        <title>Administrator Löschen</title>
    <div>
         <div>
             <a href='admin.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>

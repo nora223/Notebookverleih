@@ -32,6 +32,7 @@
     </div>
     
     <%
+        //Max
         String t = session.getAttribute("typ").toString();
         if (t.equals("Dozent")){
            
@@ -50,8 +51,7 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="dozent.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="notebookausleihedozent.jsp" class="list-group-item" >Ausleihe</a>
+                    <a href="notebookausleihedozent.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
 
                 </div>
             </div>
@@ -62,33 +62,37 @@
                       <%
                             String Str_id = request.getParameter("id");
                             long id = Long.parseLong(Str_id);
+                            String stname;
+                            String email;
 
                             List<Ausleihe> list = BL.Ausleihe.getAusleiheList();
-                            long auslId = 0;
+                            //long auslId = 0;
                             for (Ausleihe element : list) {
-                                if (id == element.getAntragssteller().getId()) {
-                                    String stname= element.getAntragssteller().getName();
-                                    String email= element.getAntragssteller().getName();
-                                    auslId = element.getId();
-                                    break;
-
-                                }
-
-                            }
-                       %>
+                                if (id == element.getId()) {
+                                    stname = element.getAntragssteller().getName();
+                                    email = element.getAntragssteller().geteMail();
+                                    
+                                    
+                    %>
                            
                     <form action="notebookabgelehnt.jsp" method="POST">   
                     <h1>Anfrage ablehnen!</h1>
-                    <p> Sie haben die Anfrage des Studenten nicht akzeptiert. </p>
+                    <p>Sie haben die Anfrage des Studenten nicht akzeptiert. </p>
                     <p>Bitte tragen Sie eine kurze Begründung für Ihre Entscheidung ein: <br><input name="begründung" type="text" width="100" height="200"></p>
                     <p><input name="stname" type="hidden" value="<%=stname%>" size="30" maxlength="40"></p> 
                     <p><input name="email" type="hidden" value="<%=email%>" size="30" maxlength="40"></p> 
                    
-                    <input type="button" name="senden" value="Senden!">
+                    <input name="button" type="submit" value="Senden!">
 
                     </form>  
-               
-                        <% BL.Ausleihe.deleteAusleiheByID(auslId);%>
+                    <%
+                                    break;
+                                }
+                            }
+                    %>
+                    
+                    
+                        <% BL.Ausleihe.deleteAusleiheByID(id);%>
                 
                 </div>
             </div>
