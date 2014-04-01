@@ -155,15 +155,15 @@
                 <a href="#" class="list-group-item active" >
                     NAVIGATION
                 </a>
-                <a href="../index.jsp" class="list-group-item">Startseite</a>
-                 <a href="../userinf.jsp" class="list-group-item">User Informationen</a>
+                <a href="index.jsp" class="list-group-item">Startseite</a>
+                 <a href="userinf.jsp" class="list-group-item">User Informationen</a>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="area">
                 <h1> Herzlich Willkommen! </h1>
-                <p> Bitte f&uuml;llen Sie das folgende Formular aus um sich als User zu registrieren</p>
+                <p> Bitte f&uuml;llen Sie das folgende Formular aus um sich als User zu registrieren:</p>
 
                 <div id="login">
                     <form name="adr" action="savestudent.jsp" methode="POST" onsubmit="javascript:return checkForm()"> 
