@@ -138,6 +138,18 @@ String messageContent =
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;
 }
+public static String Passwort_foget(String name,String passwort){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+"> Neues Passwort </h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
++"<p>Ihres neue Password:"+" "+ passwort +"."+" </p><br>"  
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;
+}
 public static String application_confirmed(Ausleihe a){
     
  String messageContent =
