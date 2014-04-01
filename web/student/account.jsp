@@ -208,7 +208,7 @@
         <title>Benutzer Men&uuml;</title>
     <div>
         <div>
-            <a href='../student.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+            <a href='../student/student.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
         </div>
         <div id="logout" > 
             <a style="color: grey" href="../logout.jsp"> (Logout) </a>
