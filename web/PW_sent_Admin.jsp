@@ -23,11 +23,9 @@
         <title></title>
            <div>
         <div>
-            <a href='index.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
+            <a href='../index.jsp'><img id="pic" src="../pic/logo.png" alt="Logo"/></a>
         </div>
-        <div id="logout" > 
-            <a style="color: grey" href="../logout.jsp"> (Logout) </a>
-        </div> <!-- Link für Logout-->
+      
         <hr>
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
@@ -41,6 +39,7 @@
                     NAVIGATION
                     </a>
                     <a href="../index.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                     <a href="../userinf.jsp" class="list-group-item">User Informationen</a>
                 </div>
             </div>
             

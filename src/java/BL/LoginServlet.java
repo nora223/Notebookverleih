@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
                     typ = "Student";
                     session.setAttribute("typ", typ);
                     System.out.println("Typ: " + typ);
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("../student/student.jsp" );
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/student/student.jsp" );
                     dispatcher.forward ( request, response );                
                     hit = true;
                     break;
@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
                     System.out.println("Dozent: Passwort richtig");
                     typ = "Dozent";
                     session.setAttribute("typ", typ);
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("../dozent/notebookausleihedozent.jsp" );
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/dozent/notebookausleihedozent.jsp" );
                     dispatcher.forward ( request, response ); 
                     hit = true;
                     break;
@@ -115,14 +115,14 @@ public class LoginServlet extends HttpServlet {
                      System.out.println("Admin: Passwort richtig");
                      typ = "Admin";
                      session.setAttribute("typ", typ);
-                     RequestDispatcher dispatcher = request.getRequestDispatcher("../admin/admin.jsp" );
+                     RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin.jsp" );
                      dispatcher.forward ( request, response );
                      hit = true;
                      break;
                 }
                 if(y >= listAdmin.size()){
                     System.out.print("Admin: Passwort falsch!");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("../loginError.jsp" );
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/loginError.jsp" );
                     dispatcher.forward ( request, response );
                     break;
                 }
@@ -130,7 +130,7 @@ public class LoginServlet extends HttpServlet {
                     y++;
                 }
             }
-            RequestDispatcher dispatcher = request.getRequestDispatcher("../loginError.jsp" );
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/loginError.jsp" );
             dispatcher.forward ( request, response );
         }
         
