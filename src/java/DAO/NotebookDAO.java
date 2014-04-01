@@ -28,13 +28,13 @@ public class NotebookDAO {
 
     }
 
-    public static void updateNotebook(Notebook nid) {
+    public static void updateNotebookStatus(Notebook nid, String s) {
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
         Notebook notebook = (Notebook) HibernateUtil.getSessionFactory().getCurrentSession().load(Notebook.class, nid.getId());
         HibernateUtil.getSessionFactory().getCurrentSession().update(notebook);
-        notebook.setNotebookStatus("verliehen");
+        notebook.setNotebookStatus(s);
         
         tx.commit();
 

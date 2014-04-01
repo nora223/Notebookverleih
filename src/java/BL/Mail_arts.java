@@ -112,6 +112,20 @@ String messageContent =
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;
 }
+
+public static String Notebook_gueltigkeit_derAnfrage_ueber(String name){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+">Stornierung von Bestellung</h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
++"<p>Ihre Bestellung wurde innerhalb von 7 Tagen nicht bestätigt und deswegen storniert.</p><br>" 
+      
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;
+}
 public static String Student_Mahnung(String name){
     
 String messageContent =
@@ -120,6 +134,18 @@ String messageContent =
 +"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
 +"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
 +"<p>Ausleihzeit von Notebook ist beendet.Bitte,bringen Sie das ausgeliehenen Notebook zurück. </p><br>"  
++"<p>Mit freundlichen Grüßen </p>"
++ "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
+  return  messageContent;
+}
+public static String Passwort_foget(String name,String passwort){
+    
+String messageContent =
+ "<img src="+"http://i.imgur.com/9LHtHp3.png"+"/><br>" 
++"<h1 style="+"text-align:"+"color:"+"## FF0000"+"> Neues Passwort </h1><br>"     
++"<h2 style="+"text-align:"+"center;"+"color:"+"#0101DF"+"> IT Geräteausleihe</h2><br>"
++"<p><font size="+3+ ">Guten Tag " + name + ","+ "</p><br>" 
++"<p>Ihres neue Password:"+" "+ passwort +"."+" </p><br>"  
 +"<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;    
   return  messageContent;

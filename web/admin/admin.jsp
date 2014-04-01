@@ -48,11 +48,12 @@
             <div class="col-md-6">
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>
-                    <p> Sie befinden sich im Administrationsbereich der Notebookausleihe!<br></p>
-                    <p> Sehr geehrte/r Administrator/in, <br><br> Sie befinden sich im Hauptmenü
-                        des Administratorenbereiches. <br>
-                        Starten Sie <b>täglich</b> den Mahnungslauf um Studierende an die Abgabe der Notebooks zu erinnern.
-                        <br> <br> Mit freundlichen Grüßen<br> Die Programmierer</p>
+                    <br>
+                    <p> Sehr geehrte/r Administrator/in, <br><br> Sie befinden sich im Hauptmen&uunml;
+                        des Administrationsbereiches der Notebookausleihe!. <br>
+                        Starten Sie <b>t&auml;glich</b> den Mahnungslauf um Studierende an die Abgabe der Notebooks zu erinnern.
+                        <br> <br> Mit freundlichen Gr&uuml;&szlig;en<br> 
+                        Die Programmierer</p>
 
 
                 </div>

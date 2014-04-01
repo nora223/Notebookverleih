@@ -4,6 +4,7 @@
  */
 package BL;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -74,11 +75,20 @@ public class Warteschlange {
         DAO.WarteschlangeDAO.deleteWarteschlangeByIDDAO(id);
     }
      
-    public static void checkWarteschlange(long id){
+    public static boolean checkWarteschlange(long id){
         
-        List<Warteschlange> erg = DAO.WarteschlangeDAO.getWarteschlangeDAO();
+        List<Warteschlange> erg;
+        erg = DAO.WarteschlangeDAO.getWarteschlangeDAO();
+        
+        System.out.println(erg.toString()+ " "+ erg.size());
+       
+        if(erg.size()== 0){
+            System.out.println("WERt: "+false+" ID: "+id);
+            return false;
+        }else{
+        System.out.println("HAAAAAAAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOO MAX");
         List<Notebook> notebook = BL.Notebook.getNotebookList();
-        Notebook note = null;
+        Notebook note = new Notebook();
         for (Notebook element : notebook) {
             if(element.getId()==id){
                 note.setId(element.getId());
@@ -89,39 +99,43 @@ public class Warteschlange {
                 note.setSeriennummer(element.getSeriennummer());
             }
         }
-        List <Warteschlange> warte = null;
+        Ausleihe warte = new Ausleihe();
+        Date date = new Date();
+        long wid = 0;
         for(Warteschlange element : erg){
-            if(element.getLeihdauer() <= note.getLeihdauer() && element.getKategorie()==note.getKlasse()){
-                warte.add(element);
-            }
-        }
-       
-            GregorianCalendar cal1 = new GregorianCalendar();
-            cal1.setTime(new Date());
-            cal1.add(Calendar.DAY_OF_MONTH, 190);
-            Date firstDate = cal1.getTime();
-            Ausleihe a = new Ausleihe();
-            long wid = 0;
-        for(Warteschlange element: warte){
-            if(firstDate.after(element.getAuftragsdatum())){
-                firstDate = element.getAuftragsdatum();
-                a.setAntragssteller(element.getAntragssteller());
-                a.setAuftragsdatum(new Date());
-                a.setBermerkung("Der Student wartet bereits längere Zeit um das Notebook daher bitten wir den Dozent um zugügige Bearbeitung.");
-                a.setBetriebssystem(element.getBs());
-                a.setDauer(element.getLeihdauer());
-                a.setLeihNotebook(note);
-                a.setMitarbeiter(element.getMitarbeiter());
-                a.setStatus("bestätigungAusstehend");
+            if(element.getLeihdauer() <= note.getLeihdauer() && element.getKategorie()==note.getKlasse() && date.after(element.getAuftragsdatum())){
+                Student s = element.getAntragssteller();
+                Date auftragsdatum = element.getAuftragsdatum();
+                String bs = element.getBs();
+                long idWarteschlange = element.getId();
+                int kategorie = element.getKategorie();
+                int leihdauer = element.getLeihdauer();
+                Dozent dozent = element.getMitarbeiter();
+                
+                warte.setAntragssteller(s);
+                warte.setAuftragsdatum(auftragsdatum);
+                warte.setBetriebssystem(bs);
+                warte.setId(id);
+                warte.setLeihNotebook(note);
+                warte.setDauer(leihdauer);
+                warte.setMitarbeiter(dozent);
+                warte.setBermerkung("Student wartet schon länger auf das Notebook. Bitte um baldige Bestätigung.");
+                warte.setStatus("bestätigungAusstehend");
                 wid = element.getId();
                 
-      
+                date = element.getAuftragsdatum();
             }
+        } 
+       
             
-        }
-        BL.Ausleihe.saveAusleihe(a);
+            
+       
+        BL.Ausleihe.saveAusleihe(warte);
         BL.Warteschlange.deleteWarteschlangeByID(wid);
-                                    
+        
+        return true;
+        
+        }                            
     }
      
     public long getId() {
