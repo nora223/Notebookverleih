@@ -35,10 +35,10 @@ public class Ausleihe implements Serializable {
 
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date auftragsdatum;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne//(cascade = CascadeType.ALL)
     private Student antragssteller;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne//(cascade = CascadeType.ALL)
     private Dozent mitarbeiter;
     private int dauer;
 
@@ -51,7 +51,7 @@ public class Ausleihe implements Serializable {
     private String bermerkung;
     private String status;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne//(cascade = CascadeType.ALL)
     private Notebook leihNotebook;
     private String betriebssystem;
 
@@ -84,7 +84,7 @@ public class Ausleihe implements Serializable {
         cal.add(Calendar.DAY_OF_MONTH, dauer);
         Date bis = cal.getTime();
 
-        BL.Notebook.updateNotebook(nid);
+        BL.Notebook.updateNotebookStatus(nid, "verliehen");
 
         DAO.AusleiheDAO.updateAusleihe(id, von, bis);
     }
@@ -218,4 +218,10 @@ public class Ausleihe implements Serializable {
         this.betriebssystem = betriebssystem;
     }
 
+    @Override
+    public String toString() {
+        return "Ausleihe{" + "id=" + id + ", auftragsdatum=" + auftragsdatum + ", antragssteller=" + antragssteller + ", mitarbeiter=" + mitarbeiter + ", dauer=" + dauer + ", von=" + von + ", bis=" + bis + ", bermerkung=" + bermerkung + ", status=" + status + ", leihNotebook=" + leihNotebook + ", betriebssystem=" + betriebssystem + '}';
+    }
+
+    
 }

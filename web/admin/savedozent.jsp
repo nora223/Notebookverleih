@@ -73,11 +73,11 @@
                         //BL.Mail.eMailcreate(messageContent, s.geteMail());
 %>
                     <div>
-                        <p>Der Dozent 
+                        <p>Folgende/r Dozent/in wurde erfolgreich angemeldet: 
                             <% out.println(vorname);
                                 out.println(nachname);
                             %>
-                            wurde erfolgreich angelegt. Es wurde eine Best&auml;tigungs-Email an: 
+                            <br> Es wurde eine Best&auml;tigungs-Email an: 
                             <% out.println(email);%> gesendet. </p>
                     </div>
                 </div>

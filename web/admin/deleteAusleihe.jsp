@@ -58,12 +58,12 @@
                         String strNotebookId = request.getParameter("notebook");
                         long notebookId = Long.parseLong(strNotebookId);
                         
-                        
-                        Ausleihe.deleteAusleiheByID(longid);
-                        
-                        Warteschlange.checkWarteschlange(notebookId);
-                        
-                        
+                        boolean wert = Warteschlange.checkWarteschlange(notebookId);
+                        Notebook notebook = BL.Notebook.getNotebookById(notebookId);
+                        if(!wert){
+                           BL.Notebook.updateNotebookStatus(notebook, "verfügbar");
+                        }
+                         Ausleihe.deleteAusleiheByID(longid);
                         
                         %>
                         

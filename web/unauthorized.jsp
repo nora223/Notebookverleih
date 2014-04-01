@@ -37,7 +37,6 @@
                         NAVIGATION
                     </a>
                     <a href=".../index.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px"><b>Startseite</b></a>
-                    <a href=".../notebookverwaltung.jsp" class="list-group-item">Notebook Verwaltung</a>
                     <a href=".../userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
                 </div>
             </div>

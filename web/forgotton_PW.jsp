@@ -29,6 +29,7 @@
                     NAVIGATION
                 </a>
                 <a href="index.jsp" class="list-group-item">Startseite</a> 
+                <a href="userinf.jsp" class="list-group-item">User Informationen</a>
 
             </div>
         </div>
@@ -39,7 +40,7 @@
                 <p> Bitte f&uuml;llen Sie das folgende Formular aus:</p>
 
                 <div id="login">
-                    <form action=PW_sent_Admin.jsp" methode="POST">
+                    <form action="servlets/passwortVergessen" method="POST">
                         <p>Nachname<br><input name="nachname" type="text" size="30" maxlength="40"></p>
                         <p>Vorname<br><input name="vorname" type="text" size ="30" maxlength="40"></p>
                         <p>E-mail<br><input name="e_mail" type="text" size ="30" maxlength="40"></p>
