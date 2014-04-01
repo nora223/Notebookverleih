@@ -60,7 +60,7 @@
                         
                         boolean wert = Warteschlange.checkWarteschlange(notebookId);
                         Notebook notebook = BL.Notebook.getNotebookById(notebookId);
-                        if(!wert){
+                        if(wert  == false){
                            BL.Notebook.updateNotebookStatus(notebook, "verfügbar");
                         }
                          Ausleihe.deleteAusleiheByID(longid);

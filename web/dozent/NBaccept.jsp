@@ -91,9 +91,9 @@
                             
                             
                             //Code Alexey für E-Mail
-                           //String email = element.getAntragssteller().geteMail();
-                           //String messageContent = BL.Mail_arts.application_confirmed(element);
-                           //BL.Mail.eMailcreate(messageContent, email);
+                           String email = element.getAntragssteller().geteMail();
+                           String messageContent = BL.Mail_arts.application_confirmed(element);
+                           BL.Mail.eMailcreate(messageContent, email);
                            //**********************************************************************
                             
                             break;

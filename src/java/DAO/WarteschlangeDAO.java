@@ -40,7 +40,7 @@ public class WarteschlangeDAO {
 
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        Warteschlange warteschlange = (Warteschlange) HibernateUtil.getSessionFactory().getCurrentSession().load(Ausleihe.class, id);
+        Warteschlange warteschlange = (Warteschlange) HibernateUtil.getSessionFactory().getCurrentSession().load(Warteschlange.class, id);
         HibernateUtil.getSessionFactory().getCurrentSession().delete(warteschlange);
         transaction.commit();
 
