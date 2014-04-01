@@ -111,8 +111,8 @@
                                  
                                     <option value="7">7 Tage</option>
                                     <option value="30">30 Tage</option>
-                                    <option value="30">90 Tage</option>
-                                    <option>180 Tage</option>
+                                    <option value="90">90 Tage</option>
+                                    <option value="180">180 Tage</option>
                                 </select>
                             </p>
                             <p>Status
