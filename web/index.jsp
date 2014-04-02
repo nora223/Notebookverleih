@@ -80,13 +80,8 @@
                         <a href="forgotton_PW.jsp" >Passwort vergessen?</a>
 
                     </div>
-                    <li><a href="admin/admin.jsp">Admin</a></li>
-                    <li><a href="testfaelle.jsp">Testf&auml;lle!</a></li>
-                    <li><a href="testfaelle_alexey.jsp">Testf&auml;lle_Aleksey!</a></li>
-                    <li><a href="testfaelle_notebook.jsp">Testf&auml;lle_notebook</a></li>
-                    <li><a href="testausleihen.jsp">Ausleihen?</a>
-                        <!--<li><a href="student/student.jsp">Student</a></li>
-                        <li><a href="dozent/dozent.jsp">Dozent</a></li>-->
+                    <li><a href="testfall1.jsp">Testfall 1</a></li>
+                    <li><a href="testfall2.jsp">Testfall 2</a></li>
                 </div> 
             </div>
         </div>

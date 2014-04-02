@@ -23,6 +23,17 @@
         <hr>
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
+    
+     <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Admin")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+    
 </head>
     <body>
         <div  class="row">
