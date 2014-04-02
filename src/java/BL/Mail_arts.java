@@ -19,7 +19,7 @@ public class Mail_arts {
   
    
     
-public static String application_confirm(Ausleihe a,Notebook n,Dozent d,Student s){
+public static String application_confirm(String bemerkung,Ausleihe a,Notebook n,Dozent d,Student s){
 
        
 String messageContent =
@@ -37,8 +37,9 @@ String messageContent =
 + "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + n.getKlasse() + "</th> </tr>"
 + "<tr><th align="+"left"+">Dauer: </th> <th>" + n.getLeihdauer() + "</th> </tr>"
 + "<tr><th align="+"left"+">Status: </th> <th>Wartet auf bestätigung durch Mitarbeiter</th> </tr></table><br>"
-+ "<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>"        
-+ " <li><a href="+"http://localhost:8080/Notebookverleih/"+">"+"Startseite"+"</a></li>" 
++ "<p>Bemerkung:  "+bemerkung+"</p><br>" 
++ "<p>Auf der folgenden Webseite können Sie den Antrag bestätigen oder ablehnen:</p><br>" 
++ " <li><a href="+"http://localhost:8080/Notebookverleih/"+">"+"Bestätigung"+"</a></li>" 
 + "<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ; 
   return messageContent;

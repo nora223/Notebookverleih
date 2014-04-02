@@ -159,7 +159,7 @@
 
                     BL.Ausleihe.saveAusleihe(a);
 
-                    String messageContent = BL.Mail_arts.application_confirm(a, notebook, dozent, student);
+                    String messageContent = BL.Mail_arts.application_confirm(bemerkung,a, notebook, dozent, student);
                     BL.Mail.eMailcreate(messageContent, dozent.geteMail());
 
 
