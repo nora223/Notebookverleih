@@ -49,7 +49,7 @@
                 <div class="area">
                     <h1> Herzlich Willkommen! </h1>
                     <br>
-                    <p> Sehr geehrte/r Administrator/in, <br><br> Sie befinden sich im Hauptmen&uunml;
+                    <p> Sehr geehrte/r Administrator/in, <br><br> Sie befinden sich im Hauptmenü
                         des Administrationsbereiches der Notebookausleihe!. <br>
                         Starten Sie <b>t&auml;glich</b> den Mahnungslauf um Studierende an die Abgabe der Notebooks zu erinnern.
                         <br> <br> Mit freundlichen Gr&uuml;&szlig;en<br> 
