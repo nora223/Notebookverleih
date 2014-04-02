@@ -72,18 +72,21 @@
          
         
          List<Ausleihe> listAusleihe = Ausleihe.getAusleiheList();
-            
+         
+         
          for(Ausleihe element : listAusleihe){
+             
+             if(element.getStatus().equals("verliehen")){
              String name = element.getAntragssteller().getName();
              String mail = element.getAntragssteller().geteMail();
              Date bis = element.getBis();
              Date d= new Date();
-           if(d.compareTo(bis)>0){
+             if(d.compareTo(bis)>0){
                  
              String messageContent = BL.Mail_arts.Student_Mahnung(name);
              BL.Mail.eMailcreate(messageContent, mail);  
              }
-               
+             }
          }
        %>
                 

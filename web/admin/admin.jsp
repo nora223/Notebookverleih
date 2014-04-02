@@ -49,10 +49,10 @@
                     <a href="#" class="list-group-item active" >
                         NAVIGATION
                     </a>
-                    <a href="admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
-                    <a href="ausleihverwaltung.jsp" class="list-group-item" >Ausleih Verwaltung</a>
-                    <a href="list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
-                    <a href="userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
+                    <a href="../admin/admin.jsp" class="list-group-item" style="padding: 20px 5px 10px 10px">Startseite</a>
+                    <a href="../admin/ausleihverwaltung.jsp" class="list-group-item" >Ausleih Verwaltung</a>
+                    <a href="../admin/list_notebook.jsp" class="list-group-item">Notebook Verwaltung</a>
+                    <a href="../admin/userverwaltung.jsp" class="list-group-item">User Verwaltung</a>
                 </div>
             </div>
 
@@ -75,8 +75,8 @@
                         MAIN
                     </a>
 
-                        <a href="Mahnung.jsp" class="list-group-item">Mahnungslauf starten</a>
-                        <a href="gueltigkeit_derAnfrage.jsp" class="list-group-item">G&uuml;ltigkeit der Anfrage</a>
+                        <a href="../admin/Mahnung.jsp" class="list-group-item">Mahnungslauf starten</a>
+                        <a href="../admin/gueltigkeit_derAnfrage.jsp" class="list-group-item">G&uuml;ltigkeit der Anfrage</a>
 
                 </div> 
             </div>   
