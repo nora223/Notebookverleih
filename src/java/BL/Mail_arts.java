@@ -161,13 +161,12 @@ public static String application_confirmed(Ausleihe a){
 + "<table border="+8+"cellspacing="+10+"cellpadding="+20+"> "
 + "<tr><th align="+"left"+">Name: </th> <th>" + a.getAntragssteller().getName() + "</th> "
 + "<tr><th align="+"left"+">Mitarbeiter: </th> <th>" + a.getMitarbeiter().getName() + "</th> </tr>"
-+ "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + a.getClass() + "</th> </tr>"
++ "<tr><th align="+"left"+">Gerätetyp: </th> <th>" + a.getLeihNotebook().getKlasse() + "</th> </tr>"
 + "<tr><th align="+"left"+">Dauer: </th> <th>" + a.getLeihNotebook().getLeihdauer() + "</th> </tr>"
 + "<tr><th align="+"left"+">Status: </th> <th>In Vorbereitung durch IT</th> </tr></table><br>"
 +"<p>Bitte Beachten Sie: Verschiebungen aufgrund von verfrühter Rückgabe sind leider nicht auszuschließen</p><br>"        
-+"<p> Sobald Ihre Gerät verfügbar ist und durch unser Team vorbereitet wird erhalten Sie eine weitere E-Mail.</p><br>"
 +"<p>Bitte prüfen Sie den Status unter:</p><br>"
-+" <li><a href="+"http://localhost:8080/Notebookverleih/"+">"+"Meine Ausleihen"+"</a></li>"
++" <li><a href="+"http://localhost:8080/Notebookverleih/"+">"+"Startseite"+"</a></li>"
 +"<p>Mit freundlichen Grüßen </p>"
 + "<p>Ihr EDV-Ausleih-Team</p><br>" ;  
  return messageContent;
