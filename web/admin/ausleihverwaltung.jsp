@@ -100,6 +100,7 @@
                                 <td><%=bemerkung%></td>
 
                                 <td><a href="deleteAusleihe.jsp?id=<%=id%>&notebook=<%=notebook.getId()%>">L&ouml;schen</td>
+                                <td><a href="defektNotebook.jsp?id=<%=id%>&notebook=<%=notebook.getId()%>">Defekt</td>
                             </tr>
                             <%}%>
                         </tbody>
