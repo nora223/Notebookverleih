@@ -65,9 +65,9 @@
                         <a href="forgotton_PW.jsp" >Passwort vergessen?</a>
 
                     </div>
-                    <li><a href="admin/admin.jsp">Admin</a></li>
-                    
-                </div> 
+                    <li><a href="testfall1.jsp">Testfall 1</a></li>
+                    <li><a href="testfall2.jsp">Testfall 2</a></li>                        
+                  </div> 
             </div>
         </div>
     </div>

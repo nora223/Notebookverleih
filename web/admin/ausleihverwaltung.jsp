@@ -31,6 +31,17 @@
         <hr>
         <p><img id="pic2" src="../pic/dh.jpg" alt="dh" /></p>
     </div>
+    
+     <%
+        String t = session.getAttribute("typ").toString();
+        if (t.equals("Admin")){
+           
+        }else{
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/unauthorized.jsp" );
+            dispatcher.forward ( request, response );
+        }
+    %>
+    
 </head>
 <body>
     <%
@@ -56,8 +67,7 @@
             <div class="col-md-8">
                 <div class="area">
                     <h1> Ausleihverwaltung </h1>
-                    <p> </p>
-                    <table class="table table-hover">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -70,46 +80,44 @@
                                 <th>Status</th>
                                 <th>Betriebssystem</th>
                                 <th>Bemerkung</th>
-                             
                             </tr>
                         </thead>
                         <tbody>
-                            <% 
-                               List<Ausleihe> erg =  BL.Ausleihe.getListAusleihe();
-                                for (Ausleihe element : erg){
-                                long id = element.getId();
-                                Student antragsteller = element.getAntragssteller();
-                                Dozent mitarbeiter = element.getMitarbeiter();
-                                Date date = element.getAuftragsdatum();
-                                String bemerkung = element.getBermerkung();
-                                String betriebssystem = element.getBetriebssystem();
-                                Date bis = element.getBis();
-                                int dauer = element.getDauer();
-                                Notebook notebook = element.getLeihNotebook();
-                                String status = element.getStatus();
-                                Date von = element.getVon();
-                                
-                                
-        %>
-        <tr>
-                            <td><%=id%></td>
-                            <td><%=antragsteller.getVorname()+" "+antragsteller.getName()%></td>
-                            <td><%=date%></td>
-                            <td><%=mitarbeiter.getVorname()+" "+mitarbeiter.getName()%></td>
-                            <td><%=notebook.getId()%></td>
-                            <td><%=von%></td>
-                            <td><%=bis%></td>
-                            <td><%=status%></td>
-                            <td><%=betriebssystem%></td>
-                            <td><%=bemerkung%></td>
-                            
-        <td><a href="deleteAusleihe.jsp?id=<%=id%>&notebook=<%=notebook.getId()%>">L&ouml;schen</td>
-        </tr>
-         <%}%>
+                            <%
+                                List<Ausleihe> erg = BL.Ausleihe.getListAusleihe();
+                                for (Ausleihe element : erg) {
+                                    long id = element.getId();
+                                    Student antragsteller = element.getAntragssteller();
+                                    Dozent mitarbeiter = element.getMitarbeiter();
+                                    Date date = element.getAuftragsdatum();
+                                    String bemerkung = element.getBermerkung();
+                                    String betriebssystem = element.getBetriebssystem();
+                                    Date bis = element.getBis();
+                                    int dauer = element.getDauer();
+                                    Notebook notebook = element.getLeihNotebook();
+                                    String status = element.getStatus();
+                                    Date von = element.getVon();
+                            %>
+                            <tr>
+                                <td><%=id%></td>
+                                <td><%=antragsteller.getVorname() + " " + antragsteller.getName()%></td>
+                                <td><%=date%></td>
+                                <td><%=mitarbeiter.getVorname() + " " + mitarbeiter.getName()%></td>
+                                <td><%=notebook.getId()%></td>
+                                <td><%=von%></td>
+                                <td><%=bis%></td>
+                                <td><%=status%></td>
+                                <td><%=betriebssystem%></td>
+                                <td><%=bemerkung%></td>
+
+                                <td><a href="deleteAusleihe.jsp?id=<%=id%>&notebook=<%=notebook.getId()%>">L&ouml;schen</td>
+                                <td><a href="defektNotebook.jsp?id=<%=id%>&notebook=<%=notebook.getId()%>">Defekt</td>
+                            </tr>
+                            <%}%>
                         </tbody>
                     </table>
 
-                   
+
 
                     <footer class="footer">
                         <input class="blue" name="button" type="submit" value="Speichern">
